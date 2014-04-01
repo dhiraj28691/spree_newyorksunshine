@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_newyorksunshine'
   s.version     = '2.2.1'
   s.summary     = 'Theme file for newyorksunshine.com'
-  # s.description = 'TODO: Add (optional) gem description here'
+  s.description = 'Email me for installation instructions'
   s.required_ruby_version = '>= 1.9.3'
 
   s.author    = 'Michael Ray'

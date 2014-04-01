@@ -1,0 +1,25 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html id="spree-application" class="loading" lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head>
+    <%= render :partial => 'spree/shared/head' %>
+  </head>
+  <body>
+
+    <header>
+      <%= render :partial => 'spree/shared/header' %>
+    </header>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <%= render :partial => 'spree/shared/footer' %>
+    </footer>
+
+  </body>
+</html>

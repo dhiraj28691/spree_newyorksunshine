@@ -1,0 +1,66 @@
+#feed {
+  column-count: 3;
+  column-gap: 0;
+  a {
+    border-radius: 3px;
+    color: white;
+    display: block;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition-duration: $slow;
+
+    &:after {
+      background: transparent;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition-duration: $slow;
+    }
+
+    img {
+      background: white;
+      box-sizing: border-box;
+      display: block;
+      padding: 1.75em;
+      width: 100%;
+      transition-duration: $slow;
+      filter: grayscale(99%);
+
+    }
+    .info {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      color: transparent;
+      text-align: center;
+      width: 100%;
+      transition-duration: $slow;
+      height: 2.4em;
+      z-index: 1;
+    }
+
+
+    &:hover {
+      .info {
+        color: $matteBlack;
+        transition-duration: $fast;
+      }
+      &:after {
+        background: hsla(0, 0%, 100%, 0.95);
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition-duration: $fast;
+      }
+    }
+  }
+}
+

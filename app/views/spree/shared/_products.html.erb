@@ -1,0 +1,47 @@
+<h3>products.html.erb</h3>
+
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+
+<% content_for :head do %>
+  <% if paginated_products.respond_to?(:num_pages) %>
+    <%= rel_next_prev_link_tags paginated_products %>
+  <% end %>
+<% end %>
+
+<% if paginated_products.respond_to?(:num_pages) %>
+  <% content_for :top do %>
+    <%= paginate paginated_products %>
+  <% end %>
+<% end %>
+
+
+<% if products.empty? %>
+  <%= Spree.t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+  <h6 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h6>
+<% end %>
+
+<% if products.any? %>
+  <div id="feed" class="inline product-listing" data-hook>
+    <% products.each do |product| %>
+      <%= link_to(product, {:id => "product_" + product.id.to_s, :class => "product", "data-hook" => "products_list_item", "itemscope" => "", :itemtype => "http://schema.org/Product" }) do %>
+        <div class="image-background">
+          <%= small_image(product, :itemprop => "image", :class => "product-image") %>
+        </div>
+        <span class="info" href="/products/ruby-on-rails-bag" itemprop="name" title="Ruby on Rails Bag"><%= product.name %></span>
+        <span class="price selling" itemprop="price"><%= display_price(product) %></span>
+      <% end %>
+    <% end %>
+    <% reset_cycle("classes") %>
+  </div>
+<% end %>
+
+
+<% if paginated_products.respond_to?(:num_pages) %>
+  <% content_for :bottom do %>
+    <%= paginate paginated_products %>
+  <% end %>
+<% end %>

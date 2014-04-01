@@ -1,0 +1,48 @@
+html#spree-application {
+  // background: url(http://files.human-nyc.com/newyorksunshine/home.jpg) center bottom;
+  // background: url( http://files.human-nyc.com/newyorksunshine/pdp.jpg) center top;
+  height: 100%;
+
+  body {
+    @extend %default-typography;
+    height: 100%;
+  }
+
+  header {
+    @extend %layout-main-container;
+    letter-spacing: 2.5px;
+    background: hsla(0, 100%, 100%, 0.95);
+    text-align: center;
+    padding: 84px 0 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+
+  #content {
+    @extend %layout-main-container;
+    min-height: 100%;
+    padding: 137px 0 2.75em;
+    box-sizing: border-box;
+    transition-duration: $slow;
+  }
+
+  footer {
+    @extend %layout-main-container;
+    letter-spacing: 2.5px;
+    height: 2.75em;
+    margin-top: -2.75em;
+  }
+
+  &.loading #content {
+    opacity: 0;
+    transition-duration: $fast;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    font-weight: normal;
+  }
+}

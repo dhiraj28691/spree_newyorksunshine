@@ -1,0 +1,58 @@
+h1#logo {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+h1#logo a {
+  @extend %sprite;
+  background-position: 0 -84px;
+  color: $matteBlack;
+  display: block;
+  position: relative;
+  width: 378px;
+  height: 42px;
+  text-decoration: none;
+  text-indent: -9999px;
+  transition-duration: $slow;
+  width: 340px;
+  &:hover:after {
+    right: -0.1em;
+    background: hsl(0, 0%, 0%);
+    content: "";
+    height: 4px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: -0.1em;
+  }
+  // &:hover {
+  //   opacity: 0.50;
+  //   transition-duration: $fast;
+  // }
+}
+
+
+nav.main-nav {
+  font-size: 0;
+  margin-top: -50px;
+	text-align: center;
+	text-transform: uppercase;
+	a {
+    color: black;
+		display: inline-block;
+    font-size: 11px;
+		padding: 2em;
+    text-decoration: none;
+		&:nth-child(3) {
+			margin-right: 188px;
+		}
+		&:nth-child(4) {
+			margin-left: 188px;
+		}
+    &:hover {
+      text-decoration: line-through;
+    }
+	}
+
+}

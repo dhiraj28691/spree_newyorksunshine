@@ -1,0 +1,12 @@
+<h1 id="logo"><%= link_to 'New York Sunshine', spree.root_path %></h1>
+
+<nav class="main-nav">
+  <%= link_to('Shop', '/products') %>
+  <%= link_to('Surfclub','/surfclub') %>
+  <%= link_to('Lookbook', '/lookbook') %>
+  <%= link_to('News','/news') %>
+  <%= link_to('Stockists','/stockists') %>
+  <% link_to Spree.t(:cart), '/cart' %>
+  <%= link_to 'Cart(0)', '/cart' %>
+</nav>
+

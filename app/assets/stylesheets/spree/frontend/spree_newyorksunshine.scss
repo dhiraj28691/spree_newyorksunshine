@@ -17,6 +17,8 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 
 @import "products/show";
 
+@import "shared/breadcrumbs";
 @import "shared/feed";
 @import "shared/footer";
 @import "shared/header";
+@import "shared/taxonomies";

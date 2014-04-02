@@ -1,0 +1,25 @@
+#breadcrumbs {
+  padding: 3px 0;
+  margin-bottom: 15px;
+  text-align: center;
+  ul {
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+    a {
+      // color: red;
+      display: inline-block;
+      text-decoration: none;
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
+    span {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}

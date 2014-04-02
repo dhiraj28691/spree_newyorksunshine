@@ -20,14 +20,17 @@ html#spree-application {
     z-index: 2;
   }
 
-
-  #content {
+  #wrapper {
     @extend %layout-main-container;
     min-height: 100%;
     padding: 137px 0 2.75em;
     box-sizing: border-box;
     transition-duration: $slow;
   }
+
+  // #content {
+  //   background: red;
+  // }
 
   footer {
     @extend %layout-main-container;

@@ -28,9 +28,10 @@ html#spree-application {
     transition-duration: $slow;
   }
 
-  // #content {
-  //   background: red;
-  // }
+  #content {
+    // background: red;
+    transition-duration: $slow;
+  }
 
   footer {
     @extend %layout-main-container;

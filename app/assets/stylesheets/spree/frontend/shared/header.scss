@@ -16,20 +16,10 @@ h1#logo a {
   text-indent: -9999px;
   transition-duration: $slow;
   width: 340px;
-  &:hover:after {
-    right: -0.1em;
-    background: hsl(0, 0%, 0%);
-    content: "";
-    height: 4px;
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    left: -0.1em;
+  &:hover {
+    opacity: 0.50;
+    transition-duration: $fast;
   }
-  // &:hover {
-  //   opacity: 0.50;
-  //   transition-duration: $fast;
-  // }
 }
 
 

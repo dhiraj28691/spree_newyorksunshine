@@ -1,0 +1,26 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+#lookbook {
+  border: 10px solid red;
+  margin: auto;
+  position: relative;
+  width: 960px;
+  height: 600px;
+  transform-style: preserve-3d;
+  transition-duration: $slow;
+
+  img {
+    display: block;
+    width: 960px;
+    height: 600px;
+    position: absolute;
+    transition-duration: $slow;
+  }
+}
+
+#wrapper {
+  perspective: 1100px;
+}

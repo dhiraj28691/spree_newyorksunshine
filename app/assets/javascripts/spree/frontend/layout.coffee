@@ -1,4 +1,4 @@
-//= require modernizr
+//= require ./modernizr
 
 header = undefined
 transform = undefined

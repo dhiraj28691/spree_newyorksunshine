@@ -3,6 +3,22 @@
   They will automatically be included in application.css.
 */
 
+#lookbook-links {
+  // text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 2em;
+  a {
+    color: inherit;
+    display: block;
+    padding: 1em 2em;
+    text-decoration: none;
+    &:hover {
+      text-decoration: line-through;
+    }
+  }
+}
+
 #lookbook {
   // background: black;
   margin: auto;
@@ -21,12 +37,15 @@
     width: 1182px;
     height: 856px;
 
-    pointer-events: auto;
+    // pointer-events: auto;
     opacity: .65;
     // opacity: 0.15;
     // opacity: 0;
     position: absolute;
     backface-visibility: hidden;
+
+    box-sizing: border-box;
+    padding: 33px;
 
     transition-property: transform, opacity;
     transition-duration: $slow, $slow;
@@ -77,13 +96,13 @@
   // transform: translateY(-100%);
 
   .left {
-    // background: orange;
-    cursor: w-resize;
+    // cursor: asset-url("w-resize.svg"), asset-url("w-resize.png"), w-resize;
+    cursor: asset-url("w-resize.png"), w-resize;
     flex: 1 1 50%;
   }
   .right {
-    // background: red;
-    cursor: e-resize;
+    // cursor: asset-url("e-resize.svg"), asset-url("e-resize.png"), e-resize;
+    cursor: asset-url("e-resize.png"), e-resize;
     flex: 1 1 50%;
   }
 }

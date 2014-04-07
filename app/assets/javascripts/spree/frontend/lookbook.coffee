@@ -1,72 +1,122 @@
 //= require ./modernizr
 
+"use strict"
+
+
 class Lookbook
 
-  "use strict"
+  constructor: (@lookbook) ->
 
-  nextSlide: () ->
+    @stage = @lookbook.querySelector(".stage")
+    @looks = @stage.children
+    @current_slide_index = 0
+    @slideshow_position_array = []
+    @rotation_offset = 0
+
+    @thumbnails = document.querySelector('.thumbnails')
+
+    @thumbnails.addEventListener 'click', @goToSlide
+
+
+    # arrange the slides
+    @setStage()
+    # sync slideshow state
+    @updateSlideshow()
 
 
   prevSlide: () ->
+    if @current_slide_index == 0 then @rotation_offset--
+
+    # @current_slide_index--
+    @current_slide_index = if @current_slide_index > 0 then @current_slide_index - 1 else @looks.length - 1
+
+    console.log this
+    @updateSlideshow()
+
+  nextSlide: () ->
+    if @current_slide_index == @looks.length - 1 then @rotation_offset++
+
+    # @current_slide_index++
+
+    @current_slide_index = if @current_slide_index < @looks.length - 1 then @current_slide_index + 1 else 0
+
+    @updateSlideshow()
+
+  goToSlide: (event) =>
+    node = event.target
+
+    @current_slide_index = [].indexOf.call(node.parentNode.children, node)
+
+    @updateSlideshow()
 
 
 
-  initSlideshow: () ->
 
-    @lookbook = document.querySelector('#lookbook')
-    console.log "@lookbook", @lookbook
+  updateSlideshow: () ->
+    translateZ = @slideshow_position_array[@current_slide_index].translateZ * -1
+    translateX = @slideshow_position_array[@current_slide_index].translateX * -1
+    rotateY = (@slideshow_position_array[@current_slide_index].rotateY + (@rotation_offset * 360)) * -1
 
-    @looks = @lookbook.children
-    console.log "@looks", @looks
+    transform = "translateZ(" + translateZ + "px) translateX(" + translateX + "%) rotateY(" + rotateY + "deg)"
 
-    return
+    @stage.style.webkitTransform = transform
+    @stage.style.transform = transform
 
+    if @stage.querySelector('.current') != null then @stage.querySelector('.current').classList.remove('current')
+
+    @stage.children[@current_slide_index].classList.add('current')
+
+    if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
+
+    @thumbnails.children[@current_slide_index].classList.add('current')
 
 
 
   setStage: () ->
-
-    panelSize = @looks[0].width
+    panelSize = @stage.offsetWidth
     numberOfPanels = @looks.length
-    slideshow_position_array = []
 
-
-
-    tz = Math.round( ( panelSize / 2 ) /  Math.tan( Math.PI / numberOfPanels ) ) * -1
-
+    translateZ = Math.round( ( panelSize / 2 ) /  Math.tan( Math.PI / numberOfPanels ) )
+    translateX = 0
 
     for look, index in @looks
-      console.log index, look
+      rotateY = 360/@looks.length * index
+      transform = "rotateY(" + rotateY + "deg) translateZ(" + translateZ + "px)"
+      look.style.webkitTransform = transform
+      look.style.transform = transform
 
-      ry = 360/looks.length * index * -1
-
-      look.style.webkitTransform = "rotateY(" + ry + "deg) translateZ(" + tz + "px)"
-
-      slideshow_position_array.push { rotateY: ry, translateZ: tz }
-
-    console.log slideshow_position_array
+      @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
 
 
-    lookbook.style.webkitTransform = "translateZ(" + (tz * -1) + "px)"
+    # for look, index in @looks
+    #   rotateY = 0
+    #   translateZ = 0
+    #   translateX = index * 100
 
+    #   transform = "rotateY(" + rotateY + "deg) translateX(" + translateX + "%) translateZ(" + translateZ + "px)"
 
-  respondToKeydown: (event)->
+    #   look.style.webkitTransform = transform
 
-    switch event.which
-      when 37
-        console.log "prev slide"
-      when 39
-        console.log "next slide"
-
-
-lookbook = new Lookbook
+    #   @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
 
 
 
-document.addEventListener "DOMContentLoaded", lookbook.initSlideshow
+document.addEventListener "DOMContentLoaded", ->
+  if(document.querySelector('#lookbook') != null)
+    lookbook = new Lookbook(document.querySelector('#lookbook'))
 
-window.addEventListener "load", lookbook.setStage
+
+    document.querySelector('.left').addEventListener 'click', ()->
+      lookbook.prevSlide()
+
+    document.querySelector('.right').addEventListener 'click', ()->
+      lookbook.nextSlide()
 
 
+    addEventListener 'keydown', (event) ->
+      switch event.which
+        when 37
+          lookbook.prevSlide()
+        when 39
+          lookbook.nextSlide()
 
-window.addEventListener 'keydown', lookbook.respondToKeydown

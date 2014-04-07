@@ -9,10 +9,10 @@
 
 %layout-main-container {
     position: relative;
-    width: 960px;
+    // width: 960px;
     margin: 0 auto;
     @media #{$widescreen} {
-      width: 1200px;
+      // width: 1200px;
     }
 }
 

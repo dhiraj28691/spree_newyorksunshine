@@ -1,8 +1,21 @@
-
 <div id="lookbook">
+  <div id="plane">
+    <div class="stage">
+      <% @lookbook.each do |slide| %>
+        <img class="look" src="<%= slide['image_src'] %>">
+      <% end %>
+    </div>
+  </div>
 
-  <% @lookbook.each do |slide| %>
-    <img src="<%= slide['image_src'] %>">
-  <% end %>
+  <div class="captures">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+
+  <div class="thumbnails">
+    <% @lookbook.each do |slide| %>
+      <img class="thumbnail" src="<%= slide['image_src'] %>">
+    <% end %>
+  </div>
 
 </div>

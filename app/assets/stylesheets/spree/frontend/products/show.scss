@@ -1,14 +1,37 @@
+$pdp-description-width: 384px;
+
 .top {
   display: flex;
-  img {
+  .image-container {
     width: 576px;
     flex: 1 1 auto;
-    height: auto;
-    filter: grayscale(100%);
+    img {
+      filter: grayscale(100%);
+      width: 100%;
+      height: auto;
+    }
   }
   .description {
     flex: 1 1 auto;
-    width: 384px;
+    width: $pdp-description-width;
+  }
+}
+
+#product-thumbnails {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  li {
+    display: block;
+    flex: 1 1 auto;
+    a {
+      display: block;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 }
 

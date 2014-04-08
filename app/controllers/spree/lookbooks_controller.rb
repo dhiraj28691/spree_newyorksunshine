@@ -1,8 +1,6 @@
 module Spree
   class LookbooksController < Spree::BaseController
 
-    # layout 'spree_application'
-
     def index
 
       @lookbook = []

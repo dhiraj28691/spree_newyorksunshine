@@ -1,0 +1,28 @@
+dl#stockists {
+  text-align: center;
+  // white-space: pre;
+
+
+  dt {
+    margin-top: 5em;
+  }
+
+  dd {
+    margin-bottom: 5em;
+    margin-left: 0;
+  }
+
+  address {
+    display: block;
+  }
+
+  a {
+    &:before {
+      content: " ";
+      display: block;
+    }
+    clear: both;
+    color: inherit;
+  }
+
+}

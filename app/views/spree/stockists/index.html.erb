@@ -1,0 +1,25 @@
+<dl id="stockists">
+
+
+  <% @stockists.each do |stockist| %>
+
+    <dt><%= stockist['name'] %>
+
+    <dd>
+
+      <address><%= stockist['address'] %></address>
+
+      <% if (defined?(stockist['phone_number'])) %>
+        <a class="phone-number" href="tel:<%= stockist['phone_number'] %>"><%= stockist['phone_number'] %></a>
+      <% end %>
+
+
+      <a class="website" href="<%= stockist['anchor_href'] %>" target="_blank" ><%= stockist['anchor'] %></a>
+
+
+
+
+  <% end %>
+
+
+</dl>

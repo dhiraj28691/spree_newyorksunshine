@@ -3,6 +3,77 @@
 "use strict"
 
 
+# scrollTo = (element, to, duration)->
+#   start = element.scrollTop
+#   change = to - start
+#   currentTime = 0
+#   increment = 20
+
+#   animateScroll = ->
+#     currentTime += increment
+#     val = Math.easeInOutQuad(currentTime, start, change, duration)
+#     element.scrollTop = val;
+#     if currentTime < duration then requestAnimationFrame(animateScroll)
+
+#   animateScroll()
+
+
+
+
+scrollTo = (element, to, duration)->
+  start = element.scrollTop
+  change = to - start
+  initialTime = Date.now()
+  finalTime = initialTime + duration
+
+  # exit out if already scrolled to top
+  if change >= 0 then return
+
+  animateScroll = ->
+    currentTime = Date.now()
+    val = Math.easeInOutQuad(currentTime - initialTime, start, change, duration)
+    element.scrollTop = val;
+    if currentTime < finalTime then requestAnimationFrame(animateScroll)
+
+  animateScroll()
+
+
+
+
+
+# t = current time
+# b = start value
+# c = change in value
+# d = duration
+Math.easeInOutQuad = (t, b, c, d)->
+  t /= d/2
+  if t < 1 then return c/2*t*t + b
+  t--
+  -c/2 * (t*(t-2) - 1) + b
+
+
+
+
+# window.scrollTo = (element, to, duration)->
+#   if duration < 0 then return
+
+#   difference = to - element.scrollTop
+
+#   perTick = difference / duration * 10
+
+#   setTimeout ->
+#     element.scrollTop = element.scrollTop + perTick
+
+#     if (element.scrollTop == to) then return
+
+#     scrollTo element, to, duration - 10
+
+#   , 10
+
+
+
+
+
 class Lookbook
 
   constructor: (@lookbook) ->
@@ -49,6 +120,8 @@ class Lookbook
 
     @updateSlideshow()
 
+    # scrollTo(document.body, 0, 800)
+    scrollTo(document.body, 0, 400)
 
 
 
@@ -102,7 +175,9 @@ class Lookbook
 
 
 document.addEventListener "DOMContentLoaded", ->
+
   if(document.querySelector('#lookbook') != null)
+
     lookbook = new Lookbook(document.querySelector('#lookbook'))
 
 

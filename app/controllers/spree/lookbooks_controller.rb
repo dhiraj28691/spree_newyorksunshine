@@ -15,7 +15,7 @@ module Spree
       @lookbook << { "image_src" => "http://www.wallpapersat.com/wallpapers/2013/03/Keira-Knightley-Shirt-1200x1920.jpg" }
       @lookbook << { "image_src" => "http://www.wallseemly.com/wallpapers/2013/04/Yves-larock-man-t-shirt-hands-face-1200x1920.jpg" }
       @lookbook << { "image_src" => "http://drtech.bangordailynews.com/files/2013/10/bigdata.jpg" }
-      @lookbook << { "image_src" => "http://www.lumicon.de/wp3/wp-content/gallery/perlin_scape1/5653_NoiseGridNeu05_2_0.jpg" }
+      @lookbook << { "image_src" => "http://www.sexyli.com/wp-content/uploads/2013/06/Ansel-Adams-Wallpapers-2.jpg" }
       @lookbook << { "image_src" => "http://thejosevilson.com/wp-content/uploads/2013/06/lionroarbw.jpg" }
       @lookbook << { "image_src" => "http://images.mmorpg.com/images/galleries/full/182010/d6cf5033-4368-4d75-85da-2d22dc4c1c43.jpg" }
       @lookbook << { "image_src" => "http://www.modernwallstreet.com/wp-content/uploads/2013/11/new-york-aerial-view-in-black-and-white-wallpaper.jpg" }

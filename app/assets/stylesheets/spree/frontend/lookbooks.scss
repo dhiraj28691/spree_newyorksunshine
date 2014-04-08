@@ -60,8 +60,7 @@
 }
 
 #plane {
-  // overflow: hidden;
-  perspective: 2560px;
+  // perspective: 2560px;
   pointer-events: none;
 }
 
@@ -82,11 +81,11 @@
 
 .captures {
   margin: auto;
-  width: 960px;
+  // width: 960px;
   height: 600px;
   margin-top: -600px;
 
-  width: 1182px;
+  // width: 1182px;
   height: 856px;
   margin-top: -856px;
 
@@ -122,7 +121,7 @@
   backface-visibility: hidden;
   width: 100%;
   padding: 33px;
-  flex: 1 1 280px;
+  flex: 0 1 280px;
   filter: grayscale(99%);
 
   height: auto;

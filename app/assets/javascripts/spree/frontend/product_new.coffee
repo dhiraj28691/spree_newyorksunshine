@@ -1,2 +1,1 @@
-console.log('WTF')
-console.log('products.js.coffee')
+console.log('product_new.coffee')

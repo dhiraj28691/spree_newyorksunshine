@@ -2,7 +2,7 @@ $pdp-description-width: 384px;
 
 .top {
   display: flex;
-  .image-container {
+  .pdp-image-container {
     width: 576px;
     flex: 1 1 auto;
     img {
@@ -24,7 +24,7 @@ $pdp-description-width: 384px;
   width: 100%;
   li {
     display: block;
-    flex: 1 1 auto;
+    flex: 1;
     a {
       display: block;
       img {

@@ -1,3 +1,7 @@
+body#lookbooks #content {
+  width: auto;
+}
+
 /*
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
@@ -115,6 +119,9 @@
   flex-wrap: wrap;
   margin: 0 auto 33px;
   width: 1038px;
+  align-items: center;
+  // justify-content: center;
+  justify-content: flex-start;
 }
 
 .thumbnail {

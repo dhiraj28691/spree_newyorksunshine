@@ -22,8 +22,8 @@ html#spree-application {
   }
 
   #wrapper {
-    @extend %layout-main-container;
     min-height: 100%;
+    overflow: hidden;
     padding: 137px 0 2.75em;
     box-sizing: border-box;
     transition-duration: $slow;
@@ -31,7 +31,9 @@ html#spree-application {
 
   #content {
     // background: red;
+    margin: 72px auto 0;
     transition-duration: $slow;
+    @extend %layout-main-container;
   }
 
   footer {

@@ -121,7 +121,7 @@ class Lookbook
     @updateSlideshow()
 
     # scrollTo(document.body, 0, 800)
-    scrollTo(document.body, 0, 400)
+    # scrollTo(document.body, 0, 400)
 
 
 
@@ -142,6 +142,8 @@ class Lookbook
     if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
 
     @thumbnails.children[@current_slide_index].classList.add('current')
+
+    scrollTo(document.body, 248, 400)
 
 
 
@@ -189,9 +191,16 @@ document.addEventListener "DOMContentLoaded", ->
 
 
     addEventListener 'keydown', (event) ->
+      console.log event.which
+
       switch event.which
+        when 32
+          lookbook.nextSlide()
+          event.preventDefault()
         when 37
+          event.preventDefault()
           lookbook.prevSlide()
         when 39
           lookbook.nextSlide()
+          event.preventDefault()
 

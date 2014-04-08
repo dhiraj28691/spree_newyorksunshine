@@ -7,7 +7,7 @@
   <head>
     <%= render :partial => 'spree/shared/head' %>
   </head>
-  <body>
+  <body id="<%= controller.controller_name %><%= controller.action_name != 'index' ? " #{controller.action_name}" : '' %>">
 
     <%= render :partial => 'spree/shared/header' %>
 

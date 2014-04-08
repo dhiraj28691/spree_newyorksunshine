@@ -1,10 +1,15 @@
 dl#stockists {
+  line-height: normal;
+  margin: 0;
   text-align: center;
   // white-space: pre;
 
 
   dt {
     margin-top: 5em;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   dd {
@@ -14,6 +19,7 @@ dl#stockists {
 
   address {
     display: block;
+    font-style: normal;
   }
 
   a {

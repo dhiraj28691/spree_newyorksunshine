@@ -3,8 +3,10 @@
 
     <div class="top">
 
-      <%= render :partial => 'image' %>
-
+      <div class="pdp-image-container">
+        <%= render :partial => 'image' %>
+        <%= render :partial => 'thumbnails' %>
+      </div>
 
       <div class="description">
 
@@ -25,8 +27,6 @@
       </div>
 
     </div>
-
-    <%= render :partial => 'thumbnails' %>
 
 
     <%= render :partial => 'taxons' %>

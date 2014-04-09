@@ -9,4 +9,6 @@ Spree::Core::Engine.routes.draw do
 
   get 'stockists', :to => 'stockists#index'
 
+  get 'surfclub', :to => 'surfclub#index'
+
 end

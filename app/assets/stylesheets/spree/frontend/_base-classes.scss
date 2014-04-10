@@ -9,10 +9,15 @@
 
 %layout-main-container {
     position: relative;
-    width: $main-container-width;
     margin: 0 auto;
+
+    @media #{$tablet-portrait} {
+      width: 1024px;
+    }
+
     @media #{$widescreen} {
-      // width: 1200px;
+      width: 1200px;
+      background: purple;
     }
 }
 

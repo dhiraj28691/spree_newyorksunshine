@@ -14,33 +14,48 @@ html#spree-application {
     letter-spacing: 2.5px;
     background: hsla(0, 100%, 100%, 0.95);
     text-align: center;
-    padding: 84px 0 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2;
+    @media #{$tablet-portrait} {
+      padding: 84px 0 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+    }
+
+
   }
 
   #wrapper {
-    min-height: 100%;
-    overflow: hidden;
-    padding: 137px 0 2.75em;
-    box-sizing: border-box;
     transition-duration: $slow;
+    @media #{$tablet-portrait} {
+      min-height: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 137px 0 2.75em;
+    }
   }
 
   #content {
     // background: red;
-    margin: 72px auto 0;
     transition-duration: $slow;
     @extend %layout-main-container;
+    // background: red;
+
+    @media #{$tablet-portrait} {
+      margin: 72px auto 0;
+    }
   }
 
   footer {
-    @extend %layout-main-container;
     letter-spacing: 2.5px;
     height: 2.75em;
     margin-top: -2.75em;
+    position: relative;
+    @extend %layout-main-container;
+
+    // @media #{$widescreen} {
+    //   background: deepskyblue;
+    // }
   }
 
   &.loading #content {

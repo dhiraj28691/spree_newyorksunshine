@@ -1,16 +1,28 @@
 nav.footer-nav {
 	text-transform: uppercase;
 	padding: 0;
+	text-align: center;
 	display: flex;
+	flex-direction: column;
+	@media #{$tablet-portrait} {
+		flex-direction: row;
+	}
 	a {
 		color: $matteBlack;
 		display: inline-block;
 		padding: 0.75em 0 0.75em 1.6em;
 		text-decoration: none;
 
+
+
+
+
 		&:before {
-			content: "|";
-			padding: 0 1.6em 0 0;
+			@media #{$tablet-portrait} {
+				content: "|";
+				padding: 0 1.6em 0 0;
+			}
+
 		}
 		&:first-child {
 			padding-left: 0;
@@ -33,10 +45,13 @@ nav.footer-nav {
 }
 
 #social {
-	display: flex;
-	position: absolute;
-	right: 0;
-	bottom: 0;
+	text-align: center;
+	@media #{$tablet-portrait} {
+		display: flex;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
 	a {
 		display: inline-block;
 		color: #fff;

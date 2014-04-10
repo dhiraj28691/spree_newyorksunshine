@@ -6,43 +6,92 @@ h1#logo {
 }
 h1#logo a {
   @extend %sprite;
-  background-position: 0 -84px;
   color: $matteBlack;
   display: block;
   position: relative;
-  width: 378px;
-  height: 42px;
   text-decoration: none;
   text-indent: -9999px;
   transition-duration: $slow;
-  width: 340px;
+  transition-property: opacity;
+
+  background-position: -168px 0;
+  width: 84px;
+
+  @media #{$tablet-portrait} {
+    background-position: 0 -84px;
+    width: 340px;
+    height: 42px;
+  }
+
+
+
   &:hover {
     opacity: 0.50;
     transition-duration: $fast;
   }
 }
 
+label#equivalent {
+  cursor: pointer;
+  font-size: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  @media #{$tablet-portrait} { display: none }
+}
+
+input#equivalent-check {
+  display: none;
+}
 
 nav.main-nav {
   font-size: 0;
-  margin-top: -50px;
 	text-align: center;
 	text-transform: uppercase;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition-duration: $slow;
+  transition-property: height, opacity;
+
+  @media #{$tablet-portrait} {
+    margin-top: -50px;
+    height: auto;
+    opacity: 1;
+  }
+
+  input#equivalent-check:checked + & {
+    height: 360px;
+    opacity: 1;
+    transition-duration: $fast;
+    transition-delay: 0ms, $fast;
+  }
+
+
+
 	a {
     color: black;
-		display: inline-block;
+		display: block;
     font-size: 11px;
 		padding: 2em;
     text-decoration: none;
-		&:nth-child(3) {
-			margin-right: 188px;
-		}
-		&:nth-child(4) {
-			margin-left: 188px;
-		}
     &:hover {
       text-decoration: line-through;
     }
+
+    @media #{$tablet-portrait} {
+      display: inline-block;
+
+      &:nth-child(3) {
+        margin-right: 188px;
+      }
+      &:nth-child(4) {
+        margin-left: 188px;
+      }
+
+
+    }
+
 	}
 
 }

@@ -1,6 +1,9 @@
 #feed {
-  column-count: 3;
-  column-gap: 0;
+  @media #{$tablet-portrait} {
+    column-count: 3;
+    column-gap: 0;
+  }
+
   a {
     border-radius: 3px;
     color: white;
@@ -31,8 +34,9 @@
       transition-duration: $slow;
       filter: grayscale(99%);
       width: 100%;
-      height: 415px;
-
+      @media #{$tablet-portrait} {
+        height: 415px;
+      }
     }
 
     &:nth-child(odd) {

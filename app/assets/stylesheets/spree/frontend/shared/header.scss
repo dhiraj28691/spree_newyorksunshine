@@ -32,11 +32,13 @@ h1#logo a {
 }
 
 label#equivalent {
+  // background: orange;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 60px;
+  line-height: 1;
   position: absolute;
   left: 0;
-  top: 0;
+  top: -10px;
   @media #{$tablet-portrait} { display: none }
 }
 

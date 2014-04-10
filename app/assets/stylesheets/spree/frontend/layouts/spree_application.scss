@@ -13,6 +13,7 @@ html#spree-application {
     @extend %layout-main-container;
     letter-spacing: 2.5px;
     background: hsla(0, 100%, 100%, 0.95);
+    padding: 5px 0;
     text-align: center;
     @media #{$tablet-portrait} {
       padding: 84px 0 0;

@@ -32,7 +32,6 @@ h1#logo a {
 }
 
 label#equivalent {
-  // background: orange;
   cursor: pointer;
   font-size: 60px;
   line-height: 1;
@@ -42,9 +41,7 @@ label#equivalent {
   @media #{$tablet-portrait} { display: none }
 }
 
-input#equivalent-check {
-  display: none;
-}
+input#equivalent-check { display: none }
 
 nav.main-nav {
   font-size: 0;
@@ -53,7 +50,7 @@ nav.main-nav {
   height: 0;
   opacity: 0;
   overflow: hidden;
-  transition-duration: $slow;
+  transition-duration: $fast;
   transition-property: height, opacity;
 
   @media #{$tablet-portrait} {
@@ -65,7 +62,7 @@ nav.main-nav {
   input#equivalent-check:checked + & {
     height: 360px;
     opacity: 1;
-    transition-duration: $fast;
+    // transition-duration: $fast;
     transition-delay: 0ms, $fast;
   }
 

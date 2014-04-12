@@ -13,6 +13,7 @@ html#spree-application {
     @extend %layout-main-container;
     letter-spacing: 2.5px;
     background: hsla(0, 100%, 100%, 0.95);
+    background: hsla(180, 50%, 50%, 0.5);
     padding: 5px 0;
     text-align: center;
     @media #{$tablet-portrait} {
@@ -25,7 +26,7 @@ html#spree-application {
   }
 
   #wrapper {
-    transition-duration: $slow;
+    // transition-duration: $slow;
     @media #{$tablet-portrait} {
       min-height: 100%;
       overflow: hidden;
@@ -35,10 +36,8 @@ html#spree-application {
   }
 
   #content {
-    // background: red;
-    transition-duration: $slow;
+    transition: $slow opacity;
     @extend %layout-main-container;
-    // background: red;
 
     @media #{$tablet-portrait} {
       margin: 72px auto 0;

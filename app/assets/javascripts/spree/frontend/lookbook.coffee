@@ -2,24 +2,6 @@
 
 "use strict"
 
-
-# scrollTo = (element, to, duration)->
-#   start = element.scrollTop
-#   change = to - start
-#   currentTime = 0
-#   increment = 20
-
-#   animateScroll = ->
-#     currentTime += increment
-#     val = Math.easeInOutQuad(currentTime, start, change, duration)
-#     element.scrollTop = val;
-#     if currentTime < duration then requestAnimationFrame(animateScroll)
-
-#   animateScroll()
-
-
-
-
 scrollTo = (element, to, duration)->
   start = element.scrollTop
   change = to - start
@@ -37,10 +19,6 @@ scrollTo = (element, to, duration)->
 
   animateScroll()
 
-
-
-
-
 # t = current time
 # b = start value
 # c = change in value
@@ -50,27 +28,6 @@ Math.easeInOutQuad = (t, b, c, d)->
   if t < 1 then return c/2*t*t + b
   t--
   -c/2 * (t*(t-2) - 1) + b
-
-
-
-
-# window.scrollTo = (element, to, duration)->
-#   if duration < 0 then return
-
-#   difference = to - element.scrollTop
-
-#   perTick = difference / duration * 10
-
-#   setTimeout ->
-#     element.scrollTop = element.scrollTop + perTick
-
-#     if (element.scrollTop == to) then return
-
-#     scrollTo element, to, duration - 10
-
-#   , 10
-
-
 
 
 
@@ -86,28 +43,59 @@ class Lookbook
 
     @thumbnails = document.querySelector('.thumbnails')
 
-    @thumbnails.addEventListener 'click', @goToSlide
-
 
     # arrange the slides
     @setStage()
     # sync slideshow state
     @updateSlideshow()
 
+    @slideshow_scroll_top = if matchMedia("(min-width: 768px)").matches then 231 else 97
 
-  prevSlide: () ->
+    left_capture = document.querySelector('.left')
+    right_capture = document.querySelector('.right')
+
+
+    left_capture.addEventListener 'touchstart', @prevSlide
+    right_capture.addEventListener 'touchstart', @nextSlide
+    # @thumbnails.addEventListener 'touchstart', @goToSlide
+
+    left_capture.addEventListener 'click', @prevSlide
+    right_capture.addEventListener 'click', @nextSlide
+    @thumbnails.addEventListener 'click', @goToSlide
+
+
+    addEventListener 'resize', @resizeStage
+
+
+    addEventListener 'keydown', (event) =>
+      switch event.which
+        when 32
+          @nextSlide()
+          event.preventDefault()
+        when 37
+          @prevSlide()
+          event.preventDefault()
+        when 39
+          @nextSlide()
+          event.preventDefault()
+
+  prevSlide: () =>
+    event.stopPropagation()
+    event.preventDefault()
+
     if @current_slide_index == 0 then @rotation_offset--
 
-    # @current_slide_index--
     @current_slide_index = if @current_slide_index > 0 then @current_slide_index - 1 else @looks.length - 1
 
-    console.log this
     @updateSlideshow()
 
-  nextSlide: () ->
-    if @current_slide_index == @looks.length - 1 then @rotation_offset++
 
-    # @current_slide_index++
+
+  nextSlide: () =>
+    event.stopPropagation()
+    event.preventDefault()
+
+    if @current_slide_index == @looks.length - 1 then @rotation_offset++
 
     @current_slide_index = if @current_slide_index < @looks.length - 1 then @current_slide_index + 1 else 0
 
@@ -120,17 +108,33 @@ class Lookbook
 
     @updateSlideshow()
 
-    # scrollTo(document.body, 0, 800)
-    # scrollTo(document.body, 0, 400)
 
-
-
-  updateSlideshow: () ->
+  updateSlideshow: () =>
     translateZ = @slideshow_position_array[@current_slide_index].translateZ * -1
     translateX = @slideshow_position_array[@current_slide_index].translateX * -1
     rotateY = (@slideshow_position_array[@current_slide_index].rotateY + (@rotation_offset * 360)) * -1
 
+    the_top = @slideshow_top
+
     transform = "translateZ(" + translateZ + "px) translateX(" + translateX + "%) rotateY(" + rotateY + "deg)"
+
+    @stage.style.webkitTransform = transform
+    @stage.style.transform = transform
+
+
+    if @stage.querySelector('.current') != null then @stage.querySelector('.current').classList.remove('current')
+    @stage.children[@current_slide_index].classList.add('current')
+
+
+    if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
+    @thumbnails.children[@current_slide_index].classList.add('current')
+
+    scrollTo(document.body, @slideshow_scroll_top, 400)
+
+  updateSlideshow2d: () ->
+    translateX = @slideshow_position_array[@current_slide_index].translateX * -1
+
+    transform = "translateX(" + translateX + "%)"
 
     @stage.style.webkitTransform = transform
     @stage.style.transform = transform
@@ -146,61 +150,55 @@ class Lookbook
     scrollTo(document.body, 248, 400)
 
 
+  setStage2d: () ->
 
-  setStage: () ->
+    for look, index in @looks
+      translateX = index * 100
+      transform = "translateX(" + translateX + "%)"
+      look.style.webkitTransform = transform
+      look.style.transform = transform
+
+      @slideshow_position_array.push { translateX: translateX }
+
+
+
+  setStage: () =>
     panelSize = @stage.offsetWidth
-    numberOfPanels = @looks.length
+    @numberOfPanels = @looks.length
 
-    translateZ = Math.round( ( panelSize / 2 ) /  Math.tan( Math.PI / numberOfPanels ) )
+    translateZ = Math.round( ( panelSize / 2 ) /  Math.tan( Math.PI / @numberOfPanels ) )
     translateX = 0
+
+    @slideshow_position_array = []
 
     for look, index in @looks
       rotateY = 360/@looks.length * index
       transform = "rotateY(" + rotateY + "deg) translateZ(" + translateZ + "px)"
+
       look.style.webkitTransform = transform
       look.style.transform = transform
 
+
       @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
 
+  resizeStage: () =>
+    panelSize = @stage.offsetWidth
+    translateZ = Math.round( ( panelSize / 2 ) /  Math.tan( Math.PI / @numberOfPanels ) )
 
-    # for look, index in @looks
-    #   rotateY = 0
-    #   translateZ = 0
-    #   translateX = index * 100
+    for look, index in @looks
+      @slideshow_position_array[index].translateZ = translateZ
 
-    #   transform = "rotateY(" + rotateY + "deg) translateX(" + translateX + "%) translateZ(" + translateZ + "px)"
+      rotateY = @slideshow_position_array[index].rotateY
 
-    #   look.style.webkitTransform = transform
+      transform = "rotateY(" + rotateY + "deg) translateZ(" + translateZ + "px)"
 
-    #   @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
+      look.style.webkitTransform = transform
+      look.style.transform = transform
+
 
 
 
 document.addEventListener "DOMContentLoaded", ->
-
   if(document.querySelector('#lookbook') != null)
-
     lookbook = new Lookbook(document.querySelector('#lookbook'))
-
-
-    document.querySelector('.left').addEventListener 'click', ()->
-      lookbook.prevSlide()
-
-    document.querySelector('.right').addEventListener 'click', ()->
-      lookbook.nextSlide()
-
-
-    addEventListener 'keydown', (event) ->
-      console.log event.which
-
-      switch event.which
-        when 32
-          lookbook.nextSlide()
-          event.preventDefault()
-        when 37
-          event.preventDefault()
-          lookbook.prevSlide()
-        when 39
-          lookbook.nextSlide()
-          event.preventDefault()
 

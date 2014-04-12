@@ -1,8 +1,5 @@
 %default-typography {
   font: 12px/1.5 "andale_monoregular";
-  // letter-spacing: 2.5px;
-  // letter-spacing: 1px;
-  // height: 100%;
   word-spacing: 0.8px;
 }
 
@@ -17,7 +14,6 @@
 
     @media #{$widescreen} {
       width: 1200px;
-      background: purple;
     }
 }
 

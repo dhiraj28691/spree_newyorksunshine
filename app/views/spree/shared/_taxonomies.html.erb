@@ -1,4 +1,5 @@
 <nav id="taxonomies" class="sidebar-item" data-hook>
+  <a class="all" href="/products">All</a>
   <% @taxonomies.each do |taxonomy| %>
     <% cache taxonomy do %>
       <% if(@taxonomies.count > 1) %>

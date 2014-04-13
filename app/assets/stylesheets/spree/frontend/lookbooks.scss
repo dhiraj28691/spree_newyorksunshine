@@ -127,7 +127,8 @@ body#lookbooks #content {
     text-align: center;
     text-transform: uppercase;
     top: 50%;
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
+    transform: translate(-50%, -100%);
     a {
       color: inherit;
       pointer-events: auto;
@@ -201,7 +202,7 @@ body#lookbooks #content {
     float: left;
     border: 5px solid white;
     box-sizing: border-box;
-    height: 206px;
+    // height: 206px;
     pointer-events: none;
 
     &.thumbnail-style-1 {

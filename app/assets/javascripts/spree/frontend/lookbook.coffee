@@ -49,7 +49,7 @@ class Lookbook
     # sync slideshow state
     @updateSlideshow()
 
-    @slideshow_scroll_top = if matchMedia("(min-width: 768px)").matches then 231 else 97
+    @slideshow_scroll_top = if matchMedia("(min-width: 768px)").matches then 230 else 97
 
     left_capture = document.querySelector('.left')
     right_capture = document.querySelector('.right')

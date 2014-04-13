@@ -4,6 +4,7 @@ nav#taxonomies {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  text-transform: uppercase;
   h6.taxonomy-root {
     display: inline-block;
     font: inherit;
@@ -19,6 +20,10 @@ nav#taxonomies {
     padding: 1em;
     text-decoration: none;
     &:hover {
+      text-decoration: line-through;
+    }
+
+    body#products &.all {
       text-decoration: line-through;
     }
   }

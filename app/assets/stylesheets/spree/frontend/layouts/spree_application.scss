@@ -12,16 +12,20 @@ html#spree-application {
   header {
     @extend %layout-main-container;
     letter-spacing: 2.5px;
-    background: hsla(0, 100%, 100%, 0.95);
-    background: hsla(180, 50%, 50%, 0.5);
+    background: white;
     padding: 5px 0;
     text-align: center;
+    transition: background $fast;
     @media #{$tablet-portrait} {
       padding: 84px 0 0;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 2;
+    }
+    &.pinned {
+      background: hsla(0, 100%, 100%, 0.95);
+      transition-duration: $slow;
     }
   }
 
@@ -31,7 +35,7 @@ html#spree-application {
       min-height: 100%;
       overflow: hidden;
       box-sizing: border-box;
-      padding: 137px 0 2.75em;
+      padding: 136px 0 2.75em;
     }
   }
 
@@ -64,5 +68,10 @@ html#spree-application {
   h1 {
     font-size: 2.5em;
     font-weight: normal;
+  }
+
+  a:not([href]),
+  a.current {
+    text-decoration: line-through;
   }
 }

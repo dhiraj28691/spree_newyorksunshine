@@ -1,11 +1,6 @@
-body#lookbooks #content {
+html#spree-application body.lookbooks #content {
   width: auto;
 }
-
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
 
 #lookbook-links {
   display: flex;
@@ -30,11 +25,9 @@ body#lookbooks #content {
   margin: auto;
   overflow: hidden;
   position: relative;
-  // text-align: center;
 }
 
 #plane {
-  // perspective: 2760px;
   pointer-events: none;
   position: relative;
 }
@@ -44,68 +37,31 @@ body#lookbooks #content {
   margin: auto;
   pointer-events: none;
   transition-duration: $slow;
-
   transform-style: preserve-3d;
-  // width: 240px;
-  // height: 150px;
-  // height: 718px;
-
-  // max-width: 1182px;
-  // max-width: 1262px;
   max-width: 1260px;
-
-  @media #{$tablet-portrait} {
-    // width: 480px;
-    // height: 300px;
-  }
-  @media #{$widescreen} {
-    // width: 1182px;
-    // height: 856px;
-  }
-
 }
-
 
 .slide {
   display: block;
   width: 100%;
-  // height: 100%;
-  // height: 886px;
-  height: 897px;
-  // filter: grayscale(99%);
-  // opacity: .65;
   position: absolute;
   top: 0;
   backface-visibility: hidden;
-
   box-sizing: border-box;
-
-  transition-property: transform, opacity;
-  transition-duration: $slow, $slow;
-
   transition-property: opacity;
   transition-duration: $slow;
-
-
-  @media #{$tablet-portrait} {
-    // padding: 33px;
-  }
-
   &:first-child {
     position: static;
   }
-
   &.current {
     opacity: 1;
     pointer-events: none;
   }
-
   img {
     display: block;
     background: #909090;
     border: 16px solid white;
     box-sizing: border-box;
-    height: 897px;
     line-height: normal;
     &.style-1 {
       width: 100%;
@@ -116,19 +72,26 @@ body#lookbooks #content {
     }
   }
 
-
-
   .description {
     color: white;
+    font-size: 7px;
     position: absolute;
-    left: 25%;
-    // line-height: 1;
     width: 25%;
     text-align: center;
     text-transform: uppercase;
-    top: 50%;
-    // transform: translate(-50%, -50%);
-    transform: translate(-50%, -100%);
+    top: 0;
+    left: 0;
+    // transform: translate(-50%, 0);
+    box-sizing: border-box;
+    padding: 16px;
+    width: 50%;
+    @media #{$tablet-portrait} {
+      font-size: 11px;
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%, -100%);
+      width: 25%;
+    }
     a {
       color: inherit;
       pointer-events: auto;
@@ -141,10 +104,7 @@ body#lookbooks #content {
       font-style: normal;
     }
   }
-
 }
-
-
 
 .capture {
   pointer-events: auto;
@@ -152,21 +112,15 @@ body#lookbooks #content {
   top: 0;
   bottom: 0;
   width: 50%;
-
   &.left {
     cursor: asset-url("w-resize.png"), w-resize;
-    // flex: 1 1 50%;
     left: 0;
-    // background: hsla(180, 100%, 50%, 0.50);
   }
   &.right {
     cursor: asset-url("e-resize.png"), e-resize;
-    // flex: 1 1 50%;
     right: 0;
-    // background: hsla(125, 100%, 50%, 0.50);
   }
 }
-
 
 .thumbnails {
   cursor: pointer;
@@ -185,25 +139,34 @@ body#lookbooks #content {
 .thumbnail {
   backface-visibility: hidden;
   box-sizing: border-box;
-  display: block;
+  display: inline-block;
   overflow: hidden;
+  vertical-align: top;
   width: 100%;
-  transition-duration: $slow;
 
   @media #{$tablet-portrait} {
     padding: 32px;
 
-    &:first-child {
-      padding-top: 0;
+    // &:first-child {
+    //   padding-top: 0;
+    // }
+
+
+    &:hover img,
+    &.current img {
+      opacity: 0.35;
+      transition-duration: $fast;
     }
   }
 
   img {
     float: left;
+    background: #909090;
     border: 5px solid white;
     box-sizing: border-box;
-    // height: 206px;
     pointer-events: none;
+    transition: opacity $slow;
+
 
     &.thumbnail-style-1 {
       width: 100%;
@@ -211,16 +174,6 @@ body#lookbooks #content {
     &.thumbnail-style-2 {
       width: 50%;
     }
-
   }
-
-
-
-
-  // &:hover,
-  // &.current {
-  //   opacity: 0.35;
-  //   transition-duration: $fast;
-  // }
 }
 

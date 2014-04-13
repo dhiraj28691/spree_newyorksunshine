@@ -7,8 +7,8 @@
 
   <nav class="main-nav">
 
-    <%= link_to_unless_current("Shop", { controller: "products" }) do %>
-      <%= link_to("Shop", nil, { class: "current" }) %>
+    <%= link_to_unless_current("Shop", { controller: "products" }, { class: "shop" }) do %>
+      <%= link_to("Shop", nil, { class: "shop current" }) %>
     <% end %>
 
     <%= link_to_unless_current('Surfclub', { controller: "surfclub"}) do %>

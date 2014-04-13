@@ -8,7 +8,7 @@ Spree::BaseHelper.module_eval do
 	end
 
   def breadcrumbs(taxon, separator="&nbsp;&raquo;&nbsp;")
-    return "" if current_page?("/") || taxon.nil?
+    return "no taxons to display" if current_page?("/") || taxon.nil?
     separator = raw(separator)
     crumbs = [content_tag(:li, link_to(Spree.t(:home), spree.root_path) + separator)]
     if taxon

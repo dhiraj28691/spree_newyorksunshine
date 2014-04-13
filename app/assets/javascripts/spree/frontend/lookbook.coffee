@@ -3,10 +3,18 @@
 "use strict"
 
 scrollTo = (element, to, duration)->
-  start = element.scrollTop
+  start = Math.max(document.documentElement.scrollTop, document.body.scrollTop)
   change = to - start
   initialTime = Date.now()
   finalTime = initialTime + duration
+
+  console.log({
+    start: start
+    change: to - start
+    initialTime: Date.now()
+    finalTime: initialTime + duration
+  })
+
 
   # exit out if already scrolled to top
   if change >= 0 then return
@@ -14,7 +22,12 @@ scrollTo = (element, to, duration)->
   animateScroll = ->
     currentTime = Date.now()
     val = Math.easeInOutQuad(currentTime - initialTime, start, change, duration)
-    element.scrollTop = val;
+
+    # element.scrollTop = val
+
+    document.documentElement.scrollTop = val
+    document.body.scrollTop = val
+
     if currentTime < finalTime then requestAnimationFrame(animateScroll)
 
   animateScroll()
@@ -79,9 +92,10 @@ class Lookbook
           @nextSlide()
           event.preventDefault()
 
-  prevSlide: () =>
-    event.stopPropagation()
-    event.preventDefault()
+  prevSlide: (event) =>
+    if event
+      event.stopPropagation()
+      event.preventDefault()
 
     if @current_slide_index == 0 then @rotation_offset--
 
@@ -89,11 +103,10 @@ class Lookbook
 
     @updateSlideshow()
 
-
-
-  nextSlide: () =>
-    event.stopPropagation()
-    event.preventDefault()
+  nextSlide: (event) =>
+    if event
+      event.stopPropagation()
+      event.preventDefault()
 
     if @current_slide_index == @looks.length - 1 then @rotation_offset++
 
@@ -107,7 +120,6 @@ class Lookbook
     @current_slide_index = [].indexOf.call(node.parentNode.children, node)
 
     @updateSlideshow()
-
 
   updateSlideshow: () =>
     translateZ = @slideshow_position_array[@current_slide_index].translateZ * -1
@@ -131,37 +143,6 @@ class Lookbook
 
     scrollTo(document.body, @slideshow_scroll_top, 400)
 
-  updateSlideshow2d: () ->
-    translateX = @slideshow_position_array[@current_slide_index].translateX * -1
-
-    transform = "translateX(" + translateX + "%)"
-
-    @stage.style.webkitTransform = transform
-    @stage.style.transform = transform
-
-    if @stage.querySelector('.current') != null then @stage.querySelector('.current').classList.remove('current')
-
-    @stage.children[@current_slide_index].classList.add('current')
-
-    if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
-
-    @thumbnails.children[@current_slide_index].classList.add('current')
-
-    scrollTo(document.body, 248, 400)
-
-
-  setStage2d: () ->
-
-    for look, index in @looks
-      translateX = index * 100
-      transform = "translateX(" + translateX + "%)"
-      look.style.webkitTransform = transform
-      look.style.transform = transform
-
-      @slideshow_position_array.push { translateX: translateX }
-
-
-
   setStage: () =>
     panelSize = @stage.offsetWidth
     @numberOfPanels = @looks.length
@@ -180,6 +161,34 @@ class Lookbook
 
 
       @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
+
+  updateSlideshow2d: () ->
+    translateX = @slideshow_position_array[@current_slide_index].translateX * -1
+
+    transform = "translateX(" + translateX + "%)"
+
+    @stage.style.webkitTransform = transform
+    @stage.style.transform = transform
+
+    if @stage.querySelector('.current') != null then @stage.querySelector('.current').classList.remove('current')
+
+    @stage.children[@current_slide_index].classList.add('current')
+
+    if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
+
+    @thumbnails.children[@current_slide_index].classList.add('current')
+
+    scrollTo(document.body, 248, 400)
+
+  setStage2d: () ->
+
+    for look, index in @looks
+      translateX = index * 100
+      transform = "translateX(" + translateX + "%)"
+      look.style.webkitTransform = transform
+      look.style.transform = transform
+
+      @slideshow_position_array.push { translateX: translateX }
 
   resizeStage: () =>
     panelSize = @stage.offsetWidth

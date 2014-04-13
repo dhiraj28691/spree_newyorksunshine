@@ -37,7 +37,7 @@ label#equivalent {
   line-height: 1;
   position: absolute;
   left: 0;
-  top: -10px;
+  top: -0.25em;
   @media #{$tablet-portrait} { display: none }
 }
 
@@ -68,9 +68,6 @@ nav.main-nav {
     font-size: 11px;
 		padding: 2em;
     text-decoration: none;
-    &:hover {
-      text-decoration: line-through;
-    }
     @media #{$tablet-portrait} {
       display: inline-block;
       &:nth-child(3) {
@@ -79,6 +76,16 @@ nav.main-nav {
       &:nth-child(4) {
         margin-left: 188px;
       }
+    }
+
+    body.taxons &.shop,
+    body.products &.shop {
+      text-decoration: line-through;
+    }
+
+
+    &:hover {
+      text-decoration: line-through;
     }
 	}
 }

@@ -7,13 +7,12 @@
   <head>
     <%= render :partial => 'spree/shared/head' %>
   </head>
-  <body id="<%= controller.controller_name %><%= controller.action_name != 'index' ? " #{controller.action_name}" : '' %>">
+  <body class="<%= controller.controller_name %><%= controller.action_name != 'index' ? " #{controller.action_name}" : '' %>">
 
     <%= render :partial => 'spree/shared/header' %>
 
     <div id="wrapper" class="row" data-hook>
 
-      <%= breadcrumbs(@taxon) %>
       <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
 
       <div id="content">

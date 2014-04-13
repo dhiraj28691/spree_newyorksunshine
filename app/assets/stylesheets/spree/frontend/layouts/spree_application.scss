@@ -40,6 +40,7 @@ html#spree-application {
   }
 
   #content {
+    text-align: center;
     transition: $slow opacity;
     @extend %layout-main-container;
 
@@ -50,14 +51,12 @@ html#spree-application {
 
   footer {
     letter-spacing: 2.5px;
-    height: 2.75em;
-    margin-top: -2.75em;
-    position: relative;
     @extend %layout-main-container;
-
-    // @media #{$widescreen} {
-    //   background: deepskyblue;
-    // }
+    @media #{$tablet-portrait} {
+      height: 2.75em;
+      margin-top: -2.75em;
+      position: relative;
+    }
   }
 
   &.loading #content {
@@ -68,6 +67,11 @@ html#spree-application {
   h1 {
     font-size: 2.5em;
     font-weight: normal;
+  }
+
+  h5 {
+    font: inherit;
+    text-transform: uppercase;
   }
 
   a:not([href]),

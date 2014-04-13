@@ -1,19 +1,22 @@
 #feed {
+  column-count: 2;
   @media #{$tablet-portrait} {
     column-count: 3;
     column-gap: 0;
   }
 
   a {
-    border-radius: 3px;
     color: white;
     display: block;
     position: relative;
     justify-content: center;
     align-items: center;
     transition-duration: $slow;
-    border: 33px solid white;
     box-sizing: border-box;
+
+    @media #{$tablet-portrait} {
+      border: 33px solid white;
+    }
 
     &:after {
       background: transparent;
@@ -35,16 +38,14 @@
       filter: grayscale(99%);
       width: 100%;
       @media #{$tablet-portrait} {
-        height: 415px;
+        // height: 415px;
       }
     }
 
-    &:nth-child(odd) {
-      background: #272727;
-      img {
-        opacity: .5;
-      }
-    }
+    // background: #272727;
+    // img {
+    //   opacity: .5;
+    // }
 
 
 

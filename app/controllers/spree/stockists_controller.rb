@@ -6,6 +6,14 @@ module Spree
       @stockists = []
 
       @stockists << {
+        "name" => "Collette in Paris",
+        "address" => "213 Rue Saint Honoré, 75001 Paris, France",
+        "phone_number" => "+33 1 55 35 33 90",
+        "anchor" => "www.colette.fr",
+        "anchor_href" => "http://www.colette.fr/"
+      }
+
+      @stockists << {
         "name" => "WISM in Tokyo",
         "address" => "5-17-20 Jingumae, Shibuya-Ku, 150-0001, Tokyo",
         "phone_number" => "+3 6418 5034",
@@ -36,21 +44,15 @@ module Spree
       }
 
       @stockists << {
-        "name" => "W. South Beach"
+        "name" => "W. South Beach",
+        "address" => "2201 Collins Avenue, Miami Beach, Florida, 33139",
+        "phone_number" => "+1 305 938 3000"
       }
 
       @stockists << {
         "name" => "Blue & Cream East Hampton",
         "address" => "60 The Cir, East Hampton, NY 11937",
         "anchor_href" => "http://www.blueandcream.com/"
-      }
-
-      @stockists << {
-        "name" => "Oakland Surf Club",
-        "address" => "337 14th St, Oakland, CA 94612",
-        "phone_number" => "+1 510 465 2770",
-        "anchor" => "oaklandsurfclub.com",
-        "anchor_href" => "http://oaklandsurfclub.com/"
       }
 
       @stockists << {
@@ -62,12 +64,21 @@ module Spree
       }
 
       @stockists << {
-        "name" => "Collette in Paris",
-        "address" => "213 Rue Saint Honoré, 75001 Paris, France",
-        "phone_number" => "+33 1 55 35 33 90",
-        "anchor" => "www.colette.fr",
-        "anchor_href" => "http://www.colette.fr/"
+        "name" => "Reed Space",
+        "address" => "151 Orchard St, New York, NY 10002",
+        "phone_number" => "+1 212 253 0588",
+        "anchor" => "thereedspace.com",
+        "anchor_href" => "http://thereedspace.com/"
       }
+
+      # @stockists << {
+      #   "name" => "Oakland Surf Club",
+      #   "address" => "337 14th St, Oakland, CA 94612",
+      #   "phone_number" => "+1 510 465 2770",
+      #   "anchor" => "oaklandsurfclub.com",
+      #   "anchor_href" => "http://oaklandsurfclub.com/"
+      # }
+
 
     end
 

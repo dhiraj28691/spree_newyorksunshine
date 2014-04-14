@@ -5,18 +5,16 @@
 }
 
 
-%layout-main-container {
-    position: relative;
-    margin: 0 auto;
+// // %layout-main-container {
 
-    @media #{$tablet-portrait} {
-      width: 1024px;
-    }
+//     @media #{$tablet-portrait} {
+//       width: 1024px;
+//     }
 
-    @media #{$widescreen} {
-      width: 1200px;
-    }
-}
+//     @media #{$widescreen} {
+//       width: 1200px;
+//     }
+// }
 
 
 %sprite {

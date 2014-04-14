@@ -25,7 +25,7 @@ module Spree
         "name" => "Barneys Japan",
         "address" => "6-8-7 Ginza, Tokyo",
         "phone_number" => "+81 03 3289 1200",
-        "anchor" => "barneys.co.jp",
+        "anchor" => "www.barneys.co.jp",
         "anchor_href" => "http://www.barneys.co.jp/"
       }
 
@@ -33,8 +33,8 @@ module Spree
         "name" => "ODIN NY",
         "address" => "199 Lafayette St, New York, NY 10012",
         "phone_number" => "+1 212 966 0026",
-        "anchor" => "www.odinnewyork.com",
-        "anchor_href" => "http://www.odinnewyork.com/"
+        "anchor" => "odinnewyork.com",
+        "anchor_href" => "http://odinnewyork.com/"
       }
 
       @stockists << {
@@ -52,6 +52,8 @@ module Spree
       @stockists << {
         "name" => "Blue & Cream East Hampton",
         "address" => "60 The Cir, East Hampton, NY 11937",
+        "phone_number" => "+1 631 329 1392",
+        "anchor" => "www.blueandcream.com",
         "anchor_href" => "http://www.blueandcream.com/"
       }
 

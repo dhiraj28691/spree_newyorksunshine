@@ -10,9 +10,9 @@ html#spree-application {
   }
 
   header {
-    @extend %layout-main-container;
     letter-spacing: 2.5px;
     background: white;
+    margin: auto;
     padding: 5px 0;
     text-align: center;
     transition: background $fast;
@@ -40,22 +40,29 @@ html#spree-application {
   }
 
   #content {
+    margin: auto;
     text-align: center;
     transition: $slow opacity;
-    @extend %layout-main-container;
 
     @media #{$tablet-portrait} {
       margin: 72px auto 0;
+      width: 1024px;
+    }
+    @media #{$widescreen} {
+      width: 1200px;
     }
   }
 
   footer {
     letter-spacing: 2.5px;
-    @extend %layout-main-container;
+    margin: auto;
+    position: relative;
     @media #{$tablet-portrait} {
       height: 2.75em;
       margin-top: -2.75em;
-      position: relative;
+    }
+    @media #{$widescreen} {
+      width: 1200px;
     }
   }
 

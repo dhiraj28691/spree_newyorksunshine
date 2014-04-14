@@ -32,9 +32,12 @@ document.addEventListener "DOMContentLoaded", ->
     document.documentElement.classList.add('loading')
 
 
-  if matchMedia("(min-width: 768px)").matches
 
-    addEventListener 'scroll', ->
+  addEventListener 'scroll', ->
+
+    if matchMedia("(min-width: 768px)").matches
+
+
       requestAnimationFrame ->
 
         transform = Math.max(window.scrollY, 0)
@@ -45,6 +48,10 @@ document.addEventListener "DOMContentLoaded", ->
         header.style.transform = "translateY(" + transform + "px)";
 
         if window.scrollY * ratio <= threshhold then header.classList.add('pinned') else header.classList.remove('pinned')
+
+    else
+      header.removeAttribute("style")
+      header.classList.remove('pinned')
 
 
 

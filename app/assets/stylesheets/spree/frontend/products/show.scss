@@ -7,7 +7,6 @@ $pdp-description-width: 384px;
   .pdp-image-container {
     flex: 1 1 576px;
     img {
-      filter: grayscale(100%);
       width: 100%;
       height: auto;
     }
@@ -47,13 +46,9 @@ td {
   padding: 0.25em;
 }
 table {
-  color: $matteBlack;
+  // color: $matteBlack;
   // font-size: larger;
   width: 100%;
-}
-tr:hover {
-  background: $matteBlack;
-  color: white;
 }
 
 .description form {
@@ -64,6 +59,12 @@ tr:hover {
 
 table#product-properties {
   border-collapse: collapse;
+
+  tr:hover {
+    background: $matteBlack;
+    color: white;
+  }
+
 }
 
 #inside-product-cart-form,
@@ -87,7 +88,8 @@ table#product-properties {
     padding: 0.25em;
   }
   select,
-  input,
+  input[type="text"],
+  input[type="number"],
   button {
     background: #E5E5E5;
     border: 0;
@@ -113,7 +115,8 @@ table#product-properties {
     margin: 2em 0;
     transition-duration: $slow;
     &:hover {
-      background: $matteBlack;
+      background: white;
+      color: black;
       transition-duration: $fast;
     }
 
@@ -128,6 +131,7 @@ table#product-properties {
   // }
 
   button {
+    cursor: pointer;
     -webkit-appearance: none;
     flex: 1 1 auto;
     width: 100%;

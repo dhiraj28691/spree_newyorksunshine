@@ -1,0 +1,37 @@
+body.about {
+  // background: url('http://files.human-nyc.com/newyorksunshine/about.jpg') center top;
+}
+
+body.about #content {
+  box-sizing: border-box;
+  text-align: left;
+
+  img {
+    // float: left;
+    // width: 57%%;
+    margin: 0 32px 32px 32px;
+    width: calc(100% - 64px);
+    @media #{$tablet-portrait} {
+      float: left;
+      width: 57%%;
+    }
+
+    @media #{$widescreen} {
+      margin: 0 64px 64px 64px;
+    }
+  }
+
+  p {
+    margin: 1em 32px;
+
+    @media #{$widescreen} {
+      margin-right: 64px;
+    }
+  }
+
+  p + p {
+    margin-top: 2em;
+  }
+
+}
+

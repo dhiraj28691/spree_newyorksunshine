@@ -7,11 +7,14 @@ html#spree-application {
     @extend %default-typography;
     height: 100%;
     margin: 0;
+    @media #{$widescreen} {
+      font-size: 15px;
+    }
   }
 
   header {
     letter-spacing: 2.5px;
-    background: white;
+    // background: white;
     margin: auto;
     padding: 5px 0;
     text-align: center;
@@ -30,7 +33,6 @@ html#spree-application {
   }
 
   #wrapper {
-    // transition-duration: $slow;
     @media #{$tablet-portrait} {
       min-height: 100%;
       overflow: hidden;
@@ -41,15 +43,18 @@ html#spree-application {
 
   #content {
     margin: auto;
-    text-align: center;
+    // text-align: center;
     transition: $slow opacity;
 
     @media #{$tablet-portrait} {
-      margin: 72px auto 0;
+      margin: 72px auto;
+      width: 768px;
+    }
+    @media #{$desktop} {
       width: 1024px;
     }
     @media #{$widescreen} {
-      width: 1200px;
+      width: 1280px;
     }
   }
 
@@ -60,9 +65,13 @@ html#spree-application {
     @media #{$tablet-portrait} {
       height: 2.75em;
       margin-top: -2.75em;
+      width: 768px;
+    }
+    @media #{$desktop} {
+      width: 1024px;
     }
     @media #{$widescreen} {
-      width: 1200px;
+      width: 1280px;
     }
   }
 
@@ -79,6 +88,10 @@ html#spree-application {
   h5 {
     font: inherit;
     text-transform: uppercase;
+  }
+
+  h6 {
+    font: inherit;
   }
 
   a:not([href]),

@@ -130,6 +130,11 @@ html#spree-application body.lookbooks #content {
 
   columns: 2;
   column-gap: 0;
+
+  column-break-inside: avoid;
+  backface-visibility: hidden;
+
+
   @media #{$tablet-portrait} {
     margin-top: 16px;
     columns: 3;
@@ -143,6 +148,10 @@ html#spree-application body.lookbooks #content {
   overflow: hidden;
   vertical-align: top;
   width: 100%;
+
+  column-break-inside: avoid;
+  backface-visibility: hidden;
+
 
   @media #{$tablet-portrait} {
     padding: 32px;
@@ -160,6 +169,11 @@ html#spree-application body.lookbooks #content {
   }
 
   img {
+
+    column-break-inside: avoid;
+    backface-visibility: hidden;
+
+
     float: left;
     background: #909090;
     border: 5px solid white;
@@ -174,6 +188,10 @@ html#spree-application body.lookbooks #content {
     &.thumbnail-style-2 {
       width: 50%;
     }
+
+
+
+
   }
 }
 

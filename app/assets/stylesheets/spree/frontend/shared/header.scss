@@ -8,6 +8,7 @@ h1#logo a {
   @extend %sprite;
   color: $matteBlack;
   display: block;
+  font-size: 33px;
   position: relative;
   text-decoration: none;
   text-indent: -9999px;
@@ -16,11 +17,11 @@ h1#logo a {
 
   background-position: -168px 0;
   width: 84px;
+  height: 42px;
 
-  @media #{$tablet-portrait} {
+  @media #{$desktop} {
     background-position: 0 -84px;
     width: 340px;
-    height: 42px;
   }
 
 
@@ -66,10 +67,31 @@ nav.main-nav {
     color: black;
 		display: block;
     font-size: 11px;
-		padding: 2em;
+    padding: 2em 1.85em;
     text-decoration: none;
+
+    @media #{$tablet-portrait} {
+      padding: 2em 1.85em;
+    }
+    @media #{$desktop} {
+      padding: 2em 1.85em;
+    }
+    @media #{$widescreen} {
+      padding: 2em 3.6em;
+    }
+
+
     @media #{$tablet-portrait} {
       display: inline-block;
+
+      &:nth-child(3) {
+        margin-right: 64px;
+      }
+      &:nth-child(4) {
+        margin-left: 64px;
+      }
+    }
+    @media #{$desktop} {
       &:nth-child(3) {
         margin-right: 188px;
       }
@@ -77,6 +99,8 @@ nav.main-nav {
         margin-left: 188px;
       }
     }
+
+
 
     body.taxons &.shop,
     body.products &.shop {

@@ -25,32 +25,32 @@
         </div>
     <% end %>
 
-    <label for="color">Color</label>
-    <select id="color" name="color">
+    <!-- <label for="color">Color</label> -->
+    <!-- <select id="color" name="color">
       <option>Black</option>
       <option>Red</option>
       <option>Gray</option>
       <option>Dark White</option>
-    </select>
+    </select> -->
 
-    <label for="size">Size</label>
-    <select id="size" name="size">
+    <!-- <label for="size">Size</label> -->
+    <!-- <select id="size" name="size">
       <option>One Size</option>
       <option>XS</option>
       <option>S</option>
       <option>M</option>
       <option>L</option>
       <option>XL</option>
-    </select>
+    </select> -->
 
      <% if @product.variants_and_option_values(current_currency).any? %>
       <div id="product-variants" class="columns five alpha">
-        <h6 class="product-section-title"><%= Spree.t(:variants) %></h6>
-        <ul>
+        <!-- <p class="product-section-title"><%= Spree.t(:variants) %></p> -->
+
           <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
-            <li>
+            <div>
               <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => Spree::Money.new(variant.price, with_currency: true).to_s  %>
-              <%= label_tag "variant_id" do %>
+              <%= label_tag "variant_id_#{variant.id}" do %>
                 <span class="variant-description">
                   <%= variant_options variant %>
                 </span>
@@ -58,9 +58,9 @@
                   <span class="price diff"><%= variant_price variant %></span>
                 <% end %>
               <% end %>
-            </li>
+            </div>
           <% end%>
-        </ul>
+
       </div>
     <% else %>
       <%= hidden_field_tag "variant_id", @product.master.id %>
@@ -71,8 +71,7 @@
       <label for="quantity">Quantity</label>
       <%= number_field_tag :quantity, 1, :class => 'title', :min => 1, :step => 1 %>
       <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
-        + Add to Cart
-        <!-- <%= Spree.t(:add_to_cart) %> -->
+        + <%= Spree.t(:add_to_cart) %>
       <% end %>
 
     <% else %>

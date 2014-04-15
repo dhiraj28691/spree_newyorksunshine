@@ -12,11 +12,10 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    transition-duration: $slow;
     box-sizing: border-box;
 
     @media #{$tablet-portrait} {
-      border: 33px solid white;
+      border: 32px solid white;
     }
 
     &:after {
@@ -35,9 +34,10 @@
       display: block;
       // padding: 1.75em;
       width: 100%;
-      transition-duration: $slow;
-      filter: grayscale(99%);
+      // transition-duration: $slow;
+      // filter: grayscale(99%);
       width: 100%;
+      outline: 1px solid red;
       @media #{$tablet-portrait} {
         // height: 415px;
       }

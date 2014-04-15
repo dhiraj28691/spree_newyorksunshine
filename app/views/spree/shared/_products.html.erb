@@ -37,9 +37,6 @@
   </div>
 <% end %>
 
-
 <% if paginated_products.respond_to?(:num_pages) %>
-  <% content_for :bottom do %>
-    <%= paginate paginated_products %>
-  <% end %>
+  <%= paginate paginated_products %>
 <% end %>

@@ -11,7 +11,8 @@ Spree::Core::Engine.routes.draw do
 
   get 'surfclub', :to => 'surfclub#index'
 
-
   get 'about', :to => 'about#index'
+
+  get 'returns-exchanges', :to => 'returnsexchanges#index'
 
 end

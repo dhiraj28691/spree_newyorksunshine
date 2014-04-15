@@ -1,101 +1,102 @@
 html#spree-application {
-  // background: url(http://files.human-nyc.com/newyorksunshine/home.jpg) center bottom;
-  // background: url( http://files.human-nyc.com/newyorksunshine/pdp.jpg) center top;
+// background: url(http://files.human-nyc.com/newyorksunshine/home.jpg) center bottom;
+// background: url( http://files.human-nyc.com/newyorksunshine/pdp.jpg) center top;
   height: 100%;
+}
 
-  body {
-    @extend %default-typography;
-    height: 100%;
-    margin: 0;
-    @media #{$widescreen} {
-      font-size: 15px;
-    }
+
+body {
+  @extend %default-typography;
+  height: 100%;
+  margin: 0;
+  @media #{$widescreen} {
+    font-size: 15px;
   }
+}
 
-  header {
-    letter-spacing: 2.5px;
-    // background: white;
-    margin: auto;
-    padding: 5px 0;
-    text-align: center;
-    transition: background $fast;
-    @media #{$tablet-portrait} {
-      padding: 84px 0 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-    }
-    &.pinned {
-      background: hsla(0, 100%, 100%, 0.95);
-      transition-duration: $slow;
-    }
+header {
+  letter-spacing: 2.5px;
+  // background: white;
+  margin: auto;
+  padding: 5px 0;
+  text-align: center;
+  transition: background $fast;
+  @media #{$tablet-portrait} {
+    padding: 84px 0 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
   }
-
-  #wrapper {
-    @media #{$tablet-portrait} {
-      min-height: 100%;
-      overflow: hidden;
-      box-sizing: border-box;
-      padding: 136px 0 2.75em;
-    }
+  &.pinned {
+    background: hsla(0, 100%, 100%, 0.95);
+    transition-duration: $slow;
   }
+}
 
-  #content {
-    margin: auto;
-    // text-align: center;
-    transition: $slow opacity;
-
-    @media #{$tablet-portrait} {
-      margin: 72px auto;
-      width: 768px;
-    }
-    @media #{$desktop} {
-      width: 1024px;
-    }
-    @media #{$widescreen} {
-      width: 1280px;
-    }
+#wrapper {
+  @media #{$tablet-portrait} {
+    min-height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 136px 0 2.75em;
   }
+}
 
-  footer {
-    letter-spacing: 2.5px;
-    margin: auto;
-    position: relative;
-    @media #{$tablet-portrait} {
-      height: 2.75em;
-      margin-top: -2.75em;
-      width: 768px;
-    }
-    @media #{$desktop} {
-      width: 1024px;
-    }
-    @media #{$widescreen} {
-      width: 1280px;
-    }
-  }
+#content {
+  margin: auto;
+  // text-align: center;
+  transition: $slow opacity;
 
-  &.loading #content {
-    opacity: 0;
-    transition-duration: $fast;
+  @media #{$tablet-portrait} {
+    margin: 72px auto;
+    width: 768px;
   }
+  @media #{$desktop} {
+    width: 1024px;
+  }
+  @media #{$widescreen} {
+    width: 1280px;
+  }
+}
 
-  h1 {
-    font-size: 2.5em;
-    font-weight: normal;
+footer {
+  letter-spacing: 2.5px;
+  margin: auto;
+  position: relative;
+  @media #{$tablet-portrait} {
+    height: 2.75em;
+    margin-top: -2.75em;
+    width: 768px;
   }
+  @media #{$desktop} {
+    width: 1024px;
+  }
+  @media #{$widescreen} {
+    width: 1280px;
+  }
+}
 
-  h5 {
-    font: inherit;
-    text-transform: uppercase;
-  }
+html.loading #content {
+  opacity: 0;
+  transition-duration: $fast;
+}
 
-  h6 {
-    font: inherit;
-  }
+h1 {
+  font-size: 2.5em;
+  font-weight: normal;
+}
 
-  a:not([href]),
-  a.current {
-    text-decoration: line-through;
-  }
+h5 {
+  font: inherit;
+  text-transform: uppercase;
+}
+
+h6 {
+  font: inherit;
+}
+
+a:not([href]),
+a.current {
+  text-decoration: line-through;
 }

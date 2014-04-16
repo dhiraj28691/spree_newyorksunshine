@@ -1,11 +1,12 @@
 body.about {
-  // background: url('http://files.human-nyc.com/newyorksunshine/about.jpg') center top;
+  background: silver url('//files.human-nyc.com/newyorksunshine/about.jpg') center top;
+  background-size: cover;
 }
 
 body.about #content {
   box-sizing: border-box;
   text-align: left;
-
+  width: 480px;
   img {
     // float: left;
     // width: 57%%;
@@ -22,11 +23,11 @@ body.about #content {
   }
 
   p {
-    margin: 1em 32px;
+    // margin: 1em 32px;
 
-    @media #{$widescreen} {
-      margin-right: 64px;
-    }
+    // @media #{$widescreen} {
+    //   margin-right: 64px;
+    // }
   }
 
   p + p {

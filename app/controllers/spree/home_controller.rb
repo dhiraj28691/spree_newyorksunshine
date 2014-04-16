@@ -6,8 +6,13 @@ module Spree
     def index
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
+      @taxonomies = Spree::Taxonomy.includes(root: :children)
+
+      if(params.has_key?(:ajax))
+        render :layout => false
+      end
+
     end
 
   end
 end
-

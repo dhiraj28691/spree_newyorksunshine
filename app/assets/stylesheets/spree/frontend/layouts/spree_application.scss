@@ -9,9 +9,9 @@ body {
   @extend %default-typography;
   height: 100%;
   margin: 0;
-  @media #{$widescreen} {
-    font-size: 15px;
-  }
+  // @media #{$widescreen} {
+    // font-size: 15px;
+  // }
 }
 
 header {

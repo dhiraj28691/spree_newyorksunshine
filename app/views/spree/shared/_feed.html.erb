@@ -23,7 +23,7 @@
 <% end %>
 
 <% if products.any? %>
-  <div id="feed" class="inline product-listing" data-hook>
+  <div class="feed" class="inline product-listing" data-hook>
     <% products.each do |product| %>
       <%= link_to(product, {:id => "product_" + product.id.to_s, :class => "product" }) do %>
         <%= product_image(product, :itemprop => "image", :class => "product-image") %>
@@ -39,7 +39,5 @@
 
 
 <% if paginated_products.respond_to?(:num_pages) %>
-  <% content_for :bottom do %>
     <%= paginate paginated_products %>
-  <% end %>
 <% end %>

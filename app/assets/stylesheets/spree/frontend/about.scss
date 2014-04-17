@@ -1,38 +1,74 @@
-body.about #wrapper {
-  background: silver url('//files.human-nyc.com/newyorksunshine/assets/about.jpg') center top;
-  background-size: cover;
-}
+body.about {
+  background: #0D1017;
 
-body.about #content {
-  box-sizing: border-box;
-  text-align: left;
-  width: 480px;
-  img {
-    // float: left;
-    // width: 57%%;
-    margin: 0 32px 32px 32px;
-    width: calc(100% - 64px);
-    @media #{$tablet-portrait} {
-      float: left;
-      width: 57%%;
+  header.pinned {
+    background: hsla(0, 100%, 0%, 0.85);
+  }
+
+  h1#logo a {
+    background-position: 0 -126px;
+  }
+
+  nav.main-nav a {
+    color: white;
+  }
+
+  #wrapper {
+    background: url('//files.human-nyc.com/newyorksunshine/assets/about.jpg') center top;
+    background-size: cover;
+    color: white;
+  }
+
+  #content {
+    box-sizing: border-box;
+    text-align: left;
+    width: 480px;
+    img {
+      // float: left;
+      // width: 57%%;
+      margin: 0 32px 32px 32px;
+      width: calc(100% - 64px);
+      @media #{$tablet-portrait} {
+        float: left;
+        width: 57%%;
+      }
+
+      @media #{$widescreen} {
+        margin: 0 64px 64px 64px;
+      }
     }
 
-    @media #{$widescreen} {
-      margin: 0 64px 64px 64px;
+    p {
+      // margin: 1em 32px;
+
+      // @media #{$widescreen} {
+      //   margin-right: 64px;
+      // }
+    }
+
+    p + p {
+      margin-top: 2em;
     }
   }
 
-  p {
-    // margin: 1em 32px;
-
-    // @media #{$widescreen} {
-    //   margin-right: 64px;
-    // }
+  nav.footer-nav a,
+  nav.footer-nav span {
+    color: white;
   }
 
-  p + p {
-    margin-top: 2em;
+  a.email:before {
+    background-position: 0 -30px;
   }
+
+  a.facebook:before {
+    background-position: -30px -30px;
+  }
+  a.instagram:before {
+    background-position: -60px -30px;
+  }
+  a.twitter:before {
+    background-position: -90px -30px;
+  }
+
 
 }
-

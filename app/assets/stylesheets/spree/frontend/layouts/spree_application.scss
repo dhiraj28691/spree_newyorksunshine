@@ -29,7 +29,7 @@ header {
     z-index: 2;
   }
   &.pinned {
-    background: hsla(0, 100%, 100%, 0.95);
+    background: hsla(0, 100%, 100%, 0.85);
     transition-duration: $slow;
   }
 }

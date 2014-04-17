@@ -71,13 +71,14 @@ nav.footer-nav {
 	a {
 		display: inline-block;
 		color: #fff;
-		transition-duration: $slow;
+		padding: 3.5px;
 		&:before {
+			transition-duration: $slow;
 			@extend %sprite;
-			background-size: auto 90px;
+			background-size: 270px 120px;
 			content: "";
 			display: block;
-			border: 3.5px solid white;
+
 			width: 30px;
 			height: 30px;
 
@@ -87,7 +88,7 @@ nav.footer-nav {
 				border-right: none;
 			}
 		}
-		&:hover {
+		&:hover:before {
 			background-color: $gray;
 			transition-duration: $fast;
 		}

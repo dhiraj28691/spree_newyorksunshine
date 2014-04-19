@@ -10,6 +10,10 @@ module Spree
       @searcher = build_searcher(params)
       @products = @searcher.retrieve_products
       @taxonomies = Spree::Taxonomy.includes(root: :children)
+
+      # Disable layout if GET param ajax is present
+      render :layout => params.has_key?(:ajax) ? false : true
+
     end
 
     def show

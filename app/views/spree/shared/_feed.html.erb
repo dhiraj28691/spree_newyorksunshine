@@ -37,6 +37,10 @@
   </div>
 <% end %>
 
+<nav class="pagination">
+  <a href="/products?page=2">MIKE</a>
+</nav>
+
 
 <% if paginated_products.respond_to?(:num_pages) %>
     <%= paginate paginated_products %>

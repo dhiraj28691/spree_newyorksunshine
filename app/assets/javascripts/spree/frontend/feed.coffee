@@ -1,3 +1,8 @@
+# class Feed
+#  constructor:
+
+
+
 document.addEventListener "DOMContentLoaded", ->
 
   pagination_el = document.querySelector('.pagination')
@@ -13,6 +18,8 @@ document.addEventListener "DOMContentLoaded", ->
       xhr.onreadystatechange = ()->
         if xhr.readyState != 4 || xhr.status != 200 then return
 
+        console.log xhr
+
         # HTML string
         div = document.createElement('div')
 
@@ -20,9 +27,10 @@ document.addEventListener "DOMContentLoaded", ->
 
         fragment = div.firstChild
 
+        console.log fragment
 
-        document.querySelector('#content').appendChild(fragment)
-
-
+        content_el = document.querySelector('#content')
+        # console.log content_el
+        content_el.appendChild(fragment)
 
       xhr.send()

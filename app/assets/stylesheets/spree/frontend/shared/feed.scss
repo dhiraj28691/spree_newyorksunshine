@@ -1,4 +1,4 @@
-.feed {
+.feed-group {
   column-count: 2;
   @media #{$tablet-portrait} {
     column-count: 3;
@@ -58,7 +58,7 @@
       text-align: center;
       width: 100%;
       transition-duration: $slow;
-      height: 2.4em;
+      height: 3em;
       z-index: 1;
     }
 
@@ -84,4 +84,21 @@
 
 nav.pagination {
   text-align: center;
+
+  a.next {
+    @extend %sprite;
+    // background-color: magenta;
+    background-position: -252px 0;
+    margin: auto;
+    display: block;
+    text-indent: -9999px;
+    width: 126px;
+    height: 42px;
+    transition: opacity $slow;
+    &:hover {
+      opacity: 0.50;
+      transition-duration: $fast;
+    }
+  }
 }
+

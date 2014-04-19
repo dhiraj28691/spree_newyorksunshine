@@ -1,36 +1,45 @@
-# class Feed
-#  constructor:
+class Feed
+  constructor: (selector) ->
+
+    @feed = document.querySelector(selector)
+
+    if @feed
+
+      pagination_el = @feed.querySelector('.pagination')
+
+      pagination_el.addEventListener 'click', @loadAjax
+
+
+  justDoIt: (event)->
+    console.log event
+
+    document.querySelector('#feed').insertBefore(this.responseXML.querySelector('.feed-group'), document.querySelector('.pagination'))
+
+  loadAjax: (event) =>
+    event.preventDefault()
+
+    url = event.target.href + '&ajax'
+
+    xhr = new XMLHttpRequest()
+
+    xhr.onload = @justDoIt
+
+
+    xhr.open "GET", url
+    xhr.responseType = "document"
+    xhr.send()
+
+
+    # xhr.onreadystatechange = @justDoIt
+
+
+    # Report errors if they happen
+    xhr.addEventListener "error", (e) ->
+      console "Error: " + e + " Could not load url."
+
 
 
 
 document.addEventListener "DOMContentLoaded", ->
 
-  pagination_el = document.querySelector('.pagination')
-
-  if pagination_el
-    document.querySelector('.pagination').addEventListener 'click', (event)->
-      event.preventDefault()
-
-      url = event.target.href + '&ajax'
-
-      xhr = new XMLHttpRequest()
-      xhr.open "GET", url
-      xhr.onreadystatechange = ()->
-        if xhr.readyState != 4 || xhr.status != 200 then return
-
-        console.log xhr
-
-        # HTML string
-        div = document.createElement('div')
-
-        div.innerHTML = xhr.responseText
-
-        fragment = div.firstChild
-
-        console.log fragment
-
-        content_el = document.querySelector('#content')
-        # console.log content_el
-        content_el.appendChild(fragment)
-
-      xhr.send()
+  feed = new Feed('#feed')

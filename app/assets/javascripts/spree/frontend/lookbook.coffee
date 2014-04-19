@@ -1,4 +1,5 @@
 //= require ./modernizr
+//= require ./../../test-preserve3d
 
 "use strict"
 
@@ -121,7 +122,7 @@ class Lookbook
 
     @updateSlideshow()
 
-  updateSlideshow: () =>
+  updateSlideshow3d: () =>
     translateZ = @slideshow_position_array[@current_slide_index].translateZ * -1
     translateX = @slideshow_position_array[@current_slide_index].translateX * -1
     rotateY = (@slideshow_position_array[@current_slide_index].rotateY + (@rotation_offset * 360)) * -1
@@ -143,7 +144,7 @@ class Lookbook
 
     scrollTo(document.body, @slideshow_scroll_top, 400)
 
-  setStage: () =>
+  setStage3d: () =>
     panelSize = @stage.offsetWidth
     @numberOfPanels = @looks.length
 
@@ -152,17 +153,22 @@ class Lookbook
 
     @slideshow_position_array = []
 
-    for look, index in @looks
-      rotateY = 360/@looks.length * index
-      transform = "rotateY(" + rotateY + "deg) translateZ(" + translateZ + "px)"
 
-      look.style.webkitTransform = transform
-      look.style.transform = transform
+    if Modernizr.preserve3d
+
+      for look, index in @looks
+        rotateY = 360/@looks.length * index
+        transform = "rotateY(" + rotateY + "deg) translateZ(" + translateZ + "px)"
+
+        look.style.webkitTransform = transform
+        look.style.transform = transform
 
 
-      @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
+        @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
 
-  updateSlideshow2d: () ->
+
+
+  updateSlideshow2d: () =>
     translateX = @slideshow_position_array[@current_slide_index].translateX * -1
 
     transform = "translateX(" + translateX + "%)"
@@ -180,7 +186,7 @@ class Lookbook
 
     scrollTo(document.body, 248, 400)
 
-  setStage2d: () ->
+  setStage2d: () =>
 
     for look, index in @looks
       translateX = index * 100
@@ -204,8 +210,12 @@ class Lookbook
       look.style.webkitTransform = transform
       look.style.transform = transform
 
+  setStage: () ->
+    console.log 'setStage'
+    if Modernizr.preserve3d then @setStage3d.call() else @setStage2d.call()
 
-
+  updateSlideshow: () ->
+    if Modernizr.preserve3d then @updateSlideshow3d.call() else @updateSlideshow2d.call()
 
 document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#lookbook') != null)

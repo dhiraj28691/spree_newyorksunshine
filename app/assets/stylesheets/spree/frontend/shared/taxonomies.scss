@@ -19,6 +19,7 @@ nav#taxonomies {
     display: inline-block;
     padding: 1em;
     text-decoration: none;
+    &.current,
     &:hover {
       text-decoration: line-through;
     }

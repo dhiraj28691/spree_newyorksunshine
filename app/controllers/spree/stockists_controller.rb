@@ -6,7 +6,7 @@ module Spree
       @stockists = []
 
       @stockists << {
-        "name" => "Collette in Paris",
+        "name" => "Colette in Paris",
         "address" => "213 Rue Saint Honoré, 75001 Paris, France",
         "phone_number" => "+33 1 55 35 33 90",
         "anchor" => "www.colette.fr",

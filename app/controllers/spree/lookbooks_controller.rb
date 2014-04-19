@@ -7,8 +7,7 @@ module Spree
 
       # 1
       @lookbook << {
-        "images" => ["http://files.human-nyc.com/newyorksunshine/assets/look-1.jpg"],
-        "description" => '<p>2014<br>New York Sunshine<br><a href="http://newyorksunshine.com/" target="_blank">www.newyorksunshine.com</a></p><p>For wholesale inquiries<br><a href="mailto:info@newyorksunshine.com">info@newyorksunshine.com</a></p><p><address>Flagship Location<br>28 Nugent Street<br>Southampton, NY 11968</address></p><p>Design / Photography<br>by<br>William Kaner</p>'
+        "images" => ["http://files.human-nyc.com/newyorksunshine/assets/look-1.jpg"]
       }
 
       # 2
@@ -53,7 +52,7 @@ module Spree
 
       # 10
       @lookbook << {
-        "images" => ["http://files.human-nyc.com/newyorksunshine/assets/look-10.1.jpg", "http://files.human-nyc.com/newyorksunshine/assets/look-10.2.jpg"]
+        "images" => ["http://files.human-nyc.com/newyorksunshine/assets/look-10.jpg"]
       }
 
       # 11

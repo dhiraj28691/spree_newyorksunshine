@@ -12,11 +12,26 @@
   #main-image {
     cursor: pointer;
     position: relative;
-    transition-duration: $slow;
-    transform-origin: 0 0;
+    transition-duration: $fast;
+    width: 100%;
     img {
       display: block;
       width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: $slow opacity ease-out $slow;
+      z-index: -1;
+      &.current {
+        opacity: 1;
+        z-index: 0;
+        // transition-delay: $fast;
+        transition-delay: 0;
+      }
+      &:first-child {
+        position: relative;
+      }
     }
   }
 
@@ -27,10 +42,14 @@
     height: 42px;
     @extend %sprite;
     background-position: -252px -42px;
-    transition: transform $slow;
+    transition: transform $slow, opacity $slow;
     position: absolute;
     bottom: 0;
     right: 0;
+    &:hover {
+      opacity: 0.50;
+      transition: transform $slow, opacity $fast;
+    }
   }
 
 
@@ -38,21 +57,48 @@
     // flex: 1 1 100%;
 
     #main-image {
-      position: relative;
-      transform: scale(1.739);
+      // position: relative;
+      // transform: scale(1.739);
+      @media #{$tablet-portrait} {
+        width: 768px;
+      }
+      @media #{$desktop} {
+        width: 1024px;
+      }
+      @media #{$widescreen} {
+        width: 1280px;
+      }
     }
-
     #zoom {
       transform: rotate(45deg);
       transition-duration: $fast;
     }
+    #product-thumbnails {
+      @media #{$tablet-portrait} {
+        width: 768px;
+      }
+      @media #{$desktop} {
+        width: 1024px;
+      }
+      @media #{$widescreen} {
+        width: 1280px;
+      }
+    }
 
+    & + .description {
+      opacity: 0;
+      pointer-events: none;
+      transition-delay: 0ms;
+    }
   }
 }
+
+
 
 .description {
   flex: 1 1 384px;
   text-align: left;
+  transition: opacity $fast $fast;
 }
 
 
@@ -62,6 +108,17 @@
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: flex-start;
+  transition-duration: $fast;
+  width: 100%;
+  @media #{$tablet-portrait} {
+    width: 768px;
+  }
+  @media #{$desktop} {
+    width: 1024px;
+  }
+  @media #{$widescreen} {
+    width: 1280px;
+  }
   a {
     display: inline-block;
     flex: 1 1 calc(100%/3);

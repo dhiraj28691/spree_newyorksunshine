@@ -1,7 +1,17 @@
-<a id="zoom"></a>
+<% if (@product.images + @product.variant_images).uniq.size > 1 %>
+  <% @product.images.each do |i| %>
+    <%= image_tag i.attachment.url(:large) %>
+  <% end %>
 
-<% if defined?(image) && image %>
-  <%= image_tag image.attachment.url(:product) %>
-<% else %>
-  <%= large_image(@product) %>
+  <% if @product.has_variants? %>
+    <% @product.variant_images.each do |i| %>
+      <% next if @product.images.include?(i) %>
+        <%= image_tag i.attachment.url(:large) %>
+    <% end %>
+  <% end %>
 <% end %>
+
+<div class="left capture"></div>
+<div class="right capture"></div>
+
+<a id="zoom"></a>

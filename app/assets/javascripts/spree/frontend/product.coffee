@@ -10,6 +10,7 @@ class ProductImages
 
     @zoom.addEventListener 'click', (event)=>
       event.preventDefault()
+      event.stopPropagation()
       @product_images.classList.toggle('zoom')
 
     if @product_thumbnails

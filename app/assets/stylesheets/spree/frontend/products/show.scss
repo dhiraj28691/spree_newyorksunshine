@@ -104,7 +104,6 @@
 
 #product-thumbnails {
   display: flex;
-  // flex: 1 1 100%;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: flex-start;
@@ -121,7 +120,13 @@
   }
   a {
     display: inline-block;
-    flex: 1 1 calc(100%/3);
+    transition: opacity $slow;
+    width: calc(100%/5);
+    &:hover,
+    &.current {
+      opacity: 0.50;
+      transition-duration: $fast;
+    }
     img {
       display: block;
       width: 100%;

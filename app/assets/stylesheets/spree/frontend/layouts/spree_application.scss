@@ -15,6 +15,7 @@ body {
 }
 
 header {
+  backface-visibility: hidden;
   letter-spacing: 2.5px;
   // background: white;
   margin: auto;

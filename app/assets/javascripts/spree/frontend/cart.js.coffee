@@ -52,10 +52,12 @@ document.addEventListener "DOMContentLoaded", ->
 
   if line_items
     document.querySelector('#line_items').addEventListener 'click', (event)->
-      # event.preventDefault()
-      # event.stopPropagation()
 
-      if event.target.nodeName.toLowerCase() == 'img'
+      if event.target.classList.contains("delete")
+        event.preventDefault()
+        event.stopPropagation()
+
+
         event.target.parentNode.parentNode.parentNode.querySelector('input.line_item_quantity').value = 0
 
         document.forms['update-cart'].submit()

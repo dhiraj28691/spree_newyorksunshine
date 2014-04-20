@@ -1,0 +1,22 @@
+body.orders.edit {
+  text-align: center;
+  td.cart-item-description {
+    text-align: left;
+  }
+  a.delete {
+    border-radius: 50%;
+    display: block;
+    display: block;
+    width: 42px;
+    height: 42px;
+    @extend %sprite;
+    background-position: -252px -42px;
+    transform: rotate(45deg);
+    transition: opacity $slow;
+    &:hover {
+      opacity: 0.50;
+      transition-duration: $fast;
+    }
+  }
+}
+

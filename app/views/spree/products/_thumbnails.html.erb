@@ -1,19 +1,15 @@
 <%# no need for thumbnails unless there is more than one image %>
 <% if (@product.images + @product.variant_images).uniq.size > 1 %>
-  <ul id="product-thumbnails" class="thumbnails inline" data-hook>
+  <div id="product-thumbnails" class="thumbnails inline" data-hook>
     <% @product.images.each do |i| %>
-      <li>
-        <%= link_to(image_tag(i.attachment.url(:product)), i.attachment.url(:large)) %>
-      </li>
+      <%= link_to(image_tag(i.attachment.url(:product), class: "thumbnail"), i.attachment.url(:large)) %>
     <% end %>
 
     <% if @product.has_variants? %>
       <% @product.variant_images.each do |i| %>
         <% next if @product.images.include?(i) %>
-        <li>
-          <%= link_to(image_tag(i.attachment.url(:product)), i.attachment.url(:large)) %>
-        </li>
+          <%= link_to(image_tag(i.attachment.url(:product), class: "thumbnail"), i.attachment.url(:large)) %>
       <% end %>
     <% end %>
-  </ul>
+  </div>
 <% end %>

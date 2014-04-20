@@ -3,8 +3,10 @@
 
     <div class="top">
 
-      <div class="pdp-image-container">
-        <%= render :partial => 'image' %>
+      <div id="product-images">
+        <div id="main-image" data-hook>
+          <%= render :partial => 'image' %>
+        </div>
         <%= render :partial => 'thumbnails' %>
       </div>
 
@@ -22,8 +24,6 @@
           <%= render :partial => 'properties' %>
 
         </div>
-
-
       </div>
 
     </div>

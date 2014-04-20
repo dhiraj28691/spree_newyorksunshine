@@ -23,4 +23,22 @@ Spree::BaseHelper.module_eval do
   end
 
 
+  def link_to_cart(text = nil)
+    text = text ? h(text) : Spree.t('cart')
+    css_class = nil
+
+    if simple_current_order.nil? or simple_current_order.item_count.zero?
+      text = "#{text}(0)"
+      css_class = 'empty'
+    else
+      # text = "#{text}: (#{simple_current_order.item_count})  <span class='amount'>#{simple_current_order.display_total.to_html}</span>".html_safe
+      text = "#{text}(#{simple_current_order.item_count})".html_safe
+      css_class = 'full'
+    end
+
+    link_to text, spree.cart_path, :class => "cart-info #{css_class}"
+  end
+
+
+
 end

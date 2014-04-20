@@ -25,27 +25,27 @@
         </div>
     <% end %>
 
-    <!-- <label for="color">Color</label> -->
-    <!-- <select id="color" name="color">
+    <label for="color">Color</label>
+    <select id="color" name="color">
       <option>Black</option>
       <option>Red</option>
       <option>Gray</option>
       <option>Dark White</option>
-    </select> -->
+    </select>
 
-    <!-- <label for="size">Size</label> -->
-    <!-- <select id="size" name="size">
+    <label for="size">Size</label>
+    <select id="size" name="size">
       <option>One Size</option>
       <option>XS</option>
       <option>S</option>
       <option>M</option>
       <option>L</option>
       <option>XL</option>
-    </select> -->
+    </select>
 
      <% if @product.variants_and_option_values(current_currency).any? %>
       <div id="product-variants" class="columns five alpha">
-        <!-- <p class="product-section-title"><%= Spree.t(:variants) %></p> -->
+        <p class="product-section-title"><%= Spree.t(:variants) %></p>
 
           <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
             <div>

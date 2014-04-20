@@ -87,16 +87,16 @@ nav.pagination {
 
   a.next {
     @extend %sprite;
-    // background-color: magenta;
+    background-color: black;
     background-position: -252px 0;
     margin: auto;
     display: block;
     text-indent: -9999px;
     width: 126px;
     height: 42px;
-    transition: opacity $slow;
+    transition: background-color $slow;
     &:hover {
-      opacity: 0.50;
+      background-color: $matteBlack;
       transition-duration: $fast;
     }
   }

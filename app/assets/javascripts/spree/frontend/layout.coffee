@@ -39,15 +39,14 @@ document.addEventListener "DOMContentLoaded", ->
 
 
       requestAnimationFrame ->
-
-        transform = Math.max(window.scrollY, 0)
+        transform = Math.max(pageYOffset/2, 0)
         transform = transform * ratio
         transform = Math.max(transform, threshhold)
 
         header.style.webkitTransform = "translateY(" + transform + "px)";
         header.style.transform = "translateY(" + transform + "px)";
 
-        if window.scrollY * ratio <= threshhold then header.classList.add('pinned') else header.classList.remove('pinned')
+        if pageYOffset * ratio <= threshhold then header.classList.add('pinned') else header.classList.remove('pinned')
 
     else
       header.removeAttribute("style")

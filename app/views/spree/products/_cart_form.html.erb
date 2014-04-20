@@ -1,30 +1,6 @@
 <%= form_for :order, :url => populate_orders_path do |f| %>
   <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
-    <% if @product.price_in(current_currency) and !@product.price.nil? %>
-      <div class="product-price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
-
-        <div id="product-price">
-          <div>
-            <span class="price selling" itemprop="price">
-              <%= display_price(@product) %>
-            </span>
-            <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
-          </div>
-
-          <% if @product.master.can_supply? %>
-            <link itemprop="availability" href="http://schema.org/InStock" />
-          <% end %>
-        </div>
-
-      </div>
-    <% else %>
-        <div id="product-price">
-          <br>
-          <div><span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span></div>
-        </div>
-    <% end %>
-
     <label for="color">Color</label>
     <select id="color" name="color">
       <option>Black</option>
@@ -43,7 +19,7 @@
       <option>XL</option>
     </select>
 
-     <% if @product.variants_and_option_values(current_currency).any? %>
+    <% if @product.variants_and_option_values(current_currency).any? %>
       <div id="product-variants" class="columns five alpha">
         <p class="product-section-title"><%= Spree.t(:variants) %></p>
 
@@ -70,6 +46,40 @@
 
       <label for="quantity">Quantity</label>
       <%= number_field_tag :quantity, 1, :class => 'title', :min => 1, :step => 1 %>
+
+
+
+
+
+
+      <% if @product.price_in(current_currency) and !@product.price.nil? %>
+        <div class="product-price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
+
+          <div id="product-price">
+            <div>
+              <span class="price selling" itemprop="price">
+                <%= display_price(@product) %>
+              </span>
+              <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+            </div>
+
+            <% if @product.master.can_supply? %>
+              <link itemprop="availability" href="http://schema.org/InStock" />
+            <% end %>
+          </div>
+
+        </div>
+      <% else %>
+          <div id="product-price">
+            <br>
+            <div><span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span></div>
+          </div>
+      <% end %>
+
+
+
+
+
       <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
         + <%= Spree.t(:add_to_cart) %>
       <% end %>

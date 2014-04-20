@@ -1,6 +1,11 @@
 <% if (@product.images + @product.variant_images).uniq.size > 1 %>
-  <% @product.images.each do |i| %>
-    <%= image_tag i.attachment.url(:large) %>
+  <% @product.images.each_with_index do |i, index| %>
+    <% if(index == 0) %>
+      <%= image_tag i.attachment.url(:large), :class => "current" %>
+    <% else %>
+      <%= image_tag i.attachment.url(:large) %>
+    <% end %>
+
   <% end %>
 
   <% if @product.has_variants? %>

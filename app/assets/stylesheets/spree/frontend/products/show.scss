@@ -85,7 +85,7 @@
       }
     }
 
-    & + .description {
+    & + .info {
       opacity: 0;
       pointer-events: none;
       transition-delay: 0ms;
@@ -93,9 +93,8 @@
   }
 }
 
-.description {
+.info {
   flex: 1 1 384px;
-  text-align: left;
   transition: opacity $fast $fast;
 }
 
@@ -132,7 +131,7 @@
   }
 }
 
-.description form {
+.info form {
   @media #{$tablet-portrait} {
     width: 40%;
   }

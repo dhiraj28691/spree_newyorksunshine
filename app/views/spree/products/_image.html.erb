@@ -9,6 +9,17 @@
         <%= image_tag i.attachment.url(:large) %>
     <% end %>
   <% end %>
+
+<% else %>
+
+
+  <% if defined?(image) && image %>
+    <%= image_tag image.attachment.url(:product), :class => "current" %>
+  <% else %>
+    <%= product_image @product, :class => "current" %>
+  <% end %>
+
+
 <% end %>
 
 <div class="left capture"></div>

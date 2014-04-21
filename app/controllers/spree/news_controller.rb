@@ -15,7 +15,7 @@ module Spree
       #2
       @posts << {
         "embed_code" => '<iframe src="//player.vimeo.com/video/14074949" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/14074949">DARK SIDE OF THE LENS</a> from <a href="http://vimeo.com/astrayfilms">Astray Films</a> on <a href="https://vimeo.com">Vimeo</a>.</p>',
-        "clickthrough_link" => "http://vimeo.com/14074949"
+        "clickthrough_link" => "http://vimeo.com/14074949",
         "body_text" => "No matter how many times we watch this video, we never cease to be amazed.  Gives us the chills every time&hellip;"
       }
 

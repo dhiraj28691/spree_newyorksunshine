@@ -2,19 +2,9 @@ justDoIt = ->
 
   link_to_cart = document.querySelector('#link-to-cart')
 
-  # window.responseXML = this.responseXML
-
-
   fragment = this.responseXML.body.innerHTML
 
-  console.log fragment
-
-
   document.querySelector('#link-to-cart').innerHTML = fragment
-
-  # document.querySelector('#feed').insertBefore(this.responseXML.querySelector('.feed-group'), document.querySelector('.pagination'))
-
-
 
 
 Spree.fetch_cart = ->
@@ -36,16 +26,6 @@ Spree.fetch_cart = ->
     console "Error: " + e + " Could not load url."
 
 
-
-  # $.ajax
-  #   url: Spree.routes.cart_link,
-  #   success: (data) ->
-  #     $('#link-to-cart').html data
-
-
-
-
-
 document.addEventListener "DOMContentLoaded", ->
 
   line_items = document.querySelector('#line_items')
@@ -57,19 +37,14 @@ document.addEventListener "DOMContentLoaded", ->
         event.preventDefault()
         event.stopPropagation()
 
-
         event.target.parentNode.parentNode.parentNode.querySelector('input.line_item_quantity').value = 0
 
         document.forms['update-cart'].submit()
 
-
-        console.log event.target.nodeName
-
       else
-        console.log event.target.nodeName.toLowerCase()
-      # console.log this
 
       # ($ 'form#update-cart a.delete').show().one 'click', ->
+
     , false
 
     document.forms['update-cart'].addEventListener 'submit', (event)->

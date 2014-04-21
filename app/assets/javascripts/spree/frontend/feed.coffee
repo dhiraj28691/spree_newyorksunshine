@@ -11,7 +11,6 @@ class Feed
 
 
   justDoIt: (event)->
-    console.log event
 
     document.querySelector('#feed').insertBefore(this.responseXML.querySelector('.feed-group'), document.querySelector('.pagination'))
 

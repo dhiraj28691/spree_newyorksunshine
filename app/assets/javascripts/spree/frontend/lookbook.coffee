@@ -9,14 +9,6 @@ scrollTo = (element, to, duration)->
   initialTime = Date.now()
   finalTime = initialTime + duration
 
-  console.log({
-    start: start
-    change: to - start
-    initialTime: Date.now()
-    finalTime: initialTime + duration
-  })
-
-
   # exit out if already scrolled to top
   if change >= 0 then return
 
@@ -211,7 +203,6 @@ class Lookbook
       look.style.transform = transform
 
   setStage: () ->
-    console.log 'setStage'
     if Modernizr.preserve3d then @setStage3d.call() else @setStage2d.call()
 
   updateSlideshow: () ->

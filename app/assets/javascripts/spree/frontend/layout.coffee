@@ -1,5 +1,7 @@
-//= require ./modernizr
-
+//= require modernizr
+//= require classList
+//= require matchMedia
+//= require requestAnimationFrame
 
 document.addEventListener "DOMContentLoaded", ->
 
@@ -17,7 +19,6 @@ document.addEventListener "DOMContentLoaded", ->
 
 
   fadeInContent = ->
-    console.log 'fading in content'
     document.documentElement.classList.remove('loading')
 
 
@@ -33,26 +34,26 @@ document.addEventListener "DOMContentLoaded", ->
 
 
 
-  addEventListener 'scroll', ->
+  scroll = ->
 
     if matchMedia("(min-width: 768px)").matches
+      transform = Math.max(pageYOffset/2, 0)
+      transform = transform * ratio
+      transform = Math.max(transform, threshhold)
 
+      header.style.webkitTransform = "translateY(" + transform + "px)";
+      header.style.transform = "translateY(" + transform + "px)";
 
-      requestAnimationFrame ->
-        transform = Math.max(pageYOffset/2, 0)
-        transform = transform * ratio
-        transform = Math.max(transform, threshhold)
+      if pageYOffset * ratio <= threshhold then header.classList.add('pinned') else header.classList.remove('pinned')
 
-        header.style.webkitTransform = "translateY(" + transform + "px)";
-        header.style.transform = "translateY(" + transform + "px)";
+      requestAnimationFrame scroll
 
-        if pageYOffset * ratio <= threshhold then header.classList.add('pinned') else header.classList.remove('pinned')
 
     else
       header.removeAttribute("style")
       header.classList.remove('pinned')
 
-
+  scroll()
 
 
   document.documentElement.addEventListener 'click', (event)->

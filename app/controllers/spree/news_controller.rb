@@ -19,4 +19,6 @@ module Spree
         "body_text" => "No matter how many times we watch this video, we never cease to be amazed.  Gives us the chills every time&hellip;"
       }
 
-
+    end
+  end
+end

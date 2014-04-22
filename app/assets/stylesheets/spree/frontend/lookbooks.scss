@@ -105,6 +105,23 @@ html#spree-application body.lookbooks #content {
     }
   }
 
+
+  .capture {
+    pointer-events: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    &.left {
+      cursor: url(/assets/w-resize.png), w-resize;
+      left: 0;
+    }
+    &.right {
+      cursor: url(/assets/e-resize.png), e-resize;
+      right: 0;
+    }
+  }
+
   .thumbnails {
     cursor: pointer;
     margin: 0 auto 33px;

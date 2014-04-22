@@ -162,10 +162,13 @@
 
 table#product-properties {
   border-collapse: collapse;
-  display: none;
+  // display: none;
   tr:hover {
     background: $matteBlack;
     color: white;
+  }
+  td {
+    padding: calc(0.25em + 1.5px);
   }
 }
 
@@ -200,7 +203,7 @@ table#product-properties {
     border-radius: 0;
     display: inline-block;
     // outline-style: solid;
-    flex: 1 1 50%;
+    flex: 1 1 5s0%;
     margin: 0.25em 0;
     padding: 0.25em 1em;
     text-transform: uppercase;

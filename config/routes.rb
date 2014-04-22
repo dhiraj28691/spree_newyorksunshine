@@ -7,6 +7,8 @@ Spree::Core::Engine.routes.draw do
   # Add your extension routes here
   get 'lookbook', :to => 'lookbooks#index'
 
+  get 'news', :to => 'news#index'
+
   get 'stockists', :to => 'stockists#index'
 
   get 'surfclub', :to => 'surfclub#index'

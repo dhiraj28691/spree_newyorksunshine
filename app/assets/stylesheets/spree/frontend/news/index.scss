@@ -1,7 +1,7 @@
 body.news {
 
   article.post {
-    margin: 200px 0;
+    margin: 32px;
   }
 
   .media {
@@ -61,13 +61,13 @@ body.news {
     display: block;
     margin: auto;
     width: 100%;
-    max-height: 550px;
-    @media #{$widescreen} {
-      max-height: 720px
-    }
-    @media #{$QHD} {
-      max-height: 1440px;
-    }
+    // max-height: 550px;
+    // @media #{$widescreen} {
+      // max-height: 720px
+    // }
+    // @media #{$QHD} {
+      // max-height: 1440px;
+    // }
   }
 
 

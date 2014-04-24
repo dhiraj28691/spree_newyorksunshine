@@ -5,7 +5,7 @@ class PostSlideshow
     @slides = @stage.querySelectorAll('.slide')
     @slideshow_length = @slides.length
     @slideshow_position_array = []
-    @current_slide_index = 1
+    @current_slide_index = 0
     @setStage()
     @renderSlideshow()
 

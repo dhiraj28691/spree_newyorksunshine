@@ -52,6 +52,7 @@ module Spree
       @posts << {
         "title" => "Swell Attire",
         "date" => "02-02-2014",
+        "images" => ["http://files.human-nyc.com/newyorksunshine/assets/news-swell-attire.jpg"],
         "clickthrough_link" => "http://www.insidehook.com/new-york/summer-surf-style/",
         "tags" => ["press"]
       }

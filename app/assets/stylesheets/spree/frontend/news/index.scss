@@ -1,7 +1,10 @@
 body.news {
 
   article.post {
-    margin: 32px;
+    margin: 64px 32px;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   .media {
@@ -97,10 +100,10 @@ body.news {
     &:first-child {
       display: block;
       margin: auto;
-      max-height: 550px;
+      // max-height: 550px;
       position: relative;
       @media #{$widescreen} {
-        max-height: 1440px;
+        // max-height: 1440px;
       }
     }
     // &:hover {

@@ -4,11 +4,13 @@ $matteBlack: #272727;
 $fast: 400ms;
 $slow: 800ms;
 
+// Media Queries
 $mobile-landscape: "(min-width: 480px)";
 $tablet-portrait: "(min-width: 768px)";
 $desktop: "(min-width: 1024px)";
 $widescreen: "(min-width: 1280px)";
 $retina: "(-webkit-min-device-pixel-ratio: 2) and (min-resolution: 2dppx)";
 $non-retina: "-webkit-max-device-pixel-ratio: 1";
+$QHD: "(min-width: 2560px)";
 
 $main-container-width: 1024px;

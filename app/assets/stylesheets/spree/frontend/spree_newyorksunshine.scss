@@ -27,6 +27,10 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 
 // Pages
 @import "lookbooks";
+
+@import "news/index";
+@import "news/show";
+
 @import "stockists";
 @import "surfclub";
 @import "about";

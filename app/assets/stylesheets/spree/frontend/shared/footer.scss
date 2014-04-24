@@ -1,13 +1,13 @@
 nav.footer-nav {
 	text-transform: uppercase;
 	padding: 0;
-	text-align: center;
 	display: flex;
 	flex-direction: column;
 	margin: 0 32px;
 
 	@media #{$tablet-portrait} {
 		flex-direction: row;
+		text-align: center;
 	}
 
 	@media #{$desktop} {

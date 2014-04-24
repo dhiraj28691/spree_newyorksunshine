@@ -1,17 +1,21 @@
 html#spree-application {
 // background: url(http://files.human-nyc.com/newyorksunshine/home.jpg) center bottom;
 // background: url( http://files.human-nyc.com/newyorksunshine/pdp.jpg) center top;
-  height: 100%;
+  @media #{$tablet-portrait} {
+    height: 100%;
+  }
 }
 
-
 body {
-  @extend %default-typography;
-  height: 100%;
-  margin: 0;
-  // @media #{$widescreen} {
-    // font-size: 15px;
-  // }
+  font: 13px/1.615 "andale_monoregular";
+
+  @media #{$tablet-portrait} {
+    height: 100%;
+    margin: 0;
+  }
+  @media #{$QHD} {
+    font-size: 16px;
+  }
 }
 
 header {
@@ -36,10 +40,10 @@ header {
 }
 
 #wrapper {
+  overflow: hidden;
   transition: $slow opacity;
   @media #{$tablet-portrait} {
     min-height: 100%;
-    overflow: hidden;
     box-sizing: border-box;
     padding: 136px 0 2.75em;
   }

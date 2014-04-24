@@ -1,7 +1,7 @@
 //= require modernizr
-//= require classList
-//= require matchMedia
-//= require requestAnimationFrame
+//= require polyfills/classList
+//= require polyfills/matchMedia
+//= require polyfills/requestAnimationFrame
 
 document.addEventListener "DOMContentLoaded", ->
 

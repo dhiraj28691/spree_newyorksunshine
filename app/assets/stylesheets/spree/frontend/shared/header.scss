@@ -66,6 +66,9 @@ nav.main-nav {
   a {
     color: inherit;
     text-decoration: none;
+    &.current {
+      text-decoration: line-through;
+    }
   }
 	& > a,
   & > span {

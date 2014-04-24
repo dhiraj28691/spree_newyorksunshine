@@ -19,9 +19,18 @@
       <%= link_to("Lookbook", nil, { class: "current"}) %>
     <% end %>
 
-    <%= link_to('News','/news') %>
+    <%= link_to_unless_current('News', { controller: "news"}) do %>
+      <%= link_to("News", nil, { class: "current"}) %>
+    <% end %>
 
-    <%= link_to('Stockists','/stockists') %>
+    <%= link_to_unless_current('Stockists', { controller: "stockists"}) do %>
+      <%= link_to("Stockists", nil, { class: "current"}) %>
+    <% end %>
+
+
+
+
+
     <% link_to Spree.t(:cart), '/cart' %>
     <span id="link-to-cart">Cart(0)</span>
   </nav>

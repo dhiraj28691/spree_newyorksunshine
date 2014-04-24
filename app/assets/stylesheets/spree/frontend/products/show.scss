@@ -47,15 +47,18 @@
 
 
   #zoom {
-    display: block;
-    width: 42px;
-    height: 42px;
-    @extend %sprite;
-    background-position: -252px -42px;
-    transition: transform $fast, opacity $slow;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    display: none;
+    @media #{$tablet-portrait} {
+      display: block;
+      width: 42px;
+      height: 42px;
+      @extend %sprite;
+      background-position: -252px -42px;
+      transition: transform $fast, opacity $slow;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
     &:hover {
       opacity: 0.50;
       transition: transform $slow, opacity $fast;
@@ -115,7 +118,7 @@
   transition: opacity $fast $fast;
   form {
     @media #{$tablet-portrait} {
-      width: 40%;
+      width: 50%;
     }
   }
 }
@@ -166,9 +169,12 @@
 table#product-properties {
   border-collapse: collapse;
   // display: none;
+  transition-property: background, color;
+  transition-duration: $slow;
   tr:hover {
     background: $matteBlack;
     color: white;
+    transition-duration: $fast;
   }
   td {
     padding: calc(0.25em + 1.5px);
@@ -193,7 +199,7 @@ table#product-properties {
     cursor: pointer;
     flex: 1 1 50%;
     margin: 1em 0;
-    padding: 0.25em;
+    padding: 0.25em 0.25em 0.25em 0x;
   }
   select,
   input[type="text"],
@@ -206,9 +212,10 @@ table#product-properties {
     border-radius: 0;
     display: inline-block;
     // outline-style: solid;
-    flex: 1 1 5s0%;
+    flex: 1 1 50%;
+    line-height: 3em;
     margin: 0.25em 0;
-    padding: 0.25em 1em;
+    padding: 0 1em;
     text-transform: uppercase;
     &:focus {
       outline: 1px solid $matteBlack;

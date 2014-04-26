@@ -5,7 +5,6 @@ h1#logo {
   z-index: 1;
 }
 h1#logo a {
-  @extend %sprite;
   color: $matteBlack;
   display: block;
   font-size: 33px;
@@ -14,11 +13,10 @@ h1#logo a {
   text-indent: -9999px;
   transition-duration: $slow;
   transition-property: opacity;
-
-  background-position: -168px 0;
   width: 84px;
   height: 42px;
-
+  @extend %sprite;
+  background-position: -168px 0;
   @media #{$desktop} {
     background-position: 0 -84px;
     width: 340px;
@@ -34,12 +32,15 @@ h1#logo a {
 
 label#equivalent {
   cursor: pointer;
-  font-size: 60px;
   line-height: 1;
   position: absolute;
   left: 0;
-  top: -0.25em;
+  width: 42px;
+  height: 42px;
+  @extend %sprite;
+  background-position: -294px -42px;
   @media #{$tablet-portrait} { display: none }
+
 }
 
 input#equivalent-check { display: none }

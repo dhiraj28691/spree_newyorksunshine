@@ -30,7 +30,7 @@ form#subscribe-form {
   // transform: translateY(-522px);
   // transform: translateY(-200%);
   opacity: 0;
-  transform: translateY(-100px);
+  transform: translateY(-1em);
   transition-property: opacity, transform;
   transition-duration:  $fast;
   width: 580px;

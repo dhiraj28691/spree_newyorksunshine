@@ -3,26 +3,15 @@ h1 {
   font-size: 2.25em;
   font-weight: normal;
 }
+h4 { text-transform: uppercase }
 
-h4 {
-  text-transform: uppercase;
-}
-
-
-h6 {
-  // font: inherit;
-  font-size: 5em;
-}
+// h6 { font-size: 5em }
 
 a:not([href]),
 a.current {
   text-decoration: line-through;
 }
 
-
-// table, th, td {
-//   border: 1px solid lightgray;
-// }
 th {
   border-bottom: 1px solid $gray;
   text-align: left;
@@ -31,20 +20,17 @@ td {
   padding: 0.25em;
 }
 table {
-  // color: $matteBlack;
-  // font-size: larger;
   border-collapse: collapse;
   width: 100%;
 }
 
 input, textarea, keygen, select, button {
-  font-size: 1em;
+  font: inherit;
 }
 
 
 input[type="text"] {
   -webkit-appearance: none;
-  outline-color: hsl(0, 100%, 100%);
   border-color: hsl(0, 100%, 100%);
   border-radius: initial;
   border-style: solid;

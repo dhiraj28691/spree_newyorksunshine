@@ -51,7 +51,7 @@ nav.main-nav {
 	text-transform: uppercase;
   height: 0;
   opacity: 0;
-  overflow: hidden;
+  // overflow: hidden;
   transition-duration: $fast;
   transition-property: height, opacity;
   @media #{$tablet-portrait} {
@@ -72,7 +72,7 @@ nav.main-nav {
     }
   }
 	& > a,
-  & > span {
+  & > span a {
     color: black;
 		display: block;
     font-size: 11px;

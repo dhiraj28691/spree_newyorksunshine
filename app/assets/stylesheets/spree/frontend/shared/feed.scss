@@ -1,13 +1,14 @@
 .feed-group {
-  column-count: 2;
+  // column-count: 2;
+  // column-gap: 0;
+  columns: 0 2;
   @media #{$tablet-portrait} {
     column-count: 3;
-    column-gap: 0;
   }
 
   a {
     color: white;
-    display: inline-block;
+    display: block;
     width: 100%;
     position: relative;
     justify-content: center;
@@ -32,21 +33,8 @@
     img {
       background: white;
       display: block;
-      // padding: 1.75em;
       width: 100%;
-      // transition-duration: $slow;
-      // filter: grayscale(99%);
-      width: 100%;
-      @media #{$tablet-portrait} {
-        // height: 415px;
-      }
     }
-
-    // background: #272727;
-    // img {
-    //   opacity: .5;
-    // }
-
 
 
     .info {
@@ -60,6 +48,14 @@
       transition-duration: $slow;
       height: 3em;
       z-index: 1;
+    }
+
+
+    &.loading {
+      // pointer-events: none;
+      &:after {
+        background: hsla(0, 0%, 100%,0.99);
+      }
     }
 
 
@@ -83,29 +79,51 @@
 }
 
 nav.pagination {
+  opacity: 0;
+  pointer-events: none;
   text-align: center;
+  transition-duration: $slow;
 
-  a.next {
-    background-color: black;
-    margin: auto;
-    display: block;
-    text-indent: -9999px;
-    width: 126px;
-    height: 42px;
-    transition: background-color $slow;
-    &:after {
-      background-position: -294px 0;
-      content: "";
+  &:last-child {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  span {
+    display: none;
+    &.next {
       display: block;
-      margin: auto;
-      width: 42px;
-      height: 42px;
-      @extend %sprite;
-    }
-    &:hover {
-      background-color: $matteBlack;
-      transition-duration: $fast;
+      a {
+        background-color: black;
+        margin: auto;
+        display: block;
+        position: relative;
+        text-indent: -9999px;
+        width: 126px;
+        height: 42px;
+        transition: background-color $slow;
+        &:after {
+          background-position: -294px 0;
+          content: "";
+          display: block;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 42px;
+          width: 42px;
+          height: 42px;
+          @extend %sprite;
+        }
+        &:hover {
+          background-color: $matteBlack;
+          transition-duration: $fast;
+        }
+      }
     }
   }
-}
 
+
+  & + .feed-group {
+    margin-top: -42px;
+  }
+}

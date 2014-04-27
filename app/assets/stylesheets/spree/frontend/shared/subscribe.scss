@@ -1,4 +1,5 @@
 #subscribe-wrapper {
+  display: none;
   overflow: scroll;
   position: fixed;
   top: 0;
@@ -11,6 +12,7 @@
   transition: background $fast;
   &.active {
     background: hsla(0, 100%, 100%, 0.85);
+    display: block;
     pointer-events: auto;
     transition-duration: $fast;
     form#subscribe-form {

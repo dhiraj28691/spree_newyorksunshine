@@ -112,11 +112,11 @@ html#spree-application body.lookbooks #content {
     bottom: 0;
     width: 50%;
     &.left {
-      cursor: image-url('/assets/w-resize.png'), w-resize;
+      cursor: image-url("w-resize.png"), w-resize;
       left: 0;
     }
     &.right {
-      cursor: image-url('/assets/e-resize.png'), e-resize;
+      cursor: image-url("e-resize.png"), e-resize;
       right: 0;
     }
   }

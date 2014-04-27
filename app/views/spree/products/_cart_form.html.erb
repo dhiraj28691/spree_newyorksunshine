@@ -20,24 +20,10 @@
     </select> -->
 
     <% if @product.variants_and_option_values(current_currency).any? %>
-      <div id="product-variants" class="columns five alpha">
-        <p class="product-section-title"><%= Spree.t(:variants) %></p>
 
-          <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
-            <div>
-              <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => Spree::Money.new(variant.price, with_currency: true).to_s  %>
-              <%= label_tag "variant_id_#{variant.id}" do %>
-                <span class="variant-description">
-                  <%= variant_options variant %>
-                </span>
-                <% if variant_price variant %>
-                  <span class="price diff"><%= variant_price variant %></span>
-                <% end %>
-              <% end %>
-            </div>
-          <% end%>
+        <%= label_tag "variant_id", Spree.t(:variants) %>
+        <%= select_tag "variant_id", options_for_select(@product.variants_and_option_values(current_currency).collect{|v| ["#{variant_options(v)}  #{variant_price(v)}", v.id]}) %>
 
-      </div>
     <% else %>
       <%= hidden_field_tag "variant_id", @product.master.id %>
     <% end %>

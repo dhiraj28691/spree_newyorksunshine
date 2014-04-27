@@ -22,8 +22,11 @@ body.orders.edit {
 
   td.cart-item-description {
     text-align: left;
-    h4 a {
+    a.item-name {
       color: inherit;
+      display: inline-block;
+      line-height: normal;
+      padding: 14px 16px 14px;
       text-decoration: none;
       &:hover {
         text-decoration: underline;
@@ -49,25 +52,32 @@ body.orders.edit {
     -webkit-appearance: none;
     border-radius: 0;
     display: inline-block;
-    line-height: 3em;
-    // margin: 0.25em 0;
-    // padding: 0 0 0 1em;
-    padding: 0 0.25em 0 1em;
+    padding-right: 0.25em;
     text-align: center;
-    width: 100%;
+    width: 4em;
   }
 
 
   a.delete {
     border-radius: 50%;
     display: block;
-    display: block;
+    overflow: hidden;
+    position: relative;
+    transition: opacity $slow;
     width: 42px;
     height: 42px;
-    @extend %sprite;
-    background-position: -252px -42px;
-    transform: rotate(45deg);
-    transition: opacity $slow;
+    &:before {
+      content: "";
+      display: block;
+      @extend %sprite;
+      background-position: -252px -42px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: rotate(45deg);
+    }
     &:hover {
       opacity: 0.50;
       transition-duration: $fast;
@@ -88,6 +98,10 @@ body.orders.edit {
 
     input#order_coupon_code {
       width: 20em;
+      &::-webkit-input-placeholder { text-transform: uppercase }
+      &:-moz-placeholder { text-transform: uppercase }
+      &::-moz-placeholder { text-transform: uppercase }
+      &:-ms-input-placeholder { text-transform: uppercase }
     }
 
   }

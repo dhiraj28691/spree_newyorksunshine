@@ -12,11 +12,9 @@
     </td>
 
     <td class="cart-item-description" data-hook="cart_item_description">
-      <h4><%= link_to line_item.name, product_path(variant.product) %></h4>
+      <%= link_to line_item.name, product_path(variant.product), {:class => "item-name"} %>
       <% if @order.insufficient_stock_lines.include? line_item %>
-        <span class="out-of-stock">
-          <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
-        </span>
+        <span class="out-of-stock"><%= Spree.t(:out_of_stock) %></span>
       <% end %>
     </td>
 

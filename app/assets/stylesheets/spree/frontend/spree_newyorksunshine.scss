@@ -28,6 +28,9 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 @import "shared/subscribe";
 @import "shared/taxonomies";
 
+// Checkout pages
+@import "checkout/update";
+
 // Pages
 @import "lookbooks";
 

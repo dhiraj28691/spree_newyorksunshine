@@ -33,6 +33,7 @@ module Spree
             errors.push "An unknown error occurred"
           end
         end
+
       else
         errors.push "Please enter a valid email address"
 

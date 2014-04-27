@@ -51,7 +51,7 @@ input[type="submit"] {
   padding: 14px 16px 14px;
   text-decoration: none;
   text-transform: uppercase;
-  transition-property: background-color, color;
+  transition-property: background-color, border-color, color;
   transition-duration: $slow;
   &:hover {
     background: #E5E5E5;

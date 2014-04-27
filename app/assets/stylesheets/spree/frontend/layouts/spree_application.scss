@@ -42,7 +42,7 @@ header {
   overflow: hidden;
   transition: $slow opacity;
   @media #{$tablet-portrait} {
-    // min-height: 100%;
+    min-height: 100%;
     box-sizing: border-box;
     padding: 136px 0 2.75em;
   }

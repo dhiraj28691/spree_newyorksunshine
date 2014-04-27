@@ -29,8 +29,8 @@ class Feed
     return true
 
   justDoIt: (event) =>
-    feed_group = @xhr.responseXML.querySelector('#feed .feed-group')
-    new_next = @xhr.responseXML.querySelector('#feed .pagination')
+    feed_group = @xhr.responseXML.querySelector('.feed .feed-group')
+    new_next = @xhr.responseXML.querySelector('.feed .pagination')
 
     @feed.appendChild(feed_group)
     @feed.appendChild(new_next)
@@ -64,4 +64,4 @@ class Feed
 
 document.addEventListener "DOMContentLoaded", ->
 
-  feed = new Feed('#feed')
+  feed = new Feed('.feed')

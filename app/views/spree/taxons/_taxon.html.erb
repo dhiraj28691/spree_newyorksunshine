@@ -1,0 +1,6 @@
+<% if taxon_preview(taxon).any? %>
+  <div class="taxon" data-hook="taxon">
+    <h4 class="subtaxon-title"><%= link_to taxon.name, seo_url(taxon), :class => 'breadcrumbs' %></h4>
+    <%= render :partial => 'spree/shared/products', :locals => { :products => taxon_preview(taxon), :taxon => taxon } %>
+  </div>
+<% end %>

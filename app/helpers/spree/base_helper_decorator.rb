@@ -31,7 +31,6 @@ Spree::BaseHelper.module_eval do
       text = "#{text}(0)"
       css_class = 'empty'
     else
-      # text = "#{text}: (#{simple_current_order.item_count})  <span class='amount'>#{simple_current_order.display_total.to_html}</span>".html_safe
       text = "#{text}(#{simple_current_order.item_count})".html_safe
       css_class = 'full'
     end

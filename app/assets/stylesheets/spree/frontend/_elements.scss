@@ -55,6 +55,7 @@ input[type="text"] {
   padding: 14px 16px 14px;
 }
 
+.button,
 input[type="submit"] {
   -webkit-appearance: none;
   background: hsl(231, 23%, 11%);
@@ -62,10 +63,36 @@ input[type="submit"] {
   color: white;
   cursor: pointer;
   padding: 14px 16px 14px;
-  transition-property: background-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-property: background-color, color;
   transition-duration: $slow;
   &:hover {
-    background: grey;
+    background: #E5E5E5;
+    color: black;
     transition-duration: $fast;
   }
+}
+
+
+select,
+input[type="text"],
+input[type="number"],
+input[type="submit"],
+button {
+  background: #E5E5E5;
+  border-color: #E5E5E5;
+  border-style: solid;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  flex: 1 1 50%;
+  line-height: normal;
+  margin: 0.25em 0;
+  padding: 14px 16px 14px;
+}
+
+:focus {
+  outline: $matteBlack auto 5px;
 }

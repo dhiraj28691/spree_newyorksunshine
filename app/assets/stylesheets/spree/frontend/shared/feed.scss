@@ -1,5 +1,5 @@
 .feed-group {
-  border-bottom: 20px solid red;
+  // border-bottom: 20px solid red;
   column-count: 2;
   column-gap: 0;
   column-fill: auto;
@@ -117,7 +117,7 @@ nav.pagination {
           @extend %sprite;
         }
         &:hover {
-          background-color: $matteBlack;
+          background-color: #E5E5E5;
           transition-duration: $fast;
         }
       }

@@ -1,0 +1,34 @@
+<% @body_id = 'cart' %>
+
+<div data-hook="cart_container">
+  <h1><%= Spree.t(:shopping_cart) %></h1>
+
+  <% if @order.line_items.empty? %>
+
+    <div data-hook="empty_cart">
+      <p><%= Spree.t(:your_cart_is_empty) %></p>
+      <p><%= link_to Spree.t(:continue_shopping), products_path, :class => 'button continue' %></p>
+    </div>
+
+  <% else %>
+
+    <%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart'} do |order_form| %>
+
+      <%= render :partial => 'form', :locals => { :order_form => order_form } %>
+
+      <div class="cart-buttons">
+        <div class="left side">
+          <%= order_form.text_field :coupon_code, :size => 10, :placeholder => Spree.t(:coupon_code) %>
+          <%= button_tag Spree.t(:update), :class => 'primary button', :id => 'update-button' %>
+        </div>
+        <div class="right side">
+          <%= link_to Spree.t(:continue_shopping), products_path, :class => 'continue button gray' %>
+          <%= button_tag Spree.t(:checkout), :class => 'button checkout primary', :id => 'checkout-link', :name => 'checkout' %>
+        </div>
+      </div>
+
+    <% end %>
+
+  <% end %>
+</div>
+

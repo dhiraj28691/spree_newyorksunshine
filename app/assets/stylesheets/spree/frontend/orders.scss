@@ -1,5 +1,25 @@
 body.orders.edit {
   text-align: center;
+
+  th.cart-item-total-header {
+    text-align: center;
+  }
+
+  td.cart-item-image {
+    a {
+      display: block;
+      img {
+        display: block;
+        transition-duration: $slow;
+        width: 100%;
+      }
+      &:hover img {
+        opacity: 0.50;
+        transition-duration: $fast;
+      }
+    }
+  }
+
   td.cart-item-description {
     text-align: left;
     h4 a {
@@ -16,6 +36,9 @@ body.orders.edit {
   }
   td.cart-item-quantity {
     width: 20px;
+  }
+  td.cart-item-delete {
+    text-align: right;
   }
 
   input.line_item_quantity {
@@ -50,5 +73,25 @@ body.orders.edit {
       transition-duration: $fast;
     }
   }
+
+  .cart-buttons {
+    display: flex;
+    .side {
+      flex: 1 1 50%;
+      &.left {
+        text-align: left;
+      }
+      &.right {
+        text-align: right;
+      }
+    }
+
+    input#order_coupon_code {
+      width: 20em;
+    }
+
+  }
+
+
 }
 

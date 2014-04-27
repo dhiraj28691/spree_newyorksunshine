@@ -15,7 +15,6 @@
       <label for="quantity">Quantity</label>
       <%= number_field_tag :quantity, 1, :class => 'title', :min => 1, :step => 1 %>
 
-
       <% if @product.price_in(current_currency) and !@product.price.nil? %>
         <div class="product-price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
 
@@ -41,16 +40,14 @@
           </div>
       <% end %>
 
-
-
-
-
       <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
         + <%= Spree.t(:add_to_cart) %>
       <% end %>
-
     <% else %>
+
       <div><span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span></div>
     <% end %>
+
   </div>
 <% end %>
+

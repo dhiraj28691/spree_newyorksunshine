@@ -21,7 +21,6 @@ body {
 header {
   backface-visibility: hidden;
   letter-spacing: 2.5px;
-  // background: white;
   margin: auto;
   padding: 5px 0;
   text-align: center;
@@ -34,7 +33,7 @@ header {
     z-index: 2;
   }
   &.pinned {
-    background: hsla(0, 100%, 100%, 0.85);
+    background: hsla(0, 100%, 100%, 0.96);
     transition-duration: $slow;
   }
 }

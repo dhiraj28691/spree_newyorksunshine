@@ -57,7 +57,7 @@
       background-position: -252px -42px;
       transition: transform $fast, opacity $slow;
       position: absolute;
-      bottom: 0;
+      top: 0;
       right: 0;
     }
     &:hover {
@@ -156,13 +156,15 @@ table#product-properties {
   // display: none;
   transition-property: background, color;
   transition-duration: $slow;
-  tr:hover {
-    background: $matteBlack;
-    color: white;
-    transition-duration: $fast;
-  }
-  td {
-    padding: calc(0.25em + 1.5px);
+  tr {
+    &:hover {
+      background: $matteBlack;
+      color: white;
+      transition-duration: $fast;
+    }
+    td {
+      padding: calc(0.25em + 1.5px);
+    }
   }
 }
 
@@ -190,45 +192,25 @@ table#product-properties {
   input[type="text"],
   input[type="number"],
   button {
-    background: #E5E5E5;
-    border: 0;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    border-radius: 0;
-    display: inline-block;
-    // outline-style: solid;
     flex: 1 1 50%;
-    line-height: 3em;
-    margin: 0.25em 0;
-    padding: 0 1em;
-    text-transform: uppercase;
-    &:focus {
-      outline: 1px solid $matteBlack;
-    }
-
   }
 
   button {
     background: black;
+    border-color: black;
     color: white;
-    line-height: 3;
+    // line-height: 3;
     margin: 2em 0;
     transition-duration: $slow;
+    transition-property: background-color, border-color, color;
     &:hover {
       background: #E5E5E5;
+      border-color: #E5E5E5;
       color: black;
       transition-duration: $fast;
     }
 
   }
-
-  // input {
-  //   -webkit-appearance: none;
-  //   border-
-  //   box-sizing: border-box;
-  //   flex: 1 1 auto;
-  //   width: 50%;
-  // }
 
   button {
     cursor: pointer;

@@ -1,20 +1,35 @@
-<dl id="stockists">
+<div id="stockists">
 
-  <% @stockists.each do |stockist| %>
+  <% puts @stockists %>
 
-    <dt><%= stockist['name'] %>
+  <% @stockists.each_pair do |region, stockists| %>
 
-    <dd>
+  <h4><%= region %></h4>
 
-      <address><%= stockist['address'] %></address>
+    <dl>
 
-      <% if (defined?(stockist['phone_number'])) %>
-        <a class="phone-number" href="tel:<%= stockist['phone_number'] %>"><%= stockist['phone_number'] %></a>
+      <% stockists.each do |stockist| %>
+
+
+        <dt><%= stockist['name'] %>
+
+        <dd>
+
+          <address><%= stockist['address'] %></address>
+
+          <% if (defined?(stockist['phone_number'])) %>
+            <a class="phone-number" href="tel:<%= stockist['phone_number'] %>"><%= stockist['phone_number'] %></a>
+          <% end %>
+
+          <a class="website" href="<%= stockist['anchor_href'] %>" target="_blank" ><%= stockist['anchor'] %></a>
+
       <% end %>
 
-      <a class="website" href="<%= stockist['anchor_href'] %>" target="_blank" ><%= stockist['anchor'] %></a>
+    </dl>
 
   <% end %>
 
-</dl>
+
+
+</div>
 

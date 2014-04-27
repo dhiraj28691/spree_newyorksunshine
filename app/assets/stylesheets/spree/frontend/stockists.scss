@@ -1,9 +1,15 @@
-dl#stockists {
-  line-height: normal;
-  margin: 0;
+#stockists {
   text-align: center;
-  // white-space: pre;
 
+  h4 {
+    margin: 1em 0 5em;
+    text-transform: none;
+  }
+
+  dl {
+    line-height: normal;
+    margin: 0;
+  }
 
   dt {
     margin-top: 5em;

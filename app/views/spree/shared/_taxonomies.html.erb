@@ -3,7 +3,7 @@
   <% @taxonomies.each do |taxonomy| %>
     <% cache taxonomy do %>
       <% if(@taxonomies.count > 1) %>
-        <!-- <h6 class='taxonomy-root'><%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %></h6> -->
+        <!-- <h4 class='taxonomy-root'><%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %></h4> -->
       <% end %>
       <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 1) %>
     <% end %>

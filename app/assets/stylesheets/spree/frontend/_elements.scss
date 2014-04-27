@@ -37,7 +37,7 @@ input, textarea, keygen, select, button {
 }
 
 
-input {
+input[type="text"] {
   -webkit-appearance: none;
   outline-color: hsl(0, 100%, 100%);
   border-color: hsl(0, 100%, 100%);

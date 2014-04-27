@@ -20,8 +20,12 @@ a.current {
 }
 
 
-table, th, td {
-  border: 1px solid lightgray;
+// table, th, td {
+//   border: 1px solid lightgray;
+// }
+th {
+  border-bottom: 1px solid $gray;
+  text-align: left;
 }
 td {
   padding: 0.25em;
@@ -29,6 +33,7 @@ td {
 table {
   // color: $matteBlack;
   // font-size: larger;
+  border-collapse: collapse;
   width: 100%;
 }
 
@@ -56,6 +61,7 @@ input[type="submit"] {
   border: none;
   color: white;
   cursor: pointer;
+  padding: 14px 16px 14px;
   transition-property: background-color;
   transition-duration: $slow;
   &:hover {

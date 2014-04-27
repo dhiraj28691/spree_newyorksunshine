@@ -2,7 +2,39 @@ body.orders.edit {
   text-align: center;
   td.cart-item-description {
     text-align: left;
+    h4 a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
+  td.cart-item-variant {
+    text-align: left;
+    // vertical-align: bottom;
+  }
+  td.cart-item-quantity {
+    width: 20px;
+  }
+
+  input.line_item_quantity {
+
+    background: hsl(0, 0%, 90%);
+    border: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border-radius: 0;
+    display: inline-block;
+    line-height: 3em;
+    // margin: 0.25em 0;
+    // padding: 0 0 0 1em;
+    padding: 0 0.25em 0 1em;
+    text-align: center;
+    width: 100%;
+  }
+
+
   a.delete {
     border-radius: 50%;
     display: block;

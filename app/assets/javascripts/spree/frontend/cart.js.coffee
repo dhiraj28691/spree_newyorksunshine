@@ -37,7 +37,7 @@ document.addEventListener "DOMContentLoaded", ->
         event.preventDefault()
         event.stopPropagation()
 
-        event.target.parentNode.parentNode.parentNode.querySelector('input.line_item_quantity').value = 0
+        event.target.parentNode.parentNode.querySelector('input.line_item_quantity').value = 0
 
         document.forms['update-cart'].submit()
 

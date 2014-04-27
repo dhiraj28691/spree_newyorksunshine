@@ -10,7 +10,7 @@
   transition-duration: $slow;
 
   #main-image {
-    cursor: pointer;
+    cursor: image-url("e-resize.png"), e-resize;
     margin: 8px;
     position: relative;
     transition-duration: $fast;
@@ -50,6 +50,7 @@
     display: none;
     @extend %sprite;
     @media #{$tablet-portrait} {
+      cursor: pointer;
       display: block;
       width: 42px;
       height: 42px;
@@ -67,36 +68,20 @@
 
 
   &.zoomed {
-    // flex: 1 1 100%;
-
     #main-image {
       background: white;
-      // position: relative;
-      // transform: scale(1.739);
-      @media #{$tablet-portrait} {
-        width: 752px;
-      }
-      @media #{$desktop} {
-        width: 1024px;
-      }
-      @media #{$widescreen} {
-        width: 1264px;
-      }
+      @media #{$tablet-portrait} { width: 752px  }
+      @media #{$desktop}         { width: 1024px }
+      @media #{$widescreen}      { width: 1264px }
     }
     #zoom {
       transform: rotate(225deg);
       transition-duration: $slow;
     }
     #product-thumbnails {
-      @media #{$tablet-portrait} {
-        width: 768px;
-      }
-      @media #{$desktop} {
-        width: 1024px;
-      }
-      @media #{$widescreen} {
-        width: 1280px;
-      }
+      @media #{$tablet-portrait} { width: 768px }
+      @media #{$desktop}         { width: 1024px }
+      @media #{$widescreen}      { width: 1280px }
     }
 
     & + .product-info {
@@ -134,21 +119,21 @@
   align-content: flex-start;
   transition-duration: $fast;
   width: 100%;
-  @media #{$tablet-portrait} {
-    width: 768px;
-  }
-  @media #{$desktop} {
-    width: 1024px;
-  }
-  @media #{$widescreen} {
-    width: 1280px;
-  }
+  // @media #{$tablet-portrait} {
+  //   width: 768px;
+  // }
+  // @media #{$desktop} {
+  //   width: 1024px;
+  // }
+  // @media #{$widescreen} {
+  //   width: 1280px;
+  // }
   a {
     box-sizing: border-box;
     display: inline-block;
     padding: 8px;
     transition: opacity $slow;
-    width: calc(100%/5);
+    width: calc(100%/3);
     &:hover,
     &.current {
       opacity: 0.50;

@@ -13,6 +13,8 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 @import "fonts";
 @import "typography";
 
+@import "elements";
+
 @import "layouts/spree_application";
 
 @import "orders";
@@ -23,6 +25,7 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 @import "shared/feed";
 @import "shared/footer";
 @import "shared/header";
+@import "shared/subscribe";
 @import "shared/taxonomies";
 
 // Pages

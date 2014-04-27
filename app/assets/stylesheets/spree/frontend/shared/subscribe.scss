@@ -1,0 +1,88 @@
+#subscribe-wrapper {
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 3;
+  pointer-events: none;
+  transition: background $fast;
+  &.active {
+    background: hsla(0, 100%, 100%, 0.85);
+    pointer-events: auto;
+    transition-duration: $fast;
+    form#subscribe-form {
+      opacity: 1;
+      transform: none;
+      transition-duration: $fast;
+    }
+  }
+}
+
+form#subscribe-form {
+  background: hsla(225, 27%, 6%, 0.85);
+  box-sizing: border-box;
+  margin: 90px auto;
+  padding: 90px;
+  position: relative;
+  // transform: translateY(-522px);
+  // transform: translateY(-200%);
+  opacity: 0;
+  transform: translateY(-100px);
+  transition-property: opacity, transform;
+  transition-duration:  $fast;
+  width: 580px;
+
+  p.logo-white {
+    margin: 2em 0 3em;
+    text-align: center;
+    span {
+      display: inline-block;
+      @extend %sprite;
+      background-position: 0 -90px;
+      background-size: 270px 120px;
+      height: 30px;
+      width: 246px;
+    }
+  }
+
+
+  input {
+    display: block;
+    margin: 2em 0;
+    width: 100%;
+    &[type="submit"] {
+      text-transform: uppercase;
+    }
+  }
+
+  a.close {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @extend %sprite;
+    background-position: -336px 0;
+    cursor: pointer;
+    transition: opacity $slow;
+    &:hover {
+      opacity: 0.50;
+      transition-duration: $fast;
+    }
+  }
+}
+
+ul#flash-errors {
+  color: hsl(0, 100%, 100%);
+  line-height: 1.5;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  &:not(:empty) {
+    margin: 2em 0 0;
+  }
+}
+

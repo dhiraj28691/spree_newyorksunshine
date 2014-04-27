@@ -86,15 +86,22 @@ nav.pagination {
   text-align: center;
 
   a.next {
-    @extend %sprite;
     background-color: black;
-    background-position: -252px 0;
     margin: auto;
     display: block;
     text-indent: -9999px;
     width: 126px;
     height: 42px;
     transition: background-color $slow;
+    &:after {
+      background-position: -294px 0;
+      content: "";
+      display: block;
+      margin: auto;
+      width: 42px;
+      height: 42px;
+      @extend %sprite;
+    }
     &:hover {
       background-color: $matteBlack;
       transition-duration: $fast;

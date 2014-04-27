@@ -87,38 +87,3 @@ html.loading #wrapper {
   transition-duration: $fast;
 }
 
-h1 {
-  font-size: 2.25em;
-  font-weight: normal;
-}
-
-h4 {
-  text-transform: uppercase;
-}
-
-
-h6 {
-  font: inherit;
-}
-
-a:not([href]),
-a.current {
-  text-decoration: line-through;
-}
-
-
-table, th, td {
-  border: 1px solid lightgray;
-}
-td {
-  padding: 0.25em;
-}
-table {
-  // color: $matteBlack;
-  // font-size: larger;
-  width: 100%;
-}
-
-input, textarea, keygen, select, button {
-  font-size: 1em;
-}

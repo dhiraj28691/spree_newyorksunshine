@@ -6,5 +6,3 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-2-stable'
 gemspec
 
 # gem 'nav_lynx'
-
-gem 'mailchimp-api'

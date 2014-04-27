@@ -24,6 +24,8 @@
 
     <%= render :partial => 'spree/shared/footer' %>
 
+    <%= render :partial => 'spree/shared/subscribe_form' %>
+
     <%= render :partial => 'spree/shared/google_analytics' %>
     <script>
       Spree.api_key = <%= raw(try_spree_current_user.try(:spree_api_key).to_s.inspect) %>;

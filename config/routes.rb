@@ -17,4 +17,6 @@ Spree::Core::Engine.routes.draw do
 
   get 'returns-exchanges', :to => 'returnsexchanges#index'
 
+  post 'subscribe' => 'subscribe#process_form'
+
 end

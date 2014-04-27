@@ -1,0 +1,64 @@
+
+h1 {
+  font-size: 2.25em;
+  font-weight: normal;
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+
+h6 {
+  font: inherit;
+}
+
+a:not([href]),
+a.current {
+  text-decoration: line-through;
+}
+
+
+table, th, td {
+  border: 1px solid lightgray;
+}
+td {
+  padding: 0.25em;
+}
+table {
+  // color: $matteBlack;
+  // font-size: larger;
+  width: 100%;
+}
+
+input, textarea, keygen, select, button {
+  font-size: 1em;
+}
+
+
+input {
+  -webkit-appearance: none;
+  outline-color: hsl(0, 100%, 100%);
+  border-color: hsl(0, 100%, 100%);
+  border-radius: initial;
+  border-style: solid;
+  box-sizing: border-box;
+  font: inherit;
+  letter-spacing: 1px;
+  max-width: 100%;
+  padding: 14px 16px 14px;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  background: hsl(231, 23%, 11%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: $slow;
+  &:hover {
+    background: grey;
+    transition-duration: $fast;
+  }
+}

@@ -18,7 +18,12 @@ class Layout
     @equivalent_label = document.querySelector('#equivalent')
     @equivalent_check = document.querySelector('#equivalent-check')
 
+    # Subscribe form
+    @subscribe_wrapper = document.querySelector('#subscribe-wrapper')
+    @subscribe_form = @subscribe_wrapper.querySelector('#subscribe-form')
+    @close_button = @subscribe_form.querySelector('a.close')
 
+    @flash_errors = @subscribe_form.querySelector('#flash-errors')
 
     addEventListener 'load', @fadeInContent
     setTimeout @fadeInContent, 2000
@@ -38,6 +43,13 @@ class Layout
 
     @equivalent_label.addEventListener 'touchstart', toggleMenu
 
+    # Form event bindings
+    document.querySelector('a#subscribe').addEventListener 'click', @showForm
+
+    @close_button.addEventListener 'click', @hideForm
+
+    @subscribe_form.addEventListener 'submit', @submitForm
+
 
   fadeInContent: =>
 
@@ -49,7 +61,7 @@ class Layout
 
   mediaListener: (mediaQueryList) =>
     if mediaQueryList.matches
-      @parrallax()
+      @parallax()
 
     else
       cancelAnimationFrame(@requestion)
@@ -57,7 +69,7 @@ class Layout
       @header.classList.remove('pinned')
 
 
-  parrallax: =>
+  parallax: =>
 
     if @pageYOffset != window.pageYOffset
 
@@ -73,13 +85,70 @@ class Layout
 
       if pageYOffset * @ratio <= @threshhold then @header.classList.add('pinned') else @header.classList.remove('pinned')
 
-    @requestion = requestAnimationFrame @parrallax
+    @requestion = requestAnimationFrame @parallax
 
   toggleMenu = (event) =>
     event.stopPropagation()
     event.preventDefault()
     @equivalent_check.checked = if @equivalent_check.checked then false else true
 
+  showForm: (event) =>
+    event.preventDefault()
+    console.log('show')
+    @subscribe_wrapper.classList.add('active')
+
+  hideForm: (event) =>
+    event.preventDefault()
+    console.log('hide')
+    @subscribe_wrapper.classList.remove('active')
+
+  justDoIt: (event) =>
+    # console.log event.currentTarget.response.errors
+
+    errors = event.currentTarget.response.errors
+    error_messages = []
+
+    if errors.length > 0
+
+      for error in errors
+        console.log error
+        error_messages.push '<li>' + error + '</li>'
+
+    else
+      @subscribe_form.email.value = ""
+      error_messages.push '<li>Thank you.</li>'
+
+
+    @flash_errors.innerHTML = error_messages.join("")
+
+    @subscribe_wrapper.classList.add('active')
+
+
+
+  submitForm: (event) =>
+    event.preventDefault()
+
+    @subscribe_wrapper.classList.remove('active')
+
+    # Prepare data
+    formData = new FormData(@subscribe_form)
+
+
+    xhr = new XMLHttpRequest()
+
+    xhr.onload = @justDoIt
+
+    method = @subscribe_form.method
+    url = @subscribe_form.action
+
+
+    xhr.open method, url
+    xhr.responseType = "json"
+    xhr.send(formData)
+
+    # Report errors if they happen
+    xhr.addEventListener "error", (e) ->
+      console "Error: " + e + " Could not load url."
 
 
 

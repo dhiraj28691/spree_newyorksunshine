@@ -1,0 +1,15 @@
+<div id="subscribe-wrapper">
+
+  <%= form_tag("/subscribe", method: "post", id: "subscribe-form", class: "active") do %>
+    <p class="logo-white"><span></span></p>
+    <input type="text" name="email" placeholder="EMAIL ADDRESS">
+    <input type="submit" value="Subscribe">
+
+    <ul id="flash-errors"></ul>
+
+    <a class="close"></a>
+
+  <% end %>
+
+</div>
+

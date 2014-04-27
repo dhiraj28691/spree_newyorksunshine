@@ -300,14 +300,13 @@
 			C288.573,159.482,288.246,158.337,288.02,157.766z"/>
 	</g>
 </g>
-<g id="HamburgerBG" display="none">
-	<rect x="294" y="42" display="inline" fill="#BE1E2D" width="42" height="42"/>
+<g id="HamburgerBG">
 </g>
 <g id="Hamburger">
 	<g>
-		<rect x="304" y="56" width="21" height="3"/>
-		<rect x="304" y="62" width="21" height="3"/>
-		<rect x="304" y="68" width="21" height="3"/>
+		<rect x="305" y="56" width="21" height="3"/>
+		<rect x="305" y="62" width="21" height="3"/>
+		<rect x="305" y="68" width="21" height="3"/>
 	</g>
 </g>
 <g id="Zoom">
@@ -315,6 +314,10 @@
 		<rect x="272" y="56" width="2" height="14"/>
 		<rect x="266" y="62" width="14" height="2"/>
 	</g>
+</g>
+<g id="Close">
+	<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="346" y1="10" x2="368" y2="32"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="346" y1="32" x2="368" y2="10"/>
 </g>
 <g id="Lazy_Load">
 	<g>

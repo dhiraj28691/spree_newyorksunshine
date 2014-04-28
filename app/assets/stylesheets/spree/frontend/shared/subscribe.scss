@@ -9,12 +9,16 @@
   pointer-events: none;
   z-index: 3;
   pointer-events: none;
-  transition: background $fast;
+  transition: background $fast, transform 0ms $fast;
+  transform: translateY(-100%);
   &.active {
     background: hsla(0, 100%, 100%, 0.85);
     display: block;
     pointer-events: auto;
+    transform: none;
     transition-duration: $fast;
+    transition-property: background;
+    transition-delay: 0ms;
     form#subscribe-form {
       opacity: 1;
       transform: none;

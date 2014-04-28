@@ -51,7 +51,9 @@
         </p>
       <% end %>
 
-      <p class="clickthrough-link"><%= link_to 'link', post['clickthrough_link'], {:target => "_blank"} %></p>
+      <% if post['clickthrough_link'] %>
+        <p class="clickthrough-link"><%= link_to 'read more', post['clickthrough_link'], {:target => "_blank"} %></p>
+      <% end %>
 
     </div>
 

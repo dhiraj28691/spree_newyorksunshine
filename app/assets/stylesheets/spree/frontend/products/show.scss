@@ -201,6 +201,7 @@ table#product-properties {
     color: white;
     // line-height: 3;
     margin: 2em 0;
+    text-transform: uppercase;
     transition-duration: $slow;
     transition-property: background-color, border-color, color;
     &:hover {

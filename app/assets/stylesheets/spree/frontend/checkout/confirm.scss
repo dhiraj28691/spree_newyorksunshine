@@ -1,0 +1,51 @@
+fieldset#order_details {
+  .steps-data {
+    display: flex;
+    .columns {
+      flex: 1 1 auto;
+    }
+  }
+  hr {
+    display: none;
+  }
+}
+
+table#line-items {
+  margin: 3em 0;
+  th {
+    // background: pink;
+  }
+  tfoot {
+    text-align: right;
+    td:last-child {
+      background: orange;
+    }
+
+    td {
+      padding: 5px 10px;
+    }
+
+    &#tax-adjustments td:last-child,
+    &#shipment-total td:last-child {
+      background: pink;
+      &:before {
+        content: "+ ";
+      }
+    }
+
+  }
+}
+
+
+#order_details,
+#order_summary {
+  table tfoot {
+    text-align: right;
+  }
+}
+
+#summary-order-charges td:last-child:before,
+#order-charges td:last-child:before {
+
+  content: '+ ';
+}

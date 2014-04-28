@@ -29,7 +29,12 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 @import "shared/taxonomies";
 
 // Checkout pages
-@import "checkout/update";
+@import "checkout/edit";
+@import "checkout/summary";
+
+@import "checkout/delivery";
+@import "checkout/payment";
+@import "checkout/confirm";
 
 // Pages
 @import "lookbooks";

@@ -1,5 +1,5 @@
-//= require util/scrollTo
-//= require util/getPosition
+#= require util/scrollTo
+#= require util/getPosition
 
 class PostSlideshow
   constructor: (selector) ->

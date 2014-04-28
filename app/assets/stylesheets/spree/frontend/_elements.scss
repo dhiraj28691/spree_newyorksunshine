@@ -61,14 +61,12 @@ input[type="submit"] {
 }
 
 
-select,
-input[type="text"],
+button,
 input[type="number"],
 input[type="submit"],
 input[type="tel"],
-button {
-  background: #E5E5E5;
-  border-color: #E5E5E5;
+input[type="text"],
+select {
   border-style: solid;
   box-sizing: border-box;
   -webkit-appearance: none;
@@ -79,6 +77,28 @@ button {
   margin: 0.25em 0;
   padding: 14px 16px 14px;
 }
+
+button,
+input[type="submit"] {
+  background: black;
+  border-color: black;
+  color: white;
+  &:hover {
+    background: #E5E5E5;
+    border-color: #E5E5E5;
+    color: black;
+  }
+}
+
+
+input[type="number"],
+input[type="tel"],
+input[type="text"],
+select {
+  background: #E5E5E5;
+  border-color: #E5E5E5;
+}
+
 
 :focus {
   outline-color: black;

@@ -1,3 +1,5 @@
+#= require spree
+
 justDoIt = ->
 
   link_to_cart = document.querySelector('#link-to-cart')

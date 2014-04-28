@@ -78,11 +78,11 @@ module Spree
         "anchor_href" => "http://www.barneys.co.jp/"
       }
 
-      @stockists['International'] << {
-        "name" => "Fred Segal Japan",
-        "anchor" => "www.fredsegal.jp",
-        "anchor_href" => "http://www.fredsegal.jp/"
-      }
+      # @stockists['International'] << {
+      #   "name" => "Fred Segal Japan",
+      #   "anchor" => "www.fredsegal.jp",
+      #   "anchor_href" => "http://www.fredsegal.jp/"
+      # }
 
     end
 

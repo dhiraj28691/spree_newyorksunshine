@@ -1,7 +1,7 @@
-//= require modernizr
-//= require polyfills/classList
-//= require polyfills/matchMedia
-//= require polyfills/requestAnimationFrame
+#= require modernizr
+#= require polyfills/classList
+#= require polyfills/matchMedia
+#= require polyfills/requestAnimationFrame
 
 class Layout
 

@@ -1,0 +1,135 @@
+span.required {
+  color: $alert;
+}
+
+body.checkout.edit {
+  // background: magenta;
+  .row[data-hook="checkout_header"] {
+    // background: deepskyblue;
+    display: flex;
+    // align-items: baseline;
+    align-items: center;
+    h1 {
+      margin: 0 30px 0 0;
+    }
+  }
+
+  ol.progress-steps {
+    // background: orange;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: columns;
+    padding: 0;
+    list-style-position: inside;
+    li {
+      flex: 1 1 auto;
+      padding: 14px 16px;
+      &.current-first,
+      &.current {
+        background: black;
+        color: white;
+      }
+      &.completed-first,
+      &.completed {
+        background: #E5E5E5;
+      }
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  form#checkout_form_address.edit_order {
+    display: flex;
+    flex-flow: row wrap;
+    @media #{$tablet-portrait} {
+      // width: 850px;
+    }
+    @media #{$widescreen} {
+      // width: 960px;
+    }
+  }
+
+  .billing_fieldset_wrapper,
+  .shipping_fieldset_wrapper {
+    flex: 1 1 auto;
+    flex-flow: row wrap;
+    width: 50%;
+  }
+
+  fieldset {
+    border: none;
+    border-top: 1px solid $gray;
+    margin: 10px 0;
+    width: auto;
+  }
+  legend {
+    padding: 0 11px;
+    text-transform: uppercase;
+  }
+
+
+  p[data-hook="use_billing"] {
+    float: right;
+    margin: 0;
+  }
+
+  label[for] {
+    cursor: pointer;
+  }
+
+  input[type="text"],
+  input[type="tel"] {
+    width: 100%;
+  }
+
+  input.error {
+    border-color: $alert;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  label.error {
+    color: $alert;
+    display: block;
+    width: auto;
+  }
+
+
+  .form-buttons {
+    width: 100%;
+  }
+
+  span.field_with_errors {
+    color: red;
+  }
+
+
+  .checkout_content {
+    display: flex;
+    // & > .columns {
+    //   background: oldLace;
+    //   flex: 1 1 auto;
+    // }
+    .columns.alpha.twelve {
+      @media #{$tablet-portrait} {
+        width: 800px;
+      }
+      @media #{$widescreen} {
+        width: 960px;
+      }
+    }
+
+  }
+
+  #checkout-summary {
+    width: 218px;
+  }
+
+}
+
+.form-buttons {
+  text-align: center;
+}

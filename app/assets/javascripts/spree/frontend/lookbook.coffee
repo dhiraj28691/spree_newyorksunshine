@@ -1,6 +1,6 @@
-//= require ./modernizr
-//= require ./../../test-preserve3d
-//= require ./../../util/scrollTo
+#= require ./modernizr
+#= require ./../../test-preserve3d
+#= require ./../../util/scrollTo
 
 "use strict"
 

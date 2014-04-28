@@ -3,5 +3,13 @@ body.returnsexchanges {
     box-sizing: border-box;
     padding: 0 32px;
     max-width: 640px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }

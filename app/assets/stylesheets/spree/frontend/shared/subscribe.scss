@@ -9,7 +9,7 @@
   pointer-events: none;
   z-index: 3;
   pointer-events: none;
-  transition: background $fast, transform 0ms $fast;
+  transition: background $slow, transform 0ms $slow;
   transform: translateY(-100%);
   &.active {
     background: hsla(0, 100%, 100%, 0.85);
@@ -101,3 +101,6 @@ ul#flash-errors {
   }
 }
 
+body.about #subscribe-wrapper.active {
+  background: hsla(240, 50%, 10%, 0.85);
+}

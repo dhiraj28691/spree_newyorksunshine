@@ -8,7 +8,7 @@ class Layout
   constructor: ->
     # ratio = -0.5
     @ratio = -1
-    @threshhold = -76
+    @threshhold = -78
 
     @new_page_flag = true
 

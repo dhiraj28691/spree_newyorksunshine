@@ -1,7 +1,7 @@
 .top {
   @media #{$tablet-portrait} {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
   }
 }
 
@@ -224,6 +224,7 @@ table#product-properties {
 .recommended-products {
   text-align: center;
   display: flex;
+  flex-flow: row wrap;
   h4 {
     width: 100%;
   }

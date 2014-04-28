@@ -1,29 +1,9 @@
 //= require ./modernizr
 //= require ./../../test-preserve3d
+//= require ./../../util/scrollTo
 
 "use strict"
 
-scrollTo = (element, to, duration)->
-  start = Math.max(document.documentElement.scrollTop, document.body.scrollTop)
-  change = to - start
-  initialTime = Date.now()
-  finalTime = initialTime + duration
-
-  # exit out if already scrolled to top
-  if change >= 0 then return
-
-  animateScroll = ->
-    currentTime = Date.now()
-    val = Math.easeInOutQuad(currentTime - initialTime, start, change, duration)
-
-    # element.scrollTop = val
-
-    document.documentElement.scrollTop = val
-    document.body.scrollTop = val
-
-    if currentTime < finalTime then requestAnimationFrame(animateScroll)
-
-  animateScroll()
 
 # t = current time
 # b = start value
@@ -69,6 +49,9 @@ class Lookbook
     right_capture.addEventListener 'click', @nextSlide
     @thumbnails.addEventListener 'click', @goToSlide
 
+    matchMedia("(min-width: 768px)").addListener @setScrollTop
+    @setScrollTop(matchMedia("(min-width: 768px)"))
+
 
     addEventListener 'resize', @resizeStage
 
@@ -84,6 +67,10 @@ class Lookbook
         when 39
           @nextSlide()
           event.preventDefault()
+
+  setScrollTop: (mediaQueryList) =>
+    @scrollTop = if mediaQueryList.matches == true then 219 else 92
+
 
   prevSlide: (event) =>
     if event
@@ -119,7 +106,7 @@ class Lookbook
     translateX = @slideshow_position_array[@current_slide_index].translateX * -1
     rotateY = (@slideshow_position_array[@current_slide_index].rotateY + (@rotation_offset * 360)) * -1
 
-    the_top = @slideshow_top
+    # the_top = @slideshow_top
 
     transform = "translateZ(" + translateZ + "px) translateX(" + translateX + "%) rotateY(" + rotateY + "deg)"
 
@@ -134,7 +121,7 @@ class Lookbook
     if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(document.body, @slideshow_scroll_top, 400)
+    scrollTo(@scrollTop, 400)
 
   setStage3d: () =>
     panelSize = @stage.offsetWidth
@@ -157,8 +144,6 @@ class Lookbook
 
 
         @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
-
-
 
   updateSlideshow2d: () =>
     translateX = @slideshow_position_array[@current_slide_index].translateX * -1

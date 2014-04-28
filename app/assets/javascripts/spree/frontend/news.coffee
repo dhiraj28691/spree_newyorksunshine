@@ -1,3 +1,6 @@
+//= require util/scrollTo
+//= require util/getPosition
+
 class PostSlideshow
   constructor: (selector) ->
     @slideshow = if selector instanceof Node then selector else document.querySelector(selector)
@@ -11,6 +14,8 @@ class PostSlideshow
 
     @slideshow.addEventListener 'click', @goToNext
 
+    addEventListener 'load', =>
+      @offset_y = getPosition(selector).y - 45
 
   setStage: =>
     for slide, index in @slides
@@ -28,6 +33,8 @@ class PostSlideshow
     console.log 'transform', transform
     @stage.style.webkitTransform = transform
     @stage.style.transform = transform
+
+    scrollTo(@offset_y, 400)
 
   goToNext: =>
     @current_slide_index = if @current_slide_index < @slideshow_length - 1 then @current_slide_index + 1 else 0

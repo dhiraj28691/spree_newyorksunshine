@@ -58,8 +58,8 @@ html#spree-application body.lookbooks #content {
     }
     img {
       display: block;
-      background: #909090;
-      border: 16px solid white;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
       box-sizing: border-box;
       line-height: normal;
       &.style-1 {

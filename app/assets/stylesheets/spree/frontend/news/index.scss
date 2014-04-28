@@ -75,19 +75,19 @@ body.news {
 
 
   .slideshow {
-    // cursor: pointer;
     cursor: image-url("e-resize.png"), e-resize;
   }
 
   .stage {
+    margin: 0 -16px;
     position: relative;
     transition: transform $slow;
   }
 
   .slide {
-    // background-color: oldLAce;
     display: block;
-    // pointer-events: none;
+    box-sizing: border-box;
+    border: 16px solid transparent;
     position: absolute;
     top: 0;
     right: 0;

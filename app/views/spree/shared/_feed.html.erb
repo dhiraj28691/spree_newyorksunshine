@@ -16,22 +16,22 @@
 <% end %>
 
 <div class="feed">
+  <% if @full_bleed %>
+    <div class="feed-group">
 
-  <div class="feed-group">
+      <% @full_bleed.each do |item| %>
 
-    <% @full_bleed.each do |item| %>
+        <%= link_to(item[:href], {:class => "product"}) do %>
+          <%= image_tag(item[:image_src], :class => "product-image") %>
+          <div class="info">
+            <div><%= item[:cta_category] %></div>
+            <%= item[:cta_predicate] %>
+          </div>
+        <% end %>
 
-      <%= link_to(item[:href], {:class => "product"}) do %>
-        <%= image_tag(item[:image_src], :class => "product-image") %>
-        <div class="info">
-          <div><%= item[:cta_category] %></div>
-          <%= item[:cta_predicate] %>
-        </div>
       <% end %>
-
-    <% end %>
-  </div>
-
+    </div>
+  <% end %>
 </div>
 
 <div class="feed">

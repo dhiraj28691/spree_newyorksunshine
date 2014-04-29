@@ -308,6 +308,11 @@
 		<rect x="305" y="62" width="21" height="3"/>
 		<rect x="305" y="68" width="21" height="3"/>
 	</g>
+	<g>
+		<rect x="347" y="56" fill="#FFFFFF" width="21" height="3"/>
+		<rect x="347" y="62" fill="#FFFFFF" width="21" height="3"/>
+		<rect x="347" y="68" fill="#FFFFFF" width="21" height="3"/>
+	</g>
 </g>
 <g id="Zoom">
 	<g>

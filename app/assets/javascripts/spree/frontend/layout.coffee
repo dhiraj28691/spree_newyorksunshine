@@ -89,8 +89,8 @@ class Layout
 
   toggleMenu = (event) =>
     event.stopPropagation()
-    event.preventDefault()
-    @equivalent_check.checked = if @equivalent_check.checked then false else true
+    # event.preventDefault()
+    # @equivalent_check.checked = if @equivalent_check.checked then false else true
 
   showForm: (event) =>
     event.preventDefault()

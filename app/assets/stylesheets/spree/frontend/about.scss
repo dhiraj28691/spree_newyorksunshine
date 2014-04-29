@@ -1,12 +1,19 @@
 body.about {
-  background: #0D1017;
+  background: #0D1017 url("//files.human-nyc.com/newyorksunshine/assets/about.jpg") center top;
 
   header.pinned {
     background: hsla(0, 100%, 0%, 0.85);
   }
 
+  label#equivalent {
+    background-position: -336px -42px;
+  }
+
   h1#logo a {
-    background-position: 0 -126px;
+    background-position: -168px -42px;
+    @media #{$tablet-portrait} {
+      background-position: 0 -126px;
+    }
   }
 
   nav.main-nav a {
@@ -14,7 +21,10 @@ body.about {
   }
 
   #wrapper {
-    background: url('//files.human-nyc.com/newyorksunshine/assets/about.jpg') center top;
+    @media #{$tablet-portrait} {
+      background: url('//files.human-nyc.com/newyorksunshine/assets/about.jpg') center top;
+    }
+
     background-size: cover;
     color: white;
   }
@@ -22,7 +32,7 @@ body.about {
   #content {
     box-sizing: border-box;
     text-align: left;
-    width: 480px;
+    max-width: 480px;
     img {
       // float: left;
       // width: 57%%;

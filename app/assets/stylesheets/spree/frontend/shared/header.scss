@@ -34,13 +34,13 @@ label#equivalent {
   cursor: pointer;
   line-height: 1;
   position: absolute;
+  z-index: 9999;
   left: 0;
   width: 42px;
   height: 42px;
   @extend %sprite;
-  background-position: -294px -42px;
+  background-position: -305px -42px;
   @media #{$tablet-portrait} { display: none }
-
 }
 
 input#equivalent-check { display: none }

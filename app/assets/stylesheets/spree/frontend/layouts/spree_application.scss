@@ -8,10 +8,9 @@ html#spree-application {
 
 body {
   font: 13px/1.615 "andale_monoregular";
-
+  margin: 0;
   @media #{$tablet-portrait} {
     height: 100%;
-    margin: 0;
   }
   @media #{$QHD} {
     font-size: 16px;

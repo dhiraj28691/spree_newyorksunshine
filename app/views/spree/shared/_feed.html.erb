@@ -17,6 +17,25 @@
 
 <div class="feed">
 
+  <div class="feed-group">
+
+    <% @full_bleed.each do |item| %>
+
+      <%= link_to(item[:href], {:class => "product"}) do %>
+        <%= image_tag(item[:image_src], :class => "product-image") %>
+        <div class="info">
+          <div><%= item[:cta_category] %></div>
+          <%= item[:cta_predicate] %>
+        </div>
+      <% end %>
+
+    <% end %>
+  </div>
+
+</div>
+
+<div class="feed">
+
   <% if products.empty? %>
     <%= Spree.t(:no_products_found) %>
   <% elsif params.key?(:keywords) %>
@@ -24,9 +43,9 @@
   <% end %>
 
   <% if products.any? %>
-    <div class="feed-group" class="inline product-listing" data-hook>
+    <div class="feed-group inline product-listing" data-hook>
       <% products.each do |product| %>
-        <%= link_to(product, {:id => "product_" + product.id.to_s, :class => "product loading" }) do %>
+        <%= link_to(product, {:id => "product_" + product.id.to_s, :class => "product not-loading" }) do %>
           <%= product_image(product, :itemprop => "image", :class => "product-image") %>
           <div class="info">
             <div>SHOP</div>

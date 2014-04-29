@@ -1,11 +1,11 @@
 .feed-group {
   // border-bottom: 20px solid red;
-  column-count: 2;
-  column-gap: 0;
-  column-fill: auto;
+  // column-count: 2;
   // columns: 0 2;
   @media #{$tablet-portrait} {
     column-count: 3;
+    column-gap: 0;
+    column-fill: auto;
   }
 
   a {

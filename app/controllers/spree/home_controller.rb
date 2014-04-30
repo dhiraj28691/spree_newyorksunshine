@@ -12,62 +12,56 @@ module Spree
       @full_bleed = [
         {
           :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
+          :cta_predicate => "Surf Club Jersey",
+          :href => "//newyorksunshine.human-nyc.com/products/surf-club-jersey",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-0445.jpg"
         },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
+          :cta_predicate => "Surf Club Jersey",
+          :href => "//newyorksunshine.human-nyc.com/products/surf-club-jersey",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-0453.jpg"
         },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
+          :cta_predicate => "NYS Script Tank",
+          :href => "//newyorksunshine.human-nyc.com/products/nys-script-tank",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-0557.jpg"
         },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
+          :cta_predicate => "NY Flag Tank",
+          :href => "//newyorksunshine.human-nyc.com/products/ny-flag-tank",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-0577.jpg"
         },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
+          :cta_predicate => "Hoop Pocket Tee",
+          :href => "//newyorksunshine.human-nyc.com/products/hoop-pocket-tee",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-0621.jpg"
         },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
+          :cta_predicate => "Surf Club Tee",
+          :href => "//newyorksunshine.human-nyc.com/products/surf-club-tee",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-0707.jpg"
         },
         {
           :cta_category => "Shop",
           :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
+          :href => "//newyorksunshine.human-nyc.com/products/hoop-dreams-tee",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-0922.jpg"
         },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
+          :cta_predicate => "Money Bag Tee",
+          :href => "//newyorksunshine.human-nyc.com/products/money-bag-tee",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-1273.jpg"
         },
         {
-          :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-2976.jpg"
         },
         {
-          :cta_category => "Shop",
-          :cta_predicate => "Hoop Dreams Tee",
-          :href => "/products",
           :image_src => "//files.human-nyc.com/newyorksunshine/assets/home/home-3030.jpg"
         },
         {

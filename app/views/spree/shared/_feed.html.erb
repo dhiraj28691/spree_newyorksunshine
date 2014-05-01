@@ -21,20 +21,19 @@
 
       <% @full_bleed.each do |item| %>
 
-        <%= link_to(item[:href], {:class => "product"}) do %>
-          <%= image_tag(item[:image_src], :class => "product-image") %>
+        <a href="<%= item[:href] %>" class="product" style="background-image: url('<%= item[:image_src] %>')">
           <div class="info">
             <div><%= item[:cta_category] %></div>
             <%= item[:cta_predicate] %>
           </div>
-        <% end %>
+        </a>
 
       <% end %>
     </div>
   <% end %>
 </div>
 
-<div class="feed">
+<!-- <div class="feed">
 
   <% if products.empty? %>
     <%= Spree.t(:no_products_found) %>
@@ -57,8 +56,10 @@
     </div>
   <% end %>
 
+  <div class="clearfix"></div>
+
   <% if paginated_products.respond_to?(:num_pages) %>
       <%= paginate paginated_products %>
   <% end %>
 
-</div>
+</div> -->

@@ -20,7 +20,7 @@ module Spree
           :cta_category => "Shop",
           :cta_predicate => "Surf Club Jersey",
           :href => "/products/surf-club-jersey",
-          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/Hoop%20Pocket%20Tee.jpg"
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/surf-club-jersey.jpg"
         },
         {
           :cta_category => "Shop",
@@ -33,7 +33,7 @@ module Spree
           :cta_category => "Shop",
           :cta_predicate => "Scallop Tee",
           :href => "/products/scallop-tee",
-          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/scallop.jpg"
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/scallop-tee.jpg"
         },
         {
           :cta_category => "Shop",
@@ -58,7 +58,7 @@ module Spree
           :cta_category => "Shop",
           :cta_predicate => "Hoop Dreams Tee",
           :href => "/products/hoop-dreams-tee",
-          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/hoopdreams.jpg"
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/hoop-dreams-tee.jpg"
         },
         {
           :cta_category => "Shop",
@@ -71,7 +71,7 @@ module Spree
           :cta_category => "Shop",
           :cta_predicate => "Big Apple Button Down",
           :href => "//newyorksunshine.human-nyc.com/products/big-apple-button-down",
-          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/appleshirt.jpg"
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/big-apple-button-down.jpg"
         },
         {
           :cta_category => "Shop",

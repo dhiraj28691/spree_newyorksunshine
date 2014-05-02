@@ -133,23 +133,23 @@ a.twitter {
 	a.pinterest {
 		&:before {
 			background-size: 30px;
-			background-image: url('/assets/pinterest.png')
+			background-image: image-url('/pinterest.png')
 		}
 		&:after {
 			background-position: 0 -30px;
 			background-size: 100%;
-			background-image: url('/assets/pinterest.png')
+			background-image: image-url('/pinterest.png')
 		}
 	}
 	a.svpply {
 		&:before {
 			background-size: 30px;
-			background-image: url('/assets/svpply.png')
+			background-image: image-url('/svpply.png')
 		}
 		&:after {
 			background-position: 0 -30px;
 			background-size: 100%;
-			background-image: url('/assets/svpply.png')
+			background-image: image-url('/svpply.png')
 		}
 	}
 }

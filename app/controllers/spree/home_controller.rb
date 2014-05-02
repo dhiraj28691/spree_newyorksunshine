@@ -8,7 +8,6 @@ module Spree
       @products = @searcher.retrieve_products
       @taxonomies = Spree::Taxonomy.includes(root: :children)
 
-
       @full_bleed = [
         {
           :cta_category => "Shop",
@@ -67,11 +66,17 @@ module Spree
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/Bat.gif"
         },
         #### ROW 4 ####
+        # {
+        #   :cta_category => "Shop",
+        #   :cta_predicate => "Big Apple Button Down",
+        #   :href => "//newyorksunshine.human-nyc.com/products/big-apple-button-down",
+        #   :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/big-apple-button-down.jpg"
+        # },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Big Apple Button Down",
-          :href => "//newyorksunshine.human-nyc.com/products/big-apple-button-down",
-          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/big-apple-button-down.jpg"
+          :cta_predicate => "Surf Club Zip Up",
+          :href => "//newyorksunshine.human-nyc.com/products/surf-club-zip-up",
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/ZipHoodie.gif"
         },
         {
           :cta_category => "Shop",

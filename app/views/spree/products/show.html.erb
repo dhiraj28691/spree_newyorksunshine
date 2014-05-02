@@ -15,10 +15,12 @@
         <%#= render :partial => 'taxons' %>
         <%#= @product.tax_category.inspect %>
         <%#= Spree::Taxonomy.all.first.inspect %>
-        <% taxon = @product.taxons.where(parent_id: 1).first %>
+        <div style="display: hidden;"><%= @product.taxons.inspect %></div>
         <a href="/products">All</a>
-        &nbsp;>&nbsp;
-        <a href="<%= seo_url(taxon) %>"><%= taxon.name %></a>
+        <% if taxon = @product.taxons.where(parent_id: 1).first %>
+          &nbsp;>&nbsp;
+          <a href="<%= seo_url(taxon) %>"><%= taxon.name %></a>
+        <% end %>
         &nbsp;>&nbsp;
         <a class="strike" href="seo_url(@product)"><%= accurate_title %></a>
       </div>

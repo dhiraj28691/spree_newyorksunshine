@@ -1,35 +1,12 @@
-.home-feed-group {
-  // border-bottom: 20px solid red;
-  // column-count: 2;
-  // columns: 0 2;
-  @media #{$tablet-portrait} {
-    // column-count: 3;
-    // column-gap: 0;
-    // column-fill: auto;
-  }
-
+.home-feed-group, .feed-group {
   a {
     color: white;
     display: block;
     width: 100%;
-    height: 500px;
-    float: left;
     position: relative;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    @media all and (max-width: 1024px) and (min-width: 768px) {
-      height: 336px;
-    }
-
-    @media #{$tablet-portrait} {
-      width: 29%;
-      margin: 2.1666%;
-    }
 
     &:after {
       background: transparent;
@@ -40,6 +17,12 @@
       bottom: 0;
       left: 0;
       transition-duration: $slow;
+    }
+
+    img {
+      background: white;
+      display: block;
+      width: 100%;
     }
 
     .info {
@@ -54,7 +37,6 @@
       height: 3em;
       z-index: 1;
     }
-
 
     &.loading {
       // pointer-events: none;
@@ -92,79 +74,31 @@
     column-gap: 0;
     column-fill: auto;
   }
-
   a {
-    color: white;
-    display: block;
-    width: 100%;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-
     @media #{$tablet-portrait} {
       border: 32px solid white;
-    }
-
-    &:after {
-      background: transparent;
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transition-duration: $slow;
-    }
-
-    img {
-      background: white;
-      display: block;
-      width: 100%;
-    }
-
-
-    .info {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      color: transparent;
-      text-align: center;
-      width: 100%;
-      transition-duration: $slow;
-      height: 3em;
-      z-index: 1;
-    }
-
-
-    &.loading {
-      // pointer-events: none;
-      &:after {
-        background: hsla(0, 0%, 100%,0.99);
-      }
-    }
-
-
-    &:hover {
-      .info {
-        color: $matteBlack;
-        transition-duration: $fast;
-      }
-      &:after {
-        background: hsla(0, 0%, 100%, 0.95);
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transition-duration: $fast;
-      }
     }
   }
 }
 
+.home-feed-group {
+  a {
+    height: 500px;
+    float: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media all and (max-width: 1024px) and (min-width: 768px) {
+      height: 336px;
+    }
+
+    @media #{$tablet-portrait} {
+      width: 29%;
+      margin: 2.1666%;
+    }
+  }
+}
 
 .clearfix {
   clear: both;

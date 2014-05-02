@@ -7,7 +7,6 @@ class ProductImages
 
     @slideshow_length = @main_image_wrapper.querySelectorAll('img').length
 
-
     @zoom.addEventListener 'click', (event)=>
       event.preventDefault()
       event.stopPropagation()
@@ -18,7 +17,13 @@ class ProductImages
 
     @main_image_wrapper.addEventListener 'click', @goToNext
 
-
+    # Svpply trigger for custom icon in product sharing
+    $('.svpply.icon').on 'click', (e) ->
+      e.preventDefault()
+      $('.svpply_button').click()
+      $('html, body').animate
+        scrollTop: $('#main-image').offset().top - 240
+      , 600
 
 
   goToSlide: (event) =>

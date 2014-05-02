@@ -11,6 +11,18 @@
 
     <div class="product-info">
 
+      <div class="breadcrumbies">
+        <%#= render :partial => 'taxons' %>
+        <%#= @product.tax_category.inspect %>
+        <%#= Spree::Taxonomy.all.first.inspect %>
+        <% taxon = @product.taxons.where(parent_id: 1).first %>
+        <a href="/products">All</a>
+        &nbsp;>&nbsp;
+        <a href="<%= seo_url(taxon) %>"><%= taxon.name %></a>
+        &nbsp;>&nbsp;
+        <a class="strike" href="seo_url(@product)"><%= accurate_title %></a>
+      </div>
+
       <h1 class="product-title" itemprop="name"><%= accurate_title %></h1>
       <%= render :partial => 'promotions' %>
 
@@ -18,16 +30,17 @@
         <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
       </p>
 
+      <%= render :partial => 'cart_form' %>
 
-        <%= render :partial => 'cart_form' %>
+      <%= render :partial => 'sharing' %>
 
-        <%= render :partial => 'properties' %>
+      <%= render :partial => 'properties' %>
 
     </div>
 
   </div>
 
-  <% if @product.outfits.length > 0 %>
+  <% if 1 == 2 && @product.outfits.length > 0 %>
     <div class="recommended-products">
       <h4>Recommended</h4>
 

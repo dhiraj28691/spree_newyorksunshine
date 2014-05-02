@@ -269,3 +269,24 @@ table#product-properties {
     }
   }
 }
+
+.breadcrumbies {
+  margin-top: 3px;
+  color: #cbcbcb;
+  a {
+    color: black;
+    text-decoration: none;
+    &:hover {
+      text-decoration: line-through;
+    }
+  }
+  a.strike {
+    color: #cbcbcb;
+    text-decoration: line-through;
+  }
+}
+
+#social.product {
+  position: static;
+  margin: -4px;
+}

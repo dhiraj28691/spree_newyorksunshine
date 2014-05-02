@@ -129,3 +129,27 @@ a.twitter {
 	&:after { background-position: -90px -30px }
 }
 
+#social {
+	a.pinterest {
+		&:before {
+			background-size: 30px;
+			background-image: url('/assets/pinterest.png')
+		}
+		&:after {
+			background-position: 0 -30px;
+			background-size: 100%;
+			background-image: url('/assets/pinterest.png')
+		}
+	}
+	a.svpply {
+		&:before {
+			background-size: 30px;
+			background-image: url('/assets/svpply.png')
+		}
+		&:after {
+			background-position: 0 -30px;
+			background-size: 100%;
+			background-image: url('/assets/svpply.png')
+		}
+	}
+}

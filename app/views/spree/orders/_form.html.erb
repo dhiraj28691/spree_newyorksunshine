@@ -2,8 +2,9 @@
 <table id="cart-detail" data-hook>
   <thead>
     <tr data-hook="cart_items_headers">
-      <th class="cart-item-description-header" colspan="2"><%= Spree.t(:item) %></th>
-      <th class="cart-item-variant-header"><%= Spree.t(:variant) %></th>
+      <th class="cart-item-description-header"><%= pluralize(order_form.object.line_items.count, "Item")%><%#= Spree.t(:item) %></th>
+      <th class="cart-item-product-header">Product Name</th>
+      <th class="cart-item-variant-header">Color / Size<%#= Spree.t(:variant) %></th>
       <th class="cart-item-price-header"><%= Spree.t(:price) %></th>
       <th class="cart-item-quantity-header"><%= Spree.t(:qty) %></th>
       <th class="cart-item-total-header"><%= Spree.t(:total) %></th>

@@ -289,4 +289,7 @@ table#product-properties {
 #social.product {
   position: static;
   margin: -4px;
+  &.hidden {
+    display: none;
+  }
 }

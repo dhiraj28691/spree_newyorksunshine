@@ -133,23 +133,23 @@ a.twitter {
 	a.pinterest {
 		&:before {
 			background-size: 30px;
-			background-image: image-url('/pinterest.png')
+			background-image: url('http://newyorksunshine-production.s3.amazonaws.com/social/pinterest.png')
 		}
 		&:after {
 			background-position: 0 -30px;
 			background-size: 100%;
-			background-image: image-url('/pinterest.png')
+			background-image: url('http://newyorksunshine-production.s3.amazonaws.com/social/pinterest.png')
 		}
 	}
 	a.svpply {
 		&:before {
 			background-size: 30px;
-			background-image: image-url('/svpply.png')
+			background-image: url('http://newyorksunshine-production.s3.amazonaws.com/social/svpply.png')
 		}
 		&:after {
 			background-position: 0 -30px;
 			background-size: 100%;
-			background-image: image-url('/svpply.png')
+			background-image: url('http://newyorksunshine-production.s3.amazonaws.com/social/svpply.png')
 		}
 	}
 	.svpply_button {

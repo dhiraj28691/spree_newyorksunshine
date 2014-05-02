@@ -43,9 +43,9 @@ module Spree
         },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Live that Life Hat",
-          :href => "/products/live-that-life-corduroy-hat",
-          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/live_that_life.jpg"
+          :cta_predicate => "Times Square Hat",
+          :href => "/products/times-square-hat",
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/times-square-hat.jpg"
         },
         #### ROW 3 ####
         {

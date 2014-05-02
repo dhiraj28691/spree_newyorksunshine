@@ -4,6 +4,7 @@ class ProductImages
     @main_image_wrapper = @product_images.querySelector('#main-image')
     @product_thumbnails = @product_images.querySelector('#product-thumbnails')
     @zoom = @main_image_wrapper.querySelector('#zoom')
+    @sharer = $('#social.product')
 
     @slideshow_length = @main_image_wrapper.querySelectorAll('img').length
 
@@ -11,6 +12,7 @@ class ProductImages
       event.preventDefault()
       event.stopPropagation()
       @product_images.classList.toggle('zoomed')
+      @sharer.toggleClass('hidden')
 
     if @product_thumbnails
       @product_thumbnails.addEventListener 'click', @goToSlide

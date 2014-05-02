@@ -1,8 +1,15 @@
 body.orders.edit {
-  text-align: center;
 
-  th.cart-item-total-header {
-    text-align: center;
+  thead {
+    text-transform: uppercase;
+  }
+
+  th.cart-item-quantity-header {
+    min-width: 100px;
+  }
+
+  td {
+    text-align: left;
   }
 
   td.cart-item-image {
@@ -12,6 +19,7 @@ body.orders.edit {
         display: block;
         transition-duration: $slow;
         width: 100%;
+        max-width: 200px;
       }
       &:hover img {
         opacity: 0.50;
@@ -26,7 +34,7 @@ body.orders.edit {
       color: inherit;
       display: inline-block;
       line-height: normal;
-      padding: 14px 16px 14px;
+      padding: 14px 0 14px;
       text-decoration: none;
       &:hover {
         text-decoration: underline;

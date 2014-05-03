@@ -68,9 +68,9 @@ module Spree
         #### ROW 4 ####
         {
           :cta_category => "Shop",
-          :cta_predicate => "Surf Club Zip Up",
-          :href => "//newyorksunshine.human-nyc.com/products/surf-club-zip-up",
-          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/ZipHoodie.gif"
+          :cta_predicate => "Stickball Raglan",
+          :href => "//newyorksunshine.human-nyc.com/products/stickball-raglan",
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/stickball-raglan.jpg"
         },
         {
           :cta_category => "Shop",
@@ -87,9 +87,9 @@ module Spree
         #### ROW 5 ####
         {
           :cta_category => "Shop",
-          :cta_predicate => "Meadow Club Polo",
-          :href => "//newyorksunshine.human-nyc.com/products/meadow-club-polo",
-          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/Tennis.gif"
+          :cta_predicate => "Surf Club Zip Up",
+          :href => "//newyorksunshine.human-nyc.com/products/surf-club-zip-up",
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/ZipHoodie.gif"
         },
         {
           :cta_category => "Shop",

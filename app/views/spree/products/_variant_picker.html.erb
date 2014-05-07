@@ -4,7 +4,7 @@
     <label><%= @product.variants.first.option_values.first.option_type.presentation %></label>
     <select id="variant_id" name="variant_id">
       <% @product.variants.each do |v| %>
-        <option value="<%= v.id %>"><%= v.option_values[0].name %></option>
+        <option value="<%= v.id %>"><%= v.option_values[0].name.upcase %></option>
       <% end %>
     </select>
 <%

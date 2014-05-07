@@ -2,7 +2,7 @@
   <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
 
-    <% if @product.variants_and_option_values(current_currency).any? %>
+    <% if @product.variants.present? %>
       <%= render 'variant_picker' %>
     <% else %>
       <%= hidden_field_tag "variant_id", @product.master.id %>

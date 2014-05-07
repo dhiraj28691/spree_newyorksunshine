@@ -1,0 +1,55 @@
+<%
+  v_array = []
+  @product.variants.each do |v|
+    option = {
+      variant_id: v.id,
+      size:       v.option_values[0].name,
+      size_id:    v.option_values[0].id,
+      color:      v.option_values[1].name,
+      color_id:   v.option_values[1].id,
+      stock:      v.in_stock?
+    }
+    v_array << option
+  end
+
+  sizes_array = []
+  v_array.each do |v|
+    sizes_array << {name: v[:size], id: v[:size_id]}
+  end
+  sizes_array = sizes_array.uniq
+
+  color_array = []
+  v_array.each do |v|
+    color_array << {name: v[:color], id: v[:color_id]}
+  end
+  color_array = color_array.uniq
+%>
+
+<label>Size</label>
+<select id="size">
+  <% sizes_array.each do |size| %>
+    <%
+      avil_colors = ""
+      v_array.each {|v| avil_colors = (avil_colors + "#{v[:color_id]} ") if v[:size] == size[:name] && v[:stock] == true}
+    %>
+    <option data-colors="<%= avil_colors %>" value="<%= size[:id] %>"><%= size[:name].upcase %></option>
+  <% end %>
+</select>
+
+<br/>
+<label>Color</label>
+<select id="color">
+  <% color_array.each do |color| %>
+    <%
+      avil_sizes = ""
+      v_array.each {|v| avil_sizes = (avil_sizes + "#{v[:size_id]} ") if v[:color] == color[:name] && v[:stock] == true}
+    %>
+    <option data-sizes="<%= avil_sizes %>" value="<%= color[:id] %>"><%= color[:name].upcase %></option>
+  <% end %>
+</select>
+
+<select id="variant_id" name="variant_id" class="hidden">
+  <% v_array.each do |v| %>
+    <option data-size="<%= v[:size_id] %>" data-color="<%= v[:color_id] %>" value="<%= v[:variant_id] %>"><%= v[:size] + " " + v[:color] %></option>
+  <% end %>
+</select>

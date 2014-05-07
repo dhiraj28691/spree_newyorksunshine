@@ -12,9 +12,6 @@
     <div class="product-info">
 
       <div class="breadcrumbies">
-        <%#= render :partial => 'taxons' %>
-        <%#= @product.tax_category.inspect %>
-        <%#= Spree::Taxonomy.all.first.inspect %>
         <a href="/products">All</a>
         <% if taxon = @product.taxons.first %>
           &nbsp;>&nbsp;

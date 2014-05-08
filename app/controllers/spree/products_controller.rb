@@ -24,11 +24,7 @@ module Spree
       @product_properties = @product.product_properties.includes(:property)
       @taxon = Spree::Taxon.find(params[:taxon_id]) if params[:taxon_id]
 
-      # @taxon = Taxon.find_by_permalink!(params[:id])
       @taxonomies = Spree::Taxonomy.includes(root: :children)
-
-
-
 
     end
 

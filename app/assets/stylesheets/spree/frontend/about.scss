@@ -6,13 +6,13 @@ body.about {
   }
 
   label#equivalent {
-    background-position: -336px -42px;
+    background-position: -179px -126px;
   }
 
   h1#logo a {
-    background-position: -168px -42px;
+    background-position: 0 -126px;
     @media #{$tablet-portrait} {
-      background-position: 0 -126px;
+      background-position: 0 -210px;
     }
   }
 

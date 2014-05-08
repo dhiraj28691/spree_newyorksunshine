@@ -47,8 +47,8 @@ form#subscribe-form {
     span {
       display: inline-block;
       @extend %sprite;
-      background-position: 0 -90px;
-      background-size: 270px 120px;
+      background-position: 0 -150px;
+      background-size: 270px 180px;
       height: 30px;
       width: 246px;
     }
@@ -80,7 +80,7 @@ form#subscribe-form {
     top: 0;
     right: 0;
     @extend %sprite;
-    background-position: -336px 0;
+    background-position: -168px -84px;
     cursor: pointer;
     transition: opacity $slow;
     &:hover {

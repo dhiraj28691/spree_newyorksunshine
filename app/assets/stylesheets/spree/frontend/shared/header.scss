@@ -13,12 +13,12 @@ h1#logo a {
   text-indent: -9999px;
   transition-duration: $slow;
   transition-property: opacity;
+  @extend %sprite;
+  background-position: 0 -84px;
   width: 84px;
   height: 42px;
-  @extend %sprite;
-  background-position: -168px 0;
   @media #{$desktop} {
-    background-position: 0 -84px;
+    background-position: 0 -168px;
     width: 340px;
   }
 
@@ -39,7 +39,7 @@ label#equivalent {
   width: 42px;
   height: 42px;
   @extend %sprite;
-  background-position: -305px -42px;
+  background-position: -137px -126px;
   @media #{$tablet-portrait} { display: none }
 }
 
@@ -52,16 +52,19 @@ nav.main-nav {
   height: 0;
   opacity: 0;
   // overflow: hidden;
+  pointer-events: none;
   transition-duration: $fast;
   transition-property: height, opacity;
   @media #{$tablet-portrait} {
     margin-top: -50px;
     height: auto;
     opacity: 1;
+    pointer-events: auto;
   }
   input#equivalent-check:checked + & {
     height: 360px;
     opacity: 1;
+    pointer-events: auto;
     transition-delay: 0ms, $fast;
   }
   a {

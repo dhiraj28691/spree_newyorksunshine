@@ -3,10 +3,10 @@ nav.footer-nav {
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-	margin: 0 32px;
-
+	margin: 0 8px;
 	@media #{$tablet-portrait} {
 		flex-direction: row;
+		margin: 0 32px;
 		text-align: center;
 	}
 
@@ -87,7 +87,7 @@ nav.footer-nav {
 			margin: 4px;
 			transition-duration: $slow;
 			@extend %sprite;
-			background-size: 270px 120px;
+			// background-size: 270px 180px;
 		}
 
 		&:before { background-color: white }
@@ -129,30 +129,14 @@ a.twitter {
 	&:after { background-position: -90px -30px }
 }
 
-#social {
-	a.pinterest {
-		&:before {
-			background-size: 30px;
-			background-image: url('http://newyorksunshine-production.s3.amazonaws.com/social/pinterest.png')
-		}
-		&:after {
-			background-position: 0 -30px;
-			background-size: 100%;
-			background-image: url('http://newyorksunshine-production.s3.amazonaws.com/social/pinterest.png')
-		}
-	}
-	a.svpply {
-		&:before {
-			background-size: 30px;
-			background-image: url('http://newyorksunshine-production.s3.amazonaws.com/social/svpply.png')
-		}
-		&:after {
-			background-position: 0 -30px;
-			background-size: 100%;
-			background-image: url('http://newyorksunshine-production.s3.amazonaws.com/social/svpply.png')
-		}
-	}
-	.svpply_button {
-		display: none !important;
-	}
+a.pinterest {
+	&:before { background-position: -120px 0 }
+	&:after { background-position: -120px -30px }
 }
+
+a.svpply {
+	&:before { background-position: -150px 0 }
+	&:after { background-position: -150px -30px }
+}
+
+.svpply_button { display: none !important }

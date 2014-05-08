@@ -1,8 +1,11 @@
 body.about {
   background: #0D1017 url("//files.human-nyc.com/newyorksunshine/assets/about.jpg") center top;
 
-  header.pinned {
-    background: hsla(0, 100%, 0%, 0.85);
+  header {
+    background: transparent;
+    &.pinned {
+      background: hsla(0, 100%, 0%, 0.85);
+    }
   }
 
   label#equivalent {

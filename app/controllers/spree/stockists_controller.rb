@@ -4,19 +4,19 @@ module Spree
     def index
 
       @stockists = {
-        'U.S.A.' => [],
+        'North America' => [],
         'International' => []
       }
 
-      @stockists['U.S.A.'] << {
-        "name" => "Blue & Cream East Hampton",
-        "address" => "60 The Cir, East Hampton, NY 11937",
-        "phone_number" => "+1 631 329 1392",
-        "anchor" => "www.blueandcream.com",
-        "anchor_href" => "http://www.blueandcream.com/"
+      @stockists['North America'] << {
+        "name" => "New York Sunshine Surf Club",
+        "address" => "28 Nugent St, Southampton, NY",
+        "phone_number" => "+1 631 461 2328",
+        "anchor" => "newyorksunshine.com",
+        "anchor_href" => "http://newyorksunshine.com/"
       }
 
-      @stockists['U.S.A.'] << {
+      @stockists['North America'] << {
         "name" => "Reed Space",
         "address" => "151 Orchard St, New York, NY 10002",
         "phone_number" => "+1 212 253 0588",
@@ -24,7 +24,7 @@ module Spree
         "anchor_href" => "http://thereedspace.com/"
       }
 
-      @stockists['U.S.A.'] << {
+      @stockists['North America'] << {
         "name" => "ODIN NY",
         "address" => "199 Lafayette St, New York, NY 10012",
         "phone_number" => "+1 212 966 0026",
@@ -32,13 +32,13 @@ module Spree
         "anchor_href" => "http://odinnewyork.com/"
       }
 
-      @stockists['U.S.A.'] << {
+      @stockists['North America'] << {
         "name" => "W. South Beach",
         "address" => "2201 Collins Avenue, Miami Beach, Florida, 33139",
         "phone_number" => "+1 305 938 3000"
       }
 
-      @stockists['U.S.A.'] << {
+      @stockists['North America'] << {
         "name" => "Aloha Sunday Supply Company",
         "address" => "3039 University Ave, San Diego, CA 92104, U.S.A.",
         "phone_number" => "+1 619.269.9838",
@@ -46,7 +46,15 @@ module Spree
         "anchor_href" => "http://alohasunday.com/"
       }
 
-      # @stockists['U.S.A.'] << {
+      @stockists['North America'] << {
+        "name" => "Blue & Cream East Hampton",
+        "address" => "60 The Cir, East Hampton, NY 11937",
+        "phone_number" => "+1 631 329 1392",
+        "anchor" => "www.blueandcream.com",
+        "anchor_href" => "http://www.blueandcream.com/"
+      }
+
+      # @stockists['North America'] << {
       #   "name" => "Oakland Surf Club",
       #   "address" => "337 14th St, Oakland, CA 94612",
       #   "phone_number" => "+1 510 465 2770",

@@ -12,7 +12,7 @@ class ProductImages
       event.preventDefault()
       event.stopPropagation()
       @product_images.classList.toggle('zoomed')
-      @sharer.toggleClass('hidden')
+      # @sharer.toggleClass('hidden')
 
     if @product_thumbnails
       @product_thumbnails.addEventListener 'click', @goToSlide

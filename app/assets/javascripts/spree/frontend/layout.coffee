@@ -12,8 +12,6 @@ class Layout
 
     @new_page_flag = true
 
-    @pageYOffset = window.pageYOffset
-
     @header = document.querySelector('header')
     @equivalent_label = document.querySelector('#equivalent')
     @equivalent_check = document.querySelector('#equivalent-check')
@@ -60,7 +58,7 @@ class Layout
     document.documentElement.classList.add('loading')
 
   mediaListener: (mediaQueryList) =>
-    if mediaQueryList.matches
+    if mediaQueryList.matches && !Modernizr.touch
       @parallax()
 
     else
@@ -70,9 +68,7 @@ class Layout
 
 
   parallax: =>
-
     if @pageYOffset != window.pageYOffset
-
       @pageYOffset = window.pageYOffset
 
       transform = Math.max(pageYOffset/2, 0)
@@ -153,4 +149,4 @@ class Layout
 
 
 document.addEventListener "DOMContentLoaded", ->
-  layout = new Layout()
+  new Layout()

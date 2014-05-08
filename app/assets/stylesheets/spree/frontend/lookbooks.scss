@@ -1,18 +1,12 @@
 html#spree-application body.lookbooks #content {
   width: auto;
-
   #lookbook-links {
     display: flex;
     justify-content: center;
-
-    @media #{$tablet-portrait} {
-      margin: 0 0 2em;
-    }
-
     a {
       color: inherit;
       display: block;
-      padding: 1em 2em;
+      padding: 1.56em 3.6em;
       text-decoration: none;
       &:hover {
         text-decoration: line-through;

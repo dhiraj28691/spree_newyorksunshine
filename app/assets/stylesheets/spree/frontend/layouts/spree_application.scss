@@ -18,6 +18,7 @@ body {
 }
 
 header {
+  background: white;
   backface-visibility: hidden;
   letter-spacing: 2.5px;
   margin: auto;
@@ -30,11 +31,17 @@ header {
     top: 0;
     width: 100%;
     z-index: 2;
+
+    html.touch & {
+      position: absolute;
+    }
+
   }
   &.pinned {
     background: hsla(0, 100%, 100%, 0.96);
     transition-duration: $slow;
   }
+
 }
 
 #wrapper {

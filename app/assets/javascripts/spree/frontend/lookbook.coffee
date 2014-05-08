@@ -35,7 +35,7 @@ class Lookbook
     # sync slideshow state
     @updateSlideshow()
 
-    @slideshow_scroll_top = if matchMedia("(min-width: 768px)").matches then 230 else 97
+    @slideshow_scroll_top = if matchMedia("(min-width: 768px)").matches then 200 else 97
 
     left_capture = document.querySelector('.left')
     right_capture = document.querySelector('.right')
@@ -69,7 +69,7 @@ class Lookbook
           event.preventDefault()
 
   setScrollTop: (mediaQueryList) =>
-    @scrollTop = if mediaQueryList.matches == true then 219 else 92
+    @scrollTop = if mediaQueryList.matches then 209 else 92
 
 
   prevSlide: (event) =>
@@ -161,7 +161,7 @@ class Lookbook
 
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(document.body, 248, 400)
+    scrollTo(@scrollTop, 400)
 
   setStage2d: () =>
 

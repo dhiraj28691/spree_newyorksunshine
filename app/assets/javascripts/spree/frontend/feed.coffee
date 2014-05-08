@@ -15,18 +15,20 @@ class Feed
     thumbnail.classList.remove('loading')
 
   cascadeFadeInProducts: (feed_group) =>
-    console.log 'feed_group', feed_group
-    @thumbnails = feed_group.querySelectorAll('a')
+    if feed_group
+      @thumbnails = feed_group.querySelectorAll('a')
 
-    for index, product of @thumbnails
+      for index, product of @thumbnails
 
-      setTimeout ( =>
-        @thumbnails.item(index).classList.remove('loading')
-      ), index * 500,
+        setTimeout ( =>
+          @thumbnails.item(index).classList.remove('loading')
+        ), index * 500,
 
-      setTimeout @fadeInThumbnail, index*100, @thumbnails.item(index)
+        setTimeout @fadeInThumbnail, index*100, @thumbnails.item(index)
 
-    return true
+      return true
+    else
+      return false
 
   justDoIt: (event) =>
     feed_group = @xhr.responseXML.querySelector('.feed .feed-group')

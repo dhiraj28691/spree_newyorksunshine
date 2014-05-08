@@ -31,9 +31,17 @@ module Spree
       }
 
       # Press
+      #0
+      @posts << {
+        "title" => "Sunshine State of Mind",
+        "date" => "05-01-2014",
+        "clickthrough_link" => "http://files.human-nyc.com/newyorksunshine/assets/news-manhattan-magazine-2014-05.pdf",
+        "tags" => ["press"]
+      }
+
       #1
       @posts << {
-        "title" => "Exploding From The Beach To The City: New York Sunshine",
+        "title" => "Exploding From The Beach To The City",
         "date" => "07-24-2012",
         "images" => ["http://files.human-nyc.com/newyorksunshine/assets/news-elitedaily.jpg"],
         "clickthrough_link" => "http://elitedaily.com/money/entrepreneurship/sunshine/",

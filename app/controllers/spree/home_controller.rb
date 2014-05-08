@@ -48,9 +48,9 @@ module Spree
         },
         #### ROW 3 ####
         {
-          :cta_category => "Shop",
-          :cta_predicate => "",
-          :href => "/products",
+          # :cta_category => "Shop",
+          # :cta_predicate => "",
+          # :href => "/products",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/surf1.jpg"
         },
         {
@@ -62,45 +62,45 @@ module Spree
         {
           :cta_category => "Shop",
           :cta_predicate => "Stickball Raglan",
-          :href => "//newyorksunshine.human-nyc.com/products/stickball-raglan",
+          :href => "/products/stickball-raglan",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/Bat.gif"
         },
         #### ROW 4 ####
         {
           :cta_category => "Shop",
           :cta_predicate => "Stickball Raglan",
-          :href => "//newyorksunshine.human-nyc.com/products/stickball-raglan",
+          :href => "/products/stickball-raglan",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/stickball-raglan.jpg"
         },
         {
           :cta_category => "Shop",
           :cta_predicate => "NY Flag Tank",
-          :href => "//newyorksunshine.human-nyc.com/products/ny-flag-tank",
+          :href => "/products/ny-flag-tank",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/ny-flag-tank.jpg"
         },
         {
           :cta_category => "Shop",
           :cta_predicate => "NYS Script Tank",
-          :href => "//newyorksunshine.human-nyc.com/products/nys-script-tank",
+          :href => "/products/nys-script-tank",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/nys-script-tank.jpg"
         },
         #### ROW 5 ####
         {
           :cta_category => "Shop",
           :cta_predicate => "Surf Club Zip Up",
-          :href => "//newyorksunshine.human-nyc.com/products/surf-club-zip-up",
+          :href => "/products/surf-club-zip-up",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/ZipHoodie.gif"
         },
         {
           :cta_category => "Shop",
           :cta_predicate => "Hawaiian Board Short",
-          :href => "//newyorksunshine.human-nyc.com/products/hawaiian-board-short",
+          :href => "/products/hawaiian-board-short",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/hawaiian-board-short.jpg"
         },
         {
-          :cta_category => "Shop",
-          :cta_predicate => "",
-          :href => "//newyorksunshine.human-nyc.com/products",
+          # :cta_category => "Shop",
+          # :cta_predicate => "",
+          # :href => "//newyorksunshine.human-nyc.com/products",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/wave.jpg"
         },
         #### ROW 6 ####
@@ -108,39 +108,39 @@ module Spree
         {
           :cta_category => "Shop",
           :cta_predicate => "Navajo Socks",
-          :href => "//newyorksunshine.human-nyc.com/products/navajo-socks",
+          :href => "/products/navajo-socks",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/navajo-socks.jpg"
         },
         {
           :cta_category => "Shop",
           :cta_predicate => "Hoop Pocket Tee",
-          :href => "//newyorksunshine.human-nyc.com/products/hoop-pocket-tee",
+          :href => "/products/hoop-pocket-tee",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/hoop-pocket-tee-row-6.jpg"
         },
         {
           :cta_category => "Shop",
           :cta_predicate => "New York Flag Tee",
-          :href => "//newyorksunshine.human-nyc.com/products/new-york-flag-tee",
+          :href => "/products/new-york-flag-tee",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/black-new-york-flag-tee.jpg"
         },
         #### ROW 7 ####
         # Row 7: home-8512_b&w.jpg, hawaiian button down, home-3821_b&w.jpg
         {
-          :cta_category => "Shop",
-          :cta_predicate => "",
-          :href => "//newyorksunshine.human-nyc.com/products",
+          # :cta_category => "Shop",
+          # :cta_predicate => "",
+          # :href => "//newyorksunshine.human-nyc.com/products",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/home-8512_b&w.jpg"
         },
         {
           :cta_category => "Shop",
           :cta_predicate => "Island Button Down",
-          :href => "//newyorksunshine.human-nyc.com/products/island-button-down",
+          :href => "/products/island-button-down",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/island-button-down.jpg"
         },
         {
-          :cta_category => "Shop",
-          :cta_predicate => "",
-          :href => "//newyorksunshine.human-nyc.com/products",
+          # :cta_category => "Shop",
+          # :cta_predicate => "",
+          # :href => "//newyorksunshine.human-nyc.com/products",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/home-3821_b&w.jpg"
         },
         #### ROW 8 ####
@@ -148,21 +148,42 @@ module Spree
         {
           :cta_category => "Shop",
           :cta_predicate => "Big Apple Hat",
-          :href => "//newyorksunshine.human-nyc.com/products/big-apple-hat",
+          :href => "/products/big-apple-hat",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/big-apple-hat.jpg"
         },
         {
-          :cta_category => "Shop",
-          :cta_predicate => "",
-          :href => "//newyorksunshine.human-nyc.com/products",
+          # :cta_category => "Shop",
+          # :cta_predicate => "",
+          # :href => "//newyorksunshine.human-nyc.com/products",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/home-3204_b&w.jpg"
         },
         {
           :cta_category => "Shop",
           :cta_predicate => "Big Apple Button Down",
-          :href => "//newyorksunshine.human-nyc.com/products/big-apple-button-down",
+          :href => "/products/big-apple-button-down",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/big-apple-button-down.jpg"
         },
+
+        #### ROW 9 ####
+        {
+          :cta_category => "Shop",
+          :cta_predicate => "Meadow Club Polo",
+          :href => "/products/meadow-club-polo",
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/Tennis.gif"
+        },
+        {
+          :cta_category => "Shop",
+          :cta_predicate => "Big Wave Guns Polo",
+          :href => "/products/big-wave-guns-polo",
+          :image_src => "http://newyorksunshine-production.s3.amazonaws.com/home/nys/newyorksunshine.staging/public/spree/products/68/large/big_wave_guns_black_web_resize2.jpg"
+        },
+        {
+          # :cta_category => "Shop",
+          # :cta_predicate => "Big Apple Button Down",
+          # :href => "/products/big-apple-button-down",
+          :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/home-5047_b&w.jpg"
+        },
+
       ]
 
       if(params.has_key?(:ajax))

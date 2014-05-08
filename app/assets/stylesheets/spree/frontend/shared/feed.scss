@@ -82,7 +82,8 @@
 }
 
 .home-feed-group {
-  a {
+  a.product,
+  span.product {
     height: 500px;
     float: left;
     background-size: contain;

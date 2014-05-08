@@ -22,12 +22,25 @@
 
       <% @full_bleed.each do |item| %>
 
+        <% if item[:href] %>
+
         <a href="<%= item[:href] %>" class="product" style="background-image: url('<%= item[:image_src] %>')">
           <div class="info">
             <div><%= item[:cta_category] %></div>
             <%= item[:cta_predicate] %>
           </div>
         </a>
+
+        <% else %>
+
+        <span class="product" style="background-image: url('<%= item[:image_src] %>')">
+          <div class="info">
+            <div><%= item[:cta_category] %></div>
+            <%= item[:cta_predicate] %>
+          </div>
+        </span>
+
+        <% end %>
 
       <% end %>
     </div>

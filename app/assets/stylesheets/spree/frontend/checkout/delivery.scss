@@ -1,15 +1,28 @@
 .shipment {
   // background: orange;
+  text-align: center;
 
   h4.stock-shipping-method-title {
     text-align: center;
   }
 
+
+  .item-name {
+    text-align: left;
+  }
+
+
   ul.field.radios.shipping-methods {
-    display: flex;
     list-style-type: none;
     padding: 0;
-    text-align: center;
+
+    display: inline-block;
+    text-align: left;
+    @media #{$tablet-portrait} {
+      text-align: center;
+      display: flex;
+    }
+
     li.shipping-method {
       flex: 1 1 auto;
       label {

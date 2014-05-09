@@ -72,7 +72,7 @@ header {
 
 footer {
   letter-spacing: 2.5px;
-  margin: auto;
+  margin: 10em auto 0;
   position: relative;
   transition: opacity $slow;
   @media #{$tablet-portrait} {

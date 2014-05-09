@@ -5,22 +5,33 @@ span.required {
 body.checkout.edit {
   // background: magenta;
   .row[data-hook="checkout_header"] {
-    // background: deepskyblue;
-    display: flex;
-    // align-items: baseline;
-    align-items: center;
+    @media #{$tablet-portrait} {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
     h1 {
       margin: 0 30px 0 0;
+      text-align: center;
+      width: 100%;
+      @media #{$tablet-portrait} {
+        width: auto;
+      }
     }
   }
 
   ol.progress-steps {
     // background: orange;
-    display: flex;
-    flex: 1 1 auto;
-    flex-flow: columns;
     padding: 0;
     list-style-position: inside;
+    width: 100%;
+    @media #{$tablet-portrait} {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: row;
+      flex-direction: column;
+    }
+
     li {
       flex: 1 1 auto;
       padding: 14px 16px;
@@ -54,7 +65,10 @@ body.checkout.edit {
   .shipping_fieldset_wrapper {
     flex: 1 1 auto;
     flex-flow: row wrap;
-    width: 50%;
+    width: 100%;
+    @media #{$tablet-portrait} {
+      width: 50%;
+    }
   }
 
   fieldset {
@@ -108,11 +122,17 @@ body.checkout.edit {
 
 
   .checkout_content {
-    display: flex;
     // & > .columns {
     //   background: oldLace;
     //   flex: 1 1 auto;
     // }
+
+    @media #{$tablet-portrait} {
+      display: flex;
+      // flex-flow: column wrap;
+    }
+
+
     .columns.alpha.twelve {
       @media #{$tablet-portrait} {
         width: 800px;
@@ -125,7 +145,10 @@ body.checkout.edit {
   }
 
   #checkout-summary {
-    width: 218px;
+    width: 100%;
+    @media #{$tablet-portrait} {
+      width: 218px;
+    }
   }
 
 }

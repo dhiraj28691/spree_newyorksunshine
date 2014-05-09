@@ -1,6 +1,8 @@
 fieldset#order_details {
   .steps-data {
-    display: flex;
+    @media #{$tablet-portrait} {
+      display: flex;
+    }
     .columns {
       flex: 1 1 auto;
     }

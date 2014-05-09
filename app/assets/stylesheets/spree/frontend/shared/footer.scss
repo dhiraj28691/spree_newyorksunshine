@@ -21,6 +21,7 @@ nav.footer-nav {
 
 
 	a, span {
+		// background-color: red;
 		color: black;
 		display: inline-block;
 		font-size: 11px;
@@ -87,25 +88,17 @@ nav.footer-nav {
 			margin: 4px;
 			transition-duration: $slow;
 			@extend %sprite;
-			// background-size: 270px 180px;
 		}
 
 		&:before { background-color: white }
 		&:after  { background-color: black; opacity: 0; }
 
 		&:hover {
-
-			&:before {
-
-			}
-
 			&:after {
 				opacity: 1;
 				transition-duration: $fast;
 			}
 		}
-
-
 	}
 }
 

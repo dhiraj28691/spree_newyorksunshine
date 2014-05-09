@@ -17,6 +17,7 @@ th {
   text-align: left;
 }
 td {
+  box-sizing: border-box;
   padding: 0.25em;
 }
 table {
@@ -45,9 +46,11 @@ input[type="text"] {
 input[type="submit"] {
   -webkit-appearance: none;
   background: hsl(231, 23%, 11%);
-  border: none;
+  border: 2px solid hsl(231, 23%, 11%);
   color: white;
   cursor: pointer;
+  display: inline-block;
+  line-height: normal;
   padding: 14px 16px 14px;
   text-decoration: none;
   text-transform: uppercase;
@@ -55,6 +58,7 @@ input[type="submit"] {
   transition-duration: $slow;
   &:hover {
     background: #E5E5E5;
+    border-color: #E5E5E5;
     color: black;
     transition-duration: $fast;
   }

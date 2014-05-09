@@ -46,7 +46,7 @@ header {
 
 #wrapper {
   overflow: hidden;
-  transition: $slow opacity;
+  transition: opacity $slow;
   @media #{$tablet-portrait} {
     min-height: 100%;
     box-sizing: border-box;
@@ -74,6 +74,7 @@ footer {
   letter-spacing: 2.5px;
   margin: auto;
   position: relative;
+  transition: opacity $slow;
   @media #{$tablet-portrait} {
     height: 2.75em;
     margin-top: -2.75em;
@@ -88,6 +89,11 @@ footer {
 }
 
 html.loading #wrapper {
+  opacity: 0;
+  transition-duration: $fast;
+}
+
+html.loading footer {
   opacity: 0;
   transition-duration: $fast;
 }

@@ -2,54 +2,127 @@ body.orders.edit {
 
   thead {
     text-transform: uppercase;
+    display: none;
+    @media #{$tablet-portrait} {
+      display: table-header-group;
+    }
   }
 
   th.cart-item-quantity-header {
     min-width: 100px;
   }
 
+  tr {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    &.line-item {
+      border-top: 1px solid hsl(0, 0%, 90%);
+      @media #{$tablet-portrait} {
+        border-top: none;
+      }
+    }
+
+    @media #{$tablet-portrait} {
+      display: table-row;
+      position: static;
+    }
+  }
+
+
   td {
     text-align: left;
-  }
+    display: inline-block;
+    @media #{$tablet-portrait} {
+      display: table-cell;
+    }
 
-  td.cart-item-image {
-    a {
-      display: block;
-      img {
+    &.cart-item-image {
+      float: left;
+      width: 50%;
+      @media #{$tablet-portrait} {
+        display: table-cell;
+        width: auto;
+      }
+      a {
         display: block;
-        transition-duration: $slow;
-        width: 100%;
-        max-width: 200px;
-      }
-      &:hover img {
-        opacity: 0.50;
-        transition-duration: $fast;
+        img {
+          display: block;
+          transition-duration: $slow;
+          width: 100%;
+          max-width: 200px;
+        }
+        &:hover img {
+          opacity: 0.50;
+          transition-duration: $fast;
+        }
       }
     }
-  }
 
-  td.cart-item-description {
-    text-align: left;
-    a.item-name {
-      color: inherit;
-      display: inline-block;
-      line-height: normal;
-      padding: 14px 0 14px;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
+    &.cart-item-description {
+      text-align: left;
+      a.item-name {
+        color: inherit;
+        display: inline-block;
+        line-height: normal;
+        text-decoration: none;
+        width: calc(50% - 42px);
+        @media #{$tablet-portrait} {
+          padding: 14px 0 14px;
+          width: auto;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
-  }
-  td.cart-item-variant {
-    text-align: left;
-    // vertical-align: bottom;
-  }
-  td.cart-item-quantity {
-    width: 20px;
-  }
-  td.cart-item-delete {
-    text-align: right;
+
+    &.cart-item-variant {
+      text-align: left;
+    }
+    &.cart-item-quantity {
+      @media #{$tablet-portrait} {
+        width: 20px;
+      }
+    }
+
+
+    &.cart-item-description,
+    &.cart-item-variant,
+    &.cart-item-price {
+      display: block;
+    }
+
+    &.cart-item-quantity:before {
+      content: "Quantity: ";
+    }
+
+    &.cart-item-total {
+      display: none;
+      @media #{$tablet-portrait} {
+        display: table-cell;
+      }
+    }
+
+
+    &.cart-item-delete {
+      // background: red;
+      text-align: right;
+      // margin: -10px;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      @media #{$tablet-portrait} {
+        margin: 0;
+        padding: 0.25em;
+        position: static;
+        top: auto;
+        right: auto;
+      }
+    }
+
   }
 
   input.line_item_quantity {
@@ -93,23 +166,45 @@ body.orders.edit {
   }
 
   .cart-buttons {
-    display: flex;
-    .side {
-      flex: 1 1 50%;
-      &.left {
-        text-align: left;
-      }
-      &.right {
-        text-align: right;
+    margin: 0 8px;
+    @media #{$tablet-portrait} {
+      display: flex;
+      margin: 0;
+      .side {
+        flex: 1 1 50%;
+        &.left {
+          text-align: left;
+        }
+        &.right {
+          text-align: right;
+        }
       }
     }
 
+
+
+
     input#order_coupon_code {
-      width: 20em;
+      width: 100%;
+      @media #{$tablet-portrait} {
+        width: 20em;
+      }
+
       &::-webkit-input-placeholder { text-transform: uppercase }
       &:-moz-placeholder { text-transform: uppercase }
       &::-moz-placeholder { text-transform: uppercase }
       &:-ms-input-placeholder { text-transform: uppercase }
+    }
+
+
+    .button {
+      box-sizing: border-box;
+      text-align: center;
+      width: 100%;
+      @media #{$tablet-portrait} {
+        width: auto;
+      }
+
     }
 
   }

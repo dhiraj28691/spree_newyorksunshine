@@ -172,10 +172,11 @@ module Spree
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/Tennis.gif"
         },
         {
-          :cta_category => "Shop",
-          :cta_predicate => "Big Wave Guns Polo",
-          :href => "/products/big-wave-guns-polo",
-          :image_src => "http://newyorksunshine-production.s3.amazonaws.com/home/nys/newyorksunshine.staging/public/spree/products/68/large/big_wave_guns_black_web_resize2.jpg"
+          # :cta_category => "Shop",
+          # :cta_predicate => "Big Wave Guns Polo",
+          # :href => "/products/big-wave-guns-polo",
+          # :image_src => "http://newyorksunshine-production.s3.amazonaws.com/home/nys/newyorksunshine.staging/public/spree/products/68/large/big_wave_guns_black_web_resize2.jpg"
+          :image_src => "http://newyorksunshine-production.s3.amazonaws.com/home/2014/hawaiian-basketball.jpg"
         },
         {
           # :cta_category => "Shop",

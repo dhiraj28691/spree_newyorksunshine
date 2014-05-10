@@ -36,10 +36,10 @@ label#equivalent {
   position: absolute;
   z-index: 9999;
   left: 0;
-  width: 52px;
+  width: 42px;
   height: 42px;
   @extend %sprite;
-  background-position: -123x -126px;
+  background-position: -126px -126px;
   @media #{$tablet-portrait} { display: none }
 }
 

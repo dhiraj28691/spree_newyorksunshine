@@ -8,7 +8,7 @@ module Spree
 
     def index
       @searcher = build_searcher(params)
-      @products = @searcher.retrieve_products
+      @products = @searcher.retrieve_products.order('created_at desc')
       # @products = @searcher.retrieve_products.sort_by(&:available_on)
       @taxonomies = Spree::Taxonomy.includes(root: :children)
 

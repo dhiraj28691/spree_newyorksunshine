@@ -23,8 +23,8 @@ module Spree
         },
         {
           :cta_category => "Shop",
-          :cta_predicate => "Hoop Pocket Tee",
-          :href => "/products/hoop-pocket-tee",
+          :cta_predicate => "Hoop Dreams Tee",
+          :href => "/products/hoop-dreams-tee",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/hoops.jpg"
         },
         #### ROW 2 ####

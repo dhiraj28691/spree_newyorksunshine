@@ -29,8 +29,8 @@ class ProductImages
 
 
   goToSlide: (event) =>
-    if matchMedia("(min-width: 768px)").matches
-      event.preventDefault()
+    # if matchMedia("(min-width: 768px)").matches
+    event.preventDefault()
 
     if event.target.classList.contains('thumbnail')
 

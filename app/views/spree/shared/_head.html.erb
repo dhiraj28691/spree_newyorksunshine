@@ -3,6 +3,14 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 <meta name="viewport" content="initial-scale=1, minimal-ui">
 <%== meta_data_tags %>
+<% if @product.present? %>
+<meta property="og:title"       content="<%= accurate_title %>" itemprop="name" />
+<meta property="og:type"        content="product"/>
+<meta property="og:url"         content="<%= product_url(@product) %>"/>
+<meta property="og:image"       content="<%= @product.images.first.attachment.url %>" itemprop="image" />
+<meta property="og:site_name"   content="New York Sunshine" itemprop="publisher" />
+<!-- <meta property="og:description" content="" /> -->
+<% end %>
 <%= canonical_tag %>
 <%= favicon_link_tag image_path('favicon.ico') %>
 <%= stylesheet_link_tag 'spree/frontend/all', :media => 'screen' %>

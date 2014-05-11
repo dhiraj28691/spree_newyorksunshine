@@ -18,7 +18,7 @@
           <a href="<%= seo_url(taxon) %>"><%= taxon.name %></a>
         <% end %>
         &nbsp;>&nbsp;
-        <a class="strike" href="seo_url(@product)"><%= accurate_title %></a>
+        <a class="strike" href="<%= product_path(@product) %>"><%= accurate_title %></a>
       </div>
 
       <h1 class="product-title" itemprop="name"><%= accurate_title %></h1>

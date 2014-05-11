@@ -90,6 +90,10 @@
     background-repeat: no-repeat;
     background-position: center;
 
+    @media all and (max-width: 381px) {
+      background-size: cover;
+    }
+
     @media all and (max-width: 1024px) and (min-width: 768px) {
       height: 336px;
     }

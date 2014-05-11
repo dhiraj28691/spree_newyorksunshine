@@ -43,9 +43,13 @@ body.news {
   }
 
   .body-text {
-    @media #{$desktop} {
-      column-count: 2;
-      column-gap: 64px;
+    width: 48%;
+    &.two-columns {
+      width: 100%;
+      @media #{$desktop} {
+        column-count: 2;
+        column-gap: 64px;
+      }
     }
 
     @media #{$widescreen} {

@@ -5,10 +5,10 @@
       <%= form.fields_for :shipments do |ship_form| %>
 
         <div class="shipment">
-          <h3 class="stock-location" data-hook="stock-location">
+          <h4 class="stock-location" data-hook="stock-location">
             <%= Spree.t(:package_from) %>
             <strong class="stock-location-name" data-hook="stock-location-name"><%= ship_form.object.stock_location.name %></strong>
-          </h3>
+          </h4>
 
           <table class="stock-contents" data-hook="stock-contents">
             <colgroup>

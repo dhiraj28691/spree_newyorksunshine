@@ -28,8 +28,8 @@ body.checkout.edit {
     @media #{$tablet-portrait} {
       display: flex;
       flex: 1 1 auto;
-      flex-direction: row;
-      flex-direction: column;
+      flex-direction: row nowrap;
+      // flex-direction: column;
     }
 
     li {

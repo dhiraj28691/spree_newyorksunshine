@@ -37,12 +37,7 @@ body.about {
     box-sizing: border-box;
     text-align: left;
     max-width: 480px;
-    // text-align: justify;
-    // word-break: break-all;
-    // hyphens: auto;
     img {
-      // float: left;
-      // width: 57%%;
       margin: 0 32px 32px 32px;
       width: calc(100% - 64px);
       @media #{$tablet-portrait} {
@@ -55,14 +50,6 @@ body.about {
       }
     }
 
-    p {
-      // margin: 1em 32px;
-
-      // @media #{$widescreen} {
-      //   margin-right: 64px;
-      // }
-    }
-
     p + p {
       margin-top: 2em;
     }
@@ -73,19 +60,5 @@ body.about {
     color: white;
   }
 
-  // a.email:before {
-  //   background-position: 0 -30px;
-  // }
-
-  // a.facebook:before {
-  //   background-position: -30px -30px;
-  // }
-  // a.instagram:before {
-  //   background-position: -60px -30px;
-  // }
-  // a.twitter:before {
-  //   background-position: -90px -30px;
-  // }
-
-
 }
+

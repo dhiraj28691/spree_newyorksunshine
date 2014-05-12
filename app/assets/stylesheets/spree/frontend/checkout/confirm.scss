@@ -20,7 +20,7 @@ table#line-items {
   tfoot {
     text-align: right;
     td:last-child {
-      background: orange;
+      // background: orange;
     }
 
     td {
@@ -29,7 +29,7 @@ table#line-items {
 
     &#tax-adjustments td:last-child,
     &#shipment-total td:last-child {
-      background: pink;
+      // background: pink;
       &:before {
         content: "+ ";
       }

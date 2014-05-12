@@ -186,8 +186,7 @@ module Spree
       if(params.has_key?(:ajax))
         render :layout => false
       end
-
     end
-
   end
 end
+

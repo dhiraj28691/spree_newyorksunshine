@@ -3,7 +3,8 @@
 <% @posts.each do |post| %>
   <article class="post">
 
-    <h4><a href="/post/"><%= raw post['title'] %></a></h4>
+    <!-- <h4><a href="/post/"><%= raw post['title'] %></a></h4> -->
+    <h4><%= raw post['title'] %></h4>
     <p class="date"><%= post['date'] %></p>
 
     <div class="media">

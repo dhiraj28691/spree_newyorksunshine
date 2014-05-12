@@ -62,7 +62,7 @@
     }
     &:hover {
       opacity: 0.50;
-      transition: transform $slow, opacity $fast;
+      transition: transform $fast, opacity $fast;
     }
   }
 
@@ -76,7 +76,7 @@
     }
     #zoom {
       transform: rotate(225deg);
-      transition-duration: $slow;
+      transition-duration: $fast;
     }
     #product-thumbnails {
       @media #{$tablet-portrait} { width: 768px }

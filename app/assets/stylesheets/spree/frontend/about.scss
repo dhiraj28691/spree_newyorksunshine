@@ -9,7 +9,7 @@ body.about {
   }
 
   label#equivalent {
-    background-position: -179px -126px;
+    background-position: -168px -126px;
   }
 
   h1#logo a {
@@ -24,6 +24,7 @@ body.about {
   }
 
   #wrapper {
+    margin: 8px;
     @media #{$tablet-portrait} {
       background: url('//files.human-nyc.com/newyorksunshine/assets/about.jpg') center top;
     }
@@ -36,6 +37,9 @@ body.about {
     box-sizing: border-box;
     text-align: left;
     max-width: 480px;
+    // text-align: justify;
+    // word-break: break-all;
+    // hyphens: auto;
     img {
       // float: left;
       // width: 57%%;

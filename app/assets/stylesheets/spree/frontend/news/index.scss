@@ -2,6 +2,7 @@ body.news {
 
   article.post {
     margin: 64px 32px;
+    position: relative;
     &:first-child {
       margin-top: 0;
     }

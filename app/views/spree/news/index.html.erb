@@ -3,6 +3,9 @@
 <% @posts.each do |post| %>
   <article class="post">
 
+    <h4><a href="/post/"><%= raw post['title'] %></a></h4>
+    <p class="date"><%= post['date'] %></p>
+
     <div class="media">
 
 
@@ -36,10 +39,6 @@
     </div>
 
     <div class="text">
-
-      <h4><a href="/post/"><%= raw post['title'] %></a></h4>
-
-      <p class="date"><%= post['date'] %></p>
       <%
         body_text_classes = ""
         body_text_classes = body_text_classes + " two-columns" if post['body_text'].split('').count > 350 rescue nil

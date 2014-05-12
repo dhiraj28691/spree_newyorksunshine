@@ -119,15 +119,6 @@
   align-content: flex-start;
   transition-duration: $fast;
   width: 100%;
-  // @media #{$tablet-portrait} {
-  //   width: 768px;
-  // }
-  // @media #{$desktop} {
-  //   width: 1024px;
-  // }
-  // @media #{$widescreen} {
-  //   width: 1280px;
-  // }
   a {
     box-sizing: border-box;
     display: inline-block;
@@ -153,7 +144,6 @@
 
 table#product-properties {
   border-collapse: collapse;
-  // display: none;
   transition-property: background, color;
   transition-duration: $slow;
   tr {
@@ -184,15 +174,17 @@ table#product-properties {
   label {
     box-sizing: border-box;
     cursor: pointer;
-    flex: 1 1 50%;
+    // flex: 1 1 50%;
     margin: 1em 0;
-    padding: 0.25em 0.25em 0.25em 0x;
+    padding: 0.25em 0.25em 0.25em 0;
+    width: 50%;
   }
   select,
   input[type="text"],
   input[type="number"],
   button {
-    flex: 1 1 50%;
+    // flex: 1 1 50%;
+    width: 50%;
   }
 
   button {
@@ -204,6 +196,13 @@ table#product-properties {
     text-transform: uppercase;
     transition-duration: $slow;
     transition-property: background-color, border-color, color;
+
+    cursor: pointer;
+    -webkit-appearance: none;
+    flex: 1 1 auto;
+    width: 100%;
+
+
     &:hover {
       background: #E5E5E5;
       border-color: #E5E5E5;
@@ -211,13 +210,6 @@ table#product-properties {
       transition-duration: $fast;
     }
 
-  }
-
-  button {
-    cursor: pointer;
-    -webkit-appearance: none;
-    flex: 1 1 auto;
-    width: 100%;
   }
 }
 

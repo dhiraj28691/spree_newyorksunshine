@@ -10,7 +10,7 @@ Spree::Core::Engine.routes.draw do
   get 'news', :to => 'news#index'
 
   # This needs to change
-  get 'news/tagged/:tag', :to => 'news#index'
+  get 'tagged/:tag', :to => 'news#tagged'
 
   get 'stockists', :to => 'stockists#index'
 

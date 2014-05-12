@@ -102,7 +102,7 @@ span.product {
   }
 
   @media #{$desktop} {
-    width: calc(100%/3);
+    width: 33.33%;
   }
 
 }

@@ -1,0 +1,65 @@
+
+
+<% @posts.each do |post| %>
+  <article class="post">
+
+    <h4><a href="/post/"><%= raw post['title'] %></a></h4>
+    <p class="date"><%= post['date'] %></p>
+
+    <div class="media">
+
+
+
+      <% if post['images'] && post['images'].length > 1 %>
+
+        <div class="slideshow">
+          <div class="stage">
+            <% post['images'].each_with_index do |x, index| %>
+              <% if index == 0 %>
+                <%= image_tag x, :class => "slide" %>
+              <% else %>
+                <span class="slide" style="background-image: url(<%= x %>)"></span>
+              <% end %>
+
+            <% end %>
+          </div>
+        </div>
+
+      <% elsif post['images'] && post['images'].length == 1 %>
+        <%= image_tag post['images'][0], :class => "mike" %>
+      <% end %>
+
+      <div class="embed">
+        <%= raw post['embed_code'] %>
+      </div>
+
+
+
+
+    </div>
+
+    <div class="text">
+      <%
+        body_text_classes = ""
+        body_text_classes = body_text_classes + " two-columns" if post['body_text'].split('').count > 350 rescue nil
+      %>
+      <div class="body-text<%= body_text_classes %>"><%= raw post['body_text'] %></div>
+
+      <% if post['tags'] %>
+        <p class="tags">tagged under:
+          <% post['tags'].each do |tag| %>
+            <%= link_to tag, "/tagged/#{tag}" %>
+          <% end %>
+        </p>
+      <% end %>
+
+      <% if post['clickthrough_link'] %>
+        <p class="clickthrough-link"><%= link_to 'read more', post['clickthrough_link'], {:target => "_blank"} %></p>
+      <% end %>
+
+    </div>
+
+
+  </article>
+<% end %>
+

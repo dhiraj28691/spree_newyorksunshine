@@ -2,6 +2,7 @@
 <title><%= title %></title>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 <meta name="viewport" content="initial-scale=1, minimal-ui">
+
 <%== meta_data_tags %>
 <% if @product.present? %>
 <meta property="og:title"       content="<%= accurate_title %>" itemprop="name" />
@@ -23,7 +24,13 @@
 <!-- <meta property="og:description" content="" /> -->
 <% end %>
 <%= canonical_tag %>
-<%= favicon_link_tag image_path('favicon.ico') %>
+<%= favicon_link_tag image_path('touch-icon.ico') %>
+<link rel="apple-touch-icon" href="<%= image_path('touch-icon.png') %>">
+
+
+<meta name="application-name" content="New York Sunshine">
+
+
 <%= stylesheet_link_tag 'spree/frontend/all', :media => 'screen' %>
 <%= javascript_include_tag 'spree/frontend/all' %>
 <%= csrf_meta_tags %>

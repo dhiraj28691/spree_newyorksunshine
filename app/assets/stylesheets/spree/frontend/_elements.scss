@@ -76,7 +76,8 @@ select {
   -webkit-appearance: none;
   border-radius: 0;
   display: inline-block;
-  flex: 1 1 50%;
+  // flex: 1 1 50%;
+  width: 50%;
   line-height: normal;
   margin: 0.25em 0;
   padding: 14px 16px 14px;

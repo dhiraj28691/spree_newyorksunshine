@@ -1,6 +1,6 @@
 <div data-hook="homepage_products">
   <% cache(cache_key_for_products) do %>
-    <%= render :partial => 'spree/shared/feed', :locals => { :products => @products } %>
+    <%= render :partial => 'spree/shared/feed', :locals => { :products => @full_bleed } %>
   <% end %>
 </div>
 

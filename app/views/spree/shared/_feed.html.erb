@@ -15,68 +15,35 @@
   <% end %>
 <% end %>
 
-<% if @full_bleed.present? %>
-  <div class="feed">
+<div class="feed">
 
-    <div class="home-feed-group">
+  <div class="feed-group">
 
-      <% @full_bleed.each do |item| %>
+    <% @full_bleed.each do |item| %>
 
-        <% if item[:href] %>
+      <% if item[:href] %>
 
-        <a href="<%= item[:href] %>" class="product" style="background-image: url('<%= item[:image_src] %>')">
-          <div class="info">
-            <div><%= item[:cta_category] %></div>
-            <%= item[:cta_predicate] %>
-          </div>
-        </a>
+      <a href="<%= item[:href] %>" class="product">
+        <%= image_tag(item[:image_src]) %>
+        <div class="info">
+          <div><%= item[:cta_category] %></div>
+          <%= item[:cta_predicate] %>
+        </div>
+      </a>
 
-        <% else %>
+      <% else %>
 
-        <span class="product" style="background-image: url('<%= item[:image_src] %>')">
-          <div class="info">
-            <div><%= item[:cta_category] %></div>
-            <%= item[:cta_predicate] %>
-          </div>
-        </span>
-
-        <% end %>
+      <span class="product">
+        <%= image_tag(item[:image_src]) %>
+        <div class="info">
+          <div><%= item[:cta_category] %></div>
+          <%= item[:cta_predicate] %>
+        </div>
+      </span>
 
       <% end %>
-    </div>
 
+    <% end %>
   </div>
 
-<% else %>
-
-  <div class="feed">
-    <% if products.empty? %>
-      <%= Spree.t(:no_products_found) %>
-    <% elsif params.key?(:keywords) %>
-      <h4 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h4>
-    <% end %>
-
-    <% if products.any? %>
-      <div class="feed-group inline product-listing" data-hook>
-        <% products.each do |product| %>
-          <%= link_to(product, {:id => "product_" + product.id.to_s, :class => "product not-loading" }) do %>
-            <%= product_image(product, :itemprop => "image", :class => "product-image") %>
-            <div class="info">
-              <div>SHOP</div>
-              <%= product.name %>
-            </div>
-          <% end %>
-        <% end %>
-        <% reset_cycle("classes") %>
-      </div>
-    <% end %>
-
-    <div class="clearfix"></div>
-
-    <% if paginated_products.respond_to?(:num_pages) %>
-        <%= paginate paginated_products %>
-    <% end %>
-
-  </div>
-
-<% end %>
+</div>

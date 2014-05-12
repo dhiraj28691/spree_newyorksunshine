@@ -16,27 +16,32 @@
 <% end %>
 
 
-<% if products.empty? %>
-  <%= Spree.t(:no_products_found) %>
-<% elsif params.key?(:keywords) %>
-  <h4 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h4>
-<% end %>
+<div class="feed">
+  <% if products.empty? %>
+    <%= Spree.t(:no_products_found) %>
+  <% elsif params.key?(:keywords) %>
+    <h4 class="search-results-title"><%= Spree.t(:search_results, :keywords => h(params[:keywords])) %></h4>
+  <% end %>
 
-<% if products.any? %>
-  <div class="feed" class="inline product-listing" data-hook>
-    <% products.each do |product| %>
-      <%= link_to(product, {:id => "product_" + product.id.to_s, :class => "product", "data-hook" => "products_list_item", "itemscope" => "", :itemtype => "http://schema.org/Product" }) do %>
-        <%= small_image(product, :itemprop => "image", :class => "product-image") %>
-        <div class="info">
-          <span class="name" href="/products/ruby-on-rails-bag" itemprop="name" title="Ruby on Rails Bag"><%= product.name %></span>
-          <span class="price selling" itemprop="price"><%= display_price(product) %></span>
+  <% if products.any? %>
+    <div class="feed-group inline product-listing" data-hook>
+      <% products.each do |product| %>
+        <%= link_to(product, {:id => "product_" + product.id.to_s, :class => "product not-loading" }) do %>
+          <%= product_image(product, :itemprop => "image", :class => "product-image") %>
+          <div class="info">
+            <div>SHOP</div>
+            <%= product.name %>
           </div>
+        <% end %>
       <% end %>
-    <% end %>
-    <% reset_cycle("classes") %>
-  </div>
-<% end %>
+      <% reset_cycle("classes") %>
+    </div>
+  <% end %>
 
-<% if paginated_products.respond_to?(:num_pages) %>
-  <%= paginate paginated_products %>
-<% end %>
+  <div class="clearfix"></div>
+
+  <% if paginated_products.respond_to?(:num_pages) %>
+      <%= paginate paginated_products %>
+  <% end %>
+
+</div>

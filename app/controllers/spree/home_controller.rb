@@ -179,7 +179,7 @@ module Spree
         },
         {
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/home-5047_b&w.jpg"
-        },
+        }
 
       ]
 

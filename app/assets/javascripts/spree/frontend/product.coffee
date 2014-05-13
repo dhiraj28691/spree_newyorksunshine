@@ -5,6 +5,7 @@ class ProductImages
     @product_thumbnails = @product_images.querySelector('#product-thumbnails')
     @zoom = @main_image_wrapper.querySelector('#zoom')
     @sharer = $('#social.product')
+    @current_slide_index = 0
 
     @slideshow_length = @main_image_wrapper.querySelectorAll('img').length
 
@@ -13,6 +14,8 @@ class ProductImages
       event.stopPropagation()
       @product_images.classList.toggle('zoomed')
       # @sharer.toggleClass('hidden')
+
+    @init()
 
     if @product_thumbnails
       @product_thumbnails.addEventListener 'click', @goToSlide
@@ -53,6 +56,8 @@ class ProductImages
 
     @main_image_wrapper.children.item(@current_slide_index).classList.add('current')
 
+  init: () =>
+    @main_image_wrapper.children.item(0).classList.add('current')
 
 document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#product-images') != null)

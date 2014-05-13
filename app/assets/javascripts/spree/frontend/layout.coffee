@@ -29,6 +29,10 @@ class Layout
     matchMedia("(min-width: 768px)").addListener @mediaListener
     @mediaListener(matchMedia("(min-width: 768px)"))
 
+    # For safari when swiping back
+    window.addEventListener 'pageshow', (event)=>
+      if (event.persisted) then @fadeInContent()
+
 
     document.documentElement.addEventListener 'click', (event)->
       # @new_page_flag is true if mavigating to new page so content fades out

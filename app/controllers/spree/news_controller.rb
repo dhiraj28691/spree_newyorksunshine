@@ -62,6 +62,7 @@ module Spree
       posts << {
         "title" => "New York Sunshine Works With Illustrator Will Bryant For Surf-Inspired Clothes",
         "date" => "07-13-2012",
+        "images" => ["//newyorksunshine-production.s3.amazonaws.com/news/will-bryant.jpg"],
         "clickthrough_link" => "http://www.complex.com/style/2012/07/new-york-sunshine-brings-the-summer-fun-gear-featuring-work-from-illustrator-will-bryant",
         "tags" => ["press"]
       }

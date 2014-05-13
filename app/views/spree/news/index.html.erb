@@ -47,7 +47,7 @@
       <div class="body-text<%= body_text_classes %>"><%= raw post['body_text'] %></div>
 
       <% if post['tags'] %>
-        <p class="tags">tagged under:
+        <p class="tags">tags:
           <% post['tags'].each do |tag| %>
             <%= link_to tag, "/tagged/#{tag}" %>
           <% end %>

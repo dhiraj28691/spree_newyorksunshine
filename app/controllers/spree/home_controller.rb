@@ -171,12 +171,12 @@ module Spree
           :href => "/products/meadow-club-polo",
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/Tennis.gif"
         },
-        {
-          :cta_category => "Shop",
-          :cta_predicate => "Hawaiian Basketball",
-          :href => "/products/hawaiian-basketball",
-          :image_src => "http://newyorksunshine-production.s3.amazonaws.com/home/2014/hawaiian-basketball.jpg"
-        },
+        # {
+        #   :cta_category => "Shop",
+        #   :cta_predicate => "Hawaiian Basketball",
+        #   :href => "/products/hawaiian-basketball",
+        #   :image_src => "http://newyorksunshine-production.s3.amazonaws.com/home/2014/hawaiian-basketball.jpg"
+        # },
         {
           :image_src => "//newyorksunshine-production.s3.amazonaws.com/home/2014/home-5047_b&w.jpg"
         }

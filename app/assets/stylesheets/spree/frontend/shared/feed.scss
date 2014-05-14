@@ -1,23 +1,19 @@
 .feed-group {
-  a {
-    color: white;
-    display: block;
-    width: 100%;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
 
-    &:after {
-      background: transparent;
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      transition-duration: $slow;
-    }
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-items: stretch;
+
+  html.no-flexbox & {
+    display: block;
+    font-size: 0;
+  }
+
+
+
+  a {
 
     img {
       background: white;
@@ -25,19 +21,6 @@
       width: 100%;
     }
 
-    .info {
-      font-size: 13px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      color: transparent;
-      text-align: center;
-      width: 100%;
-      transition-duration: $slow;
-      height: 3em;
-      z-index: 1;
-    }
 
     &.loading {
       // pointer-events: none;
@@ -66,26 +49,11 @@
   }
 }
 
-.feed-group {
-  display: flex;
-  flex-wrap: wrap;
-  flex-flow: row wrap;
-  align-items: center;
-  align-content: stretch;
-
-  html.no-flexbox & {
-    display: block;
-    font-size: 0;
-  }
-
-}
-
 a.product,
 span.product {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  display: inline-block;
   vertical-align: middle;
   width: 100%;
 
@@ -94,8 +62,27 @@ span.product {
   }
 
   @media #{$desktop} {
-    width: 33.33%;
+    width: calc(100%/3);
   }
+
+  box-sizing: border-box;
+  color: white;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  &:after {
+    background: transparent;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-duration: $slow;
+  }
+
 
 
   img {
@@ -105,6 +92,22 @@ span.product {
       border: 32px solid white;
       box-sizing: border-box;
     }
+  }
+
+
+  .info {
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    // -webkit-transform: translateY(-50%);
+    color: transparent;
+    text-align: center;
+    width: 100%;
+    transition-duration: $slow;
+    height: 3em;
+    z-index: 1;
   }
 
 }

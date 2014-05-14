@@ -1,6 +1,4 @@
 html#spree-application {
-// background: url(http://files.human-nyc.com/newyorksunshine/home.jpg) center bottom;
-// background: url( http://files.human-nyc.com/newyorksunshine/pdp.jpg) center top;
   @media #{$tablet-portrait} {
     height: 100%;
   }
@@ -56,7 +54,6 @@ header {
 
 #content {
   margin: auto;
-  // text-align: center;
 
   @media #{$tablet-portrait} {
     margin: 72px auto;

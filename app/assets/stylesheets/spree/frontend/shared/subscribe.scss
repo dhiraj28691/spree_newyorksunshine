@@ -1,5 +1,4 @@
 #subscribe-wrapper {
-  // display: none;
   overflow-y: scroll;
   position: fixed;
   top: 0;
@@ -31,15 +30,18 @@ form#subscribe-form {
   background: hsla(225, 27%, 6%, 0.85);
   box-sizing: border-box;
   margin: 90px auto;
-  padding: 90px;
+  padding: 2em;
   position: relative;
-  // transform: translateY(-522px);
-  // transform: translateY(-200%);
   opacity: 0;
   transform: translateY(-1em);
   transition-property: opacity, transform;
   transition-duration:  $fast;
-  width: 580px;
+
+  @media #{$tablet-portrait} {
+    margin: 90px auto;
+    max-width: 580px;
+    padding: 90px;
+  }
 
   p.logo-white {
     margin: 2em 0 3em;

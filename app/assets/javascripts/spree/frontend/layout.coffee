@@ -52,6 +52,7 @@ class Layout
 
     @subscribe_form.addEventListener 'submit', @submitForm
 
+    @subscribe_wrapper.addEventListener 'click', @hideForm
 
   fadeInContent: =>
 
@@ -98,12 +99,12 @@ class Layout
     @subscribe_wrapper.classList.add('active')
 
   hideForm: (event) =>
-    event.preventDefault()
-    console.log('hide')
-    @subscribe_wrapper.classList.remove('active')
+    # If you either the close button or outside the subscribe form it will close
+    if (event.target == @close_button || event.target == @subscribe_wrapper)
+      event.preventDefault()
+      @subscribe_wrapper.classList.remove('active')
 
   justDoIt: (event) =>
-    # console.log event.currentTarget.response.errors
 
     errors = event.currentTarget.response.errors
     error_messages = []
@@ -154,3 +155,4 @@ class Layout
 
 document.addEventListener "DOMContentLoaded", ->
   new Layout()
+

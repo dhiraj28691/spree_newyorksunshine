@@ -8,9 +8,7 @@ module Spree
       @products = @searcher.retrieve_products
       @taxonomies = Spree::Taxonomy.includes(root: :children)
 
-      @full_bleed = []
-
-      @full_bleeds = [
+      @full_bleed = [
         {
           :cta_category => "Shop",
           :cta_predicate => "Hoop Pocket Tee",

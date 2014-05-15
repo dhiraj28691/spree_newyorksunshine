@@ -5,24 +5,28 @@
 
 <%== meta_data_tags %>
 <% if @product.present? %>
-<meta property="og:title"       content="<%= accurate_title %>" itemprop="name" />
-<meta property="og:type"        content="product"/>
-<meta property="og:url"         content="<%= product_url(@product) %>"/>
+  <meta property="og:title"       content="<%= accurate_title %>" itemprop="name">
+  <meta property="og:type"        content="product">
+  <meta property="og:url"         content="<%= product_url(@product) %>">
 
-<% if (@product.images + @product.variant_images).uniq.size > 1 %>
-
-  <meta property="og:image"       content="<%= @product.images.first.attachment.url %>" itemprop="image" />
-
-<% else %>
-  <% if defined?(image) && image %>
-    <meta property="og:image"   content="<%= image.attachment.url(:product) %>" itemprop="image" />
+  <% if (@product.images + @product.variant_images).uniq.size > 1 %>
+    <meta property="og:image"       content="<%= @product.images.first.attachment.url %>" itemprop="image">
+  <% else %>
+    <% if defined?(image) && image %>
+      <meta property="og:image"   content="<%= image.attachment.url(:product) %>" itemprop="image">
+    <% end %>
   <% end %>
-<% end %>
 
 
-<meta property="og:site_name"   content="New York Sunshine" itemprop="publisher" />
-<!-- <meta property="og:description" content="" /> -->
+  <meta property="og:site_name"   content="New York Sunshine" itemprop="publisher">
+  <!-- <meta property="og:description" content="" /> -->
+<% else %>
+  <meta property="og:title"       content="<%= title %>" itemprop="name">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="http://newyorksunshine.com/">
+  <meta property="og:image"       content="<%= image_path('touch-icon.png') %>" itemprop="image">
 <% end %>
+
 <%= canonical_tag %>
 <%= favicon_link_tag image_path('touch-icon.ico') %>
 <link rel="apple-touch-icon" href="<%= image_path('touch-icon.png') %>">

@@ -1,13 +1,12 @@
 nav.footer-nav {
-	text-transform: uppercase;
-	padding: 0;
 	display: flex;
 	flex-direction: column;
 	margin: 0 8px;
+	text-align: center;
+	text-transform: uppercase;
 	@media #{$tablet-portrait} {
 		flex-direction: row;
 		margin: 0 32px;
-		text-align: center;
 	}
 
 	@media #{$desktop} {
@@ -18,7 +17,12 @@ nav.footer-nav {
 		margin: 0 64px;
 	}
 
-
+	span {
+		order: 1;
+		@media #{$tablet-portrait} {
+			order: initial;
+		}
+	}
 
 	a, span {
 		// background-color: red;

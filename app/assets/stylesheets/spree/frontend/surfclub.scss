@@ -19,4 +19,39 @@ body.surfclub {
     max-width: 720px;
     margin: 15px auto;
   }
+  #content {
+  }
+  #content img {
+  }
+
+  .photos {
+    font-size: 0;
+    // display: flex;
+    // flex-wrap: wrap;
+    align-items: flex-start;
+    column-count: 2;
+    column-gap: 32px;
+    margin: 0 32px;
+
+    @media #{$tablet-portrait} {
+    }
+    @media #{$desktop} {
+      // column-count: 3;
+      column-gap: 64px;
+      margin: 0 32px;
+    }
+  }
+
+  img.photo {
+    // border: 16px solid white;
+    box-sizing: border-box;
+    display: inline-block;
+    // width: calc(100%/3);
+    width: 100%;
+    margin: 16px 0;
+    @media #{$desktop} {
+      border-width: 32px;
+      margin: 32px 0;
+    }
+  }
 }

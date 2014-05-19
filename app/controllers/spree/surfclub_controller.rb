@@ -9,7 +9,6 @@ module Spree
 
       @photos = []
       @photos << {"img_src" => "//newyorksunshine-production.s3.amazonaws.com/surf-club/5I6A0234.jpg"}
-      @photos << {"img_src" => "//newyorksunshine-production.s3.amazonaws.com/surf-club/5I6A0234.jpg"}
       @photos << {"img_src" => "//newyorksunshine-production.s3.amazonaws.com/surf-club/5I6A0237.jpg"}
       @photos << {"img_src" => "//newyorksunshine-production.s3.amazonaws.com/surf-club/5I6A0239.jpg"}
       @photos << {"img_src" => "//newyorksunshine-production.s3.amazonaws.com/surf-club/IMG_9510.jpg"}

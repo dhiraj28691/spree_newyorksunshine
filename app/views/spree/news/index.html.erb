@@ -27,7 +27,17 @@
         </div>
 
       <% elsif post['images'] && post['images'].length == 1 %>
-        <%= image_tag post['images'][0], :class => "mike" %>
+
+        <% if post['clickthrough_link'] %>
+
+        <%= link_to post['clickthrough_link'], {:target => "_blank"} do %>
+          <%= image_tag post['images'][0], :class => "mike" %>
+        <% end %>
+
+        <% else %>
+          <%= image_tag post['images'][0], :class => "mike" %>
+        <% end %>
+
       <% end %>
 
       <div class="embed">

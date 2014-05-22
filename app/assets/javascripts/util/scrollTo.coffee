@@ -2,6 +2,7 @@
 "use strict"
 
 window.scrollTo = (scrollTop, duration)->
+  scrollTop = scrollTop || 0
   console.log scrollTop, duration
   start = Math.max(document.documentElement.scrollTop, document.body.scrollTop)
   change = scrollTop - start

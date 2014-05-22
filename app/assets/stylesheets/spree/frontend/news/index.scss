@@ -47,9 +47,12 @@ body.news {
   }
 
   .body-text {
-    width: 48%;
+    box-sizing: border-box;
+    padding-right: 32px;
+    width: 50%;
     &.two-columns {
-      width: 100%;
+      padding-right: 0;
+      width: auto;
       @media #{$desktop} {
         column-count: 2;
         column-gap: 64px;

@@ -69,7 +69,14 @@ class Lookbook
           event.preventDefault()
 
   setScrollTop: (mediaQueryList) =>
-    @scrollTop = if mediaQueryList.matches then 209 else 92
+    if mediaQueryList.matches
+      if (Modernizr.touch)
+        @scrollTop = 309
+      else
+        @scrollTop = 209
+
+    else
+      @scrollTop = 92
 
 
   prevSlide: (event) =>

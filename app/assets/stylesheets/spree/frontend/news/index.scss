@@ -69,6 +69,12 @@ body.news {
       margin: 0 0 1em;
     }
   }
+  p.clickthrough-link:first-child {
+    margin: 0;
+  }
+  p.clickthrough-link a {
+    color: inherit;
+  }
 
   p.tags {
     color: $gray;

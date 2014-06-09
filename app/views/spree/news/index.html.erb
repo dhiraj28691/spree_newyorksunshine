@@ -50,11 +50,13 @@
     </div>
 
     <div class="text">
-      <%
-        body_text_classes = ""
-        body_text_classes = body_text_classes + " two-columns" if post['body_text'].split('').count > 350 rescue nil
-      %>
-      <div class="body-text<%= body_text_classes %>"><%= raw post['body_text'] %></div>
+      <% if post['body_text'] %>
+        <%
+          body_text_classes = ""
+          body_text_classes = body_text_classes + " two-columns" if post['body_text'].split('').count > 350 rescue nil
+        %>
+        <div class="body-text<%= body_text_classes %>"><%= raw post['body_text'] %></div>
+      <% end %>
 
       <% if post['tags'] %>
         <p class="tags">tags:

@@ -1,5 +1,5 @@
 body.about {
-  background: #0D1017 url("//files.human-nyc.com/newyorksunshine/assets/about.jpg") center top;
+  background: #0D1017 url("//newyorksunshine-production.s3.amazonaws.com/about/about.jpg") center top;
 
   header {
     background: transparent;
@@ -25,10 +25,6 @@ body.about {
 
   #wrapper {
     margin: 8px;
-    @media #{$tablet-portrait} {
-      background: url('//files.human-nyc.com/newyorksunshine/assets/about.jpg') center top;
-    }
-
     background-size: cover;
     color: white;
   }

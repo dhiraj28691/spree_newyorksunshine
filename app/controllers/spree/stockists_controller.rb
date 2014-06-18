@@ -17,6 +17,14 @@ module Spree
       }
 
       @stockists['North America'] << {
+        "name" => "Hirshleifers",
+        "address" => "2080 Northern Blvd, Manhasset, NY, 11030",
+        "phone_number" => "+1 516 627 3566",
+        "anchor" => "themensmarket.com",
+        "anchor_href" => "http://themensmarket.com/"
+      }
+
+      @stockists['North America'] << {
         "name" => "Reed Space",
         "address" => "151 Orchard St, New York, NY 10002",
         "phone_number" => "+1 212 253 0588",
@@ -61,6 +69,14 @@ module Spree
       #   "anchor" => "oaklandsurfclub.com",
       #   "anchor_href" => "http://oaklandsurfclub.com/"
       # }
+
+      @stockists['International'] << {
+        "name" => "Vanker Closet",
+        "address" => "Fukuoka-shi, Fukuoka, Japan",
+        "phone_number" => "+81 92 753 9563",
+        "anchor" => "vankercloset.com",
+        "anchor_href" => "http://vankercloset.com/"
+      }
 
       @stockists['International'] << {
         "name" => "Colette",

@@ -13,6 +13,7 @@ class Layout
     @new_page_flag = true
 
     @header = document.querySelector('header')
+    @wrapper = document.querySelector('#wrapper')
     @equivalent_label = document.querySelector('#equivalent')
     @equivalent_check = document.querySelector('#equivalent-check')
 
@@ -73,7 +74,7 @@ class Layout
 
 
   parallax: =>
-    if @pageYOffset != window.pageYOffset
+    if @pageYOffset != window.pageYOffset && @wrapper.clientHeight > window.innerHeight
       @pageYOffset = window.pageYOffset
 
       transform = Math.max(pageYOffset/2, 0)

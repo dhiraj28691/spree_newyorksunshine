@@ -17,11 +17,11 @@ module Spree
       }
 
       @stockists['North America'] << {
-        "name" => "Hirshleifers",
-        "address" => "2080 Northern Blvd, Manhasset, NY, 11030",
-        "phone_number" => "+1 516 627 3566",
-        "anchor" => "themensmarket.com",
-        "anchor_href" => "http://themensmarket.com/"
+        "name" => "Memes NY",
+        "address" => "3 Great Jones Street New York, NY, 10012",
+        "phone_number" => "+1 212 420 9955",
+        "anchor" => "memes-nyc.com",
+        "anchor_href" => "http://memes-nyc.com/"
       }
 
       @stockists['North America'] << {
@@ -38,6 +38,14 @@ module Spree
         "phone_number" => "+1 212 966 0026",
         "anchor" => "odinnewyork.com",
         "anchor_href" => "http://odinnewyork.com/"
+      }
+
+      @stockists['North America'] << {
+        "name" => "Hirshleifers",
+        "address" => "2080 Northern Blvd, Manhasset, NY, 11030",
+        "phone_number" => "+1 516 627 3566",
+        "anchor" => "themensmarket.com",
+        "anchor_href" => "http://themensmarket.com/"
       }
 
       @stockists['North America'] << {
@@ -61,14 +69,6 @@ module Spree
         "anchor" => "www.blueandcream.com",
         "anchor_href" => "http://www.blueandcream.com/"
       }
-
-      # @stockists['North America'] << {
-      #   "name" => "Oakland Surf Club",
-      #   "address" => "337 14th St, Oakland, CA 94612",
-      #   "phone_number" => "+1 510 465 2770",
-      #   "anchor" => "oaklandsurfclub.com",
-      #   "anchor_href" => "http://oaklandsurfclub.com/"
-      # }
 
       @stockists['International'] << {
         "name" => "Vanker Closet",

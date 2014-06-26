@@ -46,6 +46,14 @@ body.about {
       }
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     p + p {
       margin-top: 2em;
     }

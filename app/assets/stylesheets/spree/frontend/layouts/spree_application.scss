@@ -67,6 +67,16 @@ header {
   }
 }
 
+
+.flash {
+  text-align: center;
+  &.error {
+    background: red;
+    color: white;
+    padding: 14px 16px 14px;
+  }
+}
+
 footer {
   letter-spacing: 2.5px;
   margin: 10em auto 0;

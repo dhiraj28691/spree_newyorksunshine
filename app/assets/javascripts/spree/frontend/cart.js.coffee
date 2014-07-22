@@ -13,6 +13,9 @@ updateCartMenu = (a,b,c,d)->
 
 
 Spree.fetch_cart = ->
+  true;
+
+  window.location.origin = window.location.origin || window.location.protocol + "//" + window.location.hostname + (if window.location.port then ":" + window.location.port)
 
   url = Spree.pathFor("cart_link")
 

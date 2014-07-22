@@ -1,22 +1,24 @@
 #= require spree
 
-justDoIt = ->
+updateCartMenu = (a,b,c,d)->
 
   link_to_cart = document.querySelector('#link-to-cart')
 
-  fragment = this.responseXML.body.innerHTML
+
+
+  fragment = if (this.status == 200) then this.responseXML.body.innerHTML else "error"
+
 
   document.querySelector('#link-to-cart').innerHTML = fragment
 
 
 Spree.fetch_cart = ->
-  true
 
-  url = Spree.routes.cart_link
+  url = Spree.pathFor("cart_link")
 
   xhr = new XMLHttpRequest()
 
-  xhr.onload = justDoIt
+  xhr.onload = updateCartMenu
 
   xhr.open "GET", url
   xhr.responseType = "document"

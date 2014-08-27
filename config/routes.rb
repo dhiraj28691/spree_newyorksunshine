@@ -1,8 +1,9 @@
-Spree::Core::Engine.routes.draw do
-  namespace :spree do
-    # resources :lookbooks
-    # resources :stockists
+Spree::Core::Engine.add_routes do
+
+  namespace :admin do
+    resources :posts
   end
+
 
   # Add your extension routes here
   get 'lookbook', :to => 'lookbooks#index'

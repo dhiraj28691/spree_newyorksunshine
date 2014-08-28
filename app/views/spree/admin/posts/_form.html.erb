@@ -1,0 +1,21 @@
+<%= form_for [:admin, @post] do |f| %>
+  <fieldset>
+    <legend align="center"><%= f.object.new_record? ? "New Post" : "Edit Post" %></legend>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :published_on %>
+    <%= f.text_field :published_on, :value => datepicker_field_value(@post.published_on), :class => 'datepicker' %>
+
+    <%= f.label :link_url %>
+    <%= f.text_field :link_url %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.submit %>
+
+  </fieldset>
+
+<% end %>

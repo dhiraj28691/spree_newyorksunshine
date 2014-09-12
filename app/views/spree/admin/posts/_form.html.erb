@@ -1,21 +1,80 @@
 <%= form_for [:admin, @post] do |f| %>
-  <fieldset>
-    <legend align="center"><%= f.object.new_record? ? "New Post" : "Edit Post" %></legend>
+  <legend align="center"><%= f.object.new_record? ? "New Post" : "Edit Post" %></legend>
 
-    <%= f.label :title %>
-    <%= f.text_field :title %>
 
-    <%= f.label :published_on %>
-    <%= f.text_field :published_on, :value => datepicker_field_value(@post.published_on), :class => 'datepicker' %>
+  <div class="twelve columns alpha">
 
-    <%= f.label :link_url %>
-    <%= f.text_field :link_url %>
+    <%= f.field_container :title do %>
 
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+      <%= f.label :title %>
+      <%= f.text_field :title, :class => "fullwidth" %>
 
-    <%= f.submit %>
+    <% end %>
+  </div>
 
-  </fieldset>
+  <div class="four columns omega">
+
+    <%= f.field_container :published_on do %>
+
+      <%= f.label :published_on %>
+      <%= f.text_field :published_on, { :value => datepicker_field_value(@post.published_on), :class => 'datepicker fullwidth' } %>
+
+    <% end %>
+  </div>
+
+  <div class="sixteen columns alpha omega">
+
+    <%= f.field_container :description do %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description, { :class => 'fullwidth',  :rows => 13 } %>
+
+    <% end %>
+
+  </div>
+
+  <div class="sixteen columns alpha omega">
+
+    <%= f.field_container :embed_code do %>
+
+      <%= f.label :embed_code %>
+      <%= f.text_area :embed_code, :class => "fullwidth" %>
+
+    <% end %>
+
+  </div>
+
+
+  <div class="row">
+    <div class="sixteen columns alpha omega">
+
+      <%= f.field_container :link_url do %>
+
+        <%= f.label :link_url %>
+        <%= f.text_field :link_url, :class => 'fullwidth' %>
+
+      <% end %>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <legend>Post Images</legend>
+
+  <br>
+
+  <div id="post_image" class="sortable">
+    <%= f.simple_fields_for :post_images do |post_image| %>
+      <%= render 'post_image_fields', :f => post_image %>
+    <% end %>
+    <br>
+    <div class="links">
+      <%= link_to_add_association 'Add Post Image', f, :post_images %>
+    </div>
+  </div>
+
+
+  <%= f.submit %>
 
 <% end %>

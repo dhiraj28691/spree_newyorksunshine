@@ -5,3 +5,7 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 table tbody tr td.actions {
   white-space: nowrap;
 }
+
+#admin-menu li a {
+  padding: 25px 0;
+}

@@ -1,7 +1,13 @@
 Spree::Core::Engine.add_routes do
 
+  concern :images do
+    resources :images
+  end
+
   namespace :admin do
-    resources :posts
+    resources :posts do
+      resources :post_images
+    end
   end
 
 

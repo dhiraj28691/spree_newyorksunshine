@@ -45,6 +45,9 @@ module Spree
 
       def set_post
         @post = Post.find(params[:id])
+        # @post = Post.where(slug: params[:id]).take
+        # @post = Post.find_by slug: "#{params[:id]}"
+        # @post = Post.first
       end
 
       def post_params

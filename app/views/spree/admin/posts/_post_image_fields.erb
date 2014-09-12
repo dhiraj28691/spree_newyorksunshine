@@ -1,0 +1,26 @@
+<div class="nested-fields sortable-item">
+  <table>
+    <tr>
+      <td>
+        <%= f.label :attachment %>
+      </td>
+      <td>
+        <% if f.object.attachment_updated_at.present? %>
+          <img src="<%= f.object.attachment.url %>" width="100">
+          <br>
+          Choose new:
+        <% end %>
+
+        <%= f.input :attachment, label: false %>
+
+        <div class="position hidden">
+          <%= f.input_field :position %>
+        </div>
+
+      </td>
+      <td>
+        <%= link_to_remove_association "Remove", f %>
+      </td>
+    </tr>
+  </table>
+</div>

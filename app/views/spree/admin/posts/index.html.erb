@@ -1,9 +1,9 @@
 <% content_for :page_title do %>
-  Listing Posts
+  <%= Spree.t(:listing_posts) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <li id="new_product_link">
+  <li id="new_post_link">
     <%= button_link_to Spree.t(:new_post), new_admin_post_url, { :remote => true, :icon => 'plus', :id => 'admin_new_post' } %>
   </li>
 <% end if can?(:create, Spree::Post) %>
@@ -11,34 +11,43 @@
 <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
 
 
-<table>
-
-  <thead>
-    <tr class="admin_posts_index_headers">
-      <th>Title</th>
-      <th>Slug</th>
-      <th>Published On</th>
-      <th>Link Url</th>
-      <th>Description</th>
-      <th data-hook="admin_products_index_header_actions" class="actions"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.slug %></td>
-        <td><%= post.published_on %></td>
-        <td><%= link_to "link", post.link_url, { "target" => "_blank" } %></td>
-        <td><%= post.description %></td>
-        <td class="actions" data-hook="admin_posts_index_row_actions">
-          <%= link_to "", edit_admin_post_path(post), { "class" => "edit fa fa-edit icon_link with-tip no-text", "data-action" => "edit", "title" => "Edit"}  %>
-          &nbsp;
-          <%= link_to "", admin_post_path(post), { "class" => "delete-resource fa fa-trash icon_link with-tip no-text", "data-action" => "remove", "data-confirm" => "Are you sure?", "title" => "Delete" } %>
-        </td>
+<% if @posts.any? %>
+  <table>
+    <thead>
+      <tr class="admin_posts_index_headers">
+        <th>Id</th>
+        <th>Title</th>
+        <th>Slug</th>
+        <th>Published On</th>
+        <th>Images</th>
+        <th>Link Url</th>
+        <th>Description</th>
+        <th data-hook="admin_products_index_header_actions" class="actions"></th>
       </tr>
-    <% end %>
-  </tbody>
+    </thead>
 
-</table>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.id %></td>
+          <td><%= post.title %></td>
+          <td><%= post.slug %></td>
+          <td><%= post.published_on %></td>
+          <td class="align-center"><%= link_to post.post_images.length, admin_post_post_images_path(post), class: "fa fa-eye" %></td>
+          <td><%= link_to "link", post.link_url, { "target" => "_blank" } %></td>
+          <td><%= post.description %></td>
+          <td class="actions" data-hook="admin_posts_index_row_actions">
+            <%= link_to "", edit_admin_post_path(post), { "class" => "edit fa fa-edit icon_link with-tip no-text", "data-action" => "edit", "title" => "Edit"}  %>
+            &nbsp;
+            <%= link_to "", admin_post_path(post), { "class" => "delete-resource fa fa-trash icon_link with-tip no-text", "data-action" => "remove", "data-confirm" => "Are you sure?", "title" => "Delete" } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alpha twelve columns no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/post')) %>,
+    <%= link_to Spree.t(:add_one), spree.new_admin_post_path %>!
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<% @post.post_images.each do |image| %>
+
+  <%= image_tag image.attachment.url(:thumb) %>
+
+<% end.empty? and begin %>
+
+  <p>There are no entries.</p>
+
+<% end %>
+
+<%= link_to 'New', new_admin_post_post_image_path(@post) %>

@@ -2,40 +2,4 @@
 
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @post } %>
 
-<%= form_for [:admin, @post], :html => { :multipart => true } do |f| %>
-  <fieldset data-hook="new_product">
-
-    <legend align="center"><%= f.object.new_record? ? "New Post" : "Edit Post" %></legend>
-
-    <%= f.field_container :title do %>
-      <%= f.label :title, raw(Spree.t(:title) + content_tag(:span, ' *', :class => "required")) %>
-      <%= f.text_field :title, :class => 'fullwidth title' %>
-      <%= f.error_message_on :title %>
-    <% end %>
-
-
-    <div data-hook="new_post_published_on">
-      <%= f.field_container :published_on do %>
-        <%= f.label :published_on %>
-        <%= f.text_field :published_on, :value => datepicker_field_value(@post.published_on), :class => 'datepicker' %>
-        <%= f.error_message_on :title %>
-      <% end %>
-    </div>
-
-    <div data-hook="new_post_link_url" class="eight columns omega">
-      <%= f.field_container :link_url do %>
-        <%= f.label :link_url %>
-        <%= f.text_field :link_url, { :class => "fullwidth"} %>
-      <% end %>
-    </div>
-
-    <%= f.field_container :description do %>
-      <%= f.label :description %>
-      <%= f.text_area :description, { :class => 'fullwidth' } %>
-    <% end %>
-
-    <%= f.submit %>
-
-  </fieldset>
-
-<% end %>
+<%= render 'form' %>

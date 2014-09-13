@@ -14,6 +14,7 @@ class Spree::Post < ActiveRecord::Base
 
   default_scope { order('published_on DESC') }
 
+  acts_as_taggable
 
   private
 

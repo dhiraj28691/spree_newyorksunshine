@@ -5,37 +5,38 @@
 
     <!-- <h4><a href="/post/"><%= raw post['title'] %></a></h4> -->
     <h4><%= raw post['title'] %></h4>
-    <p class="date"><%= post['date'] %></p>
+    <p class="date"><%= post.published_on.strftime("%m-%d-%Y") %></p>
 
     <div class="media">
 
 
 
-      <% if post['images'] && post['images'].length > 1 %>
+      <% if post.post_images && post.post_images.length > 1 %>
+
 
         <div class="slideshow">
           <div class="stage">
-            <% post['images'].each_with_index do |x, index| %>
+            <% post.post_images.each_with_index do |x, index| %>
               <% if index == 0 %>
-                <%= image_tag x, :class => "slide" %>
+                <%= image_tag x.attachment, :class => "slide" %>
               <% else %>
-                <span class="slide" style="background-image: url(<%= x %>)"></span>
+                <span class="slide" style="background-image: url(<%= x.attachment %>)"></span>
               <% end %>
 
             <% end %>
           </div>
         </div>
 
-      <% elsif post['images'] && post['images'].length == 1 %>
+      <% elsif post.post_images && post.post_images.length == 1 %>
 
-        <% if post['clickthrough_link'] %>
+        <% if post.link_url %>
 
-        <%= link_to post['clickthrough_link'], {:target => "_blank"} do %>
-          <%= image_tag post['images'][0], :class => "mike" %>
+        <%= link_to post.link_url, {:target => "_blank"} do %>
+          <%= image_tag post.post_images[0].attachment, :class => "mike" %>
         <% end %>
 
         <% else %>
-          <%= image_tag post['images'][0], :class => "mike" %>
+          <%= image_tag post.post_images[0].attachment, :class => "mike" %>
         <% end %>
 
       <% end %>
@@ -43,10 +44,6 @@
       <div class="embed">
         <%= raw post['embed_code'] %>
       </div>
-
-
-
-
     </div>
 
     <div class="text">
@@ -58,7 +55,7 @@
         <div class="body-text<%= body_text_classes %>"><%= raw post['body_text'] %></div>
       <% end %>
 
-      <% if post['tags'] %>
+      <% if post['tags'] && post['tags'] != '' %>
         <p class="tags">tags:
           <% post['tags'].each do |tag| %>
             <%= link_to tag, "/tagged/#{tag}" %>
@@ -66,8 +63,12 @@
         </p>
       <% end %>
 
-      <% if post['clickthrough_link'] %>
-        <p class="clickthrough-link"><%= link_to 'read more', post['clickthrough_link'], {:target => "_blank"} %></p>
+      <% if post.tag_list.length > 0 %>
+        Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+      <% end %>
+
+      <% if post.link_url %>
+        <p class="clickthrough-link"><%= link_to 'read more', post.link_url, {:target => "_blank"} %></p>
       <% end %>
 
     </div>

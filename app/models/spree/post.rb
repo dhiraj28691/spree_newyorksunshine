@@ -12,6 +12,8 @@ class Spree::Post < ActiveRecord::Base
     # slug
   # end
 
+  default_scope { order('published_on DESC') }
+
 
   private
 

@@ -9,6 +9,3 @@ table tbody tr td.actions {
 #admin-menu li a {
   padding: 25px 0;
 }
-
-@import "skeleton";
-@import "skeleton_widescreen";

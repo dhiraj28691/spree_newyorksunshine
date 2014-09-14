@@ -9,6 +9,8 @@ class PostSlideshow
     @slideshow_length = @slides.length
     @slideshow_position_array = []
     @current_slide_index = 0
+
+
     @setStage()
     @renderSlideshow()
 
@@ -16,6 +18,14 @@ class PostSlideshow
 
     addEventListener 'load', =>
       @offset_y = getPosition(selector).y - 45
+
+
+
+
+    matchMedia("(min-width: 768px)").addListener @mediaListener
+    @mediaListener(matchMedia("(min-width: 768px)"))
+
+
 
   setStage: =>
     for slide, index in @slides
@@ -26,11 +36,18 @@ class PostSlideshow
 
       @slideshow_position_array.push { translateX: translateX }
 
+  clearStage: =>
+    for slide, index in @slides
+      slide.removeAttribute('style')
+
+
+  mediaListener: (mql)=>
+    # console.log mql, mql.matches
+
 
   renderSlideshow: =>
     translateX = @slideshow_position_array[@current_slide_index].translateX * -1
     transform = "translateX(" + translateX + "%)"
-    # console.log 'transform', transform
     @stage.style.webkitTransform = transform
     @stage.style.transform = transform
 
@@ -44,8 +61,11 @@ class PostSlideshow
 class PostEmbed
   constructor: (selector) ->
     @iframe = if selector instanceof Node then selector else document.querySelector(selector)
-    @aspect_ratio = @iframe.clientHeight / @iframe.clientWidth
+
+    @aspect_ratio = 0.5625
+
     @iframe.width = "100%"
+
     @renderIframe()
 
 
@@ -54,9 +74,7 @@ class PostEmbed
     requestAnimationFrame(@renderIframe)
 
     if @iframe_clientWidth != @iframe.clientWidth
-
       @iframe_clientWidth = @iframe.clientWidth
-
       @iframe.height = @iframe.clientWidth * @aspect_ratio
 
     return

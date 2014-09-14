@@ -1,15 +1,10 @@
-
-
 <% @posts.each do |post| %>
   <article class="post">
 
-    <!-- <h4><a href="/post/"><%= raw post['title'] %></a></h4> -->
     <h4><%= raw post['title'] %></h4>
     <p class="date"><%= post.published_on.strftime("%m-%d-%Y") %></p>
 
     <div class="media">
-
-
 
       <% if post.post_images && post.post_images.length > 1 %>
 
@@ -31,12 +26,16 @@
 
         <% if post.link_url %>
 
-        <%= link_to post.link_url, {:target => "_blank"} do %>
-          <%= image_tag post.post_images[0].attachment, :class => "mike" %>
-        <% end %>
+          <%= link_to post.link_url, { :target => "_blank", :class => "solo-image-link" } do %>
+
+            <%= image_tag post.post_images[0].attachment, :class => "solo-image" %>
+
+          <% end %>
 
         <% else %>
-          <%= image_tag post.post_images[0].attachment, :class => "mike" %>
+
+          <%= image_tag post.post_images[0].attachment, :class => "solo-image" %>
+
         <% end %>
 
       <% end %>

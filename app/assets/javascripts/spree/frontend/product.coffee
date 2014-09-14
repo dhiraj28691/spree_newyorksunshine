@@ -22,14 +22,6 @@ class ProductImages
 
     @main_image_wrapper.addEventListener 'click', @goToNext
 
-    # Svpply trigger for custom icon in product sharing
-    $('.svpply.icon').on 'click', (e) ->
-      e.preventDefault()
-      $('.svpply_button').click()
-      $('html, body').animate
-        scrollTop: $('#main-image').offset().top - 240
-      , 600
-
 
   goToSlide: (event) =>
     # if matchMedia("(min-width: 768px)").matches

@@ -30,7 +30,7 @@ class PostSlideshow
   renderSlideshow: =>
     translateX = @slideshow_position_array[@current_slide_index].translateX * -1
     transform = "translateX(" + translateX + "%)"
-    console.log 'transform', transform
+    # console.log 'transform', transform
     @stage.style.webkitTransform = transform
     @stage.style.transform = transform
 
@@ -44,29 +44,21 @@ class PostSlideshow
 class PostEmbed
   constructor: (selector) ->
     @iframe = if selector instanceof Node then selector else document.querySelector(selector)
-
-    @aspect_ratio = @iframe.height/@iframe.width
-
+    @aspect_ratio = @iframe.clientHeight / @iframe.clientWidth
     @iframe.width = "100%"
-
     @renderIframe()
 
 
   renderIframe: =>
 
-
-    # alert('WASSUP')
+    requestAnimationFrame(@renderIframe)
 
     if @iframe_clientWidth != @iframe.clientWidth
-      console.log(window.innerWidth)
+
       @iframe_clientWidth = @iframe.clientWidth
 
       @iframe.height = @iframe.clientWidth * @aspect_ratio
 
-      console.log(@iframe.clientWidth,@aspect_ratio)
-
-
-    requestAnimationFrame(@renderIframe)
     return
 
 

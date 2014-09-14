@@ -134,9 +134,23 @@ body.news {
       margin: auto;
       // max-height: 550px;
       position: relative;
+      width: auto;
+      max-height: calc(100vh - 61px + 32px);
+      max-width: 100%;
       @media #{$widescreen} {
         // max-height: 1440px;
       }
+
+      @media (orientation: landscape) {
+        background: red;
+      }
+
+
+      @media (orientation: portrait) {
+        background: red;
+      }
+
+
     }
     // &:hover {
     //   opacity: 0.50;

@@ -4,7 +4,7 @@
 
 <% content_for :page_actions do %>
   <li id="new_post_link">
-    <%= button_link_to Spree.t(:new_post), new_admin_post_url, { :remote => true, :icon => 'plus', :id => 'admin_new_post' } %>
+    <%= button_link_to Spree.t(:new_post), new_admin_post_url, { :remote => false, :icon => 'plus', :id => 'admin_new_post' } %>
   </li>
 <% end if can?(:create, Spree::Post) %>
 

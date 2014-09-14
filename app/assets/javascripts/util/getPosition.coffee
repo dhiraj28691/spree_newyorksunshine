@@ -7,8 +7,6 @@ window.getPosition = (ele)->
     x += ele.offsetLeft
     y += ele.offsetTop
 
-    console.log ele, x, y
-
     if(ele.offsetParent == null)
       break
 

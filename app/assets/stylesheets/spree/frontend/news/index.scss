@@ -88,35 +88,80 @@ body.news {
   }
 
   .slideshow {
-    cursor: image-url("e-resize.png"), e-resize;
+    @media #{$tablet-portrait} {
+      cursor: image-url("e-resize.png"), e-resize;
+    }
   }
 
   .stage {
-    margin: 0 -16px;
+    margin: 0 -32px;
+    padding-left: 0;
     position: relative;
-    transition: transform $slow;
+    white-space: nowrap;
+    overflow: scroll;
+    // height: calc(100vh - 61px);
+
+    @media #{$tablet-portrait} {
+      height: calc(100vh - 61px);
+      margin: 0 -16px;
+      overflow: visible;
+      transition: transform $slow;
+      white-space: normal;
+    }
   }
 
   .slide {
-    display: block;
+    display: inline-block;
+    vertical-align: middle;
     box-sizing: border-box;
-    border: 16px solid transparent;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     transition: opacity $slow;
-    &:first-child {
+    margin: 0 16px;
+    @media (max-width: 767px) {
+      background: none !important;
+    }
+    @media #{$tablet-portrait} {
       display: block;
-      margin: auto;
-      position: relative;
-      width: auto;
-      max-height: calc(100vh - 61px + 32px);
-      max-width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      height: 100%;
+      margin: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+    }
+    &:first-child {
+      margin-left: 32px;
+      @media #{$tablet-portrait} {
+        margin: 0;
+      }
+      img {
+        // max-width: calc(100vw - 64px);
+        // max-height: 100vh;
+        // height: auto;
+      }
+
+      @media #{$tablet-portrait} {
+      }
+    }
+    &:last-child {
+      margin-right: 32px;
+      @media #{$tablet-portrait} {
+        margin: 0;
+      }
+    }
+
+    img {
+      max-height: 100vh;
+      max-width: calc(100vw - 32px);
+      @media #{$tablet-portrait} {
+        display: none;
+      }
     }
   }
 }

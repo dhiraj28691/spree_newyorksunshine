@@ -3,6 +3,7 @@
 
 class PostSlideshow
   constructor: (selector) ->
+    @selector = selector
     @slideshow = if selector instanceof Node then selector else document.querySelector(selector)
     @stage = @slideshow.querySelector('.stage')
     @slides = @stage.querySelectorAll('.slide')
@@ -12,12 +13,12 @@ class PostSlideshow
 
 
     @setStage()
-    @renderSlideshow()
+    @render()
 
     @slideshow.addEventListener 'click', @goToNext
 
     addEventListener 'load', =>
-      @offset_y = getPosition(selector).y - 45
+      @offset_y = getPosition(@selector).y - 61
 
 
 
@@ -38,24 +39,47 @@ class PostSlideshow
 
   clearStage: =>
     for slide, index in @slides
-      slide.removeAttribute('style')
+      # slide.removeAttribute('style')
+      slide.style.webkitTransform = 'none'
+      slide.style.transform = 'none'
 
 
   mediaListener: (mql)=>
     # console.log mql, mql.matches
+    if mql.matches
+      @setStage()
+      @render()
+
+      # @offset_y = getPosition(@selector).y - 61
 
 
-  renderSlideshow: =>
+    else
+      @clearStage()
+      @veto()
+
+      # @offset_y = undefined
+
+
+  render: =>
     translateX = @slideshow_position_array[@current_slide_index].translateX * -1
     transform = "translateX(" + translateX + "%)"
     @stage.style.webkitTransform = transform
     @stage.style.transform = transform
 
+    @offset_y = getPosition(@selector).y - 61
     scrollTo(@offset_y, 400)
 
+
+  veto: =>
+    @current_slide_index = 0
+    @stage.style.webkitTransform = "none"
+    @stage.style.transform = "none"
+
+
   goToNext: =>
-    @current_slide_index = if @current_slide_index < @slideshow_length - 1 then @current_slide_index + 1 else 0
-    @renderSlideshow()
+    if matchMedia("(min-width: 768px)").matches
+      @current_slide_index = if @current_slide_index < @slideshow_length - 1 then @current_slide_index + 1 else 0
+      @render()
 
 
 class PostEmbed

@@ -10,16 +10,12 @@
 
 
         <div class="slideshow">
-          <div class="stage">
+          <ul class="stage">
             <% post.post_images.each_with_index do |x, index| %>
-              <% if index == 0 %>
-                <%= image_tag x.attachment, :class => "slide" %>
-              <% else %>
-                <span class="slide" style="background-image: url(<%= x.attachment %>)"></span>
-              <% end %>
-
+              <li class="slide" style="background-image: url(<%= x.attachment %>)">
+                <%= image_tag x.attachment %>
             <% end %>
-          </div>
+          </ul>
         </div>
 
       <% elsif post.post_images && post.post_images.length == 1 %>

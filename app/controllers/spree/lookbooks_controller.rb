@@ -1,8 +1,12 @@
 module Spree
   class LookbooksController < Spree::BaseController
 
-    def index
+    before_action :set_lookbooks
 
+    def index
+    end
+
+    def show
       @lookbook = []
 
       # 1
@@ -74,8 +78,16 @@ module Spree
       @lookbook << {
         "images" => ["//newyorksunshine-production.s3.amazonaws.com/lookbook/ss14/look-14.1.jpg", "//newyorksunshine-production.s3.amazonaws.com/lookbook/ss14/look-14.2.jpg"]
       }
+    end
 
+    def show_new
+      # @lookbook = Spree::Loobook.find(params[:id])
+    end
 
+    private
+
+    def set_lookbooks
+      @lookbooks = Lookbook.all
     end
 
   end

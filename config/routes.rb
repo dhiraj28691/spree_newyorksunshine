@@ -5,6 +5,7 @@ Spree::Core::Engine.add_routes do
   end
 
   namespace :admin do
+    resources :lookbooks
     resources :posts do
       resources :post_images
     end
@@ -12,7 +13,10 @@ Spree::Core::Engine.add_routes do
 
 
   # Add your extension routes here
-  get 'lookbook', :to => 'lookbooks#index'
+  # get 'lookbooks', :to => 'lookbooks#index'
+  # get 'lookbooks/:id', :to => 'lookbooks#show'
+
+  resources :lookbooks
 
   get 'news', :to => 'news#index'
 

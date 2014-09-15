@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Slug</th>
+    </tr>
+  <tbody>
+    <tr>
+      <td><%= @lookbook.id %></td>
+      <td><%= @lookbook.name %></td>
+      <td><%= @lookbook.slug %></td>
+
+      <td>
+        <%= link_to "Edit", edit_admin_lookbook_path(@lookbook) %>
+      </td>
+    </tr>
+
+</table>
+
+<%= link_to "New Lookbook", new_admin_lookbook_path %>

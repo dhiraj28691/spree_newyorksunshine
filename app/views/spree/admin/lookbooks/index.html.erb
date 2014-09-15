@@ -1,0 +1,38 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_lookbooks) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li id="new_product_link">
+    <%= button_link_to Spree.t(:new_lookbook), new_object_url, { :remote => true, :icon => 'plus', :id => 'admin_new_lookbook' } %>
+  </li>
+<% end if can?(:create, Spree::Lookbook) %>
+
+<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+
+<div id="new_lookbook_wrapper" data-hook=""></div>
+
+<table id="listing_lookbooks">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Slug</th>
+    </tr>
+  <tbody>
+
+    <% @lookbooks.each do |lookbook| %>
+
+      <tr>
+        <td><%= lookbook.id %></td>
+        <td><%= lookbook.name %></td>
+        <td><%= lookbook.slug %></td>
+
+        <td class="actions">
+          <%= link_to "", edit_admin_lookbook_path(lookbook), { :class => "edit fa fa-edit icon_link with-tip no-text" } %>
+        </td>
+      </tr>
+
+    <% end %>
+
+</table>

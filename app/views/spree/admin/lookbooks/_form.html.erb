@@ -1,0 +1,44 @@
+<%= form_for [:admin, @lookbook] do |f| %>
+  <fieldset>
+    <legend align="center">
+      <%= f.object.new_record? ? "New Lookbook" : "Edit Lookbook" %>
+    </legend>
+
+    <div class="row">
+
+      <div class="ten columns alpha">
+        <%= f.field_container :name do %>
+          <%= f.label :name %>
+          <%= f.text_field :name, :class => "fullwidth" %>
+        <% end %>
+      </div>
+
+      <div class="four columns">
+        <%= f.field_container :available_on do %>
+          <%= f.label :available_on %>
+          <%= f.text_field :available_on, { :value => datepicker_field_value(@lookbook.available_on), :class => 'datepicker fullwidth' } %>
+        <% end %>
+      </div>
+
+      <div class="two columns omega">
+        <%= f.field_container :published do %>
+          <%= f.label :published %>
+          <%= f.check_box :published %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="sixteen columns alpha omega">
+        <%= f.field_container :content do %>
+          <%= f.label :content %>
+          <%= f.text_area :content, :class => "fullwidth" %>
+        <% end %>
+      </div>
+    </div>
+
+    <%= render :partial => 'spree/admin/shared/save_resource_links', :locals => { :f => f } %>
+
+
+  </fieldset>
+<% end %>

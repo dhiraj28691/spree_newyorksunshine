@@ -1,0 +1,39 @@
+<%= render 'lookbook_sub_menu' %>
+
+<div id="lookbook">
+  <div id="plane">
+
+    <div class="stage">
+
+      <% @lookbook.each do |slide| %>
+        <div class="slide">
+
+          <% slide['images'].each do |image_src| %>
+            <img class="look style-<%= slide['images'].length %>" src="<%= image_src %>">
+          <% end %>
+
+        </div>
+      <% end %>
+    </div>
+
+    <div class="left capture"></div>
+    <div class="right capture"></div>
+
+  </div>
+
+  <div class="thumbnails">
+    <% @lookbook.each do |slide| %>
+
+      <div class="thumbnail">
+
+        <% slide['images'].each do |image_src| %>
+          <img class="thumbnail-style-<%= slide['images'].length %>" src="<%= image_src %>">
+        <% end %>
+
+      </div>
+
+
+    <% end %>
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="form-buttons filter-actions actions" data-hook="buttons">
+
+  <% if f.object.new_record? %>
+    <%= button Spree.t('actions.create'), 'ok' %>
+  <% else %>
+      <%= button Spree.t('actions.update'), 'refresh' %>
+  <% end %>
+
+
+
+  <span class="or"><%= Spree.t(:or) %></span>
+  <%= button_link_to Spree.t('actions.cancel'), collection_url, :icon => 'remove' %>
+</div>

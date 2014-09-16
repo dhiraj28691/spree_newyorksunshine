@@ -1,0 +1,40 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:listing_lookbook_slides) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li id="new_product_link">
+    <%= button_link_to Spree.t(:new_lookbook), new_admin_lookbook_slide_path(@lookbook), { :remote => true, :icon => 'plus', :id => 'admin_new_lookbook' } %>
+  </li>
+<% end if can?(:create, Spree::Lookbook) %>
+
+<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Stiuffs</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @slides.each do |slide| %>
+      <tr>
+        <td>Slide Contents</td>
+
+        <td class="actions">
+          <%= link_to 'Show', admin_lookbook_slide_path(@lookbook, slide) %>
+          &nbsp;
+          <%= link_to 'Edit', edit_admin_lookbook_slide_path(@lookbook, slide) %>
+          &nbsp;
+          <%= link_to 'Destroy', admin_lookbook_slide_path(@lookbook, slide), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Slide', new_admin_lookbook_slide_path %>

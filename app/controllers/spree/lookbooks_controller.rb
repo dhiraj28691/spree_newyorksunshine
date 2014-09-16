@@ -6,7 +6,7 @@ module Spree
     def index
     end
 
-    def show
+    def show_old
       @lookbook = []
 
       # 1
@@ -80,8 +80,8 @@ module Spree
       }
     end
 
-    def show_new
-      # @lookbook = Spree::Loobook.find(params[:id])
+    def show
+      @lookbook = Lookbook.friendly.find(params[:id])
     end
 
     private

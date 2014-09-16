@@ -1,5 +1,8 @@
 class Spree::Lookbook < ActiveRecord::Base
 
+
+  has_many :slides
+
   extend FriendlyId
   friendly_id :name, use: :slugged
 

@@ -15,21 +15,23 @@
 <table id="listing_lookbooks">
   <thead>
     <tr>
-      <th>Id</th>
       <th>Name</th>
-      <th>Slug</th>
+      <th>Slides</th>
+      <th>Available On</th>
     </tr>
   <tbody>
 
     <% @lookbooks.each do |lookbook| %>
 
       <tr>
-        <td><%= lookbook.id %></td>
         <td><%= lookbook.name %></td>
-        <td><%= lookbook.slug %></td>
+        <td><%= link_to "Slides (#{lookbook.slides.count})", admin_lookbook_slides_path(lookbook) %></td>
+        <td><%= lookbook.available_on.to_formatted_s(:nice) %></td>
 
         <td class="actions">
           <%= link_to "", edit_admin_lookbook_path(lookbook), { :class => "edit fa fa-edit icon_link with-tip no-text" } %>
+          &nbsp;
+          <%= link_to "", admin_lookbooks_path(lookbook), { "class" => "delete-resource fa fa-trash icon_link with-tip no-text", "data-action" => "remove", "data-confirm" => "Are you sure?", "title" => "Delete" } %>
         </td>
       </tr>
 

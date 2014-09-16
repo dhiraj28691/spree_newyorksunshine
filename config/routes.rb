@@ -5,7 +5,10 @@ Spree::Core::Engine.add_routes do
   end
 
   namespace :admin do
-    resources :lookbooks
+    resources :lookbooks do
+      resources :slides
+    end
+
     resources :posts do
       resources :post_images
     end

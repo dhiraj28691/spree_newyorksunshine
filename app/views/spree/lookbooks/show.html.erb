@@ -5,10 +5,10 @@
 
     <div class="stage">
 
-      <% @lookbook.each do |slide| %>
+      <% @lookbook.slides.each do |slide| %>
         <div class="slide">
 
-          <% slide['images'].each do |image_src| %>
+          <% slide.slide_images.each do |image_src| %>
             <img class="look style-<%= slide['images'].length %>" src="<%= image_src %>">
           <% end %>
 
@@ -22,7 +22,7 @@
   </div>
 
   <div class="thumbnails">
-    <% @lookbook.each do |slide| %>
+    <% @lookbook.slides.each do |slide| %>
 
       <div class="thumbnail">
 

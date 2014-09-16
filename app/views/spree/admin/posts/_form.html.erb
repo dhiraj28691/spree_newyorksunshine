@@ -45,25 +45,22 @@
   </div>
 
   <div class="row">
-    <div class="sixteen columns alpha omega">
-
+    <div class="ten columns alpha">
       <%= f.field_container :link_url do %>
-
         <%= f.label :link_url %>
         <%= f.text_field :link_url, :class => 'fullwidth' %>
-
       <% end %>
-
     </div>
+
+    <div class="six columns omega">
+      <%= f.field_container :tag_list do %>
+        <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+        <%= f.text_field :tag_list, :class => "fullwidth" %>
+      <% end %>
+    </div>
+
   </div>
 
-
-  <hr>
-
-  <div class="field">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
-  </div>
 
   <hr>
 

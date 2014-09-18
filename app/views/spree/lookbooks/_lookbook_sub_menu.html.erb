@@ -1,9 +1,11 @@
-<nav id="lookbook-links">
-
-  <% @lookbooks.each do |lookbook| %>
-    <%= link_to_unless_current lookbook.name, lookbook_path(lookbook) do %>
-      <%= link_to lookbook.name, lookbook_path(lookbook), :class => "selected" %>
+<% if @lookbooks.any? %>
+  <nav id="lookbook-links">      
+    <% @lookbooks.each do |lookbook| %>
+      <%= link_to_unless_current lookbook.name, lookbook_path(lookbook) do %>
+        <%= link_to lookbook.name, lookbook_path(lookbook), :class => "selected" %>
+      <% end %>
     <% end %>
-  <% end %>
-
-</nav>
+  </nav>
+<% else %>
+  <p style="text-align:center">No Lookbooks to display</p>
+<% end %>

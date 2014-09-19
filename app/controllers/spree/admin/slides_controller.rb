@@ -1,11 +1,12 @@
 module Spree
   module Admin
     class SlidesController < ResourceController
-      before_action :set_lookbook
+      before_action :set_lookbook, only: [:index, :new, :create]
       before_action :set_slide, only: [:show, :edit, :update, :destroy]
 
       # GET /spree/admin/slides
       def index
+        @lookbook = Lookbook.find(params[:lookbook_id])
         @slides = @lookbook.slides
       end
 
@@ -16,18 +17,23 @@ module Spree
       # GET /spree/admin/slides/new
       def new
         @slide = @lookbook.slides.build
+        @action = [:admin, @lookbook]
       end
 
       # GET /spree/admin/slides/1/edit
       def edit
+        @lookbook = @slide.lookbook
+        @action = [:admin, @slide]
       end
 
       # POST /spree/admin/slides
       def create
         @slide = @lookbook.slides.build(slide_params)
 
+        @action = [:admin, @lookbook, @slide]
+
         if @slide.save
-          redirect_to admin_lookbook_slide_path(@lookbook, @slide), notice: 'Slide was successfully created.'
+          redirect_to admin_slide_path(@slide), notice: 'Slide was successfully created.'
         else
           render :new
         end
@@ -36,7 +42,7 @@ module Spree
       # PATCH/PUT /spree/admin/slides/1
       def update
         if @slide.update(slide_params)
-          redirect_to admin_lookbook_slide_path(@lookbook, @slide), notice: 'Slide was successfully updated.'
+          redirect_to admin_slide_path(@slide), notice: 'Slide was successfully updated.'
         else
           render :edit
         end
@@ -55,7 +61,7 @@ module Spree
         end
 
         def set_slide
-          @slide = @lookbook.slides.find(params[:id])
+          @slide = Slide.find(params[:id])
         end
 
 

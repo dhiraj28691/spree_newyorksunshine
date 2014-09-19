@@ -4,9 +4,9 @@
 
 <% content_for :page_actions do %>
   <li id="new_product_link">
-    <%= button_link_to Spree.t(:new_lookbook), new_admin_lookbook_slide_path(@lookbook), { :remote => true, :icon => 'plus', :id => 'admin_new_lookbook' } %>
+    <%= button_link_to Spree.t(:new_slide), new_admin_lookbook_slide_path, { :remote => false, :icon => 'plus', :id => 'admin_new_lookbook' } %>
   </li>
-<% end if can?(:create, Spree::Lookbook) %>
+<% end if can?(:create, Spree::Slide) %>
 
 <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
 
@@ -14,21 +14,22 @@
 <table>
   <thead>
     <tr>
-      <th>Stiuffs</th>
+      <th>Embed Code</th>
+      <th>Images</th>
     </tr>
   </thead>
 
   <tbody>
     <% @slides.each do |slide| %>
       <tr>
-        <td>Slide Contents</td>
-
+        <td><%= slide.embed_code %></td>
+        <td><%= link_to "Slide Images ()", admin_slide_slide_images_path(slide)  %></td>
         <td class="actions">
-          <%= link_to 'Show', admin_lookbook_slide_path(@lookbook, slide) %>
+          <%= link_to 'Show', admin_slide_path(slide) %>
           &nbsp;
-          <%= link_to 'Edit', edit_admin_lookbook_slide_path(@lookbook, slide) %>
+          <%= link_to 'Edit', edit_admin_slide_path(slide) %>
           &nbsp;
-          <%= link_to 'Destroy', admin_lookbook_slide_path(@lookbook, slide), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Destroy', admin_slide_path(slide), method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
@@ -36,5 +37,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Slide', new_admin_lookbook_slide_path %>

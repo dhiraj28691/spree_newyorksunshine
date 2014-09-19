@@ -4,9 +4,12 @@ Spree::Core::Engine.add_routes do
     resources :images
   end
 
+
   namespace :admin do
-    resources :lookbooks do
-      resources :slides
+    resources :lookbooks, shallow: true do
+      resources :slides, shallow: true do
+        resources :slide_images
+      end
     end
 
     resources :posts do
@@ -21,12 +24,15 @@ Spree::Core::Engine.add_routes do
 
   resources :lookbooks
 
-  get 'news', :to => 'news#index'
+  get 'news', to: 'news#index'
+  get 'post/:id', to: 'news#show', as: :post
+  get 'tagged/:tag', to: 'news#index', as: :tag
+
+  # resources :posts
 
   # This needs to change
   # get 'tagged/:tag', :to => 'news#tagged'
 
-  get 'tagged/:tag', to: 'news#index', as: :tag
 
   get 'stockists', :to => 'stockists#index'
 

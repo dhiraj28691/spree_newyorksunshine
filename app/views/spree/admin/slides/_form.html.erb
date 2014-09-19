@@ -1,4 +1,4 @@
-<%= form_for [:admin, @lookbook, @slide], :html => { :multipart => true } do |f| %>
+<%= form_for @action, :html => { :multipart => true } do |f| %>
   <% if @slide.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@slide.errors.count, "error") %> prohibited this slide from being saved:</h2>
@@ -11,9 +11,16 @@
     </div>
   <% end %>
 
-  <%= f.label :embed_code %>
-  <%= f.text_area(:embed_code) %>
 
+  <table>
+
+    <%= f.label(:embed_code) %>
+    <%= f.text_area(:embed_code) %>
+
+
+  <hr>
+
+  <%= link_to "Slide Images", admin_slide_slide_images_path(@slide) %>
 
   <div class="actions">
     <%= f.submit %>

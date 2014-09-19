@@ -1,0 +1,69 @@
+<article class="post">
+
+  <h4><%= link_to post['title'], post %></h4>
+  <p class="date"><%= post.published_on.strftime("%m-%d-%Y") %></p>
+
+  <div class="media">
+
+    <% if post.post_images && post.post_images.length > 1 %>
+
+
+      <div class="slideshow">
+        <ul class="stage">
+          <% post.post_images.each_with_index do |x, index| %>
+            <li class="slide" style="background-image: url(<%= x.attachment %>)">
+              <%= image_tag x.attachment %>
+          <% end %>
+        </ul>
+      </div>
+
+    <% elsif post.post_images && post.post_images.length == 1 %>
+
+      <% if post.link_url %>
+
+        <%= link_to post.link_url, { :target => "_blank", :class => "solo-image-link" } do %>
+
+          <%= image_tag post.post_images[0].attachment(:large), :class => "solo-image" %>
+
+        <% end %>
+
+      <% else %>
+
+        <%= image_tag post.post_images[0].attachment(:large), :class => "solo-image" %>
+
+      <% end %>
+
+    <% end %>
+
+    <div class="embed">
+      <%= raw post['embed_code'] %>
+    </div>
+  </div>
+
+  <div class="text">
+    <% if post['body_text'] %>
+      <%
+        body_text_classes = ""
+        body_text_classes = body_text_classes + " two-columns" if post['body_text'].split('').count > 350 rescue nil
+      %>
+      <div class="body-text<%= body_text_classes %>"><%= raw post['body_text'] %></div>
+    <% end %>
+
+    <% if post['tags'] && post['tags'] != '' %>
+      <p class="tags">tags:
+        <% post['tags'].each do |tag| %>
+          <%= link_to tag, "/tagged/#{tag}" %>
+        <% end %>
+      </p>
+    <% end %>
+
+    <% if post.tag_list.length > 0 %>
+      Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+    <% end %>
+
+    <% if post.link_url %>
+      <p class="clickthrough-link"><%= link_to 'read more', post.link_url, {:target => "_blank"} %></p>
+    <% end %>
+
+  </div>
+</article>

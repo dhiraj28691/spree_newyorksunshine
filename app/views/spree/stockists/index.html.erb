@@ -9,24 +9,13 @@
     <dl>
 
       <% stockists.each do |stockist| %>
-
-
-        <dt><%= stockist['name'] %>
-
+        <dt><%= stockist.name %>
         <dd>
-
-          <address><%= stockist['address'] %></address>
-
-          <% if (defined?(stockist['phone_number'])) %>
-            <a class="phone-number" href="tel:<%= stockist['phone_number'] %>"><%= stockist['phone_number'] %></a>
-          <% end %>
-
-          <a class="website" href="<%= stockist['anchor_href'] %>" target="_blank" ><%= stockist['anchor'] %></a>
-
+          <address><%= stockist.address %></address>
+          <%= stockist.phone_number != '' ? link_to(stockist.phone_number, "tel://#{stockist.phone_number}/", { :class => "phone-number"}) : nil %>
+          <%= stockist.link != '' ? link_to(stockist.link, stockist.link, { :class => "website", :target => "_blank" }) : nil %>
       <% end %>
-
     </dl>
-
   <% end %>
 
 

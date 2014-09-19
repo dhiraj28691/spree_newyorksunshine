@@ -1,0 +1,42 @@
+<table>
+  <colgroup>
+    <col style="width: 15%;">
+    <col style="width: 50%;">
+    <col style="width: 15%;">
+    <col style="width: 15%;">
+    <col style="width: 5%;">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone Number</th>
+      <th>Link</th>
+      <th class="actions"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% stockists.each do |stockist| %>
+      <tr>
+        <td><%= stockist.name %></td>
+        <td>
+          <address><%= stockist['address'] %></address>
+        </td>
+        <td>
+          <% if (defined?(stockist['phone_number'])) %>
+            <a class="phone-number" href="tel:<%= stockist['phone_number'] %>"><%= stockist['phone_number'] %></a>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to stockist.link, stockist.link %>
+        </td>
+        <td class="actions">
+          <%= link_to_edit stockist, :no_text => true, :class => 'edit' %>
+          &nbsp;
+          <%= link_to_delete stockist, :no_text => true %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

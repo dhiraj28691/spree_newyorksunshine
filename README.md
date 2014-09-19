@@ -37,3 +37,8 @@ require 'spree_newyorksunshine/factories'
 ```
 
 Copyright (c) 2014 [name of extension creator], released under the New BSD License
+
+
+
+rails g model spree/stockist region:integer, name:string, address:string, phone_number:string, link:string
+rails g scaffold_controller spree/admin/stockist

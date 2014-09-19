@@ -1,7 +1,7 @@
 module Spree
   class StockistsController < Spree::BaseController
 
-    def index
+    def index_old
 
       @stockists = {
         'North America' => [],
@@ -107,7 +107,19 @@ module Spree
       #   "anchor" => "www.fredsegal.jp",
       #   "anchor_href" => "http://www.fredsegal.jp/"
       # }
+    end
 
+    def index
+      stockists = Stockist.all
+
+      @stockists = {
+        "North America" => [],
+        "International" => []
+      }
+
+      stockists.each do |stockist|
+        @stockists[stockist.region].push(stockist)
+      end
     end
 
   end

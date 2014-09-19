@@ -6,6 +6,7 @@ Spree::Core::Engine.add_routes do
 
 
   namespace :admin do
+
     resources :lookbooks, shallow: true do
       resources :slides, shallow: true do
         resources :slide_images
@@ -15,6 +16,9 @@ Spree::Core::Engine.add_routes do
     resources :posts do
       resources :post_images
     end
+
+    resources :stockists
+
   end
 
 
@@ -25,8 +29,8 @@ Spree::Core::Engine.add_routes do
   resources :lookbooks
 
   get 'news', to: 'news#index'
-  get 'post/:id', to: 'news#show', as: :post
   get 'tagged/:tag', to: 'news#index', as: :tag
+  get 'post/:id', to: 'news#show', as: :post
 
   # resources :posts
 

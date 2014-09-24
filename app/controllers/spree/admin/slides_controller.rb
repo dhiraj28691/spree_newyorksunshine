@@ -17,7 +17,7 @@ module Spree
       # GET /spree/admin/slides/new
       def new
         @slide = @lookbook.slides.build
-        @action = [:admin, @lookbook]
+        @action = [:admin, @lookbook, @slide]
       end
 
       # GET /spree/admin/slides/1/edit

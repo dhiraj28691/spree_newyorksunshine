@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:listing_lookbook_slides) %>
+  <%= Spree.t(:listing_slides_for_lookbook) %> "<%= @lookbook.name %>"
 <% end %>
 
 <% content_for :page_actions do %>
@@ -10,30 +10,35 @@
 
 <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Embed Code</th>
-      <th>Images</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @slides.each do |slide| %>
+<% if @slides.any? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= slide.embed_code %></td>
-        <td><%= link_to "Slide Images ()", admin_slide_slide_images_path(slide)  %></td>
-        <td class="actions">
-          <%= link_to 'Show', admin_slide_path(slide) %>
-          &nbsp;
-          <%= link_to 'Edit', edit_admin_slide_path(slide) %>
-          &nbsp;
-          <%= link_to 'Destroy', admin_slide_path(slide), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <th>Embed Code</th>
+        <th>Slide Images</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @slides.each do |slide| %>
+        <tr>
+          <td><%= slide.embed_code %></td>
+          <td>
+
+
+            <%= link_to admin_slide_slide_images_path(slide), :class => "fa fa-eye icon_link with-tip" do %>
+              <span><%= slide.slide_images.length %></span>
+            <% end %>
+          </td>
+          <td class="actions">
+            <%= link_to_edit slide, :no_text => true, :class => 'edit' %>
+            &nbsp;
+            <%= link_to_delete slide, :no_text => true %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No slides to display</p>
+<% end %>

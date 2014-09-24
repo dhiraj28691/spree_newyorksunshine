@@ -8,9 +8,32 @@
       <% @lookbook.slides.each do |slide| %>
         <div class="slide">
 
-          <% slide.slide_images.each do |image_src| %>
-            <img class="look style-<%= slide['images'].length %>" src="<%= image_src %>">
+
+          <% case slide.slide_images.length
+
+            when 1 %>
+
+              <% slide.slide_images.each do |slide_image| %>
+                <!-- <%= image_tag slide_image.attachment(:full), { :class => "look style-#{slide.slide_images.length}" } %> -->
+                <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
+              <% end %>
+
+          <% when 2 %>
+
+              <% slide.slide_images.each do |slide_image| %>
+                <!-- <%= image_tag slide_image.attachment(:portrait), { :class => "look style-#{slide.slide_images.length}" } %> -->
+                <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:portrait) %>)'></div>
+              <% end %>
+
+          <% when 3 %>
+
+              <% slide.slide_images.each do |slide_image| %>
+                <!-- <%= image_tag slide_image.attachment(:portrait_skinny), { :class => "look style-#{slide.slide_images.length}" } %> -->
+                <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:portrait_skinny) %>)'></div>
+              <% end %>
+
           <% end %>
+
 
         </div>
       <% end %>
@@ -26,8 +49,9 @@
 
       <div class="thumbnail">
 
-        <% slide['images'].each do |image_src| %>
-          <img class="thumbnail-style-<%= slide['images'].length %>" src="<%= image_src %>">
+        <% slide.slide_images.each do |slide_image| %>
+        <%= image_tag slide_image.attachment, { :class => "thumbnail-style-#{slide.slide_images.length}" } %>
+
         <% end %>
 
       </div>

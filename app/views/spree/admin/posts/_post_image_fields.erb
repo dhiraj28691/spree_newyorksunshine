@@ -6,7 +6,7 @@
       </td>
       <td>
         <% if f.object.attachment_updated_at.present? %>
-          <img src="<%= f.object.attachment.url(:thumbnail) %>" width="100">
+          <img src="<%= f.object.attachment.url(:thumb) %>" width="100">
           <br>
           Choose new:
         <% end %>

@@ -15,7 +15,6 @@
   <table>
     <thead>
       <tr class="admin_posts_index_headers">
-        <th>Id</th>
         <th>Title</th>
         <th>Slug</th>
         <th>Published On</th>
@@ -29,12 +28,11 @@
     <tbody>
       <% @posts.each do |post| %>
         <tr>
-          <td><%= post.id %></td>
           <td><%= post.title %></td>
           <td><%= post.slug %></td>
           <td><%= post.published_on.to_formatted_s(:nice) %></td>
           <td class="align-center"><%= link_to post.post_images.length, admin_post_post_images_path(post), class: "fa fa-eye" %></td>
-          <td><%= link_to "link", post.link_url, { "target" => "_blank" } %></td>
+          <td><% if (post.link_url != "") %><%= link_to "link", post.link_url, { "target" => "_blank" } %><% end %></td>
           <td><%= post.description %></td>
           <td class="actions" data-hook="admin_posts_index_row_actions">
             <%= link_to "", edit_admin_post_path(post), { "class" => "edit fa fa-edit icon_link with-tip no-text", "data-action" => "edit", "title" => "Edit"}  %>

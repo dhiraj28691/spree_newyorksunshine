@@ -78,6 +78,14 @@ class Lookbook
     else
       @scrollTop = 92
 
+  getScrollTop: (mediaQueryList)=>
+    if mediaQueryList.matches && Modernizr.touch
+      309
+    else if mediaQueryList.matches
+      209
+    else
+      92
+
 
   prevSlide: (event) =>
     if event
@@ -128,7 +136,7 @@ class Lookbook
     if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(@scrollTop, 400)
+    scrollTo(@getScrollTop(matchMedia("(min-width: 768px)")), 400)
 
   setStage3d: () =>
     panelSize = @stage.offsetWidth
@@ -168,7 +176,7 @@ class Lookbook
 
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(@scrollTop, 400)
+    scrollTo(@getScrollTop(matchMedia("(min-width: 768px)")), 400)
 
   setStage2d: () =>
 
@@ -195,10 +203,10 @@ class Lookbook
       look.style.transform = transform
 
   setStage: () ->
-    if Modernizr.preserve3d then @setStage3d.call() else @setStage2d.call()
+    if Modernizr.preserve3d and @looks.length > 2 then @setStage3d.call() else @setStage2d.call()
 
   updateSlideshow: () ->
-    if Modernizr.preserve3d then @updateSlideshow3d.call() else @updateSlideshow2d.call()
+    if Modernizr.preserve3d and @looks.length > 2 then @updateSlideshow3d.call() else @updateSlideshow2d.call()
 
 document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#lookbook') != null)

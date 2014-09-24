@@ -40,7 +40,9 @@
     <div class="row">
       <div class="sixteen columns alpha omega">
         <div class="field">
-          <%= link_to "Show Slides (#{@lookbook.slides.count})", admin_lookbook_slides_path(@lookbook) %>
+          <% if @lookbook.id != nil %>
+            <%= link_to "Show Slides (#{@lookbook.slides.count})", admin_lookbook_slides_path(@lookbook) %>
+          <% end %>
         </div>
       </div>
     </div>

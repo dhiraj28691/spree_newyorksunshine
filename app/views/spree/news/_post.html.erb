@@ -4,10 +4,7 @@
   <p class="date"><%= post.published_on.strftime("%m-%d-%Y") %></p>
 
   <div class="media">
-
     <% if post.post_images && post.post_images.length > 1 %>
-
-
       <div class="slideshow">
         <ul class="stage">
           <% post.post_images.each_with_index do |x, index| %>
@@ -16,25 +13,15 @@
           <% end %>
         </ul>
       </div>
-
     <% elsif post.post_images && post.post_images.length == 1 %>
-
-      <% if post.link_url %>
-
+      <% if post.link_url != '' %>
         <%= link_to post.link_url, { :target => "_blank", :class => "solo-image-link" } do %>
-
           <%= image_tag post.post_images[0].attachment(:large), :class => "solo-image" %>
-
         <% end %>
-
       <% else %>
-
         <%= image_tag post.post_images[0].attachment(:large), :class => "solo-image" %>
-
       <% end %>
-
     <% end %>
-
     <div class="embed">
       <%= raw post['embed_code'] %>
     </div>

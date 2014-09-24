@@ -1,6 +1,14 @@
-<h1>Editing spree_admin_slide</h1>
+<% content_for :page_title do %>
+  <%= Spree.t(:editing_slide_for_lookbook) %> "<%= @slide.lookbook.name %>"
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:back_to_lookbook), spree.edit_admin_lookbook_path(@slide.lookbook), :icon => 'arrow-left' %>
+  </li>
+  <li>
+    <%= button_link_to Spree.t(:new_slide), spree.new_admin_lookbook_slide_path(@slide.lookbook), :icon => 'plus' %>
+  </li>
+<% end %>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', admin_slide_path(@slide) %> |
-<%= link_to 'Back', admin_lookbook_slides_path(@lookbook) %>

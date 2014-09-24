@@ -82,6 +82,9 @@ module Spree
 
     def show
       @lookbook = Lookbook.friendly.find(params[:id])
+
+      # @lookbook.slide_images
+
     end
 
     private

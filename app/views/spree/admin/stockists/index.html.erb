@@ -8,9 +8,7 @@
   </li>
 <% end %>
 
-
 <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
-
 
 <% @stockists.each do |stockist_region, stockists| %>
 
@@ -19,7 +17,3 @@
   <%= render :partial => "datatable", :locals => { :stockists => stockists } %>
 
 <% end %>
-
-<br>
-
-<%= link_to 'New Stockist', new_admin_stockist_path %>

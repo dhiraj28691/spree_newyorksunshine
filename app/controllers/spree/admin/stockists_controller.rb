@@ -7,22 +7,7 @@ module Spree
       # GET /spree/admin/stockists
       def index
 
-        @stockists = {
-          "North America" => [],
-          "International" => []
-        }
-
-        stockists = Stockist.all
-
-        stockists.each do |stockist|
-          @stockists[stockist.region].push(stockist)
-        end
-
-        @north_american_stockists = Stockist.where("region = ?", 0)
-        @international_stockists = Stockist.where("region = ?", 1)
-
-
-
+        @stockists = Stockist.all.group_by(&:region)
 
       end
 

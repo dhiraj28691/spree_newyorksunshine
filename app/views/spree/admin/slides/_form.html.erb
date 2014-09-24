@@ -1,4 +1,5 @@
 <%= form_for @action, :html => { :multipart => true } do |f| %>
+
   <% if @slide.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@slide.errors.count, "error") %> prohibited this slide from being saved:</h2>
@@ -20,9 +21,17 @@
 
   <hr>
 
-  <%= link_to "Slide Images", admin_slide_slide_images_path(@slide) %>
+  <% unless f.object.new_record? %>
+    <%= link_to "Slide Images", admin_slide_slide_images_path(@slide) %>
+  <% end %>
 
-  <div class="actions">
+  <fieldset>
+
+  <div class="form-buttons filter-actions actions">
     <%= f.submit %>
+    or Cancel
   </div>
+
+</fieldset>
+
 <% end %>

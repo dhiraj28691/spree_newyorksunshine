@@ -25,7 +25,7 @@
 
       <tr>
         <td><%= lookbook.name %></td>
-        <td><%= link_to "Slides (#{lookbook.slides.count})", admin_lookbook_slides_path(lookbook) %></td>
+        <td><%= link_to "Slides (#{lookbook.slides.length})", admin_lookbook_slides_path(lookbook) %></td>
         <td><%= lookbook.available_on.to_formatted_s(:nice) %></td>
 
         <td class="actions">

@@ -1,10 +1,8 @@
 <div id="stockists">
 
-  <% puts @stockists %>
+  <% @stockists.each do |region, stockists| %>
 
-  <% @stockists.each_pair do |region, stockists| %>
-
-  <h4><%= region %></h4>
+    <h4><%= region %></h4>
 
     <dl>
 

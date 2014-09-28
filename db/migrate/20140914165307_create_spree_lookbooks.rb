@@ -13,6 +13,7 @@ class AddNameAndSlugAndContentAndAvailableOnAndPublishedToSpreeLookbook < Active
       t.text :content
       t.datetime :available_on
       t.boolean :published, default: true
+      t.integer :aspect_ratio
 
       t.timestamps
     end

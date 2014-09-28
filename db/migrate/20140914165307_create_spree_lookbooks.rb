@@ -1,4 +1,4 @@
-class AddNameAndSlugAndContentAndAvailableOnAndPublishedToSpreeLookbook < ActiveRecord::Migration
+class CreateSpreeLookbooks < ActiveRecord::Migration
   def change
     # add_column :spree_lookbooks, :name, :string
     # add_column :spree_lookbooks, :slug, :string

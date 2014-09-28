@@ -3,6 +3,7 @@ module Spree
     class SlidesController < ResourceController
       before_action :set_lookbook, only: [:index, :new, :create]
       before_action :set_slide, only: [:show, :edit, :update, :destroy]
+      before_action :build_layouts_selects, only: [:new, :edit]
 
       # GET /spree/admin/slides
       def index
@@ -64,6 +65,9 @@ module Spree
           @slide = Slide.find(params[:id])
         end
 
+        def build_layouts_selects
+          @layouts_hash = Slide.layouts.keys
+        end
 
         # Only allow a trusted parameter "white list" through.
         def slide_params

@@ -3,4 +3,6 @@ class Spree::Slide < ActiveRecord::Base
 
   has_many :slide_images
 
+  enum layout: [ "Columns", "Rows", "Donut"]
+
 end

@@ -12,17 +12,28 @@
     </div>
   <% end %>
 
+  <div class="row">
+    <div class="eight columns alpha">
+      <%= f.field_container :embed_code do %>
+        <%= f.label(:embed_code) %>
+        <%= f.text_area(:embed_code) %>
+      <% end %>
+    </div>
 
-  <table>
-
-    <%= f.label(:embed_code) %>
-    <%= f.text_area(:embed_code) %>
+    <div class="eight columns omega">
+      <%= f.field_container :layout do %>
+        <%= f.label :layout %>
+        <%= f.select :layout, options_for_select(@layouts_hash, selected: @slide.layout), {}, class: 'select2' %>
+      <% end %>
+    </div>
+  </div>
 
 
   <hr>
 
   <% unless f.object.new_record? %>
-    <%= link_to "Slide Images", admin_slide_slide_images_path(@slide) %>
+  <label>Slide Images
+    <%= link_to "Show Slide Images (#{@slide.slide_images.length})", admin_slide_slide_images_path(@slide) %>
   <% end %>
 
   <fieldset>

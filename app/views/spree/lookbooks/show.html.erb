@@ -4,37 +4,13 @@
   <div id="plane">
 
     <div class="stage">
+      <%= image_tag "/assets/placeholders/#{@lookbook.aspect_ratio}.png", :class => "image-stretcher" %>
 
       <% @lookbook.slides.each do |slide| %>
-        <div class="slide">
-
-
-          <% case slide.slide_images.length
-
-            when 1 %>
-
-              <% slide.slide_images.each do |slide_image| %>
-                <!-- <%= image_tag slide_image.attachment(:full), { :class => "look style-#{slide.slide_images.length}" } %> -->
-                <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
-              <% end %>
-
-          <% when 2 %>
-
-              <% slide.slide_images.each do |slide_image| %>
-                <!-- <%= image_tag slide_image.attachment(:portrait), { :class => "look style-#{slide.slide_images.length}" } %> -->
-                <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:portrait) %>)'></div>
-              <% end %>
-
-          <% when 3 %>
-
-              <% slide.slide_images.each do |slide_image| %>
-                <!-- <%= image_tag slide_image.attachment(:portrait_skinny), { :class => "look style-#{slide.slide_images.length}" } %> -->
-                <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:portrait_skinny) %>)'></div>
-              <% end %>
-
+        <div class="slide style-<%= slide.slide_images.length %>">
+          <% slide.slide_images.each do |slide_image| %>
+            <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
           <% end %>
-
-
         </div>
       <% end %>
     </div>
@@ -45,19 +21,16 @@
   </div>
 
   <div class="thumbnails">
+
     <% @lookbook.slides.each do |slide| %>
-
-      <div class="thumbnail">
-
+      <div class="thumbnail style-<%= slide.slide_images.length %>">
+        <%= image_tag "/assets/placeholders/#{@lookbook.aspect_ratio}.png", :class => "thumbnail-image-stretcher" %>
         <% slide.slide_images.each do |slide_image| %>
-        <%= image_tag slide_image.attachment, { :class => "thumbnail-style-#{slide.slide_images.length}" } %>
-
+          <div class="look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
         <% end %>
-
       </div>
-
-
     <% end %>
+
   </div>
 
 </div>

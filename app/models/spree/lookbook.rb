@@ -8,7 +8,9 @@ class Spree::Lookbook < ActiveRecord::Base
 
   default_scope { order('available_on DESC') }
 
-  scope :published, where(:published => true)
+  scope :published, -> { where(published: true).where("available_on <= ?", DateTime.now) }
+
+  enum aspect_ratio: [ "1:1", "4:3", "3:2", "16:9", "21:9" ]
 
   def should_generate_new_friendly_id?
     slug.blank? || name_changed?

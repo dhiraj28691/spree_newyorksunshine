@@ -42,3 +42,12 @@ Copyright (c) 2014 [name of extension creator], released under the New BSD Licen
 
 rails g model spree/stockist region:integer, name:string, address:string, phone_number:string, link:string
 rails g scaffold_controller spree/admin/stockist
+
+rake paperclip:refresh:thumbnails CLASS=Spree::SlideImage
+
+
+1:1
+4:3
+3:2
+16:9
+21:9

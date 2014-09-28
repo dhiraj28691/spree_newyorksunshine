@@ -3,6 +3,7 @@ module Spree
     class LookbooksController < ResourceController
 
       before_action :set_lookbook, only: [:show, :edit, :update, :destroy]
+      before_action :build_aspect_ratio_selects, only: [:new, :edit]
 
       def index
         @lookbooks = Lookbook.all
@@ -58,6 +59,10 @@ module Spree
 
       def lookbook_params
         params.require(:lookbook).permit!
+      end
+
+      def build_aspect_ratio_selects
+        @aspect_ratio_selects = Spree::Lookbook.aspect_ratios.keys
       end
 
     end

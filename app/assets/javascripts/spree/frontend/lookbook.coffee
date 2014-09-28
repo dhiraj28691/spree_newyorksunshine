@@ -22,7 +22,7 @@ class Lookbook
   constructor: (@lookbook) ->
 
     @stage = @lookbook.querySelector(".stage")
-    @looks = @stage.children
+    @looks = @stage.querySelectorAll(".slide")
     @current_slide_index = 0
     @slideshow_position_array = []
     @rotation_offset = 0
@@ -34,8 +34,6 @@ class Lookbook
     @setStage()
     # sync slideshow state
     @updateSlideshow()
-
-    @slideshow_scroll_top = if matchMedia("(min-width: 768px)").matches then 200 else 97
 
     left_capture = document.querySelector('.left')
     right_capture = document.querySelector('.right')
@@ -71,20 +69,12 @@ class Lookbook
   setScrollTop: (mediaQueryList) =>
     if mediaQueryList.matches
       if (Modernizr.touch)
-        @scrollTop = 309
+        @scrollTop = 308
       else
-        @scrollTop = 209
+        @scrollTop = 173
 
     else
       @scrollTop = 92
-
-  getScrollTop: (mediaQueryList)=>
-    if mediaQueryList.matches && Modernizr.touch
-      309
-    else if mediaQueryList.matches
-      209
-    else
-      92
 
 
   prevSlide: (event) =>
@@ -110,7 +100,9 @@ class Lookbook
     @updateSlideshow()
 
   goToSlide: (event) =>
-    node = event.target
+    node = event.target.parentNode
+
+    console.log node
 
     @current_slide_index = [].indexOf.call(node.parentNode.children, node)
 
@@ -130,13 +122,14 @@ class Lookbook
 
 
     if @stage.querySelector('.current') != null then @stage.querySelector('.current').classList.remove('current')
-    @stage.children[@current_slide_index].classList.add('current')
+    console.log(@looks)
+    @looks.item(@current_slide_index).classList.add('current')
 
 
     if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(@getScrollTop(matchMedia("(min-width: 768px)")), 400)
+    scrollTo(@scrollTop, 400)
 
   setStage3d: () =>
     panelSize = @stage.offsetWidth
@@ -170,13 +163,13 @@ class Lookbook
 
     if @stage.querySelector('.current') != null then @stage.querySelector('.current').classList.remove('current')
 
-    @stage.children[@current_slide_index].classList.add('current')
+    @looks.item(@current_slide_index).classList.add('current')
 
     if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
 
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(@getScrollTop(matchMedia("(min-width: 768px)")), 400)
+    scrollTo(@scrollTop, 400)
 
   setStage2d: () =>
 
@@ -204,9 +197,10 @@ class Lookbook
 
   setStage: () ->
     if Modernizr.preserve3d and @looks.length > 2 then @setStage3d.call() else @setStage2d.call()
-
+    # @setStage2d.call()
   updateSlideshow: () ->
     if Modernizr.preserve3d and @looks.length > 2 then @updateSlideshow3d.call() else @updateSlideshow2d.call()
+    # @updateSlideshow2d.call()
 
 document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#lookbook') != null)

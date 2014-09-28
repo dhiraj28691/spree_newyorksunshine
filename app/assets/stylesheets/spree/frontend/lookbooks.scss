@@ -1,13 +1,24 @@
-html#spree-application body.lookbooks #content {
+// body.lookbooks { background: url("http://files.human-nyc.com/newyorksunshine/lookbook-2.jpg") center top no-repeat }
+
+body.lookbooks #content {
+  margin: 56px auto 0;
   width: auto;
-  #lookbook-links {
+
+  nav#lookbook-links {
     display: flex;
     justify-content: center;
+    @media #{$tablet-portrait} {
+      position: absolute;
+      left: 0;
+      right: 0;
+      transform: translateY(-100%);
+    }
     a {
       color: inherit;
       display: block;
       padding: 1.56em 3.6em;
       text-decoration: none;
+      &.selected,
       &:hover {
         text-decoration: line-through;
       }
@@ -15,7 +26,6 @@ html#spree-application body.lookbooks #content {
   }
 
   #lookbook {
-    margin: auto;
     overflow: hidden;
     position: relative;
   }
@@ -23,59 +33,74 @@ html#spree-application body.lookbooks #content {
   #plane {
     pointer-events: none;
     position: relative;
+    @media #{$tablet-portrait} {
+      padding: 0;
+    }
   }
 
   .stage {
     display: block;
-    margin: auto;
     pointer-events: none;
-    transition-duration: $slow;
+    transition: transform $slow;
     transform-style: preserve-3d;
-    max-width: 1260px;
+    @media #{$tablet-portrait} {
+      margin: auto 30px;
+    }
+  }
+
+  .image-stretcher {
+    border: 30px solid transparent;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
   }
 
   .slide {
     display: block;
-    width: 100%;
     overflow: hidden;
     position: absolute;
     top: 0;
-    height: 720px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 26px solid transparent;
     backface-visibility: hidden;
     box-sizing: border-box;
     transition-property: opacity;
-    transition-duration: $slow;
+    transition-delay: $slow;
     &:first-child {
-      position: static;
+      position: relative;
     }
     &.current {
       opacity: 1;
       pointer-events: none;
+      transition-duration: 0ms;
+      transition-delay: 0ms;
     }
-    img,
     .image {
+      background-color: transparent;
       display: block;
-      border-left: 16px solid white;
-      border-right: 16px solid white;
+      margin: 4px;
+      @media #{$tablet-portrait} {
+        margin: 4px;
+      }
       box-sizing: border-box;
       line-height: normal;
+      background-repeat: no-repeat;
       background-size: cover;
-      background-position: center;
-
-      height: 690px;
-
+      background-position: center top;
+      background-size: cover;
+      height: 100%;
       &.style-1 {
-        width: 100%;
+        width: calc(100% - 8px);
       }
       &.style-2 {
         float: left;
-        width: 50%;
-        height: 100%;
+        width: calc(50% - 8px);
       }
       &.style-3 {
         float: left;
-        width: calc(100%/3);
-        height: 100%;
+        width: calc(100%/3 - 8px);
       }
     }
 
@@ -119,7 +144,6 @@ html#spree-application body.lookbooks #content {
     top: 0;
     bottom: 0;
     width: 50%;
-    display: none;
     &.left {
       cursor: image-url("w-resize.png"), w-resize;
       left: 0;
@@ -132,60 +156,94 @@ html#spree-application body.lookbooks #content {
 
   .thumbnails {
     cursor: pointer;
+    display: flex;
+    flex-flow: wrap;
     font-size: 0;
-    margin: 0 auto 33px;
-    max-width: 1038px;
-    align-items: center;
-    // columns: 2;
-    column-gap: 0;
-    column-break-inside: avoid;
-    backface-visibility: hidden;
-    @media #{$tablet-portrait} {
-      margin-top: 16px;
-      // columns: 3;
-    }
+    // @media #{$tablet-portrait} {
+      margin: 4px 14vw 0;
+    // }
   }
 
   .thumbnail {
-    backface-visibility: hidden;
+    width: calc(100%/3);
     box-sizing: border-box;
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: top;
+    position: relative;
     width: calc(100%/2);
-    column-break-inside: avoid;
-    backface-visibility: hidden;
-
+    border: 26px solid transparent;
     @media #{$tablet-portrait} {
-      padding: 32px;
-      &:hover img,
-      &.current img {
+      &:hover,
+      &.current,
+      &:hover,
+      &.current {
         opacity: 0.35;
         transition-duration: $fast;
       }
+      transition: opacity $slow;
+    }
+
+    @media #{$desktop} {
       width: calc(100%/3);
     }
 
-    img {
-      column-break-inside: avoid;
-      backface-visibility: hidden;
-      float: left;
+    &.style-1 {
+      .look {
+        left: 0;
+        right: 0;
+      }
+    }
+    &.style-2 {
+      .look {
+        &:nth-child(2) {
+          left: 0;
+          right: 50%;
+        }
+        &:nth-child(3) {
+          left: 50%;
+          right: 0;
+        }
+      }
+    }
+    &.style-3 {
+      .look {
+        &:nth-child(2) {
+          left: 0;
+          right: calc(100%/3);
+        }
+        &:nth-child(3) {
+          left: calc(100%/3);
+          right: calc(200%/3);
+        }
+        &:nth-child(4) {
+          left: calc(200%/3);
+          right: 0;
+        }
+      }
+    }
+
+    .look {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
       background: #909090;
-      border: 5px solid white;
       box-sizing: border-box;
       pointer-events: none;
       transition: opacity $slow;
-      &.thumbnail-style-1 {
-        width: 100%;
-      }
-      &.thumbnail-style-2 {
-        width: 50%;
-      }
-      &.thumbnail-style-3 {
-        width: calc(100%/3);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 4px;
+      @media #{$tablet-portrait} {
+        margin: 16px;
+        margin: 4px;
       }
     }
   }
 
+  .thumbnail-image-stretcher {
+    box-sizing: border-box;
+    display: block;
+    border: 4px solid transparent;
+    width: 100%;
+  }
 }
-

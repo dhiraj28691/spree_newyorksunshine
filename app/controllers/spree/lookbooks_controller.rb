@@ -90,7 +90,7 @@ module Spree
     private
 
     def set_lookbooks
-      @lookbooks = Lookbook.all
+      @lookbooks = Lookbook.published.all
     end
 
   end

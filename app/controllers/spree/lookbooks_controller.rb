@@ -84,6 +84,7 @@ module Spree
       @lookbook = Lookbook.friendly.find(params[:id])
 
       # @lookbook.slide_images
+      @image_stretcher_path = "placeholders/#{@lookbook.aspect_ratio}.png"
 
     end
 

@@ -4,7 +4,7 @@
   <div id="plane">
 
     <div class="stage">
-      <%= image_tag "/assets/placeholders/#{@lookbook.aspect_ratio}.png", :class => "image-stretcher" %>
+      <%= image_tag @image_stretcher_path, :class => "image-stretcher" %>
 
       <% @lookbook.slides.each do |slide| %>
         <div class="slide style-<%= slide.slide_images.length %>">

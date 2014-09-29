@@ -104,7 +104,7 @@ class Lookbook
   goToSlide: (event) =>
     node = event.target.parentNode
 
-    console.log node
+    # console.log node
 
     @current_slide_index = [].indexOf.call(node.parentNode.children, node)
 
@@ -124,7 +124,9 @@ class Lookbook
 
 
     if @stage.querySelector('.current') != null then @stage.querySelector('.current').classList.remove('current')
-    console.log(@looks)
+
+    # console.log(@looks)
+
     @looks.item(@current_slide_index).classList.add('current')
 
 

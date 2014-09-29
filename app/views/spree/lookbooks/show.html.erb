@@ -8,7 +8,7 @@
       <% @lookbook.slides.each do |slide| %>
         <div class="slide style-<%= slide.slide_images.length %>">
           <% slide.slide_images.each do |slide_image| %>
-            <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
+            <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= @image_stretcher_path %>)'></div>
           <% end %>
         </div>
       <% end %>
@@ -23,9 +23,9 @@
 
     <% @lookbook.slides.each do |slide| %>
       <div class="thumbnail style-<%= slide.slide_images.length %>">
-        <%= image_tag "/assets/placeholders/#{@lookbook.aspect_ratio}.png", :class => "thumbnail-image-stretcher" %>
+        <%= image_tag @image_stretcher_path, :class => "thumbnail-image-stretcher" %>
         <% slide.slide_images.each do |slide_image| %>
-          <div class="look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
+          <div class="look style-<%= slide.slide_images.length %>" style='background-image: url(<%= @image_stretcher_path %>)'></div>
         <% end %>
       </div>
     <% end %>

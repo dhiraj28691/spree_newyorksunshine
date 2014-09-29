@@ -44,7 +44,7 @@ class Layout
 
       if @new_page_flag then @fadeOutContent()
 
-    @equivalent_label.addEventListener 'touchstart', toggleMenu
+    @equivalent_label.addEventListener 'touchend', toggleMenu
 
     # Form event bindings
     document.querySelector('a#subscribe').addEventListener 'click', @showForm
@@ -66,6 +66,10 @@ class Layout
   mediaListener: (mediaQueryList) =>
     if mediaQueryList.matches && !Modernizr.touch
       @parallax()
+
+    # if mediaQueryList.matches
+    #   @parallax()
+
 
     else
       cancelAnimationFrame(@requestion)

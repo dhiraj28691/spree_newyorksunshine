@@ -5,7 +5,6 @@
 
     <div class="stage">
       <%= image_tag asset_path(@image_stretcher_path), :class => "image-stretcher" %>
-      <%= image_tag asset_path("placeholders/4:3.png") %>
       <% @lookbook.slides.each do |slide| %>
         <div class="slide style-<%= slide.slide_images.length %>">
           <% slide.slide_images.each do |slide_image| %>

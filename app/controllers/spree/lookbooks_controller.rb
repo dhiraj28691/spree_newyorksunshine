@@ -83,8 +83,7 @@ module Spree
     def show
       @lookbook = Lookbook.friendly.find(params[:id])
 
-      # @lookbook.slide_images
-      @image_stretcher_path = "placeholders/#{@lookbook.aspect_ratio}.png"
+      @image_stretcher_path = "//newyorksunshine-production.s3.amazonaws.com/placeholders/#{@lookbook.aspect_ratio}.png"
 
     end
 

@@ -39,13 +39,15 @@ class Lookbook
     right_capture = document.querySelector('.right')
 
 
-    left_capture.addEventListener 'touchstart', @prevSlide
-    right_capture.addEventListener 'touchstart', @nextSlide
+    interaction_event = if Modernizr.touch then 'touchend' else 'click'
+
+    # left_capture.addEventListener 'touchstart', @prevSlide
+    # right_capture.addEventListener 'touchstart', @nextSlide
     # @thumbnails.addEventListener 'touchstart', @goToSlide
 
-    left_capture.addEventListener 'click', @prevSlide
-    right_capture.addEventListener 'click', @nextSlide
-    @thumbnails.addEventListener 'click', @goToSlide
+    left_capture.addEventListener interaction_event, @prevSlide
+    right_capture.addEventListener interaction_event, @nextSlide
+    @thumbnails.addEventListener interaction_event, @goToSlide
 
     matchMedia("(min-width: 768px)").addListener @setScrollTop
     @setScrollTop(matchMedia("(min-width: 768px)"))
@@ -71,7 +73,7 @@ class Lookbook
       if (Modernizr.touch)
         @scrollTop = 308
       else
-        @scrollTop = 173
+        @scrollTop = 162
 
     else
       @scrollTop = 92
@@ -129,7 +131,7 @@ class Lookbook
     if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(@scrollTop, 400)
+    # scrollTo(@scrollTop, 400)
 
   setStage3d: () =>
     panelSize = @stage.offsetWidth
@@ -169,7 +171,7 @@ class Lookbook
 
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(@scrollTop, 400)
+    # scrollTo(@scrollTop, 400)
 
   setStage2d: () =>
 

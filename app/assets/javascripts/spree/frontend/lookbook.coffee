@@ -133,7 +133,7 @@ class Lookbook
     if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    # scrollTo(@scrollTop, 400)
+    scrollTo(@scrollTop, 400)
 
   setStage3d: () =>
     panelSize = @stage.offsetWidth
@@ -173,7 +173,7 @@ class Lookbook
 
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    # scrollTo(@scrollTop, 400)
+    scrollTo(@scrollTop, 400)
 
   setStage2d: () =>
 

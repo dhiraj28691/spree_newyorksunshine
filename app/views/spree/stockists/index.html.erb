@@ -11,7 +11,9 @@
         <dd>
           <address><%= stockist.address %></address>
           <%= stockist.phone_number != '' ? link_to(stockist.phone_number, "tel://#{stockist.phone_number}/", { :class => "phone-number"}) : nil %>
-          <%= stockist.link != '' ? link_to(stockist.link, stockist.link, { :class => "website", :target => "_blank" }) : nil %>
+          <%= stockist.link != '' ? link_to(stockist.link, { :class => "website", :target => "_blank" }) do %>
+            <%= nice_url(stockist.link) %>
+          <% end : nil %>
       <% end %>
     </dl>
   <% end %>

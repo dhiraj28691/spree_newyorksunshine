@@ -26,7 +26,7 @@
       <% @slide.slide_images.each do |slide_image| %>
         <tr>
           <td>
-            <%= image_tag slide_image.attachment(:thumb), { :width => "100" } %>
+            <%= image_tag slide_image.attachment(:thumb) %>
           </td>
           <td class="actions">
             <%= link_to_edit slide_image, :no_text => true, :class => 'edit' %>

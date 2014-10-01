@@ -3,9 +3,8 @@
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:new_stockist), spree.new_admin_stockist_path, :icon => 'plus' %>
-  </li>
+  <li><%= button_link_to Spree.t(:new_stockist), spree.new_admin_stockist_path, :icon => 'plus' %></li>
+  <li class="drag-toggle"><%= button_link_to Spree.t(:reorder), nil, { :icon => 'arrows' } %></li>
 <% end %>
 
 <%= render :partial => 'spree/admin/shared/content_sub_menu' %>

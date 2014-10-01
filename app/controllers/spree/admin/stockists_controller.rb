@@ -46,6 +46,13 @@ module Spree
         end
       end
 
+      def sort
+        params[:stockist].each_with_index do |id, i|
+          Stockist.find(id).update_column(:position, i + 1)
+        end
+        render nothing: true
+      end
+
       # DELETE /spree/admin/stockists/1
       def destroy
         @admin_stockist.destroy

@@ -17,6 +17,7 @@ Spree::Core::Engine.add_routes do
       resources :post_images
     end
 
+    put 'stockists/sort', to: 'stockists#sort', as: 'sort_stockists'
     resources :stockists
 
   end

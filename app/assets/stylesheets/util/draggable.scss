@@ -1,0 +1,6 @@
+.zortable {
+  cursor: grab;
+  &[data-state="started"] {
+    cursor: grabbing;
+  }
+}

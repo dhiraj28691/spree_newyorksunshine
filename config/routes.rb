@@ -13,6 +13,9 @@ Spree::Core::Engine.add_routes do
       end
     end
 
+
+    resources :feed_items
+
     resources :posts do
       resources :post_images
     end

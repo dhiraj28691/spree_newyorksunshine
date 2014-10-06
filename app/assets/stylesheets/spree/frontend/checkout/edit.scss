@@ -3,7 +3,6 @@ span.required {
 }
 
 body.checkout.edit {
-  // background: magenta;
   .row[data-hook="checkout_header"] {
     @media #{$tablet-portrait} {
       display: flex;
@@ -150,7 +149,10 @@ body.checkout.edit {
       width: 218px;
     }
   }
+}
 
+#checkout {
+  margin: 0 8px;
 }
 
 .form-buttons {

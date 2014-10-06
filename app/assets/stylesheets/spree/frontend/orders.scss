@@ -1,3 +1,8 @@
+.cart-container {
+  margin: 0 8px;
+}
+
+
 body.orders.edit {
 
   thead {
@@ -42,6 +47,7 @@ body.orders.edit {
       width: 50%;
       @media #{$tablet-portrait} {
         display: table-cell;
+        float: none;
         width: auto;
       }
       a {
@@ -212,7 +218,4 @@ body.orders.edit {
     }
 
   }
-
-
 }
-

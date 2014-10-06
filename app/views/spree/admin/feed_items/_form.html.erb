@@ -1,0 +1,74 @@
+<%= form_for [:admin, @feed_item] do |f|  %>
+  <legend align="center"><%= f.object.new_record? ? "New Feed Item" : "Edit Feed Item" %></legend>
+
+  <% if @feed_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feed_item.errors.count, "error") %> prohibited this feed_item from being saved:</h2>
+
+      <ul>
+      <% @feed_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.field_container :style do %>
+    <%= f.label :type %>
+    <%= f.select :type, options_for_select(@types_hash, selected: @feed_item.type), { :prompt => true }, class: 'select21' %>
+  <% end %>
+
+  <div class="field-group" data-type="product">
+    <p>select product</p>
+
+    <%= f.field_container :product do %>
+      <%= f.label :product %>
+      <%= f.collection_select :product_id, @products, :id, :name, { :prompt => true }, { :class => 'select2' } %>
+    <% end %>
+
+  </div>
+
+  <div class="field-group" data-type="post">
+    <p>select post</p>
+
+    <%= f.field_container :post do %>
+      <%= f.label :post %>
+      <%= f.collection_select :post_id, @posts, :id, :title, { :prompt => true }, { :class => 'select2' } %>
+    <% end %>
+
+  </div>
+
+  <div class="field-group" data-type="custom">
+    <p>enter custom fields</p>
+
+    <%= f.field_container  :superheading do %>
+      <%= f.label :superheading %>
+      <%= f.text_field :superheading %>
+    <% end %>
+
+
+    <%= f.field_container  :title do %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    <% end %>
+
+
+    <%= f.field_container  :href do %>
+      <%= f.label :href, 'Link URL' %>
+      <%= f.text_field :href %>
+    <% end %>
+
+    <%= f.field_container  :attachment do %>
+      <%= f.label :attachment, 'Image' %>
+      <%= f.file_field :attachment %>
+    <% end %>
+
+
+  </div>
+
+
+
+
+  <%= f.submit %>
+
+<% end %>

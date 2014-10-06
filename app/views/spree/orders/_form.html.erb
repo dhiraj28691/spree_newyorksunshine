@@ -1,5 +1,5 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
-<table id="cart-detail" data-hook>
+<table id="cart-detail" data-hook border=0>
   <thead>
     <tr data-hook="cart_items_headers">
       <th class="cart-item-description-header"><%= pluralize(order_form.object.line_items.count, "Item")%><%#= Spree.t(:item) %></th>
@@ -25,6 +25,5 @@
   <tr class="cart-total">
     <td colspan="5" align='right'><h4><%= Spree.t(:total) %></h4></th>
     <td colspan="2"><h4><%= order_form.object.display_total %></h4></td>
-    <td></td>
   </tr>
 </table>

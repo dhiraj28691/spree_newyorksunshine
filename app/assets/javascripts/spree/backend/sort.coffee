@@ -5,7 +5,6 @@ $ ->
 class SortableBehavior
   constructor: ->
     setup()
-    console.log('hai')
 
   setup = ->
     $('.sortable').each ->

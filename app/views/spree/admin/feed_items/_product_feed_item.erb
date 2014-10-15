@@ -1,2 +1,2 @@
 <% image_source = feed_item.attachment_file_name != nil ? feed_item.attachment.url : feed_item.product.images[0].attachment.url %>
-<%= render :partial => "feed_item", :locals => { :id => feed_item.id, :image_src => image_source, :category => "SHOP", :title => feed_item.product.name } %>
+<%= render :partial => "feed_item", :locals => { :id => feed_item.id, :image_src => image_source, :category => "SHOP", :title => feed_item.product.name, :href => product_path(feed_item.product) } %>

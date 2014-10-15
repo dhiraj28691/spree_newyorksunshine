@@ -50,7 +50,13 @@ module Spree
       end
 
       def destroy
+        @feed_item.destroy
+        respond_to do |format|
+          format.html { redirect_to admin_feed_items_url, notice: 'Feed Item was successfully destroyed.' }
+          format.json { head :no_content }
+        end
       end
+
 
       private
 

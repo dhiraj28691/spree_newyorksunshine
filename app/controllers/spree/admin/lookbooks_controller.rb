@@ -39,7 +39,7 @@ module Spree
         respond_to do |format|
           if @lookbook.update(lookbook_params)
             format.html { redirect_to admin_lookbooks_path, notice: 'Lookbook was successfully created.' }
-            format.json { render action: 'show', status: :created, location: @lookbook }
+            format.json { render action: 'index', status: :created, location: @lookbook }
           else
             format.html { render action: 'new' }
             format.json { render json: @lookbook.errors, status: :unprocessable_entity }
@@ -48,6 +48,8 @@ module Spree
       end
 
       def destroy
+        @lookbook.destroy
+        redirect_to admin_lookbooks_path, notice: "Lookbook was sucessfully destroyed."
       end
 
       private

@@ -1,6 +1,6 @@
 <% content_for :sub_menu do %>
   <ul id="sub_nav" data-hook="admin_content_sub_tabs" class="inline-menu">
-    <!-- <li><%= link_to "Home" %> -->
+    <%= tab :feed_items, :match_path => /feed_items/ %>
     <!-- <li><%= link_to "Surf Club" %> -->
     <%= tab :lookbooks, :match_path => /(slide_images)|(lookbooks)/ %>
     <%= tab :posts, :match_path => '/posts' %>

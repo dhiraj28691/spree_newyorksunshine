@@ -5,6 +5,12 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 
 @import "util/draggable";
 
+$fast: 400ms;
+$slow: 800ms;
+
+
+@import "feed_items";
+
 table tbody tr td.actions {
   white-space: nowrap;
 }
@@ -13,3 +19,20 @@ table tbody tr td.actions {
   padding: 25px 0;
 }
 
+form.new_feed_item,
+form.edit_feed_item {
+  .field-group {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+
+  #feed_item_attachment_field {
+    display: none;
+  }
+
+  .field-group.active ~ #feed_item_attachment_field {
+    display: block;
+  }
+}

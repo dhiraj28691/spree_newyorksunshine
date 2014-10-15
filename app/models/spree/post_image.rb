@@ -5,7 +5,7 @@ class Spree::PostImage < ActiveRecord::Base
   default_scope { order(:position) }
 
   has_attached_file :attachment,
-  :styles => { :large => "992x992>", :thumb => "100x100>" },
+  :styles => { :large => "992x992>", :thumb => "100x100>", :cropped => "1080x1620#" },
   :convert_options => { :all => '-colorspace Gray' },
   :default_url => "/images/:style/missing.png"
 

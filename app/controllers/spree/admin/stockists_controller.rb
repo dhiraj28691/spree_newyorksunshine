@@ -8,7 +8,6 @@ module Spree
       def index
 
         @stockists = Stockist.all.group_by(&:region)
-
       end
 
       # GET /spree/admin/stockists/1
@@ -58,7 +57,6 @@ module Spree
         @admin_stockist.destroy
         redirect_to admin_stockists_url, notice: 'Stockist was successfully destroyed.'
       end
-
 
       private
         # Use callbacks to share common setup or constraints between actions.

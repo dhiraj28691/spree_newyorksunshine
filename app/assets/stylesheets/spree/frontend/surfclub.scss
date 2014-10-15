@@ -30,10 +30,12 @@ body.surfclub {
     // flex-wrap: wrap;
     align-items: flex-start;
     column-count: 2;
-    column-gap: 32px;
-    margin: 0 32px;
+    column-gap: 8px;
+    margin: 0 8px;
 
     @media #{$tablet-portrait} {
+      column-gap: 32px;
+      margin: 0 32px;
     }
     @media #{$desktop} {
       // column-count: 3;
@@ -48,8 +50,8 @@ body.surfclub {
     display: inline-block;
     // width: calc(100%/3);
     width: 100%;
-    margin: 16px 0;
-    @media #{$desktop} {
+    margin: 4px 0;
+    @media #{$tablet-portrait} {
       border-width: 32px;
       margin: 32px 0;
     }

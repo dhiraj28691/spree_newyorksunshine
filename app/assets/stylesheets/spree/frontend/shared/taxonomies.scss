@@ -2,7 +2,8 @@ nav#taxonomies {
   // background: red;
   text-align: center;
   display: flex;
-  flex-wrap: nowrap;
+  // flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   text-transform: uppercase;
   h6.taxonomy-root {

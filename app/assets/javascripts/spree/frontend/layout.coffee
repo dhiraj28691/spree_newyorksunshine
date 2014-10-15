@@ -30,6 +30,9 @@ class Layout
     matchMedia("(min-width: 768px)").addListener @mediaListener
     @mediaListener(matchMedia("(min-width: 768px)"))
 
+    matchMedia("(min-width: 2560px)").addListener @setThreshold
+    @setThreshold(matchMedia("(min-width: 2560px)"))
+
     # For safari when swiping back
     window.addEventListener 'pageshow', (event)=>
       if (event.persisted) then @fadeInContent()
@@ -76,6 +79,11 @@ class Layout
       @header.removeAttribute("style")
       @header.classList.remove('pinned')
 
+  setThreshold: (mediaQueryList) =>
+    if mediaQueryList.matches
+      @threshhold = -70
+    else
+      @threshhold = -78
 
   parallax: =>
     if @pageYOffset != window.pageYOffset && @wrapper.clientHeight > window.innerHeight

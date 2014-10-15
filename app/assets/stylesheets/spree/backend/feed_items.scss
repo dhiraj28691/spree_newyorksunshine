@@ -1,0 +1,50 @@
+#feed-items {
+  // background: blue;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+.feed-item {
+  position: relative;
+  width: calc(100%/3);
+  display: flex;
+  align-items: center;
+
+  &:before {
+    background: transparent;
+    // background: hsla(0,0%,100%,0.50);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-duration: $slow;
+  }
+
+  &:hover:before {
+    background: hsla(0,0%,100%,0.95);
+    transition-duration: $fast;
+  }
+
+
+  img {
+    display: block;
+    width: 100%;
+    border: 32px solid white;
+  }
+  .info {
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    transform: translateY(-50%);
+    transition: color $slow;
+    width: 100%;
+  }
+  &:hover .info {
+    color: #272727;
+    transition-duration: $fast;
+  }
+}

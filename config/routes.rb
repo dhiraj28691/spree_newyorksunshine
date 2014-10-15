@@ -13,7 +13,7 @@ Spree::Core::Engine.add_routes do
       end
     end
 
-
+    put 'feed_items', to: 'feed_items#update_batch', as: 'update_batch_feed_items'
     resources :feed_items
 
     resources :posts do

@@ -55,23 +55,29 @@ span.product {
   background-repeat: no-repeat;
   background-position: center;
   vertical-align: middle;
-  width: 100%;
-
-  @media #{$tablet-portrait} {
-    width: calc(100%/2);
-  }
-
-  @media #{$desktop} {
-    width: calc(100%/3);
-  }
-
   box-sizing: border-box;
   color: white;
   display: inline-block;
   display: flex;
   align-items: center;
   position: relative;
-  width: 100%;
+  // width: 100%;
+
+  width: calc(100%/2);
+
+  @media #{$mobile-landscape} {
+    width: calc(100%/3);
+  }
+
+
+  @media #{$tablet-portrait} {
+    width: calc(100%/3);
+  }
+
+  @media #{$desktop} {
+    // width: calc(100%/3);
+  }
+
   &:after {
     background: transparent;
     content: "";
@@ -88,8 +94,10 @@ span.product {
   img {
     display: block;
     width: 100%;
+    border: 8px solid white;
     @media #{$tablet-portrait} {
-      border: 32px solid white;
+      // border: 32px solid white;
+      border-width: 32px;
       box-sizing: border-box;
     }
   }

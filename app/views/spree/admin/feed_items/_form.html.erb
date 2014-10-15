@@ -13,32 +13,39 @@
     </div>
   <% end %>
 
-  <%= f.field_container :style do %>
-    <%= f.label :type %>
-    <%= f.select :type, options_for_select(@types_hash, selected: @feed_item.type), { :prompt => true }, class: 'select21' %>
+  <%= f.field_container :category do %>
+    <%= f.label :category %>
+    <%= f.select :category, options_for_select(@category_options, selected: @feed_item.category), { :prompt => true }, class: 'select21' %>
   <% end %>
 
-  <div class="field-group" data-type="product">
+  <div class="field-group" data-type="Product">
     <p>select product</p>
 
     <%= f.field_container :product do %>
       <%= f.label :product %>
       <%= f.collection_select :product_id, @products, :id, :name, { :prompt => true }, { :class => 'select2' } %>
     <% end %>
-
   </div>
 
-  <div class="field-group" data-type="post">
+  <div class="field-group" data-type="Lookbook">
+    <p>select lookbook</p>
+
+    <%= f.field_container :lookbook do %>
+      <%= f.label :lookbook %>
+      <%= f.collection_select :lookbook_id, @lookbooks, :id, :name, { :prompt => true }, { :class => 'select2' } %>
+    <% end %>
+  </div>
+
+  <div class="field-group" data-type="Post">
     <p>select post</p>
 
     <%= f.field_container :post do %>
       <%= f.label :post %>
       <%= f.collection_select :post_id, @posts, :id, :title, { :prompt => true }, { :class => 'select2' } %>
     <% end %>
-
   </div>
 
-  <div class="field-group" data-type="custom">
+  <div class="field-group" data-type="Other">
     <p>enter custom fields</p>
 
     <%= f.field_container  :superheading do %>
@@ -58,17 +65,15 @@
       <%= f.text_field :href %>
     <% end %>
 
-    <%= f.field_container  :attachment do %>
-      <%= f.label :attachment, 'Image' %>
-      <%= f.file_field :attachment %>
-    <% end %>
-
-
   </div>
 
+  <%= f.field_container  :attachment do %>
+    <%= f.label :attachment, 'Image' %>
+    <%= f.file_field :attachment %>
+  <% end %>
 
 
 
-  <%= f.submit %>
+  <%= f.submit %> or <%= link_to "Cancel", admin_feed_items_path %>
 
 <% end %>

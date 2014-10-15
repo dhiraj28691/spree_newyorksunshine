@@ -1,0 +1,9 @@
+<div class="feed-item" data-id="<%= id %>" id="feeditem_<%= id %>">
+  <%= image_tag image_src, { width: 100 } %>
+  <div class="info">
+    <div><%= category %></div>
+    <%= title %>
+    <br>
+    <%= link_to "edit", edit_admin_feed_item_path(id) %>
+  </div>
+</div>

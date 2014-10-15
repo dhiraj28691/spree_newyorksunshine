@@ -16,6 +16,10 @@ class Spree::Post < ActiveRecord::Base
 
   acts_as_taggable
 
+
+  has_many :feed_items, :class_name => "Spree::Post"
+
+
   private
 
   def create_slug

@@ -1,6 +1,6 @@
 h1#logo {
   display: inline-block;
-  margin: 0;
+  margin: 0.50em 0;
   position: relative;
   z-index: 1;
 }
@@ -46,18 +46,16 @@ label#equivalent {
 input#equivalent-check { display: none }
 
 nav.main-nav {
-  font-size: 0;
-	text-align: center;
-	text-transform: uppercase;
-  height: 0;
-  opacity: 0;
-  // overflow: hidden;
-  pointer-events: none;
-  transition-duration: $fast;
-  transition-property: height, opacity;
+  // display: block;
   @media #{$tablet-portrait} {
-    margin-top: -50px;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition-duration: $fast;
+    transition-property: height, opacity;
+    line-height: 1;
+    margin-top: -5em;
     opacity: 1;
     pointer-events: auto;
   }
@@ -76,9 +74,9 @@ nav.main-nav {
   }
 	& > a,
   & > span {
+    background: magenta;
     color: black;
 		display: block;
-    font-size: 11px;
     padding: 2em 1.85em;
     @media #{$tablet-portrait} {
       padding: 2em 1.85em;

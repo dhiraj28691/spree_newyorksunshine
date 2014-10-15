@@ -1,7 +1,7 @@
 class CreateSpreeFeedItems < ActiveRecord::Migration
   def change
     create_table :spree_feed_items do |t|
-      t.integer :type
+      t.integer :category
       t.string :href
       t.string :superheading
       t.string :title
@@ -9,6 +9,7 @@ class CreateSpreeFeedItems < ActiveRecord::Migration
 
       t.references :product
       t.references :post
+      t.references :lookbook
 
       t.timestamps
     end

@@ -47,6 +47,8 @@ input#equivalent-check { display: none }
 
 nav.main-nav {
   // display: block;
+  // font-size: smaller;
+
   @media #{$tablet-portrait} {
     display: flex;
     justify-content: center;
@@ -74,6 +76,8 @@ nav.main-nav {
   }
 	& > a,
   & > span {
+    letter-spacing: 2.2px;
+
     // background: magenta;
     color: black;
 		display: block;
@@ -90,7 +94,6 @@ nav.main-nav {
 
 
     @media #{$tablet-portrait} {
-      display: inline-block;
 
       &:nth-child(3) {
         margin-right: 64px;

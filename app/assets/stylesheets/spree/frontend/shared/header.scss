@@ -1,5 +1,4 @@
 h1#logo {
-  // background: orange;
   display: inline-block;
   font: inherit;
   margin: 0.50em 0;
@@ -54,12 +53,8 @@ input#equivalent-check { display: none }
 
 nav.main-nav {
   // display: block;
-  height: 0;
-  line-height: 1;
-  opacity: 0;
-  transition-duration: $fast;
-  transition-property: opacity, height;
-  // transition-delay: 0ms, $fast;
+  // font-size: smaller;
+
   @media #{$tablet-portrait} {
     display: flex;
     height: auto;
@@ -79,7 +74,6 @@ nav.main-nav {
     pointer-events: auto;
     transition-property: height, opacity;
     transition-delay: 0ms, $fast;
-    // transition-duration: $fast;
   }
   a {
     color: inherit;

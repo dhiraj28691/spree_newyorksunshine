@@ -1,4 +1,5 @@
 <%= form_for [:admin, @feed_item] do |f|  %>
+
   <legend align="center"><%= f.object.new_record? ? "New Feed Item" : "Edit Feed Item" %></legend>
 
   <% if @feed_item.errors.any? %>
@@ -71,7 +72,6 @@
     <%= f.label :attachment, 'Image' %>
     <%= f.file_field :attachment %>
   <% end %>
-
 
 
   <%= f.submit %> or <%= link_to "Cancel", admin_feed_items_path %>

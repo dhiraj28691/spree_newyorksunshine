@@ -1,8 +1,13 @@
 h1#logo {
+  // background: orange;
   display: inline-block;
+  font: inherit;
   margin: 0.50em 0;
   position: relative;
   z-index: 1;
+  @media #{$tablet-portrait} {
+    margin: 11px 0;
+  }
 }
 h1#logo a {
   color: $matteBlack;
@@ -32,7 +37,9 @@ h1#logo a {
 
 label#equivalent {
   cursor: pointer;
+  font: inherit;
   line-height: 1;
+  margin: 0.50em 0;
   position: absolute;
   z-index: 9999;
   left: 0;
@@ -47,23 +54,32 @@ input#equivalent-check { display: none }
 
 nav.main-nav {
   // display: block;
+  height: 0;
+  line-height: 1;
+  opacity: 0;
+  transition-duration: $fast;
+  transition-property: opacity, height;
+  // transition-delay: 0ms, $fast;
   @media #{$tablet-portrait} {
     display: flex;
+    height: auto;
     justify-content: center;
     text-transform: uppercase;
     pointer-events: none;
     transition-duration: $fast;
     transition-property: height, opacity;
-    line-height: 1;
     margin-top: -5em;
     opacity: 1;
     pointer-events: auto;
   }
   input#equivalent-check:checked + & {
-    height: 360px;
+    height: 432px;
+    // height: auto;
     opacity: 1;
     pointer-events: auto;
+    transition-property: height, opacity;
     transition-delay: 0ms, $fast;
+    // transition-duration: $fast;
   }
   a {
     color: inherit;
@@ -74,7 +90,7 @@ nav.main-nav {
   }
 	& > a,
   & > span {
-    background: magenta;
+    // background: magenta;
     color: black;
 		display: block;
     padding: 2em 1.85em;
@@ -93,18 +109,18 @@ nav.main-nav {
       display: inline-block;
 
       &:nth-child(3) {
-        margin-right: 64px;
+        margin-right: 42px;
       }
       &:nth-child(4) {
-        margin-left: 64px;
+        margin-left: 42px;
       }
     }
     @media #{$desktop} {
       &:nth-child(3) {
-        margin-right: 188px;
+        margin-right: 170px;
       }
       &:nth-child(4) {
-        margin-left: 188px;
+        margin-left: 170px;
       }
     }
 

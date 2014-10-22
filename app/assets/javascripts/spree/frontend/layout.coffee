@@ -8,7 +8,7 @@ class Layout
   constructor: ->
     # ratio = -0.5
     @ratio = -1
-    @threshhold = -78
+    @threshhold = -71
 
     @new_page_flag = true
 
@@ -83,7 +83,7 @@ class Layout
     if mediaQueryList.matches
       @threshhold = -70
     else
-      @threshhold = -78
+      @threshhold = -71
 
   parallax: =>
     if @pageYOffset != window.pageYOffset && @wrapper.clientHeight > window.innerHeight

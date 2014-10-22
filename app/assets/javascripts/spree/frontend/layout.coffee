@@ -70,10 +70,6 @@ class Layout
     if mediaQueryList.matches && !Modernizr.touch
       @parallax()
 
-    # if mediaQueryList.matches
-    #   @parallax()
-
-
     else
       cancelAnimationFrame(@requestion)
       @header.removeAttribute("style")
@@ -81,7 +77,7 @@ class Layout
 
   setThreshold: (mediaQueryList) =>
     if mediaQueryList.matches
-      @threshhold = -70
+      @threshhold = -88
     else
       @threshhold = -71
 
@@ -103,8 +99,6 @@ class Layout
 
   toggleMenu = (event) =>
     event.stopPropagation()
-    # event.preventDefault()
-    # @equivalent_check.checked = if @equivalent_check.checked then false else true
 
   showForm: (event) =>
     event.preventDefault()

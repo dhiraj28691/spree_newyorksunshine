@@ -1,5 +1,4 @@
 h1#logo {
-  // background: orange;
   display: inline-block;
   font: inherit;
   margin: 0.50em 0;
@@ -7,6 +6,9 @@ h1#logo {
   z-index: 1;
   @media #{$tablet-portrait} {
     margin: 11px 0;
+  }
+  @media #{$QHD} {
+    margin: 19px 0;
   }
 }
 h1#logo a {
@@ -26,9 +28,6 @@ h1#logo a {
     background-position: 0 -168px;
     width: 340px;
   }
-
-
-
   &:hover {
     opacity: 0.50;
     transition-duration: $fast;
@@ -53,13 +52,11 @@ label#equivalent {
 input#equivalent-check { display: none }
 
 nav.main-nav {
-  // display: block;
   height: 0;
   line-height: 1;
   opacity: 0;
   transition-duration: $fast;
   transition-property: opacity, height;
-  // transition-delay: 0ms, $fast;
   @media #{$tablet-portrait} {
     display: flex;
     height: auto;
@@ -74,12 +71,10 @@ nav.main-nav {
   }
   input#equivalent-check:checked + & {
     height: 432px;
-    // height: auto;
     opacity: 1;
     pointer-events: auto;
     transition-property: height, opacity;
     transition-delay: 0ms, $fast;
-    // transition-duration: $fast;
   }
   a {
     color: inherit;
@@ -90,7 +85,6 @@ nav.main-nav {
   }
 	& > a,
   & > span {
-    // background: magenta;
     color: black;
 		display: block;
     padding: 2em 1.85em;
@@ -103,8 +97,6 @@ nav.main-nav {
     @media #{$widescreen} {
       padding: 2em 3.6em;
     }
-
-
     @media #{$tablet-portrait} {
       display: inline-block;
 
@@ -123,15 +115,10 @@ nav.main-nav {
         margin-left: 170px;
       }
     }
-
-
-
     body.taxons &.shop,
     body.products &.shop {
       text-decoration: line-through;
     }
-
-
     &:hover {
       text-decoration: line-through;
     }

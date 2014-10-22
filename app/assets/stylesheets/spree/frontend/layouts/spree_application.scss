@@ -37,9 +37,12 @@ header {
   overflow: hidden;
   transition: opacity $slow;
   @media #{$tablet-portrait} {
-    min-height: calc(100vh - 2.75em);
+    min-height: calc(100vh - 3.0625em);
     box-sizing: border-box;
-    padding-top: 136px;
+    padding-top: 10.5em;
+  }
+  @media #{$QHD} {
+    padding-top: 11.75em;
   }
 }
 
@@ -71,10 +74,11 @@ header {
 footer {
   letter-spacing: 2.5px;
   // margin: 10em auto 0;
+  margin: auto;
   position: relative;
   transition: opacity $slow;
   @media #{$tablet-portrait} {
-    height: 2.75em;
+    // height: 3.0625em;
     margin-top: 0;
     width: 768px;
   }

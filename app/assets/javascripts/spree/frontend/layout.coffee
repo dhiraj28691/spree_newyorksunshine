@@ -82,15 +82,30 @@ class Layout
       @threshhold = -71
 
   parallax: =>
-    if @pageYOffset != window.pageYOffset && @wrapper.clientHeight > window.innerHeight
+    if @pageYOffset != window.pageYOffset && @wrapper.clientHeight >= window.innerHeight
       @pageYOffset = window.pageYOffset
 
-      transform = Math.max(pageYOffset/2, 0)
-      transform = transform * @ratio
-      transform = Math.max(transform, @threshhold)
+      if(@pageYOffset > 0)
 
-      @header.style.webkitTransform = "translateY(" + transform + "px)";
-      @header.style.transform = "translateY(" + transform + "px)";
+
+
+        transform = Math.max(@pageYOffset/2, 0)
+        transform = transform * @ratio
+        transform = Math.max(transform, @threshhold)
+
+        @header.style.webkitTransform = "translateY(" + transform + "px)";
+        @header.style.transform = "translateY(" + transform + "px)";
+
+
+      else
+        console.log @pageYOffset
+        transform = @pageYOffset * -1
+        # transform = transform
+        # transform = Math.max(transform, @threshhold)
+
+        @header.style.webkitTransform = "translateY(" + transform + "px)";
+        @header.style.transform = "translateY(" + transform + "px)";
+
 
 
       if pageYOffset * @ratio <= @threshhold then @header.classList.add('pinned') else @header.classList.remove('pinned')

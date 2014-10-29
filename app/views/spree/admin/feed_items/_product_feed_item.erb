@@ -5,13 +5,14 @@
 
   <div class="feed-item" data-id="<%= feed_item.id %>" id="feeditem_<%= feed_item.id %>">
 
-    <p class="actions">
-      <span>No product to display</span>
-      <br>
-      <%= link_to "edit", edit_admin_feed_item_path(feed_item.id), :class => "fa fa-edit no-text" %>
-      &nbsp;
-      <%= link_to "delete", admin_feed_item_path(feed_item.id), method: :delete, data: { confirm: 'Are you sure?' }, :class => "fa fa-trash no-text" %>
-    </p>
+    <div class="info">
+      <p>No product to display</p>
+      <p class="actions">
+        <%= link_to "edit", edit_admin_feed_item_path(feed_item.id), :class => "fa fa-edit no-text" %>
+        &nbsp;
+        <%= link_to "delete", admin_feed_item_path(feed_item.id), method: :delete, data: { confirm: 'Are you sure?' }, :class => "fa fa-trash no-text" %>
+      </p>
+    </div>
 
   </div>
 

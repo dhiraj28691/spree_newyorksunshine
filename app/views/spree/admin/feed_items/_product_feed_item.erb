@@ -1,2 +1,15 @@
+<% if feed_item.product %>
 <% image_source = feed_item.attachment_file_name != nil ? feed_item.attachment.url : feed_item.product.images[0].attachment.url %>
 <%= render :partial => "feed_item", :locals => { :id => feed_item.id, :image_src => image_source, :category => "SHOP", :title => feed_item.product.name, :href => product_path(feed_item.product) } %>
+<% else %>
+  <p>No product to display</p>
+
+
+  <p class="actions">
+    <%= link_to "edit", edit_admin_feed_item_path(feed_item.id), :class => "fa fa-edit no-text" %>
+    &nbsp;
+    <%= link_to "delete", admin_feed_item_path(feed_item.id), method: :delete, data: { confirm: 'Are you sure?' }, :class => "fa fa-trash no-text" %>
+  </p>
+
+
+<% end %>

@@ -1,5 +1,7 @@
 class Spree::Lookbook < ActiveRecord::Base
 
+  validates :available_on, presence: true
+  validates :aspect_ratio, presence: true
 
   has_many :slides
 

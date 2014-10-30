@@ -12,38 +12,44 @@
 
 <div id="new_lookbook_wrapper" data-hook=""></div>
 
-<table id="listing_lookbooks">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Slides</th>
-      <th>Available On</th>
-      <th>Aspet Ratio</th>
-    </tr>
-  <tbody>
+<% if @lookbooks.any? %>
 
-    <% @lookbooks.each do |lookbook| %>
-
+  <table id="listing_lookbooks">
+    <thead>
       <tr>
-        <td><%= lookbook.name %></td>
-        <td><%= link_to "Slides (#{lookbook.slides.length})", admin_lookbook_slides_path(lookbook) %></td>
-        <td>
-          <% if defined? lookbook.available_on %>
-          <%= lookbook.available_on.to_formatted_s(:nice) %>
-          <% end %>
-        </td>
-
-        <td>
-          <%= lookbook.aspect_ratio %>
-        </td>
-
-        <td class="actions">
-          <%= link_to "", edit_admin_lookbook_path(lookbook), { :class => "edit fa fa-edit icon_link with-tip no-text" } %>
-          &nbsp;
-          <%= link_to "", admin_lookbook_path(lookbook), { "class" => "delete-resource fa fa-trash icon_link with-tip no-text", "data-action" => "remove", "data-confirm" => "Are you sure?", "title" => "Delete" } %>
-        </td>
+        <th>Name</th>
+        <th>Slides</th>
+        <th>Available On</th>
+        <th>Aspet Ratio</th>
       </tr>
+    <tbody>
+      <% @lookbooks.each do |lookbook| %>
 
-    <% end %>
+        <tr>
+          <td><%= lookbook.name %></td>
+          <td><%= link_to "Slides (#{lookbook.slides.length})", admin_lookbook_slides_path(lookbook) %></td>
+          <td>
+            <% if defined? lookbook.available_on %>
+            <%= lookbook.available_on.to_formatted_s(:nice) %>
+            <% end %>
+          </td>
 
-</table>
+          <td>
+            <%= lookbook.aspect_ratio %>
+          </td>
+
+          <td class="actions">
+            <%= link_to "", edit_admin_lookbook_path(lookbook), { :class => "edit fa fa-edit icon_link with-tip no-text" } %>
+            &nbsp;
+            <%= link_to "", admin_lookbook_path(lookbook), { "class" => "delete-resource fa fa-trash icon_link with-tip no-text", "data-action" => "remove", "data-confirm" => "Are you sure?", "title" => "Delete" } %>
+          </td>
+        </tr>
+
+      <% end %>
+
+    </tbody>
+  </table>
+
+<% else %>
+  <p>No Lookbooks found. <%= link_to "Add one", new_admin_lookbook_path %>!</p>
+<% end %>

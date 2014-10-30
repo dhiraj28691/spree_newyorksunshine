@@ -1,0 +1,24 @@
+
+<!-- STATIC -->
+<% if href %>
+
+
+  <%= link_to href, { :class => "product" } do %>
+    <%= image_tag image_src, { width: 100 } %>
+    <div class="info">
+      <div><%= category %></div>
+      <%= title %>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <span class="product">
+    <%= image_tag image_src, { width: 100 } %>
+    <div class="info">
+      <div><%= category %></div>
+      <%= title %>
+    </div>
+  </span>
+
+<% end %>

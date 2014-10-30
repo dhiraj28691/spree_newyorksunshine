@@ -1,0 +1,2 @@
+<% image_source = feed_item.attachment_file_name != nil ? feed_item.attachment.url : feed_item.lookbook.slides[0].slide_images[0].attachment.url(:thumb) %>
+<%= render :partial => "feed_item", :locals => { :id => feed_item.id, :image_src => image_source, :category => "LOOKBOOK", :title => feed_item.lookbook.name, :href => lookbook_path(feed_item.lookbook.id) } %>

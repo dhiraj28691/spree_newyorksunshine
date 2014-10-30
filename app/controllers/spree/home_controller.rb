@@ -183,6 +183,9 @@ module Spree
 
       ]
 
+      @feed_items = FeedItem.all
+
+
       if(params.has_key?(:ajax))
         render :layout => false
       end

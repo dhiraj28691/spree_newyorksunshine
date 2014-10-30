@@ -1,0 +1,2 @@
+<% image_source = feed_item.attachment_file_name != nil ? feed_item.attachment.url : feed_item.post.post_images[0].attachment.url(:thumb) %>
+<%= render :partial => "feed_item", :locals => { :id => feed_item.id, :image_src => image_source, :category => "NEWS", :title => feed_item.post.title, :href => post_path(feed_item.post) } %>

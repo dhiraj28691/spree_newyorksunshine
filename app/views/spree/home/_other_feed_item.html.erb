@@ -1,0 +1,1 @@
+<%= render :partial => "feed_item", :locals => { :id => feed_item.id, :image_src => feed_item.attachment.url(:cropped), :category => feed_item.superheading, :title => feed_item.title, :href => feed_item.href } %>

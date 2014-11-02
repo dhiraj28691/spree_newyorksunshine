@@ -52,8 +52,9 @@ Spree::Core::Engine.add_routes do
 
   get 'about', :to => 'about#index'
 
-  # get 'returns-exchanges', :to => 'returnsexchanges#index'
+  get 'returns-exchanges', :to => 'returns_exchanges#index'
 
   post 'subscribe' => 'subscribe#process_form'
+
 
 end

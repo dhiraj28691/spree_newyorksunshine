@@ -10,4 +10,4 @@ gemspec
 
 # For generating scaffolds without namespaced Models
 # Example: rails generate nifty:scaffold Admin::Portfolio
-gem "nifty-generators"
+gem "nifty-generators", :group => :development

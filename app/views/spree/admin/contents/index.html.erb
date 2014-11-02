@@ -1,0 +1,32 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:Content_items) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t(:new_content_item), new_admin_content_path, :icon => 'edit' %>
+<% end %>
+
+<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |content| %>
+      <tr>
+        <td><%= content.key %></td>
+        <td><%= content.value %></td>
+        <td><%= link_to 'Show', content %></td>
+        <td><%= link_to 'Edit', edit_admin_content_path(content) %></td>
+        <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

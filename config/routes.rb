@@ -23,6 +23,10 @@ Spree::Core::Engine.add_routes do
     put 'stockists/sort', to: 'stockists#sort', as: 'sort_stockists'
     resources :stockists
 
+    resources :contents
+
+    resource :returns_exchanges
+
   end
 
 
@@ -48,7 +52,7 @@ Spree::Core::Engine.add_routes do
 
   get 'about', :to => 'about#index'
 
-  get 'returns-exchanges', :to => 'returnsexchanges#index'
+  # get 'returns-exchanges', :to => 'returnsexchanges#index'
 
   post 'subscribe' => 'subscribe#process_form'
 

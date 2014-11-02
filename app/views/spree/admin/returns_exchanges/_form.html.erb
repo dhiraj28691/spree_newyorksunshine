@@ -1,0 +1,19 @@
+<%= form_for [:admin, @returns_exchanges] do |f| %>
+
+  <div class="row">
+
+    <div class="sixteen columns alpha omega">
+      <%= f.field_container :value do %>
+        <%= f.text_area :value, :class => "fullwidth", :rows => 10 %>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="actions center">
+      <%= f.submit "update" %> or <%= link_to "Cancel", admin_returns_exchanges_path %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,13 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:Returns_and_exchanges) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= button_link_to Spree.t(:edit), edit_admin_returns_exchanges_path, :icon => 'edit' %>
+<% end %>
+
+<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+
+
+<%== @returns_exchanges.value %>
+

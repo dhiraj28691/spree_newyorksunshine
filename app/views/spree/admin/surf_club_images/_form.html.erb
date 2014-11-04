@@ -1,0 +1,5 @@
+<%= form_for [:admin, @surf_club_image] do |f| %>
+  <%= f.label :attachment %>
+  <%= f.file_field :attachment %>
+  <%= f.submit %>
+<% end %>

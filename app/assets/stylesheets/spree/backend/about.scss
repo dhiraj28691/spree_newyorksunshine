@@ -1,0 +1,7 @@
+.about-cms-page,
+.returns_exchanges {
+  p {
+    margin: 1em 0;
+    &:first-child { margin-top: 0 }
+  }
+}

@@ -14,18 +14,19 @@
     <tr>
       <th>Key</th>
       <th>Value</th>
-      <th colspan="3"></th>
+      <th data-hook="admin_products_index_header_actions" class="actions"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @contents.each do |content| %>
       <tr>
-        <td><%= content.key %></td>
+        <td style="white-space:nowrap"><%= content.key.humanize %></td>
         <td><%= content.value %></td>
-        <td><%= link_to 'Show', content %></td>
-        <td><%= link_to 'Edit', edit_admin_content_path(content) %></td>
-        <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="actions">
+          <%= link_to "", edit_admin_content_path(content), :class => "edit fa fa-edit icon_link with-tip no-text" %>
+          <%= link_to "", admin_content_path(content), method: :delete, data: { confirm: 'Are you sure?' }, :class => "delete-resource fa fa-trash icon_link with-tip no-text" %>
+        </td>
       </tr>
     <% end %>
   </tbody>

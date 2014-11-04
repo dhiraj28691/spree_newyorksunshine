@@ -7,14 +7,16 @@ Spree::Core::Engine.add_routes do
 
   namespace :admin do
 
+    put 'feed_items', to: 'feed_items#update_batch', as: 'update_batch_feed_items'
+    resources :feed_items
+
+    resources :surf_club_images
+
     resources :lookbooks, shallow: true do
       resources :slides, shallow: true do
         resources :slide_images
       end
     end
-
-    put 'feed_items', to: 'feed_items#update_batch', as: 'update_batch_feed_items'
-    resources :feed_items
 
     resources :posts do
       resources :post_images
@@ -24,7 +26,7 @@ Spree::Core::Engine.add_routes do
     resources :stockists
 
     resources :contents
-
+    resource :about
     resource :returns_exchanges
 
   end

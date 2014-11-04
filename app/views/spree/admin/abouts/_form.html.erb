@@ -1,0 +1,7 @@
+<%= form_for [:admin, @about] do |f| %>
+
+  <%= f.text_area :value %>
+
+  <%= f.submit %> or <%= link_to "Cancel", admin_about_path %>
+
+<% end %>

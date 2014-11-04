@@ -3,15 +3,17 @@ Placeholder manifest file.
 the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/backend/all.css'
 */
 
+
 @import "util/draggable";
 
-$fast: 400ms;
-$slow: 800ms;
+// $fast: 400ms;
+// $slow: 800ms;
 
-$highlight: #9fc820;
+// $highlight: #9fc820;
 
-
+@import "variables";
 @import "feed_items";
+@import "about";
 
 table tbody tr td.actions {
   white-space: nowrap;

@@ -1,0 +1,11 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:Surf_club_images) %>
+<% end %>
+
+<% render :partial => 'spree/admin/shared/content_sub_menu' %>
+
+  <% @surf_club_images.each do |surf_club_image| %>
+    hai
+  <% end %>
+
+<%= link_to "New Image", new_admin_surf_club_image_path %>

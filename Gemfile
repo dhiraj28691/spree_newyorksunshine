@@ -11,3 +11,5 @@ gemspec
 # For generating scaffolds without namespaced Models
 # Example: rails generate nifty:scaffold Admin::Portfolio
 gem "nifty-generators", :group => :development
+
+gem "mocha", group: :test

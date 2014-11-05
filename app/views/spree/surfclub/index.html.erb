@@ -7,7 +7,11 @@
 </a>
 
 <div class="photos">
-  <% @photos.each do |photo| %>
-    <img class="photo" src="<%=photo["img_src"]%>">
+
+  <%= @surf_club_images.each do |surf_club_image| %>
+
+    <%= image_tag surf_club_image.attachment(:large), :class => "photo" %>
+
   <% end %>
+
 </div>

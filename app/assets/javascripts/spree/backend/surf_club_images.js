@@ -1,17 +1,16 @@
 (function(){
 
-  var $feed_items;
+  var $surf_club_images;
 
 
   function init() {
 
-    $feed_items = $('#feed-items');
+    $surf_club_images = $('#surf-club-images');
 
-
-    $feed_items.sortable({
-      items: '.feed-item',
+    $surf_club_images.sortable({
+      items: '.surf-club-image',
       update: function(e, ui) {
-        console.log($(this).sortable('serialize'));
+        // console.log($(this).sortable('serialize'));
 
         $.ajax({
           type: 'put',
@@ -24,10 +23,13 @@
 
       }
     });
+
+    console.log('tings', $surf_club_images);
+
   }
 
 
-if(location.pathname == "/admin/feed_items")
+if(location.pathname == "/admin/surf_club_images")
   document.addEventListener('DOMContentLoaded', init);
 
 

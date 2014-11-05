@@ -74,7 +74,6 @@ module Spree
           params.require(:stockist).permit!
         end
 
-
     end
   end
 end

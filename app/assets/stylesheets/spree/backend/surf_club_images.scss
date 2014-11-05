@@ -1,0 +1,50 @@
+#surf-club-images {
+  column-count: 2;
+  column-gap: 0px;
+}
+
+.surf-club-image {
+  cursor: grab;
+  padding: 32px;
+  position: relative;
+  &:first-child {
+    margin-top: 0;
+  }
+
+
+  &:before {
+    background-color: transparent;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-duration: $slow;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+  .actions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: $slow;
+  }
+  &:hover {
+    &:before {
+      background-color: hsla(0, 0%, 100%, 0.95);
+      transition-duration: $fast;
+    }
+    .actions {
+      opacity: 1;
+      pointer-events: auto;
+      transition-duration: $fast;
+    }
+  }
+}

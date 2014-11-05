@@ -8,4 +8,6 @@ class Spree::SurfClubImage < ActiveRecord::Base
   validates_attachment_content_type :attachment, :content_type => /\Aimage\/.*\Z/
   validates :attachment, presence: true
 
+  # validates :surf_club_image, presence: true
+
 end

@@ -1,24 +1,28 @@
 <div id="stockists">
 
-  <% @stockists.each do |region, stockists| %>
+  <% if @stockists.any? %>
+    <% @stockists.each do |region, stockists| %>
 
-    <h4><%= region %></h4>
+      <h4><%= region %></h4>
 
-    <dl>
+      <dl>
 
-      <% stockists.each do |stockist| %>
-        <dt><%= stockist.name %>
-        <dd>
-          <address><%= stockist.address %></address>
-          <%= stockist.phone_number != '' ? link_to(stockist.phone_number, "tel://#{stockist.phone_number}/", { :class => "phone-number"}) : nil %>
-          <%= stockist.link != '' ? link_to(stockist.link, { :class => "website", :target => "_blank" }) do %>
-            <%= nice_url(stockist.link) %>
-          <% end : nil %>
-      <% end %>
-    </dl>
+        <% stockists.each do |stockist| %>
+          <dt><%= stockist.name %>
+          <dd>
+            <address><%= stockist.address %></address>
+
+            <% if stockist.phone_number.present? %>
+              <%= link_to(stockist.phone_number, "tel://#{stockist.phone_number}/", { :class => "phone-number"}) %>
+            <% end %>
+
+            <% if stockist.link.present? %>
+              <%= link_to(nice_url(stockist.link), stockist.link, { :class => "website", :target => "_blank" }) %>
+            <% end %>
+
+        <% end %>
+      </dl>
+    <% end %>
   <% end %>
 
-
-
 </div>
-

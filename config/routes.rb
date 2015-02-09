@@ -30,6 +30,8 @@ Spree::Core::Engine.add_routes do
     resource :about
     resource :returns_exchanges
 
+    resource :art
+    resource :artists_statement
   end
 
 

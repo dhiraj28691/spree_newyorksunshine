@@ -1,0 +1,47 @@
+<%= form_for [:admin, @admin_work] do |f| %>
+  <% if @admin_work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_work.errors.count, "error") %> prohibited this admin_work from being saved:</h2>
+
+      <ul>
+      <% @admin_work.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+    <div class="sixteen columns alpha omega">
+      <%= f.field_container :attachment do %>
+        <%= f.label :attachment %>
+        <%= f.file_field :attachment, :class => "fullwidth" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="sixteen columns alpha omega">
+      <%= f.field_container :caption do %>
+        <%= f.label :caption %>
+        <%= f.text_area :caption, :class => "fullwidth" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="sixteen columns alpha omega">
+      <%= f.field_container :published do %>
+        <%= f.check_box :published, :class => "fullwidth" %> <%= f.label :published %>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

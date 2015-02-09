@@ -30,8 +30,10 @@ Spree::Core::Engine.add_routes do
     resource :about
     resource :returns_exchanges
 
-    resource :art
+    # Art section
+    resource :art, only: [:show]
     resource :artists_statement
+    resources :works
   end
 
 

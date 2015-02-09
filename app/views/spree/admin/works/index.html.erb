@@ -1,0 +1,22 @@
+<h1>Listing admin_works</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_works.each do |admin_work| %>
+      <tr>
+        <td><%= link_to 'Edit', edit_admin_work_path(admin_work) %></td>
+        <td><%= link_to 'Destroy', admin_work_path(admin_work), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work', new_admin_work_path %>

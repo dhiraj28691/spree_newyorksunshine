@@ -14,57 +14,54 @@
 
   <div class="row">
 
-  <div class="one-third column alpha">
-    <%= f.field_container :name do %>
-      <%= f.label :name %>
-      <%= f.text_field :name, :class => "fullwidth" %>
-    <% end %>
+    <div class="one-third column alpha">
+      <%= f.field_container :name do %>
+        <%= f.label :name %>
+        <%= f.text_field :name, :class => "fullwidth" %>
+      <% end %>
+    </div>
+
+    <div class="one-third column">
+      <%= f.field_container :address do %>
+        <%= f.label :address %>
+        <%= f.text_field :address, :class => "fullwidth" %>
+      <% end %>
+    </div>
+
+    <div class="one-third column omega">
+      <%= f.field_container :region do %>
+        <%= f.label :region %>
+
+        <%= f.select :region, options_for_select(@regions_hash, selected: @admin_stockist.region), {}, class: 'select2 fullwidth' %>
+      <% end %>
+    </div>
+
   </div>
 
-  <div class="one-third column">
-    <%= f.field_container :address do %>
-      <%= f.label :address %>
-      <%= f.text_field :address, :class => "fullwidth" %>
-    <% end %>
+  <div class="row">
+
+    <div class="one-third column alpha">
+      <%= f.field_container :phone_number do %>
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, :class => "fullwidth" %>
+      <% end %>
+    </div>
+
+    <div class="one-third column">
+      <%= f.field_container :link do %>
+        <%= f.label :link %>
+        <%= f.text_field :link, :class => "fullwidth" %>
+      <% end %>
+    </div>
+
+    <div class="one-third column omega">
+      <%= f.field_container :position do %>
+        <%= f.label :position %>
+        <%= f.text_field :position, :class => "fullwidth" %>
+      <% end %>
+    </div>
+
   </div>
-
-  <div class="one-third column omega">
-    <%= f.field_container :region do %>
-      <%= f.label :region %>
-
-      <%= f.select :region, options_for_select(@regions_hash, selected: @admin_stockist.region), {}, class: 'select2 fullwidth' %>
-    <% end %>
-  </div>
-
-</div>
-
-<div class="row">
-
-
-
-
-  <div class="one-third column alpha">
-    <%= f.field_container :phone_number do %>
-      <%= f.label :phone_number %>
-      <%= f.text_field :phone_number, :class => "fullwidth" %>
-    <% end %>
-  </div>
-
-  <div class="one-third column">
-    <%= f.field_container :link do %>
-      <%= f.label :link %>
-      <%= f.text_field :link, :class => "fullwidth" %>
-    <% end %>
-  </div>
-
-  <div class="one-third column omega">
-    <%= f.field_container :position do %>
-      <%= f.label :position %>
-      <%= f.text_field :position, :class => "fullwidth" %>
-    <% end %>
-  </div>
-
-</div>
 
 
   <div class="row">

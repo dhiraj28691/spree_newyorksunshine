@@ -30,7 +30,7 @@ module Spree
         @admin_stockist = Stockist.new(admin_stockist_params)
 
         if @admin_stockist.save
-          redirect_to admin_stockists_path, notice: 'Stockist was successfully created.'
+          redirect_to admin_stockists_url, notice: 'Stockist was successfully created.'
         else
           render :new
         end
@@ -39,7 +39,7 @@ module Spree
       # PATCH/PUT /spree/admin/stockists/1
       def update
         if @admin_stockist.update(admin_stockist_params)
-          redirect_to admin_stockists_path, notice: 'Stockist was successfully updated.'
+          redirect_to admin_stockists_url, notice: 'Stockist was successfully updated.'
         else
           render :edit
         end

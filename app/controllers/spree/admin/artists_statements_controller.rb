@@ -20,7 +20,7 @@ module Spree
       def update
 
         if @artists_statement.update(artists_statement_params)
-          redirect_to admin_contents_path, notice: 'Artist\'s Statement was successfully updated.'
+          redirect_to admin_art_url, notice: 'Artist\'s Statement was successfully updated.'
         else
           render :edit
         end

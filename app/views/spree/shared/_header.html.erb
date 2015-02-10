@@ -23,12 +23,9 @@
       <%= link_to("News", nil, { class: "current"}) %>
     <% end %>
 
-    <%= link_to_unless_current('Art', { controller: "stockists"}) do %>
+    <%= link_to_unless_current('Art', { controller: "arts"}) do %>
       <%= link_to("Art", nil, { class: "current"}) %>
     <% end %>
-
-
-
 
 
     <% link_to Spree.t(:cart), '/cart' %>

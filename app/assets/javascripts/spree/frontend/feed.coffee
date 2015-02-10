@@ -65,5 +65,5 @@ class Feed
 
 
 document.addEventListener "DOMContentLoaded", ->
-
-  feed = new Feed('.feed')
+  if(document.querySelector('.feed') != null && document.querySelector('.feed').querySelectorAll('a').length > 0)
+    feed = new Feed('.feed')

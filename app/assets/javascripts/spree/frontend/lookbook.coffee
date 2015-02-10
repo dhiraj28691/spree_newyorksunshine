@@ -53,7 +53,10 @@ class Lookbook
     @setScrollTop(matchMedia("(min-width: 768px)"))
 
 
-    addEventListener 'resize', @resizeStage
+    if Modernizr.preserve3d and @looks.length > 3
+      addEventListener 'resize', @resizeStage3d
+    else
+      addEventListener 'resize', @resizeStage2d
 
 
     addEventListener 'keydown', (event) =>
@@ -67,6 +70,29 @@ class Lookbook
         when 39
           @nextSlide()
           event.preventDefault()
+
+
+  getOffsetRect: (elem) =>
+    # (1)
+    box = elem.getBoundingClientRect()
+
+    body = document.body
+    docElem = document.documentElement
+
+    # (2)
+    scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop
+    scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft
+
+    # (3)
+    clientTop = docElem.clientTop || body.clientTop || 0
+    clientLeft = docElem.clientLeft || body.clientLeft || 0
+
+    # (4)
+    top  = box.top +  scrollTop - clientTop
+    left = box.left + scrollLeft - clientLeft
+
+    { top: Math.round(top), left: Math.round(left) }
+
 
   setScrollTop: (mediaQueryList) =>
     if mediaQueryList.matches
@@ -104,7 +130,7 @@ class Lookbook
   goToSlide: (event) =>
     node = event.target.parentNode
 
-    # console.log node
+    console.log node
 
     @current_slide_index = [].indexOf.call(node.parentNode.children, node)
 
@@ -133,7 +159,11 @@ class Lookbook
     if @thumbnails.querySelector('.current') != null then @thumbnails.querySelector('.current').classList.remove('current')
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(@scrollTop, 400)
+    # scrollTo(@scrollTop, 400)
+    # console.log @getOffsetRect(@lookbook).top
+    console.log(@current_slide_index)
+    temp_scroll_top = @getOffsetRect(@lookbook).top - 70
+    if @current_slide_index != 0 then scrollTo(temp_scroll_top, 400)
 
   setStage3d: () =>
     panelSize = @stage.offsetWidth
@@ -158,9 +188,17 @@ class Lookbook
         @slideshow_position_array.push { rotateY: rotateY, translateX: translateX, translateZ: translateZ }
 
   updateSlideshow2d: () =>
-    translateX = @slideshow_position_array[@current_slide_index].translateX * -1
+    # translateX = @slideshow_position_array[@current_slide_index].translateX * -1
 
-    transform = "translateX(" + translateX + "%)"
+    offset = Math.round(document.body.clientWidth/2 - @looks.item(@current_slide_index).clientWidth / 2) - 22
+    console.log(document.body.clientWidth/2)
+    translateX = @looks.item(@current_slide_index).offsetLeft * -1 + offset
+    transform = "translateX(" + translateX + "px)"
+
+    # translateX = @looks.item(@current_slide_index).getBoundingClientRect().left * -1
+
+
+    # transform = "translateX(" + translateX + "px)"
 
     @stage.style.webkitTransform = transform
     @stage.style.transform = transform
@@ -173,19 +211,28 @@ class Lookbook
 
     @thumbnails.children[@current_slide_index].classList.add('current')
 
-    scrollTo(@scrollTop, 400)
+    # scrollTo(@scrollTop, 400)
+    # console.log @getOffsetRect(@lookbook).top
+    # scrollTo(@getOffsetRect(@lookbook).top, 400)
+
+    console.log(@current_slide_index)
+    temp_scroll_top = @getOffsetRect(@lookbook).top - 70
+    if @current_slide_index != 0 then scrollTo(temp_scroll_top, 400)
+
 
   setStage2d: () =>
 
-    for look, index in @looks
-      translateX = index * 100
-      transform = "translateX(" + translateX + "%)"
-      look.style.webkitTransform = transform
-      look.style.transform = transform
+    # for look, index in @looks
+    #   translateX = index * 100
+    #   transform = "translateX(" + translateX + "%)"
+    #   look.style.webkitTransform = transform
+    #   look.style.transform = transform
 
-      @slideshow_position_array.push { translateX: translateX }
+    #   @slideshow_position_array.push { translateX: translateX }
 
-  resizeStage: () =>
+  resizeStage2d: () =>
+
+  resizeStage3d: () =>
     panelSize = @stage.offsetWidth
     translateZ = Math.round( ( panelSize / 2 ) /  Math.tan( Math.PI / @numberOfPanels ) )
 
@@ -200,10 +247,15 @@ class Lookbook
       look.style.transform = transform
 
   setStage: () ->
-    if Modernizr.preserve3d and @looks.length > 2 then @setStage3d.call() else @setStage2d.call()
+    if Modernizr.preserve3d and @looks.length > 3
+      @setStage3d.call()
+      @lookbook.classList.add('three-dimensional')
+    else
+      @setStage2d.call()
+      @lookbook.classList.add('two-dimensional')
     # @setStage2d.call()
   updateSlideshow: () ->
-    if Modernizr.preserve3d and @looks.length > 2 then @updateSlideshow3d.call() else @updateSlideshow2d.call()
+    if Modernizr.preserve3d and @looks.length > 3 then @updateSlideshow3d.call() else @updateSlideshow2d.call()
     # @updateSlideshow2d.call()
 
 document.addEventListener "DOMContentLoaded", ->

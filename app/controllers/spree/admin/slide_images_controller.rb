@@ -4,7 +4,7 @@ module Spree
 
       before_action :set_slide, only: [:index, :new, :create]
       before_action :set_slide_image, only: [:edit]
-      # before_action :set_lookbook,    only: [:index]
+      before_action :set_lookbook,    only: [:index]
 
 
       def index
@@ -57,9 +57,10 @@ module Spree
         @slide_image = SlideImage.find(params[:id])
       end
 
-      # def set_lookbook
-      #   @lookbook = @slide_image.lookbook
-      # end
+      def set_lookbook
+        # binding.pry
+        @lookbook = @slide.lookbook
+      end
 
       def slide_image_params
         params.require(:slide_image).permit!

@@ -3,33 +3,34 @@
 body.lookbooks #content {
   margin: 56px auto 0;
   width: auto;
+}
 
-  nav#lookbook-links {
-    display: flex;
-    justify-content: center;
-    @media #{$tablet-portrait} {
-      position: absolute;
-      left: 0;
-      right: 0;
-      transform: translateY(-100%);
-    }
-    a {
-      color: inherit;
-      display: block;
-      padding: 1.56em 3.6em;
-      text-decoration: none;
-      &.selected,
-      &:hover {
-        text-decoration: line-through;
-      }
+nav#lookbook-links {
+  display: flex;
+  justify-content: center;
+  // padding-top: 65px;
+  // @media #{$tablet-portrait} {
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   transform: translateY(-100%);
+  // }
+  a {
+    color: inherit;
+    display: block;
+    padding: 1.56em 3.6em;
+    text-decoration: none;
+    &.selected,
+    &:hover {
+      text-decoration: line-through;
     }
   }
+}
 
-  #lookbook {
-    overflow: hidden;
-    position: relative;
-  }
-
+#lookbook {
+  overflow: hidden;
+  // padding-top: 65px;
+  position: relative;
   #plane {
     pointer-events: none;
     position: relative;
@@ -43,31 +44,32 @@ body.lookbooks #content {
     pointer-events: none;
     transition: transform $slow;
     transform-style: preserve-3d;
+    white-space: nowrap;
     @media #{$tablet-portrait} {
       margin: auto 30px;
     }
+
   }
 
   .image-stretcher {
     border: 30px solid transparent;
     box-sizing: border-box;
-    display: block;
-    width: 100%;
+    display: none;
+    // width: 100%;
+    height: 550px;
   }
 
   .slide {
-    display: block;
     overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     border: 26px solid transparent;
+    border-top: none;
+    border-bottom: none;
     backface-visibility: hidden;
     box-sizing: border-box;
     transition-property: opacity;
     transition-delay: $slow;
+    vertical-align: top;
+    height: calc(100vh - 70px);
     &:first-child {
       position: relative;
     }
@@ -77,12 +79,13 @@ body.lookbooks #content {
       transition-duration: 0ms;
       transition-delay: 0ms;
     }
+
     .image {
       background-color: transparent;
       display: block;
-      margin: 4px;
+      // margin: 4px;
       @media #{$tablet-portrait} {
-        margin: 4px;
+        // margin: 4px;
       }
       box-sizing: border-box;
       line-height: normal;
@@ -91,6 +94,8 @@ body.lookbooks #content {
       background-position: center top;
       background-size: cover;
       height: 100%;
+      position: absolute;
+      top: 0;
       &.style-1 {
         width: calc(100% - 8px);
       }
@@ -98,6 +103,14 @@ body.lookbooks #content {
         float: left;
         width: calc(50% - 8px);
       }
+      &.style-2:nth-child(2) {
+        left: 0;
+      }
+      &.style-2:nth-child(3) {
+        left: calc(50% + 16px);
+      }
+
+
       &.style-3 {
         float: left;
         width: calc(100%/3 - 8px);
@@ -137,6 +150,25 @@ body.lookbooks #content {
     }
   }
 
+  .slide .image-stretcher {
+    display: block;
+  }
+
+  &.two-dimensional .slide {
+    display: inline-block;
+    position: relative;
+  }
+  &.two-dimensional ul.stage {
+    white-space: nowrap;
+  }
+
+  &.three-dimensional .slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 
   .capture {
     pointer-events: auto;
@@ -145,10 +177,12 @@ body.lookbooks #content {
     bottom: 0;
     width: 50%;
     &.left {
+      // background: hsla(128,100%,50%,0.50);
       cursor: image-url("w-resize.png"), w-resize;
       left: 0;
     }
     &.right {
+      // background: hsla(200,100%,50%,0.50);
       cursor: image-url("e-resize.png"), e-resize;
       right: 0;
     }
@@ -246,4 +280,8 @@ body.lookbooks #content {
     border: 4px solid transparent;
     width: 100%;
   }
+}
+
+nav#lookbook-links + #lookbook {
+  padding-top: 0;
 }

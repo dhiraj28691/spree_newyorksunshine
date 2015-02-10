@@ -3,12 +3,9 @@
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:back_to_slide), spree.edit_admin_slide_path(@slide), :icon => 'arrow-left' %>
-  </li>
-  <li>
-    <%= button_link_to Spree.t(:new_slide_image), spree.new_admin_slide_slide_image_path, :icon => 'plus' %>
-  </li>
+  <li><%= button_link_to Spree.t(:back_to_slides), spree.admin_slide_slide_images_path(@lookbook), icon: 'arrow-left' %></li>
+  <li><%= button_link_to Spree.t(:back_to_slide), spree.edit_admin_slide_path(@slide), :icon => 'arrow-left' %></li>
+  <li><%= button_link_to Spree.t(:new_slide_image), spree.new_admin_slide_slide_image_path, :icon => 'plus' %></li>
 <% end %>
 
 

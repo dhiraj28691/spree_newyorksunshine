@@ -20,8 +20,8 @@ h1#logo a {
   text-indent: -9999px;
   transition-duration: $slow;
   transition-property: opacity;
-  @extend %sprite;
-  background-position: 0 -84px;
+  // @extend %sprite;
+  // background-position: 0 -84px;
   width: 84px;
   height: 42px;
   @media #{$desktop} {
@@ -32,6 +32,35 @@ h1#logo a {
     opacity: 0.50;
     transition-duration: $fast;
   }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    @extend %sprite;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition-duration: $slow;
+  }
+
+  &:before {
+    background-position: 0 -84px;
+    @media #{$desktop} {
+      background-position: 0 -168px;
+    }
+  }
+
+  &:after {
+    opacity: 0;
+    background-position: 0 -126px;
+    @media #{$desktop} {
+      background-position: 0 -210px;
+    }
+  }
+
+
 }
 
 label#equivalent {
@@ -55,6 +84,7 @@ nav.main-nav {
   height: 0;
   line-height: 1;
   opacity: 0;
+  padding-right: 60px;
   transition-duration: $fast;
   transition-property: opacity, height;
   @media #{$tablet-portrait} {
@@ -79,6 +109,7 @@ nav.main-nav {
   a {
     color: inherit;
     text-decoration: none;
+    transition-duration: $fast;
     &.current {
       text-decoration: line-through;
     }

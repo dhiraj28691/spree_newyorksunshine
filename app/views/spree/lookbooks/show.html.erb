@@ -1,35 +1,41 @@
-<%= render 'lookbook_sub_menu' %>
+<% content_for :top do %>
 
-<div id="lookbook">
-  <div id="plane">
+  <%= render 'lookbook_sub_menu' %>
 
-    <div class="stage">
-      <%= image_tag @image_stretcher_path, :class => "image-stretcher" %>
+  <div id="lookbook">
+    <div id="plane">
+
+      <ul class="stage">
+        <%= image_tag @image_stretcher_path, :class => "image-stretcher" %>
+        <% @lookbook.slides.each do |slide| %>
+
+          <li class="slide style-<%= slide.slide_images.length %>">
+            <%= image_tag @image_stretcher_path, :class => "image-stretcher" %>
+            <% slide.slide_images.each do |slide_image| %>
+              <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
+            <% end %>
+
+        <% end %>
+      </ul>
+
+      <div class="left capture"></div>
+      <div class="right capture"></div>
+
+    </div>
+
+    <div class="thumbnails">
+
       <% @lookbook.slides.each do |slide| %>
-        <div class="slide style-<%= slide.slide_images.length %>">
+        <div class="thumbnail style-<%= slide.slide_images.length %>">
+          <%= image_tag @image_stretcher_path, :class => "thumbnail-image-stretcher" %>
           <% slide.slide_images.each do |slide_image| %>
-            <div class="image look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
+            <div class="look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
           <% end %>
         </div>
       <% end %>
+
     </div>
 
-    <div class="left capture"></div>
-    <div class="right capture"></div>
-
   </div>
 
-  <div class="thumbnails">
-
-    <% @lookbook.slides.each do |slide| %>
-      <div class="thumbnail style-<%= slide.slide_images.length %>">
-        <%= image_tag @image_stretcher_path, :class => "thumbnail-image-stretcher" %>
-        <% slide.slide_images.each do |slide_image| %>
-          <div class="look style-<%= slide.slide_images.length %>" style='background-image: url(<%= slide_image.attachment(:full) %>)'></div>
-        <% end %>
-      </div>
-    <% end %>
-
-  </div>
-
-</div>
+<% end %>

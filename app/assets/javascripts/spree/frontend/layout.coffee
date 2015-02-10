@@ -98,7 +98,7 @@ class Layout
 
 
       else
-        console.log @pageYOffset
+        # console.log @pageYOffset
         transform = @pageYOffset * -1
         # transform = transform
         # transform = Math.max(transform, @threshhold)
@@ -117,7 +117,7 @@ class Layout
 
   showForm: (event) =>
     event.preventDefault()
-    console.log('show')
+    # console.log('show')
     @subscribe_wrapper.classList.add('active')
 
   hideForm: (event) =>
@@ -134,7 +134,7 @@ class Layout
     if errors.length > 0
 
       for error in errors
-        console.log error
+        # console.log error
         error_messages.push '<li>' + error + '</li>'
 
     else

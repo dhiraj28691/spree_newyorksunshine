@@ -5,24 +5,6 @@ body.about {
 
   header {
     background: transparent;
-    &.pinned {
-      background: hsla(0, 100%, 0%, 0.85);
-    }
-  }
-
-  label#equivalent {
-    background-position: -168px -126px;
-  }
-
-  h1#logo a {
-    background-position: 0 -126px;
-    @media #{$tablet-portrait} {
-      background-position: 0 -210px;
-    }
-  }
-
-  nav.main-nav a {
-    color: white;
   }
 
   #wrapper {
@@ -61,10 +43,38 @@ body.about {
     }
   }
 
+
+}
+
+body.about,
+body.dark {
+  header.pinned {
+    background: hsla(0, 100%, 0%, 0.85);
+  }
+
+  label#equivalent {
+    background-position: -168px -126px;
+  }
+
+  h1#logo a {
+
+    &:before {
+      opacity: 0;
+    }
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  nav.main-nav a {
+    color: white;
+  }
+
   nav.footer-nav a,
   nav.footer-nav span {
     color: white;
   }
 
-}
 
+}

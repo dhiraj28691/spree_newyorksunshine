@@ -53,6 +53,8 @@ Spree::Core::Engine.add_routes do
   # get 'tagged/:tag', :to => 'news#tagged'
 
 
+  get 'art', :to => 'arts#index'
+
   get 'stockists', :to => 'stockists#index'
 
   get 'surfclub', :to => 'surfclub#index'

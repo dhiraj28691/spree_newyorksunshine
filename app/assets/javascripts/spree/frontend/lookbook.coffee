@@ -23,7 +23,11 @@ class Lookbook
 
     @lookbook = lookbook
 
+
+
     @force2d = force2d
+
+    console.log '@force2d', @force2d
 
     @stage = @lookbook.querySelector(".stage")
     @looks = @stage.querySelectorAll(".slide")
@@ -266,7 +270,10 @@ document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#lookbook') != null)
     use2d = if window.location.pathname == "/art" then true else false
 
-    lookbook = new Lookbook(document.querySelector('#lookbook', use2d))
+    console.log 'use2d', use2d
+
+
+    lookbook = new Lookbook(document.querySelector('#lookbook'), use2d)
 
 
 

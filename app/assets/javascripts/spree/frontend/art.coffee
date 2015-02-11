@@ -61,3 +61,5 @@ class HeroVideo
 document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#video-container') != null)
     hero_video = new HeroVideo('#video-container')
+
+  alert('THIS IS A TEST')

@@ -19,7 +19,11 @@ Math.easeInOutQuad = (t, b, c, d)->
 
 class Lookbook
 
-  constructor: (@lookbook) ->
+  constructor: (lookbook, force2d) ->
+
+    @lookbook = lookbook
+
+    @force2d = force2d
 
     @stage = @lookbook.querySelector(".stage")
     @looks = @stage.querySelectorAll(".slide")
@@ -53,7 +57,7 @@ class Lookbook
     @setScrollTop(matchMedia("(min-width: 768px)"))
 
 
-    if Modernizr.preserve3d and @looks.length > 3
+    if Modernizr.preserve3d and @looks.length > 3 and !@force2d
       addEventListener 'resize', @resizeStage3d
     else
       addEventListener 'resize', @resizeStage2d
@@ -247,7 +251,7 @@ class Lookbook
       look.style.transform = transform
 
   setStage: () ->
-    if Modernizr.preserve3d and @looks.length > 3
+    if Modernizr.preserve3d and @looks.length > 3 and !@force2d
       @setStage3d.call()
       @lookbook.classList.add('three-dimensional')
     else
@@ -255,10 +259,17 @@ class Lookbook
       @lookbook.classList.add('two-dimensional')
     # @setStage2d.call()
   updateSlideshow: () ->
-    if Modernizr.preserve3d and @looks.length > 3 then @updateSlideshow3d.call() else @updateSlideshow2d.call()
+    if Modernizr.preserve3d and @looks.length > 3 and !@force2d then @updateSlideshow3d.call() else @updateSlideshow2d.call()
     # @updateSlideshow2d.call()
 
 document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#lookbook') != null)
-    lookbook = new Lookbook(document.querySelector('#lookbook'))
+    use2d = if window.location.pathname == "/art" then true else false
+
+    lookbook = new Lookbook(document.querySelector('#lookbook', use2d))
+
+
+
+
+
 

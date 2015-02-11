@@ -28,10 +28,12 @@ nav#lookbook-links {
 }
 
 #lookbook {
+  // background: red;
   overflow: hidden;
   // padding-top: 65px;
   position: relative;
   #plane {
+    // background: rebeccapurple;
     pointer-events: none;
     position: relative;
     @media #{$tablet-portrait} {
@@ -69,7 +71,7 @@ nav#lookbook-links {
     transition-property: opacity;
     transition-delay: $slow;
     vertical-align: top;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 5em);
     &:first-child {
       position: relative;
     }

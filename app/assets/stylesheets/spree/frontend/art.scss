@@ -28,6 +28,10 @@ body.arts {
       transition-duration: $fast*2;
     }
 
+    &[data-state="paused"]  ~ .top-area {
+      cursor: image-url("e-resize.png"), e-resize;
+    }
+
   }
 
 
@@ -63,20 +67,32 @@ body.arts {
     cursor: help;
   }
   .bottom-area {
-    cursor: s-resize;
+    cursor: image-url("s-resize.png"), s-resize;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     height: 50%;
   }
+
+  #lookbook .thumbnails {
+    display: block;
+    text-align: center;
+    width: auto;
+  }
+  #lookbook .thumbnail {
+    display: inline-block;
+    width: auto;
+  }
+
+  img.work {
+    display: block;
+    margin: auto;
+    width: auto;
+    height: 100px;
+  }
+
 }
 
 // #lookbook { background: red }
 
-.thumbnail .work {
-  display: block;
-  margin: auto;
-  width: auto;
-  height: 100px;
-}

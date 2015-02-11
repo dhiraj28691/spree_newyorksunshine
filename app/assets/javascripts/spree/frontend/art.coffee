@@ -16,7 +16,7 @@ class HeroVideo
 
     @is_playing = true
 
-    @scrollTop = window.innerHeight
+    # @scrollTop = window.innerHeight - document.
 
   toggleState: (event) =>
     event.preventDefault()
@@ -53,13 +53,19 @@ class HeroVideo
 
 
   scrollToSlideshow: (event) =>
+    @video_el.play()
+    @video_el.setAttribute('data-state', 'playing')
+    document.body.classList.remove('dark');
+
+    @is_playing = true
+
+
+
     event.preventDefault()
-    scrollTo(@scrollTop, 800)
+    scrollTo(window.innerHeight - document.querySelector('.main-nav').clientHeight, 800)
 
 
 
 document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#video-container') != null)
     hero_video = new HeroVideo('#video-container')
-
-  alert('THIS IS A TEST')

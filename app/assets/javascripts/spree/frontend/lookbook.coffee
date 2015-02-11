@@ -57,8 +57,8 @@ class Lookbook
     right_capture.addEventListener interaction_event, @nextSlide
     @thumbnails.addEventListener interaction_event, @goToSlide
 
-    matchMedia("(min-width: 768px)").addListener @setScrollTop
-    @setScrollTop(matchMedia("(min-width: 768px)"))
+    # matchMedia("(min-width: 768px)").addListener @setScrollTop
+    # @setScrollTop(matchMedia("(min-width: 768px)"))
 
 
     if Modernizr.preserve3d and @looks.length > 3 and !@force2d
@@ -102,15 +102,15 @@ class Lookbook
     { top: Math.round(top), left: Math.round(left) }
 
 
-  setScrollTop: (mediaQueryList) =>
-    if mediaQueryList.matches
-      if (Modernizr.touch)
-        @scrollTop = 308
-      else
-        @scrollTop = 162
+  # setScrollTop: (mediaQueryList) =>
+  #   if mediaQueryList.matches
+  #     if (Modernizr.touch)
+  #       @scrollTop = 308
+  #     else
+  #       @scrollTop = 162
 
-    else
-      @scrollTop = 92
+  #   else
+  #     @scrollTop = 92
 
 
   prevSlide: (event) =>
@@ -224,7 +224,7 @@ class Lookbook
     # scrollTo(@getOffsetRect(@lookbook).top, 400)
 
     console.log(@current_slide_index)
-    temp_scroll_top = @getOffsetRect(@lookbook).top - 70
+    temp_scroll_top = @getOffsetRect(@lookbook).top - document.querySelector('.main-nav').clientHeight
     if @current_slide_index != 0 then scrollTo(temp_scroll_top, 400)
 
 

@@ -67,7 +67,7 @@ class Lookbook
     else
       addEventListener 'resize', @resizeStage2d
 
-    screen.addEventListener 'orientationchange', ->
+    window.addEventListener 'orientationchange', ->
       setTimeout @updateSlideshow(), 100
 
 
@@ -278,6 +278,15 @@ document.addEventListener "DOMContentLoaded", ->
 
 
     lookbook = new Lookbook(document.querySelector('#lookbook'), use2d)
+
+  if(document.querySelector('#artbook') != null)
+    use2d = if window.location.pathname == "/art" then true else false
+
+    console.log 'use2d', use2d
+
+
+    lookbook = new Lookbook(document.querySelector('#artbook'), use2d)
+
 
 
 

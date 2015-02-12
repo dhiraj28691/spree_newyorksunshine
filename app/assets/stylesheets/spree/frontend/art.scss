@@ -1,25 +1,40 @@
 body.arts {
   #video-container {
-    margin-top: -10.5em;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    // display: none;
+    position:relative;
+
+    @media #{$desktop} {
+      display: block;
+      margin-top: -10.5em;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+
   }
 
   video {
-    display: block;
+    // display: block;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
-    @media (min-aspect-ratio: 16/9) {
+    width: 100%;
+    display: none;
+    @media #{$desktop} {
+      display: block;
+    }
+
+    @media (min-aspect-ratio: 16/9) and #{$desktop} {
       min-width: 100vw;
     }
-    @media (max-aspect-ratio: 16/9) {
+    @media (max-aspect-ratio: 16/9) and #{$desktop} {
       min-height: 100vh;
     }
 
+    @media #{$desktop} {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
 
     &[data-state="paused"] + .description {
@@ -36,43 +51,55 @@ body.arts {
 
 
   .description {
-    margin: auto;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    color: transparent;
-    background: transparent;
-    transition-duration: $slow;
-    transition-property: background, color;
-
-    .inner {
-      // margin: 0 32px;
-      margin-top: 5.25em;
+    @media #{$desktop} {
+      margin: auto;
+      pointer-events: none;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      color: transparent;
+      background: transparent;
+      transition-duration: $slow;
+      transition-property: background, color;
+    }
+    margin: 1em;
+    .inner {
+      @media #{$desktop} {
+        // margin: 0 32px;
+        margin-top: 5.25em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
   .top-area {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 50%;
-    left: 0;
-    cursor: help;
+    display: none;
+    @media #{$desktop} {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 50%;
+      left: 0;
+      cursor: help;
+    }
   }
   .bottom-area {
-    cursor: image-url("s-resize.png"), s-resize;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 50%;
+    display: none;
+    @media #{$desktop} {
+      display: block;
+      cursor: image-url("s-resize.png"), s-resize;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 50%;
+    }
   }
 
   #lookbook .thumbnails {
@@ -93,6 +120,3 @@ body.arts {
   }
 
 }
-
-// #lookbook { background: red }
-

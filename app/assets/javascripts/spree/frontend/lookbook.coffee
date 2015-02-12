@@ -63,8 +63,12 @@ class Lookbook
 
     if Modernizr.preserve3d and @looks.length > 3 and !@force2d
       addEventListener 'resize', @resizeStage3d
+
     else
       addEventListener 'resize', @resizeStage2d
+
+    screen.addEventListener 'orientationchange', ->
+      setTimeout @updateSlideshow(), 100
 
 
     addEventListener 'keydown', (event) =>

@@ -71,7 +71,18 @@ nav#lookbook-links {
     transition-property: opacity;
     transition-delay: $slow;
     vertical-align: top;
-    height: calc(100vh - 5em);
+    height: 280px;
+
+    @media #{$tablet-portrait} {
+      height: 480px;
+    }
+
+    @media #{$widescreen} {
+      height: calc(100vh - 5em);
+    }
+
+
+
     &:first-child {
       position: relative;
     }

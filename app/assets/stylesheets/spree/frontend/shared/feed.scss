@@ -63,7 +63,7 @@ span.product {
   position: relative;
   // width: 100%;
 
-  width: calc(100%/2);
+  width: calc(100%/3);
 
   @media #{$mobile-landscape} {
     width: calc(100%/3);
@@ -107,15 +107,20 @@ span.product {
     font-size: 13px;
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 16px;
+    right: 16px;
     transform: translateY(-50%);
     // -webkit-transform: translateY(-50%);
     color: transparent;
     text-align: center;
-    width: 100%;
+    // width: 100%;
     transition-duration: $slow;
-    height: 3em;
     z-index: 1;
+    @media #{$tablet-portrait} {
+      height: 3em;
+      left: 64px;
+      right: 64px;
+    }
   }
 
 }

@@ -1,4 +1,4 @@
-<%= form_for @action, :html => { :multipart => true } do |f| %>
+<%= form_for [:admin, @lookbook, @slide], :html => { :multipart => true } do |f| %>
 
   <% if @slide.errors.any? %>
     <div id="error_explanation">
@@ -16,33 +16,72 @@
     <div class="eight columns alpha">
       <%= f.field_container :embed_code do %>
         <%= f.label(:embed_code) %>
-        <%= f.text_area(:embed_code) %>
+        <%= f.text_area(:embed_code, class: "fullwidth") %>
       <% end %>
     </div>
 
     <div class="eight columns omega">
       <%= f.field_container :layout do %>
         <%= f.label :layout %>
-        <%= f.select :layout, options_for_select(@layouts_hash, selected: @slide.layout), {}, class: 'select2' %>
+        <%= f.select :layout, options_for_select(@layouts_hash, selected: @slide.layout), {}, class: 'select2 fullwidth' %>
       <% end %>
     </div>
   </div>
 
-
-  <hr>
-
-  <% unless f.object.new_record? %>
-  <label>Slide Images
-    <%= link_to "Show Slide Images (#{@slide.slide_images.length})", admin_slide_slide_images_path(@slide) %>
-  <% end %>
-
-  <fieldset>
-
-  <div class="form-buttons filter-actions actions">
-    <%= f.submit %>
-    or Cancel
+  <div class="row">
+    <div class="eight columns alpha">
+      <%= f.label :order %>
+      <%= f.text_field :order %>
+    </div>
+    <div class="eight columns omega">
+      <%= f.label :position %>
+      <%= f.text_field :position %>
+    </div>
   </div>
 
-</fieldset>
+  <div class="slide-images">
+    <%= f.fields_for :slide_images, { include_id: false } do |f| %>
+
+      <div class="slide-image">
+        <%= f.check_box :_destroy, class: "artist_checkbox" %>
+        <div class="row bordery inner">
+          <div class="two columns alpha position-handle">&#x2630;</div>
+
+          <div class="three columns omega">
+            <%= f.label :order %>
+            <%= f.text_field :order %>
+          </div>
+          <div class="three columns omega">
+            <%= f.label :position %>
+            <%= f.text_field :position %>
+          </div>
+
+          <div class="eight columns omega">
+            <%= f.hidden_field :id %>
+
+            <%= f.label :attachment %>
+
+            <% if f.object.attachment.present? %>
+              <br>
+              <%= image_tag f.object.attachment(:thumb) %>
+            <% end %>
+            <%= f.file_field :attachment, class: "fullwidth" %>
+
+            <%= f.label :_destroy, class: "fa fa-times" do %> <% end %>
+          </div>
+        </div>
+
+      </div>
+
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="sixteen alpha omega">
+      <%= link_to "New Slide Image", nil, class: "new button new-slide-image" %>
+    </div>
+  </div>
+
+  <div class="form-buttons filter-actions actions"><%= f.submit %> or <%= link_to "Cancel", admin_lookbook_slides_path(@lookbook) %> </div>
 
 <% end %>

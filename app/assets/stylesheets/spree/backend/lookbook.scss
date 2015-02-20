@@ -1,0 +1,51 @@
+body#slides_new,
+body#slides_edit {
+
+  .row {
+    padding: 1em 0;
+    position: relative;
+  }
+
+  .ui-sortable-handle {
+
+    background: white;
+
+    cursor: grab;
+    line-height: 100px;
+    text-align: center;
+  }
+
+
+  &.ui-sortable-helper .ui-sortable-handle {
+
+    cursor: grabbing;
+
+  }
+
+
+  .row.bordery {
+    outline: 1px solid hsl(210, 63%, 88%);
+  }
+
+
+  .slide-image {
+
+  }
+  .artist_checkbox {
+    display: none
+  }
+  .artist_checkbox:checked + .row {
+    display: none;
+  }
+
+  .fa.fa-times {
+    cursor: pointer;
+    padding: 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    &:hover {
+      color: hsl(75, 72%, 45%);
+    }
+  }
+}

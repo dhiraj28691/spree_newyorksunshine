@@ -11,5 +11,7 @@ class Spree::SlideImage < ActiveRecord::Base
   validates_attachment_content_type :attachment, :content_type => /\Aimage\/.*\Z/
   validates :attachment, presence: true
 
+  default_scope { order(:order) }
+
 
 end

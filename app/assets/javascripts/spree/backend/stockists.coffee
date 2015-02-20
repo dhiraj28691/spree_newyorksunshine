@@ -1,4 +1,3 @@
-#= require util/draggable
 
 class Stockists
   constructor: ->

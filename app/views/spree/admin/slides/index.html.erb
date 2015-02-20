@@ -14,26 +14,30 @@
   <table>
     <thead>
       <tr>
+        <th>Order</th>
+        <th>Position</th>
         <th>Embed Code</th>
         <th>Slide Images</th>
       </tr>
     </thead>
 
     <tbody>
-      <% @slides.each do |slide| %>
+      <% @slides.each do |admin_lookbook_slide| %>
         <tr>
-          <td><%= slide.embed_code %></td>
+          <td><%= admin_lookbook_slide.order %></td>
+          <td><%= admin_lookbook_slide.position %>
+          <td><%= admin_lookbook_slide.embed_code %></td>
           <td>
 
-
-            <%= link_to admin_slide_slide_images_path(slide), :class => "fa fa-eye icon_link with-tip" do %>
-              <span><%= slide.slide_images.length %></span>
+            <% admin_lookbook_slide.slide_images.each do |slide_image| %>
+              <%= image_tag slide_image.attachment.url(:thumb) %>
             <% end %>
+
           </td>
           <td class="actions">
-            <%= link_to_edit slide, :no_text => true, :class => 'edit' %>
+            <%= link_to "Edit", edit_admin_lookbook_slide_path(@lookbook, admin_lookbook_slide), :no_text => true, :class => 'edit' %>
             &nbsp;
-            <%= link_to_delete slide, :no_text => true %>
+            <%= link_to 'Destroy', admin_lookbook_slide_path(@lookbook, admin_lookbook_slide), method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
         </tr>
       <% end %>

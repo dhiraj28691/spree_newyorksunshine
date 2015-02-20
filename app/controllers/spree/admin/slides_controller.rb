@@ -1,7 +1,7 @@
 module Spree
   module Admin
     class SlidesController < ResourceController
-      before_action :set_lookbook, only: [:index, :new, :create]
+      before_action :set_lookbook, only: [:index, :new, :create, :update, :destroy]
       before_action :set_slide, only: [:show, :edit, :update, :destroy]
       before_action :build_layouts_selects, only: [:new, :edit]
 
@@ -18,23 +18,23 @@ module Spree
       # GET /spree/admin/slides/new
       def new
         @slide = @lookbook.slides.build
-        @action = [:admin, @lookbook, @slide]
+        # 3.times { @slide.slide_images.build }
+
       end
 
       # GET /spree/admin/slides/1/edit
       def edit
         @lookbook = @slide.lookbook
-        @action = [:admin, @slide]
+
+        # binding.pry
       end
 
       # POST /spree/admin/slides
       def create
         @slide = @lookbook.slides.build(slide_params)
 
-        @action = [:admin, @lookbook, @slide]
-
         if @slide.save
-          redirect_to admin_slide_path(@slide), notice: 'Slide was successfully created.'
+          redirect_to admin_lookbook_slides_url(@lookbook), notice: 'Slide was successfully created.'
         else
           render :new
         end
@@ -42,8 +42,9 @@ module Spree
 
       # PATCH/PUT /spree/admin/slides/1
       def update
+        # binding.pry
         if @slide.update(slide_params)
-          redirect_to admin_slide_path(@slide), notice: 'Slide was successfully updated.'
+          redirect_to admin_lookbook_slides_url(@lookbook), notice: 'Slide was successfully updated.'
         else
           render :edit
         end
@@ -52,7 +53,7 @@ module Spree
       # DELETE /spree/admin/slides/1
       def destroy
         @slide.destroy
-        redirect_to slides_url, notice: 'Slide was successfully destroyed.'
+        redirect_to admin_lookbook_slides_url(@lookbook), notice: 'Slide was successfully destroyed.'
       end
 
       private

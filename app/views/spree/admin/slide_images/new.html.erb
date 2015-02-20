@@ -1,9 +1,0 @@
-<% content_for :page_title do %>
-  <%= Spree.t(:new_slide_image) %>
-<% end %>
-
-<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
-
-<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @lookbook } %>
-
-<%= render 'form' %>

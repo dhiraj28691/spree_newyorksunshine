@@ -13,10 +13,15 @@ Spree::Core::Engine.add_routes do
     put 'surf_club_images', to: 'surf_club_images#update_batch', as: 'update_batch_suf_club_images'
     resources :surf_club_images
 
-    resources :lookbooks, shallow: true do
-      resources :slides, shallow: true do
-        resources :slide_images
-      end
+    # resources :lookbooks, shallow: true do
+    #   resources :slides, shallow: true do
+    #     resources :slide_images
+    #   end
+    # end
+
+    resources :lookbooks do
+      resources :slides
+      # resources :slides, as: 'slidezs'
     end
 
     resources :posts do

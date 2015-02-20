@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_newyorksunshine'
-  s.version     = '2.3.1'
+  s.version     = '2.4.4'
   s.summary     = 'Theme file for newyorksunshine.com'
   s.description = 'Email me for installation instructions'
   s.required_ruby_version = '>= 1.9.3'

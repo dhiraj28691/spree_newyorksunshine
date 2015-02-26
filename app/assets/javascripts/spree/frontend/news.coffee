@@ -12,15 +12,13 @@ class PostSlideshow
     @current_slide_index = 0
 
 
-    @setStage()
-    @render()
+    # @setStage()
+    # @render()
 
     @slideshow.addEventListener 'click', @goToNext
 
     addEventListener 'load', =>
       @offset_y = getPosition(@selector).y - 61
-
-
 
 
     matchMedia("(min-width: 768px)").addListener @mediaListener
@@ -47,7 +45,7 @@ class PostSlideshow
   mediaListener: (mql)=>
     # console.log mql, mql.matches
     if mql.matches
-      @setStage()
+      # @setStage()
       @render()
 
       # @offset_y = getPosition(@selector).y - 61
@@ -61,13 +59,19 @@ class PostSlideshow
 
 
   render: =>
-    translateX = @slideshow_position_array[@current_slide_index].translateX * -1
-    transform = "translateX(" + translateX + "%)"
+    # translateX = @slideshow_position_array[@current_slide_index].translateX * -1
+
+    translateX = getPosition(@slides.item(@current_slide_index)).x * -1 + Math.floor(window.innerWidth/2) - @slides.item(@current_slide_index).clientWidth/2
+
+    transform = "translateX(" + translateX + "px)"
+
+    console.log(getPosition(@slides.item(@current_slide_index)))
+
     @stage.style.webkitTransform = transform
     @stage.style.transform = transform
 
-    @offset_y = getPosition(@selector).y - 61
-    scrollTo(@offset_y, 400)
+    # @offset_y = getPosition(@selector).y - 61
+    # scrollTo(@offset_y, 400)
 
 
   veto: =>

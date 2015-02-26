@@ -65,9 +65,9 @@ module Spree
         end
 
         def build_category_options
-          @products = Product.all
-          @posts = Post.all
-          @lookbooks = Lookbook.all
+          @products = Product.all.order("name")
+          @posts = Post.unscoped.all.order("title")
+          @lookbooks = Lookbook.all.order("name")
 
           @category_options = FeedItem.categories.keys
         end

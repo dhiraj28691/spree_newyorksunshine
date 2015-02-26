@@ -56,6 +56,7 @@ body.news {
     position: relative;
     white-space: nowrap;
     overflow: scroll;
+    white-space: nowrap;
     // height: calc(100vh - 61px);
 
     @media #{$tablet-portrait} {
@@ -63,7 +64,8 @@ body.news {
       margin: 0 -16px;
       overflow: visible;
       transition: transform $slow;
-      white-space: normal;
+      // white-space: normal;
+      white-space: nowrap;
     }
   }
   .slide {
@@ -80,12 +82,12 @@ body.news {
     }
     @media #{$tablet-portrait} {
       display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: block;
+      // position: absolute;
+      // top: 0;
+      // right: 0;
+      // bottom: 0;
+      // left: 0;
+      display: inline-block;
       height: 100%;
       margin: 0;
       border-left: 16px solid transparent;
@@ -101,10 +103,10 @@ body.news {
         // max-width: calc(100vw - 64px);
         // max-height: 100vh;
         // height: auto;
-        @media #{$tablet-portrait} {
-          display: block;
-          width: 100%;
-        }
+        // @media #{$tablet-portrait} {
+        //   display: block;
+        //   width: 100%;
+        // }
       }
 
       @media #{$tablet-portrait} {
@@ -118,17 +120,35 @@ body.news {
     }
 
     img {
-      max-height: 100vh;
-      max-width: calc(100vw - 32px);
-      @media #{$tablet-portrait} {
-        display: none;
-      }
+      // max-height: 100vh;
+      // max-width: calc(100vw - 32px);
+      // @media #{$tablet-portrait} {
+      //   display: none;
+      // }
+      // height: 500px;
+
+      // @media #{$desktop} {
+      //   height: 550px;
+      // }
+
+      // @media #{$widescreen} {
+      //   height: 720px;
+      // }
+
+      // @media #{$QHD} {
+      //   height: 1080px;
+      // }
+
+      height: calc(100vh - 65px - 40px);
+      min-height: 520px;
+      max-height: 720px;
+
     }
   }
 
   .embed {
-
     filter: grayscale(100%);
+    margin-top: 1em;
   }
 
   .body-text {
@@ -152,12 +172,11 @@ body.news {
     }
   }
 
-  a.solo-image-link + .embed,
-  img.solo-image + .embed,
-  .slideshow + .embed {
-    margin-top: 1em;
-  }
-
+  // a.solo-image-link + .embed,
+  // img.solo-image + .embed,
+  // .slideshow + .embed {
+  //   margin-top: 1em;
+  // }
 
   p.tags {
     color: $gray;
@@ -181,7 +200,4 @@ body.news {
   p.clickthrough-link a {
     color: inherit;
   }
-
-
 }
-

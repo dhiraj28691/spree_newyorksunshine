@@ -28,12 +28,12 @@
   </div>
 
   <div class="text">
-    <% if post['body_text'] %>
+    <% if post.description.present? %>
       <%
         body_text_classes = ""
-        body_text_classes = body_text_classes + " two-columns" if post['body_text'].split('').count > 350 rescue nil
+        body_text_classes = body_text_classes + " two-columns" if post.description.split('').count > 350 rescue nil
       %>
-      <div class="body-text<%= body_text_classes %>"><%= raw post['body_text'] %></div>
+      <div class="body-text<%= body_text_classes %>"><%= raw post.description %></div>
     <% end %>
 
     <% if post['tags'] && post['tags'] != '' %>
@@ -48,7 +48,7 @@
       Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
     <% end %>
 
-    <% if post.link_url %>
+    <% if post.link_url.present? %>
       <p class="clickthrough-link"><%= link_to 'read more', post.link_url, {:target => "_blank"} %></p>
     <% end %>
 

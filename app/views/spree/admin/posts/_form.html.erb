@@ -69,13 +69,17 @@
   <br>
 
   <div id="post_image" class="sortable">
-    <%= f.simple_fields_for :post_images do |post_image| %>
-      <%= render 'post_image_fields', :f => post_image %>
+
+    <%= f.fields_for :post_images, { include_id: false } do |f| %>
+      <%= render partial: 'post_image_fields', locals: { f: f } %>
     <% end %>
+
     <br>
+
     <div class="links">
       <%= link_to_add_association 'Add Post Image', f, :post_images %>
     </div>
+
   </div>
 
 

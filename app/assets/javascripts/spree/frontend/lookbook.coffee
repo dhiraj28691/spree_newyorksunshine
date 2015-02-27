@@ -19,19 +19,19 @@ Math.easeInOutQuad = (t, b, c, d)->
 
 class Lookbook
 
-  constructor: (lookbook, force2d) ->
+  constructor: (lookbook, options) ->
 
     @lookbook = lookbook
 
 
 
-    @force2d = force2d
+    @force2d = options.use_2d
 
     console.log '@force2d', @force2d
 
     @stage = @lookbook.querySelector(".stage")
     @looks = @stage.querySelectorAll(".slide")
-    @current_slide_index = 0
+    @current_slide_index = options.initial_slide || 0
     @slideshow_position_array = []
     @rotation_offset = 0
 
@@ -61,11 +61,11 @@ class Lookbook
     # @setScrollTop(matchMedia("(min-width: 768px)"))
 
 
-    if Modernizr.preserve3d and @looks.length > 3 and !@force2d
-      addEventListener 'resize', @resizeStage3d
+    # if Modernizr.preserve3d and @looks.length > 3 and !@force2d
+    #   addEventListener 'resize', @resizeStage3d
 
-    else
-      addEventListener 'resize', @resizeStage2d
+    # else
+    #   addEventListener 'resize', @resizeStage2d
 
     window.addEventListener 'orientationchange', ->
       setTimeout @updateSlideshow(), 100
@@ -191,7 +191,7 @@ class Lookbook
 
       for look, index in @looks
         rotateY = 360/@looks.length * index
-        transform = "rotateY(" + rotateY + "deg) translateZ(" + translateZ + "px)"
+        transform = "translateX(-50%) rotateY(" + rotateY + "deg) translateZ(" + translateZ + "px)"
 
         look.style.webkitTransform = transform
         look.style.transform = transform
@@ -243,6 +243,8 @@ class Lookbook
     #   @slideshow_position_array.push { translateX: translateX }
 
   resizeStage2d: () =>
+    console.log 'this is a test'
+    requestAnimationFrame @render
 
   resizeStage3d: () =>
     panelSize = @stage.offsetWidth
@@ -272,20 +274,21 @@ class Lookbook
 
 document.addEventListener "DOMContentLoaded", ->
   if(document.querySelector('#lookbook') != null)
-    use2d = if window.location.pathname == "/art" then true else false
+    use_2d = if window.location.pathname == "/art" then true else false
 
-    console.log 'use2d', use2d
+    console.log 'use_2d', use_2d
 
 
-    lookbook = new Lookbook(document.querySelector('#lookbook'), use2d)
+    lookbook = new Lookbook(document.querySelector('#lookbook'), { use_2d: use_2d})
 
   if(document.querySelector('#artbook') != null)
-    use2d = if window.location.pathname == "/art" then true else false
+    use_2d = if window.location.pathname == "/art" then true else false
+    # user2d = false
 
-    console.log 'use2d', use2d
+    console.log 'use_2d', use_2d
 
 
-    lookbook = new Lookbook(document.querySelector('#artbook'), use2d)
+    lookbook = new Lookbook(document.querySelector('#artbook'), { use_2d: use_2d, initial_slide: 2 })
 
 
 

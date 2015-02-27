@@ -62,7 +62,7 @@ class HeroVideo
 
 
     event.preventDefault()
-    scrollTo(window.innerHeight - document.querySelector('.main-nav').clientHeight, 800)
+    scrollTo(window.innerHeight - document.querySelector('.main-nav').clientHeight + 65, 800)
 
 
 

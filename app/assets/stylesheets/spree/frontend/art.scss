@@ -106,7 +106,7 @@ body.arts {
   }
 
   #lookbook .thumbnails {
-    background: red;
+    // background: red;
     display: block;
     text-align: center;
     width: auto;
@@ -134,6 +134,7 @@ body.arts {
 
 #artbook {
   // background: red;
+  margin-top: 65px;
   overflow: hidden;
   // padding-top: 65px;
   position: relative;
@@ -156,6 +157,10 @@ body.arts {
       margin: auto 30px;
     }
 
+    min-height: 530px;
+    height: calc(100vh - 200px);
+    max-height: 720px;
+
   }
 
   .image-stretcher {
@@ -167,6 +172,7 @@ body.arts {
   }
 
   .slide {
+    opacity: 0.50;
     overflow: hidden;
     border: 26px solid transparent;
     border-top: none;
@@ -175,17 +181,21 @@ body.arts {
     box-sizing: border-box;
     transition-property: opacity;
     transition-delay: $slow;
+
+
+    transition-property: opacity;
+    transition-duration: 800ms;
+    transition-timing-function: ease;
+    transition-delay: 0ms;
+
+
     vertical-align: top;
-    height: 280px;
-
-    @media #{$tablet-portrait} {
-      height: 480px;
-    }
-
-    @media #{$widescreen} {
-      height: calc(100vh - 5em - 156px);
-    }
-
+    // height: 280px;
+    // @media #{$tablet-portrait} { height: 480px }
+    // @media #{$widescreen} { height: calc(100vh - 5em - 156px) }
+    min-height: 530px;
+    height: calc(100vh - 200px);
+    max-height: 720px;
 
 
     &:first-child {
@@ -193,9 +203,6 @@ body.arts {
     }
     &.current {
       opacity: 1;
-      pointer-events: none;
-      transition-duration: 0ms;
-      transition-delay: 0ms;
     }
 
     .image {
@@ -280,12 +287,19 @@ body.arts {
     white-space: nowrap;
   }
 
-  &.three-dimensional .slide {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  &.three-dimensional {
+    .stage {
+      // background: red;
+      margin: auto;
+      max-width: 940px;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      // right: 0;
+      // bottom: 0;
+      left: 50%;
+    }
   }
 
   .capture {

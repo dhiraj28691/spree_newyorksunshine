@@ -1,36 +1,28 @@
 body {
   font: 13px/1.615 "andale_monoregular";
   margin: 0;
-  @media #{$QHD} {
-    font-size: 16px;
-  }
 }
 
 header {
   backface-visibility: hidden;
   letter-spacing: 2.2px;
   margin: auto;
-  // padding: 5px 0;
   text-align: center;
   transition: background-color $fast;
   @media #{$tablet-portrait} {
-    // padding: 72px 0 0;
     padding: 5.5em 0 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 2;
-
     html.touch & {
       position: absolute;
     }
-
   }
   &.pinned {
     background-color: hsla(0, 100%, 100%, 0.96);
     transition-duration: $slow;
   }
-
 }
 
 #wrapper {
@@ -41,15 +33,10 @@ header {
     box-sizing: border-box;
     padding-top: 10.5em;
   }
-  @media #{$QHD} {
-    // padding-top: 11.75em;
-    // padding-top: 168px;
-  }
 }
 
 #content {
   margin: auto;
-
   @media #{$tablet-portrait} {
     margin: 72px auto;
     width: 768px;

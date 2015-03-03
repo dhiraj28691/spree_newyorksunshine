@@ -11,6 +11,7 @@ class PostSlideshow
     @slideshow_position_array = []
     @current_slide_index = 0
 
+    console.log @selector
 
     # @setStage()
     # @render()
@@ -20,10 +21,13 @@ class PostSlideshow
     addEventListener 'load', =>
       @offset_y = getPosition(@selector).y - 61
 
+      matchMedia("(min-width: 768px)").addListener @mediaListener
+      @mediaListener(matchMedia("(min-width: 768px)"))
 
-    matchMedia("(min-width: 768px)").addListener @mediaListener
-    @mediaListener(matchMedia("(min-width: 768px)"))
-
+      console.log 'this is a test'
+      setTimeout =>
+        @stage.classList.add('active')
+      , 800
 
 
   setStage: =>

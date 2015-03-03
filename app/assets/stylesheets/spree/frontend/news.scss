@@ -63,10 +63,16 @@ body.news {
       // height: calc(100vh - 61px);
       margin: 0 -16px;
       overflow: visible;
-      transition: transform $slow;
+      // transition: transform $slow;
       // white-space: normal;
       white-space: nowrap;
     }
+
+    &.active {
+      transition: transform $slow;
+    }
+
+
   }
   .slide {
     display: inline-block;

@@ -55,6 +55,7 @@ body.news {
     padding-left: 0;
     position: relative;
     white-space: nowrap;
+    opacity: 0;
     overflow: scroll;
     white-space: nowrap;
     // height: calc(100vh - 61px);
@@ -69,7 +70,8 @@ body.news {
     }
 
     &.active {
-      transition: transform $slow;
+      opacity: 1;
+      transition: transform $slow, opacity $fast;
     }
 
 

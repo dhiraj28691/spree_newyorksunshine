@@ -7,9 +7,6 @@ h1#logo {
   @media #{$tablet-portrait} {
     margin: 11px 0;
   }
-  // @media #{$QHD} {
-  //   margin: 19px 0;
-  // }
 }
 h1#logo a {
   color: $matteBlack;

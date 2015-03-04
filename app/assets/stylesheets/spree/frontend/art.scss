@@ -11,6 +11,10 @@ body.arts {
       height: 100vh;
     }
 
+    html.touch & {
+      background: url("//s3.amazonaws.com/newyorksunshine/hoop-dreams-v2.gif") center;
+    }
+
   }
 
   video {
@@ -47,6 +51,10 @@ body.arts {
       cursor: image-url("e-resize.png"), e-resize;
     }
 
+  }
+
+  html.touch video {
+    display: none;
   }
 
 

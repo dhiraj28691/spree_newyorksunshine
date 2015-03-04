@@ -128,29 +128,9 @@ body.news {
     }
 
     img {
-      // max-height: 100vh;
-      // max-width: calc(100vw - 32px);
-      // @media #{$tablet-portrait} {
-      //   display: none;
-      // }
-      // height: 500px;
-
-      // @media #{$desktop} {
-      //   height: 550px;
-      // }
-
-      // @media #{$widescreen} {
-      //   height: 720px;
-      // }
-
-      // @media #{$QHD} {
-      //   height: 1080px;
-      // }
-
       height: calc(100vh - 65px - 40px);
       min-height: 520px;
       max-height: 720px;
-
     }
   }
 

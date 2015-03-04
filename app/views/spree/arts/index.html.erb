@@ -23,8 +23,8 @@
   </div>
 
   <div class="thumbnails">
-    <% @works.each do |work| %>
-      <div class="thumbnail">
+    <% @works.each_with_index do |work, index| %>
+      <div class="thumbnail <%= index == 2 ? 'current' : nil %>">
         <%= image_tag work.attachment(:large), class: "work" %>
       </div>
     <% end %>

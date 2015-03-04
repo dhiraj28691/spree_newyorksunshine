@@ -1,20 +1,7 @@
 <div class="feed">
-
   <div class="feed-group">
-
     <% @feed_items.each do |feed_item| %>
       <%= render :partial => "#{feed_item.category.downcase}_feed_item", :locals => { :feed_item => feed_item } %>
     <% end %>
-
   </div>
-
 </div>
-
-
-
-<!-- <div data-hook="homepage_products">
-  <% cache(cache_key_for_products) do %>
-    <%= render :partial => 'spree/shared/feed', :locals => { :products => @full_bleed } %>
-  <% end %>
-</div> -->
-

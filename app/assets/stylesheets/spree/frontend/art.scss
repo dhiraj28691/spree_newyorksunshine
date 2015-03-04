@@ -1,9 +1,18 @@
 body.arts {
+  #wrapper {
+    margin-top: -55px;
+    @media #{$desktop} {
+      margin-top: 0;
+    }
+  }
   #video-container {
     // display: none;
+    overflow: hidden;
     position:relative;
-
+    background: url("//s3.amazonaws.com/newyorksunshine/hoop-dreams-v2.gif") no-repeat center top;
+    background-size: 100% auto;
     @media #{$desktop} {
+      background: transparent;
       display: block;
       margin-top: -10.5em;
       overflow: hidden;
@@ -11,9 +20,6 @@ body.arts {
       height: 100vh;
     }
 
-    html.touch & {
-      background: url("//s3.amazonaws.com/newyorksunshine/hoop-dreams-v2.gif") center;
-    }
 
   }
 
@@ -50,7 +56,6 @@ body.arts {
     &[data-state="paused"]  ~ .top-area {
       cursor: image-url("e-resize.png"), e-resize;
     }
-
   }
 
   html.touch video {
@@ -59,6 +64,11 @@ body.arts {
 
 
   .description {
+    background: hsla(0,0%,0%,0.850);
+    color: white;
+    transition-duration: $fast*2;
+    padding: 1em;
+    margin-top: 150vw;
     @media #{$desktop} {
       margin: auto;
       pointer-events: none;
@@ -71,7 +81,6 @@ body.arts {
       transition-duration: $slow;
       transition-property: background, color;
     }
-    margin: 1em;
     .inner {
       @media #{$desktop} {
         margin-top: 5.25em;
@@ -146,6 +155,9 @@ body.arts {
   overflow: hidden;
   // padding-top: 65px;
   position: relative;
+  &:focus {
+    outline: none;
+  }
   #plane {
     // background: rebeccapurple;
     pointer-events: none;
@@ -180,7 +192,6 @@ body.arts {
   }
 
   .slide {
-    opacity: 0.50;
     overflow: hidden;
     border: 26px solid transparent;
     border-top: none;
@@ -201,15 +212,28 @@ body.arts {
     // height: 280px;
     // @media #{$tablet-portrait} { height: 480px }
     // @media #{$widescreen} { height: calc(100vh - 5em - 156px) }
-    min-height: 530px;
-    height: calc(100vh - 200px);
-    max-height: 720px;
+
+
+    @media (orientation:portrait) {
+      height: calc(100vw - 16px);
+    }
+    @media (orientation:landscape) {
+      height: calc(100vh - 16px);
+    }
+
+    @media #{$desktop} {
+      min-height: 530px;
+      height: calc(100vh - 200px);
+      max-height: 720px;
+      opacity: 0.50;
+    }
 
 
     &:first-child {
       position: relative;
     }
-    &.current {
+    &.current,
+    &.is-selected {
       opacity: 1;
     }
 
@@ -229,25 +253,6 @@ body.arts {
       height: 100%;
       position: absolute;
       top: 0;
-      &.style-1 {
-        width: calc(100% - 8px);
-      }
-      &.style-2 {
-        float: left;
-        width: calc(50% - 8px);
-      }
-      &.style-2:nth-child(2) {
-        left: 0;
-      }
-      &.style-2:nth-child(3) {
-        left: calc(50% + 16px);
-      }
-
-
-      &.style-3 {
-        float: left;
-        width: calc(100%/3 - 8px);
-      }
     }
 
     .description {
@@ -316,6 +321,7 @@ body.arts {
     top: 0;
     bottom: 0;
     width: 50%;
+    z-index: 1;
     &.left {
       // background: hsla(128,100%,50%,0.50);
       cursor: image-url("w-resize.png"), w-resize;
@@ -326,101 +332,52 @@ body.arts {
       cursor: image-url("e-resize.png"), e-resize;
       right: 0;
     }
+
+    html.touch & {
+      display: none;
+    }
+
   }
 
+}
+
+body.arts {
   .thumbnails {
-    cursor: pointer;
-    // display: flex;
-    // flex-flow: wrap;
-    font-size: 0;
-    // @media #{$tablet-portrait} {
+    display: none;
+    @media #{$desktop} {
+      cursor: pointer;
+      font-size: 0;
+      margin: 25px auto;
+      display: block;
       margin: 4px 14vw 0;
-    // }
+    }
     text-align: center;
   }
 
   .thumbnail {
-    // width: calc(100%/3);
     box-sizing: border-box;
-    position: relative;
-    // width: calc(100%/2);
-    border: 26px solid transparent;
     display: inline-block;
-    @media #{$tablet-portrait} {
-      &:hover,
-      &.current,
-      &:hover,
-      &.current {
-        opacity: 0.35;
-        transition-duration: $fast;
-      }
+    position: relative;
+
+    &:hover img,
+    &.current img,
+    &:hover img,
+    &.current img {
+      opacity: 0.35;
+      transition-duration: $fast;
+    }
+
+    @media #{$desktop} {
+      border: 26px solid transparent;
+    }
+
+    img {
+      height: 52px;
       transition: opacity $slow;
+      -webkit-backface-visibility: hidden;
     }
 
-    // @media #{$desktop} {
-    //   width: calc(100%/3);
-    // }
 
-    &.style-1 {
-      .look {
-        left: 0;
-        right: 0;
-      }
-    }
-    &.style-2 {
-      .look {
-        &:nth-child(2) {
-          left: 0;
-          right: 50%;
-        }
-        &:nth-child(3) {
-          left: 50%;
-          right: 0;
-        }
-      }
-    }
-    &.style-3 {
-      .look {
-        &:nth-child(2) {
-          left: 0;
-          right: calc(100%/3);
-        }
-        &:nth-child(3) {
-          left: calc(100%/3);
-          right: calc(200%/3);
-        }
-        &:nth-child(4) {
-          left: calc(200%/3);
-          right: 0;
-        }
-      }
-    }
-
-    .look {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      background: #909090;
-      box-sizing: border-box;
-      pointer-events: none;
-      transition: opacity $slow;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 4px;
-      @media #{$tablet-portrait} {
-        margin: 16px;
-        margin: 4px;
-      }
-    }
-  }
-
-  .thumbnail-image-stretcher {
-    box-sizing: border-box;
-    display: block;
-    border: 4px solid transparent;
-    width: 100%;
   }
 }
 

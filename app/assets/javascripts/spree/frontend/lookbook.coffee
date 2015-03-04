@@ -1,6 +1,7 @@
 #= require ./modernizr
 #= require ./../../test-preserve3d
-#= require ./../../util/scrollTo
+#= require util/flickity.pkgd.min
+#= require util/scrollTo
 
 "use strict"
 
@@ -281,14 +282,10 @@ document.addEventListener "DOMContentLoaded", ->
 
     lookbook = new Lookbook(document.querySelector('#lookbook'), { use_2d: use_2d})
 
-  if(document.querySelector('#artbook') != null)
-    use_2d = if window.location.pathname == "/art" then true else false
-    # user2d = false
-
-    console.log 'use_2d', use_2d
-
-
-    lookbook = new Lookbook(document.querySelector('#artbook'), { use_2d: use_2d, initial_slide: 2 })
+  # if(document.querySelector('#artbook') != null)
+  #   use_2d = if window.location.pathname == "/art" then true else false
+  #   console.log 'use_2d', use_2d
+  #   lookbook = new Lookbook(document.querySelector('#artbook'), { use_2d: use_2d, initial_slide: 2 })
 
 
 

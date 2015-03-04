@@ -1,35 +1,35 @@
 <% content_for :top do %>
-<div id="video-container">
 
-  <video autoplay loop muted data-state="playing">
-    <source src="//newyorksunshine.s3.amazonaws.com/hoop-dreams-201502121415.mp4">
-  </video>
+  <div id="video-container">
 
-  <div class="description"><div class="inner"><%== @artist_statement %></div></div>
+    <video autoplay loop muted data-state="playing">
+      <source src="//newyorksunshine.s3.amazonaws.com/hoop-dreams-201502121415.mp4">
+    </video>
 
-  <div class="top-area"></div>
-  <div class="bottom-area"></div>
+    <div class="description"><div class="inner"><%== @artist_statement %></div></div>
 
-</div>
+    <div class="top-area"></div>
+    <div class="bottom-area"></div>
 
-
-  <div id="artbook">
-    <div id="plane">
-      <div class="stage">
-        <% @works.each do |work| %>
-          <%= image_tag work.attachment(:large), class: "slide" %>
-        <% end %>
-      </div>
-      <div class="left capture"></div>
-      <div class="right capture"></div>
-    </div>
-    <div class="thumbnails">
-      <% @works.each do |work| %>
-        <div class="thumbnail">
-          <%= image_tag work.attachment(:large), class: "work" %>
-        </div>
-      <% end %>
-    </div>
   </div>
+
+
+  <div id="artbook" class="main-gallery">
+    <% @works.each do |work| %>
+      <%= image_tag work.attachment(:large), class: "slide gallery-cell" %>
+    <% end %>
+    <div class="left capture"></div>
+    <div class="right capture"></div>
+  </div>
+
+  <div class="thumbnails">
+    <% @works.each do |work| %>
+      <div class="thumbnail">
+        <%= image_tag work.attachment(:large), class: "work" %>
+      </div>
+    <% end %>
+  </div>
+
+
 
 <% end %>

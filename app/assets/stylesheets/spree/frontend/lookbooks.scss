@@ -46,7 +46,7 @@ ul#thumbnails {
   display: none;
 
   @media #{$desktop} {
-
+    display: block;
     padding-left: 0;
     text-align: center;
     li {

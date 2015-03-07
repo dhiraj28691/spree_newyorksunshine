@@ -1,3 +1,5 @@
+//= require util/flickity.pkgd.min
+
 function Lookbooks() {
   "use strict";
 

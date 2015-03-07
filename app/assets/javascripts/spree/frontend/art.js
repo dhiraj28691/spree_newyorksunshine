@@ -1,6 +1,8 @@
 //= require util/scrollTo
+//= require util/flickity.pkgd.min
 
 function Art() {
+
   "use strict";
 
   var flkty, thumbnails_wrapper;

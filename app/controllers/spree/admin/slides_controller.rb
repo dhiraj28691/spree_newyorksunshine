@@ -50,6 +50,13 @@ module Spree
         end
       end
 
+      def update_batch
+        params[:slide].each_with_index do |id, index|
+          Slide.find(id).update_column(:position, index)
+        end
+        render nothing: true
+      end
+
       # DELETE /spree/admin/slides/1
       def destroy
         @slide.destroy

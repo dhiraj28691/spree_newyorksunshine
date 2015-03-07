@@ -12,4 +12,4 @@ gemspec
 # Example: rails generate nifty:scaffold Admin::Portfolio
 gem "nifty-generators", :group => :development
 
-gem "mocha", group: :testbundlebun
+# gem "mocha", group: :testbundlebun

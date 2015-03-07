@@ -20,6 +20,7 @@ Spree::Core::Engine.add_routes do
     # end
 
     resources :lookbooks do
+      put 'slides', to: 'slides#update_batch', as: 'update_batch_slides'
       resources :slides
       # resources :slides, as: 'slidezs'
     end

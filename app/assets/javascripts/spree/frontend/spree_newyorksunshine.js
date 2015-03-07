@@ -7,7 +7,8 @@
 //   slides = new Slides(),
 //   posts = new Posts();
 
-var art = new Art();
+var art = new Art(),
+  lookbooks = new Lookbooks();
 
 
 
@@ -20,6 +21,7 @@ var routes = [];
 // routes.push({ reg_exp: /^\/admin\/posts\/new$/, callback: posts.form });
 // routes.push({ reg_exp: /^\/admin\/posts\/([\w-]+)\/edit$/, callback: posts.form });
 routes.push({ reg_exp: /^\/art$/, callback: art.index })
+routes.push({ reg_exp: /^\/lookbooks\/([\w-]+)$/, callback: lookbooks.show });
 
 
 var callback = new Router(routes);

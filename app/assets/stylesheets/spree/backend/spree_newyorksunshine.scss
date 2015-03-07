@@ -43,3 +43,29 @@ form.edit_feed_item {
     display: block;
   }
 }
+
+tbody {
+  tr {
+    &:first-child th,
+    &:first-child td {
+      border-top: 1px solid $color-border;
+    }
+    &:nth-child(even) td {
+      background-color: $color-tbl-even;
+
+      img {
+        border: 1px solid very-light($color-3, 6);
+      }
+    }
+
+    &:hover td {
+      background-color: very-light($color-3, 5);
+
+      img {
+        border: 1px solid $color-border;
+      }
+    }
+
+
+  }
+}

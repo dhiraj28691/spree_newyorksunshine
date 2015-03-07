@@ -7,30 +7,22 @@ body#slides_edit {
   }
 
   .ui-sortable-handle {
-
-    background: white;
-
     cursor: grab;
-    line-height: 100px;
     text-align: center;
   }
 
-
   &.ui-sortable-helper .ui-sortable-handle {
-
     cursor: grabbing;
-
   }
 
 
   .row.bordery {
+    background: white;
     outline: 1px solid hsl(210, 63%, 88%);
   }
 
+  .slide-image {}
 
-  .slide-image {
-
-  }
   .artist_checkbox {
     display: none
   }

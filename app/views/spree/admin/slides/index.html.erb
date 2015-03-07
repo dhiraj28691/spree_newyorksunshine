@@ -12,32 +12,35 @@
 
 <% if @slides.any? %>
   <table>
+
+    <colgroup>
+      <col style="width: 5%">
+      <col style="width: 20%">
+      <col style="width: 35%">
+      <col style="width: 15%">
+    </colgroup>
+
     <thead>
       <tr>
-        <th>Order</th>
-        <th>Position</th>
+        <th colspan="2">Slide Images</th>
         <th>Embed Code</th>
-        <th>Slide Images</th>
       </tr>
     </thead>
 
-    <tbody>
+    <tbody class="sortable">
       <% @slides.each do |admin_lookbook_slide| %>
-        <tr>
-          <td><%= admin_lookbook_slide.order %></td>
-          <td><%= admin_lookbook_slide.position %>
-          <td><%= admin_lookbook_slide.embed_code %></td>
+        <tr id="slide_<%= admin_lookbook_slide.id %>">
+          <td class="center position no-border"><span class="handle ui-sortable-handle"></span></td>
           <td>
-
             <% admin_lookbook_slide.slide_images.each do |slide_image| %>
-              <%= image_tag slide_image.attachment.url(:thumb) %>
+              <%= link_to slide_image.attachment.url, target: '_blank' do %><%= image_tag slide_image.attachment.url(:thumb) %><% end %>
             <% end %>
-
           </td>
+          <td><%= admin_lookbook_slide.embed_code %></td>
           <td class="actions">
-            <%= link_to "Edit", edit_admin_lookbook_slide_path(@lookbook, admin_lookbook_slide), :no_text => true, :class => 'edit' %>
+            <%= link_to '', edit_admin_lookbook_slide_path(@lookbook, admin_lookbook_slide), :no_text => true, :class => 'fa fa-edit icon_link with-tip no-text' %>
             &nbsp;
-            <%= link_to 'Destroy', admin_lookbook_slide_path(@lookbook, admin_lookbook_slide), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to '', admin_lookbook_slide_path(@lookbook, admin_lookbook_slide), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-resource fa fa-trash icon_link with-tip no-text" %>
           </td>
         </tr>
       <% end %>

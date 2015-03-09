@@ -12,6 +12,25 @@ nav#lookbook-links {
 
 #lookbook-wrapper {
   position: relative;
+
+  .capture {
+    pointer-events: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    &.left {
+      // background: hsla(128,100%,50%,0.50);
+      cursor: image-url("w-resize.png"), w-resize;
+      left: 0;
+    }
+    &.right {
+      // background: hsla(200,100%,50%,0.50);
+      cursor: image-url("e-resize.png"), e-resize;
+      right: 0;
+    }
+  }
+
 }
 
 ul#lookbook {

@@ -1,18 +1,13 @@
 <% content_for :top do %>
 
   <div id="video-container">
-
-    <video autoplay loop muted data-state="playing">
+    <video autoplay loop muted data-state="playing" poster="//newyorksunshine.s3.amazonaws.com/hoop-dreams.jpg">
       <source src="//newyorksunshine.s3.amazonaws.com/hoop-dreams-201502121415.mp4">
     </video>
-
     <div class="description"><div class="inner"><%== @artist_statement %></div></div>
-
     <div class="top-area"></div>
     <div class="bottom-area"></div>
-
   </div>
-
 
   <div id="artbook" class="main-gallery">
     <% @works.each do |work| %>
@@ -30,6 +25,5 @@
     <% end %>
   </div>
 
-
-
 <% end %>
+

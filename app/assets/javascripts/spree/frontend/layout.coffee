@@ -75,37 +75,26 @@ class Layout
       @header.removeAttribute("style")
       @header.classList.remove('pinned')
 
-  # setThreshold: (mediaQueryList) =>
-  #   if mediaQueryList.matches
-  #     @threshhold = -88
-  #   else
-  #     @threshhold = -71
-
   parallax: =>
     if @pageYOffset != window.pageYOffset && @wrapper.clientHeight >= window.innerHeight
       @pageYOffset = window.pageYOffset
 
       if(@pageYOffset > 0)
 
-
-
         transform = Math.max(@pageYOffset/2, 0)
         transform = transform * @ratio
         transform = Math.max(transform, @threshhold)
 
-        @header.style.webkitTransform = "translateY(" + transform + "px)";
-        @header.style.transform = "translateY(" + transform + "px)";
-
+        @header.style[Modernizr.prefixed('transform')] = "translateY(" + transform + "px)";
 
       else
-        # console.log @pageYOffset
+
+        console.log @pageYOffset
         transform = @pageYOffset * -1
-        # transform = transform
-        # transform = Math.max(transform, @threshhold)
 
-        @header.style.webkitTransform = "translateY(" + transform + "px)";
-        @header.style.transform = "translateY(" + transform + "px)";
+        @header.style[Modernizr.prefixed('transform')] = "translateY(" + transform + "px)";
 
+        @header.style[Modernizr.prefixed('transform')] = "translateY(" + transform + "px)";
 
 
       if pageYOffset * @ratio <= @threshhold then @header.classList.add('pinned') else @header.classList.remove('pinned')
@@ -146,8 +135,6 @@ class Layout
 
     @subscribe_wrapper.classList.add('active')
 
-
-
   submitForm: (event) =>
     event.preventDefault()
 
@@ -173,8 +160,7 @@ class Layout
     xhr.addEventListener "error", (e) ->
       console "Error: " + e + " Could not load url."
 
-
-
 document.addEventListener "DOMContentLoaded", ->
+
   new Layout()
 

@@ -54,15 +54,17 @@ ul#lookbook {
   }
   li {
     display: inline-block;
-    margin: 0 calc(30px - 4px);
   }
   img.look {
     display: inline-block;
     margin: 0 4px;
     white-space: nowrap;
-
-    height: 56.25vw;
+    padding: 0 calc(30px - 4px);
+    box-sizing: border-box;
+    width: 100vw;
+    // height: 56.25vw;
     @media #{$desktop} {
+      width: auto;
       min-height: 530px;
       height: calc(100vh - 65px - 65px);
       max-height: 856px;

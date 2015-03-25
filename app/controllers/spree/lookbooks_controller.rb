@@ -3,10 +3,7 @@ module Spree
     before_action :set_lookbooks
 
     def index
-      if @lookbooks.length == 1
-        redirect_to lookbook_path(@lookbooks[0])
-      end
-
+      redirect_to lookbook_path(@lookbooks.first)
     end
 
 
@@ -19,10 +16,7 @@ module Spree
     private
 
     def set_lookbooks
-
       @lookbooks = Lookbook.published.all
-
-
     end
 
   end

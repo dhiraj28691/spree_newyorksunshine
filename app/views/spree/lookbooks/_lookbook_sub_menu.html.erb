@@ -2,7 +2,7 @@
   <nav id="lookbook-links">
     <% @lookbooks.each do |lookbook| %>
       <%= link_to_unless_current lookbook.name, lookbook_path(lookbook) do %>
-        <%= link_to lookbook.name, lookbook_path(lookbook), :class => "selected" %>
+        <span class="selected"><%= lookbook.name %></span>
       <% end %>
     <% end %>
   </nav>

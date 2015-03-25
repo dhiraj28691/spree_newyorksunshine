@@ -7,25 +7,15 @@
 
   <nav class="main-nav">
 
-    <%= link_to_unless_current("Shop", { controller: "products" }, { class: "shop" }) do %>
-      <%= link_to("Shop", nil, { class: "shop current" }) %>
-    <% end %>
+    <%= link_to_unless controller.controller_name == "products", "Shop", spree.products_path, class: "shop" do %><%= link_to "Shop", nil, class: "shop current" %><% end %>
 
-    <%= link_to_unless_current('Surfclub', { controller: "surfclub"}) do %>
-      <%= link_to("Surfclub", nil, { class: "current"}) %>
-    <% end %>
+    <%= link_to_unless controller.controller_name == "surfclub", "Surfclub", spree.surfclub_path do %><%= link_to "Surfclub", nil, class: "current" %><% end %>
 
-    <%= link_to_unless_current('Lookbook', { controller: "lookbooks"}) do %>
-      <%= link_to("Lookbook", nil, { class: "current"}) %>
-    <% end %>
+    <%= link_to_unless controller.controller_name == 'lookbooks', 'Lookbook', spree.lookbooks_path do %><%= link_to("Lookbook", nil, class: "current") %><% end %>
 
-    <%= link_to_unless_current('News', { controller: "news"}) do %>
-      <%= link_to("News", nil, { class: "current"}) %>
-    <% end %>
+    <%= link_to_unless controller.controller_name == "news", "News", spree.news_path do %><%= link_to "News", nil, class: "current" %><% end %>
 
-    <%= link_to_unless_current('Art', { controller: "arts"}) do %>
-      <%= link_to("Art", nil, { class: "current"}) %>
-    <% end %>
+    <%= link_to_unless controller.controller_name == "arts", "Art", spree.art_path do %><%= link_to "Art", nil, class: "current" %><% end %>
 
 
     <% link_to Spree.t(:cart), '/cart' %>

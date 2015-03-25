@@ -1,6 +1,6 @@
 #= require spree
 
-updateCartMenu = (a,b,c,d)->
+updateCartMenu = (event)->
 
   link_to_cart = document.querySelector('#link-to-cart')
 
@@ -8,8 +8,21 @@ updateCartMenu = (a,b,c,d)->
 
   fragment = if (this.status == 200) then this.responseXML.body.innerHTML else "error"
 
+  $fragment = $(fragment)
 
-  document.querySelector('#link-to-cart').innerHTML = fragment
+  console.log(fragment)
+
+  if window.location.pathname == "/cart"
+
+    $('#link-to-cart').html($fragment).find("a").addClass("current")
+    console.log('yes')
+
+  else
+    $('#link-to-cart').html($fragment)
+    console.log('no')
+
+
+  # document.querySelector('#link-to-cart').innerHTML = fragment
 
 
 Spree.fetch_cart = ->
@@ -21,7 +34,7 @@ Spree.fetch_cart = ->
 
   xhr = new XMLHttpRequest()
 
-  xhr.onload = updateCartMenu
+  xhr.addEventListener 'load', updateCartMenu
 
   xhr.open "GET", url
   xhr.responseType = "document"

@@ -54,6 +54,14 @@ ul#lookbook {
   }
   li {
     display: inline-block;
+    html.no-touch & img.look {
+      -webkit-filter: grayscale(100%);
+      transition-duration: $slow;
+    }
+    html.no-touch &.is-selected img.look {
+      -webkit-filter: none;
+    }
+
   }
   img.look {
     display: inline-block;
@@ -84,11 +92,20 @@ ul#thumbnails {
       cursor: pointer;
       display: inline-block;
       padding: 30px calc(30px - 4px);
-      &.current img,
       &:hover img {
         opacity: 0.50;
         transition-duration: $fast;
       }
+
+      html.no-touch & {
+        img {
+          -webkit-filter: grayscale(100%);
+        }
+        &.current img {
+          -webkit-filter: none;
+        }
+      }
+
       img {
         height: 202px;
         margin: 0 4px;

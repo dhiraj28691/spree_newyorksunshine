@@ -71,5 +71,4 @@ Spree::Core::Engine.add_routes do
 
   post 'subscribe' => 'subscribe#process_form'
 
-
 end

@@ -61,9 +61,7 @@ tbody {
     &:hover td {
       background-color: very-light($color-3, 5);
 
-      img {
-        border: 1px solid $color-border;
-      }
+      // img { border: 1px solid $color-border }
     }
 
 

@@ -8,19 +8,20 @@
   </li>
 <% end if can?(:create, Spree::Lookbook) %>
 
-<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
 
-<div id="new_lookbook_wrapper" data-hook=""></div>
+
+<div id="new_lookbook_wrapper" class="table" data-hook=""></div>
 
 <% if @lookbooks.any? %>
 
-  <table id="listing_lookbooks">
+  <table id="listing_lookbooks" class="table">
     <thead>
       <tr>
         <th>Name</th>
         <th>Slides</th>
         <th>Available On</th>
-        <th>Aspet Ratio</th>
+        <th>Aspect Ratio</th>
+        <th data-hook="admin_products_index_header_actions" class="actions"></th>
       </tr>
     <tbody>
       <% @lookbooks.each do |lookbook| %>
@@ -38,11 +39,11 @@
             <%= lookbook.aspect_ratio %>
           </td>
 
-          <td class="actions">
-            <%= link_to "", edit_admin_lookbook_path(lookbook), { :class => "edit fa fa-edit icon_link with-tip no-text" } %>
-            &nbsp;
-            <%= link_to "", admin_lookbook_path(lookbook), { "class" => "delete-resource fa fa-trash icon_link with-tip no-text", "data-action" => "remove", "data-confirm" => "Are you sure?", "title" => "Delete" } %>
+          <td class="actions actions-3 text-right" data-hook="admin_products_index_row_actions">
+            <%= link_to_edit lookbook, no_text: true, class: 'edit' %>
+            <%= link_to_delete lookbook, no_text: true %>
           </td>
+
         </tr>
 
       <% end %>

@@ -1,15 +1,11 @@
-
 <% content_for :page_title do %>
   <%= Spree.t(:feed_items) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <li>
-    <%= button_link_to Spree.t(:new_feed_item), spree.new_admin_feed_item_path, :icon => 'plus' %>
-  </li>
+  <%= button_link_to Spree.t(:new_feed_item), spree.new_admin_feed_item_path, class: "btn-success", icon: 'add' %>
 <% end %>
 
-<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
 
 <div id="feed-items">
   <% @feed_items.each do |feed_item| %>

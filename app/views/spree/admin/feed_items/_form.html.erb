@@ -70,6 +70,7 @@
     <%= f.label :attachment, 'Image' %>
     <br>
     <%= f.file_field :attachment %>
+    <%= image_tag f.object.attachment.url(:thumb) %>
   <% end %>
 
 

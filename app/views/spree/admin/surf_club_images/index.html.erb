@@ -2,12 +2,8 @@
   <%= Spree.t(:Surf_club_images) %>
 <% end %>
 
-<% render :partial => 'spree/admin/shared/content_sub_menu' %>
-
 <% content_for :page_actions do %>
-  <li id="new_product_link">
-    <%= button_link_to Spree.t(:new_surf_club_image), new_admin_surf_club_image_path, { :remote => false, :icon => 'plus', :id => 'admin_new_surf_club_image' } %>
-  </li>
+  <%= button_link_to Spree.t(:new_surf_club_image), new_admin_surf_club_image_path, { remote: false,  class: "btn-success", icon: 'add' } %>
 <% end if can?(:create, Spree::Slide) %>
 
 <div id="surf-club-images">

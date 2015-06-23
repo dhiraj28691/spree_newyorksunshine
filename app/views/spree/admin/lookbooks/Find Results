@@ -1,0 +1,114 @@
+Searching 4216 files for "<%= render :partial => 'spree/admin/shared/content_sub_menu' %>"
+
+~/Sites/newyorksunshine/log/development.log:
+    <binary>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/abouts/show.html.erb:
+    7  <% end %>
+    8
+    9: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   10
+   11  <div class="about-cms-page">
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/artists_statements/edit.html.erb:
+    4
+    5
+    6: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+    7
+    8  <%= render 'form' %>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/arts/show.html.erb:
+    3  <% end %>
+    4
+    5: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+    6
+    7  <%= @artist_statement %>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/contents/index.html.erb:
+    7  <% end %>
+    8
+    9: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   10
+   11
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/feed_items/edit.html.erb:
+    3  <% end %>
+    4
+    5: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+    6
+    7  <%= render 'form' %>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/feed_items/index.html.erb:
+   10  <% end %>
+   11
+   12: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   13
+   14  <div id="feed-items">
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/feed_items/new.html.erb:
+    4
+    5
+    6: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+    7
+    8  <%= render 'form' %>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/lookbooks/edit.html.erb:
+   10  <% end %>
+   11
+   12: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   13
+   14  <%= render 'form' %>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/lookbooks/index.html.erb:
+    9  <% end if can?(:create, Spree::Lookbook) %>
+   10
+   11: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   12
+   13  <div id="new_lookbook_wrapper" data-hook=""></div>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/lookbooks/new.html.erb:
+    1: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+    2
+    3  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @lookbook } %>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/posts/index.html.erb:
+    9  <% end if can?(:create, Spree::Post) %>
+   10
+   11: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   12
+   13
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/posts/new.html.erb:
+    1: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+    2
+    3  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @post } %>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/returns_exchanges/show.html.erb:
+    7  <% end %>
+    8
+    9: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   10
+   11  <div class="returns_exchanges">
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/slides/index.html.erb:
+    9  <% end if can?(:create, Spree::Slide) %>
+   10
+   11: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   12
+   13  <% if @slides.any? %>
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/stockists/edit.html.erb:
+    6  <% end %>
+    7
+    8: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+    9
+   10
+
+/Users/michaelburtonray/Sites/spree_newyorksunshine/app/views/spree/admin/stockists/index.html.erb:
+    7  <% end %>
+    8
+    9: <%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+   10
+   11  <% @stockists.each do |stockist_region, stockists| %>
+
+18 matches across 17 files

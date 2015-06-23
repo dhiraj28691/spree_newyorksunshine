@@ -8,22 +8,16 @@
   </li>
 <% end if can?(:create, Spree::Slide) %>
 
-<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+
 
 <% if @slides.any? %>
-  <table>
-
-    <colgroup>
-      <col style="width: 5%">
-      <col style="width: 20%">
-      <col style="width: 35%">
-      <col style="width: 15%">
-    </colgroup>
+  <table class="table">
 
     <thead>
       <tr>
         <th colspan="2">Slide Images</th>
         <th>Embed Code</th>
+        <th data-hook="admin_products_index_header_actions" class="actions"></th>
       </tr>
     </thead>
 
@@ -37,10 +31,13 @@
             <% end %>
           </td>
           <td><%= admin_lookbook_slide.embed_code %></td>
-          <td class="actions">
-            <%= link_to '', edit_admin_lookbook_slide_path(@lookbook, admin_lookbook_slide), :no_text => true, :class => 'fa fa-edit icon_link with-tip no-text' %>
-            &nbsp;
-            <%= link_to '', admin_lookbook_slide_path(@lookbook, admin_lookbook_slide), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-resource fa fa-trash icon_link with-tip no-text" %>
+          <td class="actions actions-2 text-right">
+
+
+            <%= link_to_edit nil, url: polymorphic_path([:admin, @lookbook, admin_lookbook_slide], action: "edit"), no_text: true, class: 'edit' %>
+
+            <%= link_to_delete nil, url: polymorphic_path([:admin, @lookbook, admin_lookbook_slide]), no_text: true %>
+
           </td>
         </tr>
       <% end %>

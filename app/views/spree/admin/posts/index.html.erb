@@ -8,11 +8,11 @@
   </li>
 <% end if can?(:create, Spree::Post) %>
 
-<%= render :partial => 'spree/admin/shared/content_sub_menu' %>
+
 
 
 <% if @posts.any? %>
-  <table>
+  <table class="table">
     <thead>
       <tr class="admin_posts_index_headers">
         <th>Title</th>

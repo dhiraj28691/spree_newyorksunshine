@@ -1,0 +1,49 @@
+/*
+Placeholder manifest file.
+the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/backend/all.css'
+*/
+
+
+// @import "normalize";
+
+@import "variables";
+@import "base-classes";
+
+@import "fonts";
+@import "typography";
+
+@import "elements";
+
+@import "layouts/spree_application";
+
+@import "orders";
+
+@import "products/show";
+
+@import "shared/breadcrumbs";
+@import "shared/feed";
+@import "shared/footer";
+@import "shared/header";
+@import "shared/pagination";
+@import "shared/subscribe";
+@import "shared/taxonomies";
+
+// Checkout pages
+@import "checkout/edit";
+@import "checkout/summary";
+
+@import "checkout/delivery";
+@import "checkout/payment";
+@import "checkout/confirm";
+
+// Pages
+@import "lookbooks";
+
+@import "news";
+
+@import "art";
+
+@import "stockists";
+@import "surfclub";
+@import "about";
+@import "returnsexchanges";

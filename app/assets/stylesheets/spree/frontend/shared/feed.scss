@@ -117,7 +117,7 @@ span.product {
     transition-duration: $slow;
     z-index: 1;
     @media #{$tablet-portrait} {
-      height: 3em;
+      // height: 3em;
       left: 64px;
       right: 64px;
     }

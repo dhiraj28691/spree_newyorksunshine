@@ -1,3 +1,14 @@
+// require jquery
+// require jquery_ujs
+//= require bootstrap-sprockets
+//= require jquery.validate/jquery.validate.min
+//= require spree
+//= require spree/frontend/cart
+//= require spree/frontend/checkout
+//= require spree/frontend/product
+
+
+
 // Placeholder manifest file.
 // the installer will append this file to the app vendored assets here: vendor/assets/javascripts/spree/frontend/all.js'
 

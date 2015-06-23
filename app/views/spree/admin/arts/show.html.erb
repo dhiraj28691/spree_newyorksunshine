@@ -5,11 +5,13 @@
 
 
 <%= @artist_statement %>
-<p><%= link_to "Edit", edit_admin_artists_statement_path, class: "button" %></p>
+<p>
+<%= link_to "Edit", edit_admin_artists_statement_path, class: "button" %></p>
 
 <hr>
 
-<%= link_to "New Work", new_admin_work_path %>
+<p><%= button_link_to "New Work", new_admin_work_path, class: "btn-success", icon: 'add' %></p>
+
 
 <div class="works">
   <% @admin_works.each do |admin_work| %>

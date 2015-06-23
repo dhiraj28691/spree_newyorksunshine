@@ -1,0 +1,20 @@
+.pagination {
+
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  &.pagination-sm {}
+
+  a {
+    color: inherit;
+    display: block;
+    padding: 0.50em;
+    text-decoration: none;
+  }
+
+  li:hover a,
+  li.active a {
+    text-decoration: line-through;
+  }
+
+}

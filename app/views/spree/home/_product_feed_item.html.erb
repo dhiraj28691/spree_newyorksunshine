@@ -1,6 +1,45 @@
-<% if feed_item.product %>
-  <% image_source = feed_item.attachment_file_name != nil ? feed_item.attachment.url : feed_item.product.images[0].attachment.url %>
-  <%= render :partial => "feed_item", :locals => { :id => feed_item.id, :image_src => image_source, :category => "SHOP", :title => feed_item.product.name, :href => product_path(feed_item.product) } %>
+<% if feed_item && feed_item.product %>
+
+
+
+  <!-- STATIC -->
+  <% if product_path(feed_item.product) %>
+
+
+    <%= link_to product_path(feed_item.product), { :class => "product" } do %>
+
+      <% if feed_item.attachment.present? %>
+
+        <%= image_tag feed_item.attachment.url(:cropped), { width: 100 } %>
+
+      <% elsif (defined?(image) && image) %>
+        <%= image_tag image.attachment.url(:product) %>
+      <% else %>
+        <%= product_image(feed_item.product) %>
+      <% end %>
+
+      <div class="info">
+        <div><%= "SHOP" %></div>
+        <%= feed_item.product.name %>
+      </div>
+    <% end %>
+
+  <% else %>
+
+    <span class="product">
+      <%= image_tag "none", { width: 100 } %>
+      <div class="info">
+        <div><%= "SHOP" %></div>
+        <%= feed_item.product.name %>
+      </div>
+    </span>
+
+  <% end %>
+
+
+
+
+
 <% else %>
 
   <div class="feed-item" data-id="<%= feed_item.id %>" id="feeditem_<%= feed_item.id %>">

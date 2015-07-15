@@ -70,9 +70,13 @@
     <%= f.label :attachment, 'Image' %>
     <br>
     <%= f.file_field :attachment %>
-    <%= image_tag f.object.attachment.url(:thumb) %>
+    <% if f.object.attachment.exists? %>
+      <%= link_to image_tag(f.object.attachment.url(:thumb)), f.object.attachment.url %>
+    <% end %>
   <% end %>
 
+  <%= f.check_box :delete_attachment %>
+  <%= f.label :delete_attachment %>
 
   <%= f.submit %> or <%= link_to "Cancel", admin_feed_items_path %>
 

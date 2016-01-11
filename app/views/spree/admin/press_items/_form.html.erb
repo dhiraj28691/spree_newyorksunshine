@@ -1,0 +1,35 @@
+<%= form_for [:admin, @press_item] do |f| %>
+
+  <div class="twelve columns alpha">
+    <%= f.field_container :name do %>
+      <%= f.label :name %>
+      <%= f.text_field :name, :class => "fullwidth" %>
+    <% end %>
+  </div>
+
+  <div class="four columns omega">
+    <%= f.field_container :position do %>
+      <%= f.label :position %>
+      <%= f.number_field :position, { :value => @press_item.position, :class => 'fullwidth' } %>
+    <% end %>
+  </div>
+
+
+  <div class="eight columns alpha">
+    <%= f.field_container :link do %>
+      <%= f.label :link %>
+      <%= f.text_field :link, :class => "fullwidth" %>
+    <% end %>
+  </div>
+
+  <div class="eight columns omega">
+    <%= f.field_container :logo do %>
+      <%= f.label :logo %>
+      <%= f.file_field :logo, :class => "fullwidth" %>
+    <% end %>
+  </div>
+
+
+  <%= f.submit %>
+
+<% end %>

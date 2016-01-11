@@ -6,6 +6,7 @@ module Spree
 
       def index
         @press_items = PressItem.all
+
       end
 
       def show

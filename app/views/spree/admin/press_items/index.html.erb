@@ -1,4 +1,28 @@
-<% @press_items.each do |press_item| %>
-hi
+<% content_for :page_title do %>
+  <%= plural_resource_name(Spree::PressItem) %>
+<% end %>
 
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:new_press_item), new_object_url, { :class => "btn-success", :icon => 'add', :id => 'admin_new_press_item' } %>
+<% end if can?(:create, Spree::PressItem) %>
+
+<% if @press_items.any? %>
+  <table class="table">
+    <thead>
+      <tr class="admin_press_items_index_headers">
+        <th>Title</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @press_items.each do |press_item| %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>

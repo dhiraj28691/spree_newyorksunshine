@@ -13,9 +13,11 @@
 
     <%= link_to_unless controller.controller_name == 'lookbooks', 'Lookbook', spree.lookbooks_path do %><%= link_to("Lookbook", nil, class: "current") %><% end %>
 
-    <%= link_to_unless controller.controller_name == "news", "News", spree.news_path do %><%= link_to "News", nil, class: "current" %><% end %>
+    <%= link_to_unless controller.controller_name == "news", "Press", spree.news_path do %><%= link_to "News", nil, class: "current" %><% end %>
 
     <%= link_to_unless controller.controller_name == "arts", "Art", spree.art_path do %><%= link_to "Art", nil, class: "current" %><% end %>
+
+    <a href="http://hightide.newyorksunshine.com">High Tide</a>
 
 
     <% link_to Spree.t(:cart), '/cart' %>

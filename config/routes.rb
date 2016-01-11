@@ -25,6 +25,8 @@ Spree::Core::Engine.add_routes do
       # resources :slides, as: 'slidezs'
     end
 
+    resources :press_items
+
     resources :posts do
       resources :post_images
     end

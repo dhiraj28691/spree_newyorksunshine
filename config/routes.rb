@@ -60,6 +60,7 @@ Spree::Core::Engine.add_routes do
   # This needs to change
   # get 'tagged/:tag', :to => 'news#tagged'
 
+  get 'press', to: 'press#index'
 
   get 'art', :to => 'arts#index'
 

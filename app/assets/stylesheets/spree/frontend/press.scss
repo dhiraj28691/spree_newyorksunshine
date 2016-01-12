@@ -18,7 +18,7 @@
   -webkit-filter: grayscale(100%) opacity(1);
   filter: grayscale(100%) opacity(1);
   transition-duration: $slow;
-  transition-property: all;
+  transition-property: filter;
   &:hover {
     -webkit-filter: opacity(.7);
     -moz-filter: opacity(.7);
@@ -27,6 +27,78 @@
 }
 
 #press-link a {
+  color: $matteBlack;
+  display: block;
+  font-size: 33px;
+  position: relative;
+  text-decoration: none;
+}
+
+.i-d {
+  text-align: center;
+  margin: 0 0 3% 20%;
+  width: 225px;
+  @media #{$desktop} {
+    width: 450px;
+    margin: 0 0 3% 33%;
+  }
+}
+
+.i-d img {
+  width: 112.5px;
+  height: 50px;
+  @media #{$desktop} {
+    width: 225px;
+    height: 100px;
+  }
+  -webkit-filter: grayscale(100%) opacity(1);
+  filter: grayscale(100%) opacity(1);
+  transition-duration: $slow;
+  transition-property: filter;
+  &:hover {
+    -webkit-filter: opacity(.7);
+    -moz-filter: opacity(.7);
+    filter: opacity(.7);
+  }
+}
+
+.i-d a {
+  color: $matteBlack;
+  display: block;
+  font-size: 33px;
+  position: relative;
+  text-decoration: none;
+}
+
+.desillusion {
+  text-align: center;
+  margin: 0 0 3% 20%;
+  width: 225px;
+  @media #{$desktop} {
+    width: 450px;
+    margin: 0 0 3% 33%;
+  }
+}
+
+.desillusion img {
+  width: 225px;
+  height: 50px;
+  @media #{$desktop} {
+    width: 450px;
+    height: 50px;
+  }
+  -webkit-filter: grayscale(100%) opacity(1);
+  filter: grayscale(100%) opacity(1);
+  transition-duration: $slow;
+  transition-property: filter;
+  &:hover {
+    -webkit-filter: opacity(.7);
+    -moz-filter: opacity(.7);
+    filter: opacity(.7);
+  }
+}
+
+.desillusion a {
   color: $matteBlack;
   display: block;
   font-size: 33px;

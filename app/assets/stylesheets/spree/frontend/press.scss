@@ -1,14 +1,12 @@
 #press-link {
   text-align: center;
-  margin: 0 0 3% 20%;
-  width: 225px;
-  @media #{$desktop} {
-    width: 450px;
-    margin: 0 0 3% 33%;
-  }
+  width: 100%;
+  margin: 0 0 3% 0;
 }
 
 #press-link img {
+  display: block;
+  margin: auto;
   width: 225px;
   height: 50px;
   @media #{$desktop} {
@@ -26,25 +24,15 @@
   }
 }
 
-#press-link a {
-  color: $matteBlack;
-  display: block;
-  font-size: 33px;
-  position: relative;
-  text-decoration: none;
-}
-
 .i-d {
   text-align: center;
-  margin: 0 0 3% 20%;
-  width: 225px;
-  @media #{$desktop} {
-    width: 450px;
-    margin: 0 0 3% 33%;
-  }
+  width: 100%;
+  margin: 0 0 3% 0;
 }
 
 .i-d img {
+  display: block;
+  margin: auto;
   width: 112.5px;
   height: 50px;
   @media #{$desktop} {
@@ -62,25 +50,15 @@
   }
 }
 
-.i-d a {
-  color: $matteBlack;
-  display: block;
-  font-size: 33px;
-  position: relative;
-  text-decoration: none;
-}
-
 .desillusion {
   text-align: center;
-  margin: 0 0 3% 20%;
-  width: 225px;
-  @media #{$desktop} {
-    width: 450px;
-    margin: 0 0 3% 33%;
-  }
+  width: 100%;
+  margin: 0 0 3% 0;
 }
 
 .desillusion img {
+  display: block;
+  margin: auto;
   width: 225px;
   height: 35px;
   @media #{$desktop} {
@@ -98,25 +76,15 @@
   }
 }
 
-.desillusion a {
-  color: $matteBlack;
-  display: block;
-  font-size: 33px;
-  position: relative;
-  text-decoration: none;
-}
-
 .designboom {
   text-align: center;
-  margin: 0 0 3% 20%;
-  width: 225px;
-  @media #{$desktop} {
-    width: 450px;
-    margin: 0 0 3% 33%;
-  }
+  width: 100%;
+  margin: 0 0 3% 0;
 }
 
 .designboom img {
+  display: block;
+  margin: auto;
   width: 225px;
   height: 40px;
   @media #{$desktop} {
@@ -132,12 +100,4 @@
     -moz-filter: opacity(.7);
     filter: opacity(.7);
   }
-}
-
-.designboom a {
-  color: $matteBlack;
-  display: block;
-  font-size: 33px;
-  position: relative;
-  text-decoration: none;
 }

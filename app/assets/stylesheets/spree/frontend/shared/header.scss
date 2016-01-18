@@ -90,7 +90,7 @@ nav.main-nav {
     height: auto;
     justify-content: center;
     text-transform: uppercase;
-    padding-right: 60px;
+    padding-right: 10px;
     pointer-events: none;
     transition-duration: $fast;
     transition-property: height, opacity;
@@ -133,7 +133,7 @@ nav.main-nav {
       display: inline-block;
 
       &:nth-child(3) {
-        margin-left: 20px;
+        // margin-left: 20px;
         margin-right: 42px;
       }
       &:nth-child(4) {

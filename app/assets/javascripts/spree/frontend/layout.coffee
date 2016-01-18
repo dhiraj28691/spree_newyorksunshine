@@ -89,7 +89,6 @@ class Layout
 
       else
 
-        console.log @pageYOffset
         transform = @pageYOffset * -1
 
         @header.style[Modernizr.prefixed('transform')] = "translateY(" + transform + "px)";
@@ -106,7 +105,6 @@ class Layout
 
   showForm: (event) =>
     event.preventDefault()
-    # console.log('show')
     @subscribe_wrapper.classList.add('active')
 
   hideForm: (event) =>

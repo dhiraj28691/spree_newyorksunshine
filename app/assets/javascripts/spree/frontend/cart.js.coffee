@@ -4,22 +4,17 @@ updateCartMenu = (event)->
 
   link_to_cart = document.querySelector('#link-to-cart')
 
-
-
   fragment = if (this.status == 200) then this.responseXML.body.innerHTML else "error"
 
   $fragment = $(fragment)
 
-  console.log(fragment)
 
   if window.location.pathname == "/cart"
 
     $('#link-to-cart').html($fragment).find("a").addClass("current")
-    console.log('yes')
 
   else
     $('#link-to-cart').html($fragment)
-    console.log('no')
 
 
   # document.querySelector('#link-to-cart').innerHTML = fragment

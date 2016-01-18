@@ -17,7 +17,7 @@ function Router(routes) {
   }
 
   function noMatches() {
-    console.log('no matches');
+    // console.log('no matches');
   }
 
   // Router.prototype.init = callback

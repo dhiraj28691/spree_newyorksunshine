@@ -13,17 +13,12 @@
 
     <%= link_to_unless controller.controller_name == 'lookbooks', 'Lookbook', spree.lookbooks_path do %><%= link_to("Lookbook", nil, class: "current") %><% end %>
 
-    <%= link_to_unless controller.controller_name == "press", "Press", spree.press_path do %><%= link_to "Press", nil, class: "current" %><% end %>
-
     <%= link_to_unless controller.controller_name == "arts", "Art", spree.art_path do %><%= link_to "Art", nil, class: "current" %><% end %>
 
     <a href="http://hightide.newyorksunshine.com" target="_blank">High Tide</a>
-
-
+    
     <% link_to Spree.t(:cart), '/cart' %>
-    <span id="link-to-cart">
       <a class="cart-info" href="/cart">Cart(0)</a>
-    </span>
   </nav>
 
 </header>

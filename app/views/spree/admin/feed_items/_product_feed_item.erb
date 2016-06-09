@@ -1,4 +1,3 @@
-<!--
 <% if feed_item.product %>
   <% image_source = feed_item.attachment.present? ? feed_item.attachment.url(:cropped) : "//placehold.it/856x1248" %>
   <%= render :partial => "feed_item", :locals => { :id => feed_item.id, :image_src => image_source, :category => "SHOP", :title => feed_item.product.name, :href => product_path(feed_item.product) } %>
@@ -16,37 +15,5 @@
     </div>
 
   </div>
-
-<% end %>
-
--->
-
-<hr>
-
-
-
-
-<% if (feed_item.product.images + feed_item.product.variant_images).uniq.size > 1 %>
-  1
-  <%= feed_item.product.images.first.attachment.url(:large) %>
-
-  <% if feed_item.product.has_variants? %>
-    <% feed_item.product.variant_images.each do |i| %>
-      <% next if feed_item.product.images.include?(i) %>
-        <%= i.attachment.url(:large) %>
-    <% end %>
-  <% end %>
-
-<% else %>
-  2
-
-  <% if defined?(image) && image %>
-    2.1
-    <%= image.attachment.url(:product) %>
-  <% else %>
-    2.2
-    <%= product_image %>
-  <% end %>
-
 
 <% end %>

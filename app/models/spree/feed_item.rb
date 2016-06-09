@@ -1,7 +1,7 @@
 class Spree::FeedItem < ActiveRecord::Base
   before_save :destroy_image?
 
-  belongs_to :product
+  belongs_to :product, :dependent => :destroy
   belongs_to :lookbook
   belongs_to :post
 

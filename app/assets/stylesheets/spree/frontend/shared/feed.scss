@@ -1,26 +1,17 @@
 .feed-group {
-
-
   display: flex;
-  flex-wrap: wrap;
   flex-flow: row wrap;
   align-items: stretch;
-
   html.no-flexbox & {
     display: block;
     font-size: 0;
   }
-
-
-
   a {
-
     img {
       background: white;
       display: block;
       width: 100%;
     }
-
 
     &.loading {
       // pointer-events: none;
@@ -29,26 +20,10 @@
       }
     }
 
-
-    &:hover {
-      .info {
-        color: $matteBlack;
-        transition-duration: $fast;
-      }
-      &:after {
-        background: hsla(0, 0%, 100%, 0.95);
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transition-duration: $fast;
-      }
-    }
   }
 }
 
+.feed-item,
 a.product,
 span.product {
   background-size: contain;
@@ -61,42 +36,30 @@ span.product {
   display: flex;
   align-items: center;
   position: relative;
-  // width: 100%;
-
   width: calc(100%/3);
-
   @media #{$mobile-landscape} {
     width: calc(100%/3);
   }
-
-
   @media #{$tablet-portrait} {
     width: calc(100%/3);
   }
-
   @media #{$desktop} {
-    // width: calc(100%/3);
+    width: calc(100%/3);
   }
-
-  &:after {
-    background: transparent;
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition-duration: $slow;
+  &.loading,
+  &:hover {
+    .info {
+      background: hsla(0, 0%, 100%, 0.95);
+      color: $matteBlack;
+      transition-duration: $fast;
+    }
   }
-
-
 
   img {
     display: block;
     width: 100%;
     border: 8px solid white;
     @media #{$tablet-portrait} {
-      // border: 32px solid white;
       border-width: 32px;
       box-sizing: border-box;
     }
@@ -106,21 +69,18 @@ span.product {
   .info {
     font-size: 13px;
     position: absolute;
-    top: 50%;
-    left: 16px;
-    right: 16px;
-    transform: translateY(-50%);
-    // -webkit-transform: translateY(-50%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     color: transparent;
     text-align: center;
-    // width: 100%;
     transition-duration: $slow;
     z-index: 1;
-    @media #{$tablet-portrait} {
-      // height: 3em;
-      left: 64px;
-      right: 64px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
 }

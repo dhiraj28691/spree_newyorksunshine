@@ -1,0 +1,38 @@
+#home {
+  header {
+    padding: 0;
+  }
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('http://oviwbmt47.s3.amazonaws.com/cover.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  video {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background: white;
+    &.wide {
+      width: 100%;
+    }
+    &.tall {
+      height: 100%;
+    }
+  }
+  @media (min-width: 768px) {
+    nav.main-nav {
+      justify-content: flex-end;
+      > a:nth-child(3) {
+        margin: 0;
+      }
+    }
+  }
+}

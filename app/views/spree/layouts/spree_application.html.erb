@@ -10,24 +10,44 @@
   <body id="<%= controller.controller_name %><%= controller.action_name != 'index' ? "_#{controller.action_name}" : '' %>"
     class="<%= controller.controller_name %><%= controller.action_name != 'index' ? " #{controller.action_name}" : '' %>">
 
-    <%= render :partial => 'spree/shared/header' %>
+    <% if controller.controller_name == 'home' && controller.action_name == 'index' %>
+      <header>
+        <h1 id="logo"><%= link_to 'New York Sunshine', spree.root_path %></h1>
+        <label id="equivalent" for="equivalent-check"></label>
+        <input id="equivalent-check" type="checkbox">
+        <nav class="main-nav">
+          <%= link_to_unless controller.controller_name == "arts", "Art", spree.art_path do %><%= link_to "Art", nil, class: "current" %><% end %>
+          <a href="https://www.instagram.com/newyorksunshine/">Instagram</a>
+          <a href="mailto:info@newyorksunshine.com">Email</a>
+        </nav>
+      </header>
+      <div class="video-container">
+        <video id="home-video" preload="auto" autoplay="true" loop="true">
+          <!-- <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm" type="video/webm"> -->
+          <source src="http://oviwbmt47.s3.amazonaws.com/video.mp4" type="video/mp4">
+          <!-- <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv" type="video/ogg">-->
+        </video>
+      </div>
+    <% else %>
+      <%= render :partial => 'spree/shared/header' %>
 
-    <div id="wrapper" class="row" data-hook>
+      <div id="wrapper" class="row" data-hook>
 
-      <%= yield :top %>
+        <%= yield :top %>
 
-      <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
+        <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
 
-      <div id="content">
-        <%= flash_messages %>
-        <%= yield %>
+        <div id="content">
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
       </div>
 
-    </div>
+      <%= render :partial => 'spree/shared/footer' %>
 
-    <%= render :partial => 'spree/shared/footer' %>
-
-    <%= render :partial => 'spree/shared/subscribe_form' %>
+      <%= render :partial => 'spree/shared/subscribe_form' %>
+    <% end %>
 
     <%= render :partial => 'spree/shared/google_analytics' %>
     <script>

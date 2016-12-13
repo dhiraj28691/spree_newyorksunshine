@@ -19,13 +19,13 @@ $(function() {
 
   video = document.getElementById('home-video');
   if(!$.isEmptyObject(video)){
-    video.addEventListener('loadeddata', function() {
+    video.onloadeddata = function() {
       if (video.readyState === 4) {
         setVideoRatio()
         resizeHomeVideo()
         $('#home-video').fadeIn(2000);
       }
-    });
+    };
 
     $(window).resize(function() {
       resizeHomeVideo()

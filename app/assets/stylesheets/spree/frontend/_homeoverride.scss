@@ -12,6 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: -1;
   }
   video {
     display: none;
@@ -26,6 +27,13 @@
     &.tall {
       height: 100%;
     }
+  }
+  nav.main-nav {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  #equivalent, #equivalent-check, footer, #subscribe-wrapper {
+    display: none;
   }
   @media (min-width: 768px) {
     nav.main-nav {

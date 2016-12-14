@@ -1,6 +1,6 @@
 body.arts {
   #wrapper {
-    margin-top: -55px;
+    margin-top: -130px;
     @media #{$desktop} {
       margin-top: 0;
     }
@@ -19,6 +19,7 @@ body.arts {
       overflow: hidden;
       width: 100vw;
       height: 100vh;
+      z-index: 0;
     }
   }
 

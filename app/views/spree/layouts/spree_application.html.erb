@@ -10,25 +10,17 @@
   <body id="<%= controller.controller_name %><%= controller.action_name != 'index' ? "_#{controller.action_name}" : '' %>"
     class="<%= controller.controller_name %><%= controller.action_name != 'index' ? " #{controller.action_name}" : '' %>">
 
+    <%= render :partial => 'spree/shared/header' %>
+
     <% if controller.controller_name == 'home' && controller.action_name == 'index' %>
-      <header>
-        <label id="equivalent" for="equivalent-check"></label>
-        <input id="equivalent-check" type="checkbox">
-        <nav class="main-nav">
-          <%= link_to_unless controller.controller_name == "arts", "Art", spree.art_path do %><%= link_to "Art", nil, class: "current" %><% end %>
-          <a href="https://www.instagram.com/newyorksunshine/">Instagram</a>
-          <a href="mailto:info@newyorksunshine.com">Email</a>
-        </nav>
-      </header>
-      <div class="video-container">
+      <div class="video-container ios <%= 'ios' if browser.platform.ios? %>">
         <video id="home-video" preload="auto" autoplay="true" loop="true">
-          <!-- <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.webm" type="video/webm"> -->
           <source src="http://oviwbmt47.s3.amazonaws.com/video.mp4" type="video/mp4">
-          <!-- <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8.ogv" type="video/ogg">-->
+          <source src="http://oviwbmt47.s3.amazonaws.com/video.webm" type="video/webm">
+          <source src="http://oviwbmt47.s3.amazonaws.com/video.ogv" type="video/ogg">
         </video>
       </div>
     <% else %>
-      <%= render :partial => 'spree/shared/header' %>
 
       <div id="wrapper" class="row" data-hook>
 

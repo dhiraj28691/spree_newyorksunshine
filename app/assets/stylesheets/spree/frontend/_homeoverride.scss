@@ -1,7 +1,4 @@
 #home {
-  header {
-    padding: 0;
-  }
   .video-container {
     position: absolute;
     top: 0;
@@ -13,6 +10,9 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
+    &.ios {
+      background-image: url('http://oviwbmt47.s3.amazonaws.com/video.gif');
+    }
   }
   video {
     display: none;
@@ -28,19 +28,23 @@
       height: 100%;
     }
   }
-  nav.main-nav {
-    margin-top: 0px;
-    opacity: 1;
-  }
   #equivalent, #equivalent-check, footer, #subscribe-wrapper {
     display: none;
   }
-  @media (min-width: 768px) {
-    nav.main-nav {
-      justify-content: flex-end;
-      > a:nth-child(3) {
-        margin: 0;
-      }
+}
+
+header {
+  padding: 0;
+}
+nav.main-nav {
+  margin-top: 0px;
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  nav.main-nav {
+    justify-content: flex-end;
+    > a:nth-child(3) {
+      margin: 0;
     }
   }
 }

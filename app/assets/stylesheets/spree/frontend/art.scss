@@ -11,6 +11,7 @@ body.arts {
     position:relative;
     background: url("//s3.amazonaws.com/newyorksunshine/hoop-dreams-v2.gif") no-repeat center top;
     background-size: 100% auto;
+    z-index: -1;
     @media #{$desktop} {
       background: transparent;
       display: block;
@@ -19,8 +20,6 @@ body.arts {
       width: 100vw;
       height: 100vh;
     }
-
-
   }
 
   video {

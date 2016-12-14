@@ -5,13 +5,16 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('http://oviwbmt47.s3.amazonaws.com/cover.jpg');
+    background-image: url('https://newyorksunshine-production.s3.amazonaws.com/video/cover.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     z-index: -1;
     &.ios {
-      background-image: url('http://oviwbmt47.s3.amazonaws.com/video.gif');
+      background-image: url('https://newyorksunshine-production.s3.amazonaws.com/video/video.gif');
+      #home-video {
+        display: none;
+      }
     }
   }
   video {

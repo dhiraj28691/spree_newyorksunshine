@@ -42,6 +42,7 @@ header {
 nav.main-nav {
   margin-top: 0px;
   opacity: 1;
+  pointer-events: auto;
 }
 @media (min-width: 768px) {
   nav.main-nav {

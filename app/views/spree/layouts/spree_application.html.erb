@@ -13,7 +13,7 @@
     <%= render :partial => 'spree/shared/header' %>
 
     <% if controller.controller_name == 'home' && controller.action_name == 'index' %>
-      <div class="video-container <%= 'ios' if browser.platform.ios? %>">
+      <div class="video-container <%= 'ios' if (browser.platform.ios? || browser.device.mobile?) %>">
         <video id="home-video" preload="auto" autoplay="true" loop="true">
           <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.mp4" type="video/mp4">
           <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.webm" type="video/webm">

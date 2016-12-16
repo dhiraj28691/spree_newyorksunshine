@@ -13,13 +13,19 @@
     <%= render :partial => 'spree/shared/header' %>
 
     <% if controller.controller_name == 'home' && controller.action_name == 'index' %>
-      <div class="video-container <%= 'ios' if (browser.platform.ios? || browser.device.mobile?) %>">
-        <video id="home-video" preload="auto" autoplay="true" loop="true">
+      <div class="video-container">
+        <iframe id="<%= 'home-video' unless (browser.platform.ios? || browser.device.mobile?) %>"
+          src="https://player.vimeo.com/video/195127345?autoplay=1&loop=1&title=0&byline=0&portrait=0"
+          width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+        </iframe>
+      </div>
+
+        <!-- <video id="home-video" preload="auto" autoplay="true" loop="true">
           <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.mp4" type="video/mp4">
           <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.webm" type="video/webm">
           <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.ogv" type="video/ogg">
-        </video>
-      </div>
+        </video> -->
+      <!-- </div> -->
     <% else %>
 
       <div id="wrapper" class="row" data-hook>

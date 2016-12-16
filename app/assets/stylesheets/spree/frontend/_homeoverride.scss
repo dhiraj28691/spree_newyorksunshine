@@ -10,12 +10,12 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
-    &.ios {
-      background-image: url('https://newyorksunshine-production.s3.amazonaws.com/video/video.gif');
-      #home-video {
-        display: none;
-      }
-    }
+  }
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
   }
   video {
     display: none;
@@ -24,12 +24,12 @@
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
     background: white;
-    &.wide {
-      width: 100%;
-    }
-    &.tall {
-      height: 100%;
-    }
+  }
+  .wide {
+    width: 100%;
+  }
+  .tall {
+    height: 100%;
   }
   #equivalent, #equivalent-check, footer, #subscribe-wrapper {
     display: none;

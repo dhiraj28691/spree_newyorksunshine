@@ -11,24 +11,18 @@ $(function() {
     container = $('.video-container');
     containerRatio = container.width() / container.height();
     if(containerRatio > videoRatio){ // WIDE
-      video.attr('class', 'wide');
+      video.css('width', '100%');
+      video.css('height', video.width() / videoRatio);
     } else { // TALL
-      video.attr('class', 'tall');
+      video.css('height', '100%');
+      video.css('width', video.height() * videoRatio);
     }
   }
 
-  video = document.getElementById('home-video');
-  if(!$.isEmptyObject(video)){
-    video.onloadeddata = function() {
-      if (video.readyState === 4) {
-        setVideoRatio()
-        resizeHomeVideo()
-        $('#home-video').fadeIn(2000);
-      }
-    };
+  setVideoRatio()
+  resizeHomeVideo()
 
-    $(window).resize(function() {
-      resizeHomeVideo()
-    });
-  }
+  $(window).resize(function() {
+    resizeHomeVideo()
+  });
 })

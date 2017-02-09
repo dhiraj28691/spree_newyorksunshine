@@ -18,6 +18,7 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 
 @import "orders";
 
+@import "products/index";
 @import "products/show";
 
 @import "shared/breadcrumbs";

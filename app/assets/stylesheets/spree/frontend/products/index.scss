@@ -30,8 +30,10 @@
   }
 
   a.product {
-    width: 50%;
     margin: auto;
+    margin-bottom: 40px;
+    max-width: 650px;
+    width: auto;
 
     img {
       border: none;
@@ -41,5 +43,10 @@
     .info {
       display: none;
     }
+  }
+
+  footer {
+    background: #FFF;
+    width: 100vw;
   }
 }

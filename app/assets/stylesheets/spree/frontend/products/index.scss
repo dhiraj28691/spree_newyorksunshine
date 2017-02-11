@@ -1,5 +1,9 @@
 #products {
 
+  header {
+    background-color: #FFF;
+  }
+
   .product-background {
     background: asset_url('web-background.jpg') center;
     background-size: cover;
@@ -32,6 +36,10 @@
     img {
       border: none;
       background: none;
+    }
+
+    .info {
+      display: none;
     }
   }
 }

@@ -1,7 +1,7 @@
 #products {
 
-  header {
-    background-color: #FFF;
+  nav.main-nav > a {
+    color: #FFF;
   }
 
   .product-background {
@@ -46,7 +46,17 @@
   }
 
   footer {
-    background: #FFF;
     width: 100vw;
+  }
+
+  nav.footer-nav {
+    a, span {
+      color: #FFF;
+    }
+  }
+
+  #social a:before {
+    -webkit-filter: invert(1);
+   filter: invert(1);
   }
 }

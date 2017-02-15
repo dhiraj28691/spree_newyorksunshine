@@ -1,8 +1,38 @@
 #products {
 
+  /* IVY */
+
+  .ivy-intro-text {
+    left: 50%;
+    margin-left: -200px;
+    position: absolute;
+    top: 95px;
+    width: 356px;
+    z-index: 10;
+    @media (min-width: 768px) {
+      top: 140px;
+      width: 400px;
+    }
+  }
+
+  #content {
+    margin: 177px auto;
+    @media (min-width: 768px) {
+      margin: 91px auto;
+    }
+  }
+
+  label#equivalent,
+  #social a:before {
+    -webkit-filter: invert(1);
+   filter: invert(1);
+  }
+
   nav.main-nav > a {
     color: #FFF;
   }
+
+  /* END IVY */
 
   .product-background {
     background: asset_url('web-background.jpg') center;
@@ -53,10 +83,5 @@
     a, span {
       color: #FFF;
     }
-  }
-
-  #social a:before {
-    -webkit-filter: invert(1);
-   filter: invert(1);
   }
 }

@@ -137,7 +137,7 @@ nav.main-nav {
         margin-right: 42px;
       }
       &:nth-child(4) {
-        margin-left: 42px;
+        // margin-left: 42px;
       }
     }
     @media #{$desktop} {
@@ -145,7 +145,7 @@ nav.main-nav {
         margin-right: 170px;
       }
       &:nth-child(4) {
-        margin-left: 170px;
+        // margin-left: 170px;
       }
     }
     body.taxons &.shop,

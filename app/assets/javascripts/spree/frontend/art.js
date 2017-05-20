@@ -33,7 +33,7 @@ function Art() {
       thumbnails_wrapper.querySelectorAll('.thumbnail').item(flkty.selectedIndex).classList.add('current');
     });
     
-        flkty_tank = new Flickity('#artbook', {
+        flkty_tank = new Flickity('#artbook-tank', {
       cellAlign: 'center',
       cellSelector: '.slide',
       contain: true,

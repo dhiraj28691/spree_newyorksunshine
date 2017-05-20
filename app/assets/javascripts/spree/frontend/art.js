@@ -5,7 +5,7 @@ function Art() {
 
   "use strict";
 
-  var flkty, thumbnails_wrapper;
+  var flkty, thumbnails_wrapper, flkty_tank;
 
   Art.prototype.index = function() {
 
@@ -29,6 +29,22 @@ function Art() {
     });
 
     flkty.on( 'cellSelect', function() {
+      thumbnails_wrapper.querySelector('.current').classList.remove('current');
+      thumbnails_wrapper.querySelectorAll('.thumbnail').item(flkty.selectedIndex).classList.add('current');
+    });
+    
+        flkty_tank = new Flickity('#artbook', {
+      cellAlign: 'center',
+      cellSelector: '.slide',
+      contain: true,
+      imagesLoaded: true,
+      initialIndex: 2,
+      pageDots: false,
+      prevNextButtons: false,
+      wrapAround: true
+    });
+
+    flkty_tank.on( 'cellSelect', function() {
       thumbnails_wrapper.querySelector('.current').classList.remove('current');
       thumbnails_wrapper.querySelectorAll('.thumbnail').item(flkty.selectedIndex).classList.add('current');
     });

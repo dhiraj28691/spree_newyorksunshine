@@ -25,5 +25,20 @@
     <% end %>
   </div>
 
-<% end %>
+  <div id="artbook2" class="main-gallery">
+    <% @works.each do |work| %>
+      <%= image_tag work.attachment(:large), class: "slide gallery-cell" %>
+    <% end %>
+    <div class="left capture"></div>
+    <div class="right capture"></div>
+  </div>
 
+  <div class="thumbnails">
+    <% @works.each_with_index do |work, index| %>
+      <div class="thumbnail <%= index == 2 ? 'current' : nil %>">
+        <%= image_tag work.attachment(:large), class: "work" %>
+      </div>
+    <% end %>
+  </div>
+
+<% end %>

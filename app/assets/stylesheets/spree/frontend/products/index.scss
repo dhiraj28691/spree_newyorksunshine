@@ -16,9 +16,9 @@
   }
 
   #content {
-    margin: 265px auto;
+    margin: 40px auto;
     @media (min-width: 768px) {
-      margin: 204px auto;
+      margin: 40px auto;
     }
   }
 
@@ -91,12 +91,7 @@
 #products .product-background {
 background:#fff;
 }
-  #content {
-    margin: 40px auto;
-    @media (min-width: 768px) {
-      margin: 40px auto;
-    }
-  }
+
 #products nav.main-nav>a {
     color: black;
 }

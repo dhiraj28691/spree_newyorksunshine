@@ -91,3 +91,12 @@
 #products .product-background {
 background:#fff;
 }
+  #content {
+    margin: 40px auto;
+    @media (min-width: 768px) {
+      margin: 40px auto;
+    }
+  }
+#products nav.main-nav>a {
+    color: black;
+}

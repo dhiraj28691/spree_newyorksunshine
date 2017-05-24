@@ -4,6 +4,15 @@
   // background-size: 378px 168px;
   background-size: 378px 252px;
 }
-.main-nav a , .footer-nav a {
-    cursor: default;
+.main-nav {
+  a{
+    cursor: default!important;
+  }
+}
+
+
+.footer-nav {
+  a{
+    cursor: default!important;
+  }
 }

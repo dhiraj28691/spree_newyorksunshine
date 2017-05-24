@@ -6,13 +6,21 @@
 }
 .main-nav {
   a{
-    cursor: default!important;
+    cursor: pointer!important;
   }
 }
 
 
 .footer-nav {
   a{
-    cursor: default!important;
+    cursor: pointer!important;
   }
+}
+
+#wrapper { 
+  cursor: default!important;
+}
+
+html,body {
+ cursor: inherit!important;
 }

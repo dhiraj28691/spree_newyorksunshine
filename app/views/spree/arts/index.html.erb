@@ -41,12 +41,16 @@
     <div class="right capture"></div>
   </div>
 
-  <div class="thumbnails">
-    <% @works.each_with_index do |work, index| %>
-      <div class="thumbnail <%= index == 2 ? 'current' : nil %>">
-        <%= image_tag work.attachment(:large), class: "work" %>
+ <div class="thumbnails">
+      <div class="thumbnail ">
+        <img class="work" src="http://trcproducts.in/NYS/Content/tank1.png" alt="2" />
       </div>
-    <% end %>
+      <div class="thumbnail current">
+        <img class="work" src="http://trcproducts.in/NYS/Content/tank2.png" alt="3" />
+      </div>
+      <div class="thumbnail ">
+        <img class="work" src="http://trcproducts.in/NYS/Content/tank3.png" alt="4" />
+      </div>
   </div>
 
 <% end %>

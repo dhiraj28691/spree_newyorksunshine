@@ -30,7 +30,6 @@
   <label id="equivalent" for="equivalent-check"></label>
   <input id="equivalent-check" type="checkbox">
   <nav class="main-nav">
-        <%= link_to_unless controller.controller_name == "about", "About", spree.about_path do %><%= link_to "About", nil, class: "current" %><% end %>
     <%= link_to_unless controller.controller_name == "products", "Shop", spree.products_path, class: "shop" do %><%= link_to "Shop", spree.products_path, class: "shop current" %><% end %>
     <%= link_to_unless controller.controller_name == "arts", "Art", spree.art_path do %><%= link_to "Art", nil, class: "current" %><% end %>
     <a href="http://hightide.newyorksunshine.com">Hightide</a>

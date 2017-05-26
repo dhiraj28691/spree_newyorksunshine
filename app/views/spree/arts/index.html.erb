@@ -27,15 +27,16 @@
 
   <div id="video-container-tank">
     <video autoplay loop muted data-state="playing" >
-      <source src="https://trcproducts.in/NYS/Content/Water Box Series.mp4">
+      <source src="http://trcproducts.in/NYS/Content/Water Box Series.mp4">
     </video>
   </div>
 
 
   <div id="artbook-tank" class="main-gallery">
-    <% @works.each do |work| %>
-      <%= image_tag work.attachment(:large), class: "slide gallery-cell" %>
-    <% end %>
+      <img class="slide gallery-cell" src="http://trcproducts.in/NYS/Content/tank1.png" alt="1" />
+      <img class="slide gallery-cell" src="http://trcproducts.in/NYS/Content/tank2.png" alt="2" />
+      <img class="slide gallery-cell" src="http://trcproducts.in/NYS/Content/tank3.png" alt="3" />
+     
     <div class="left capture"></div>
     <div class="right capture"></div>
   </div>

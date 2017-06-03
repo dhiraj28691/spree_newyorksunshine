@@ -74,3 +74,8 @@ nav.main-nav {
     font-size: 20px;
     font-weight: BOLD;
 }
+@media (max-width: 768px) {
+  #onTop {
+       top: 100px;
+  }
+}

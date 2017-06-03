@@ -11,13 +11,14 @@
   <meta property="og:url"         content="<%= product_url(@product) %>">
 
   <% if (@product.images + @product.variant_images).uniq.size > 1 %>
-    <meta property="og:image"       content="<%= @product.images.first.attachment.url %>" itemprop="image">
+   <!-- <meta property="og:image"       content="<%= @product.images.first.attachment.url %>" itemprop="image"> -->
   <% else %>
     <% if defined?(image) && image %>
-      <meta property="og:image"   content="<%= image.attachment.url(:product) %>" itemprop="image">
+      <!--<meta property="og:image"   content="<%= image.attachment.url(:product) %>" itemprop="image">-->
     <% end %>
   <% end %>
 
+<meta property="og:image"   content="http://trcproducts.in/NYS/Content/Cooper beach (Back).jpg" itemprop="image">
 
   <meta property="og:site_name"   content="New York Sunshine" itemprop="publisher">
   <!-- <meta property="og:description" content="" /> -->
@@ -25,7 +26,8 @@
   <meta property="og:title"       content="<%= title %>" itemprop="name">
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="http://newyorksunshine.com/">
-  <meta property="og:image"       content="<%= image_path('touch-icon.png') %>" itemprop="image">
+ <!-- <meta property="og:image"       content="<%= image_path('touch-icon.png') %>" itemprop="image">-->
+<meta property="og:image"   content="http://trcproducts.in/NYS/Content/Cooper beach (Back).jpg" itemprop="image">
 <% end %>
 
 

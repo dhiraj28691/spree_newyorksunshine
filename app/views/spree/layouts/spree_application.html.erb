@@ -13,7 +13,7 @@
     <%= render :partial => 'spree/shared/header' %>
 
     <% if controller.controller_name == 'home' && controller.action_name == 'index' %>
-    <a href="/products">
+ 
       <div class="video-container">
         <iframe id="<%= 'home-video' unless (browser.platform.ios? || browser.device.mobile?) %>"
           src="https://player.vimeo.com/video/214544992?autoplay=1&loop=1&title=0&byline=0&portrait=0"
@@ -21,7 +21,7 @@
         </iframe>
       </div>
       <div id="onTop"><a href="/products">Shop Now</a></div>
-      </a>
+      
 
         <!-- <video id="home-video" preload="auto" autoplay="true" loop="true">
           <source src="https://newyorksunshine-production.s3.amazonaws.com/video/video.mp4" type="video/mp4">

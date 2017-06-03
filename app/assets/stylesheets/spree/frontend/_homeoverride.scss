@@ -85,3 +85,12 @@ body.arts #video-container-tank video {
     top:0px!important;
     left:0px!important;
 }
+#products .pagination, #products #sidebar {
+    display: block !important;
+    visibility: visible;
+    z-index: 1000000000000;
+    position: relative;
+}
+#products .pagination, #products #sidebar {
+    display: inline-block;
+}

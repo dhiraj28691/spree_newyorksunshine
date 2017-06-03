@@ -79,3 +79,7 @@ nav.main-nav {
        top: 100px;
   }
 }
+body.arts #video-container-tank video {
+    -webkit-transform: translate(0px);
+    transform: translate(0px);
+}

@@ -5,11 +5,12 @@ function Art() {
 
   "use strict";
 
-  var flkty, thumbnails_wrapper, flkty_tank;
+  var flkty, thumbnails_wrapper, flkty_tank,thumbnails_wrapper_tank;
 
   Art.prototype.index = function() {
 
     thumbnails_wrapper = document.querySelector('.thumbnails');
+    thumbnails_wrapper_tank = document.querySelector('.thumbnails.tank');
 
 
 
@@ -45,8 +46,8 @@ function Art() {
     });
 
     flkty_tank.on( 'cellSelect', function() {
-      thumbnails_wrapper.querySelector('.current').classList.remove('current');
-      thumbnails_wrapper.querySelectorAll('.thumbnail').item(flkty_tank.selectedIndex).classList.add('current');
+      thumbnails_wrapper_tank.querySelector('.current').classList.remove('current');
+      thumbnails_wrapper_tank.querySelectorAll('.thumbnail.tank').item(flkty_tank.selectedIndex).classList.add('current');
     });
 
     // Slideshow Thumbnails

@@ -14,14 +14,13 @@
 
     <% if controller.controller_name == 'home' && controller.action_name == 'index' %>
  
-     <a href="/products"> <div class="video-container">
+     <div class="video-container">
         <iframe id="<%= 'home-video' unless (browser.platform.ios? || browser.device.mobile?) %>"
           src="https://player.vimeo.com/video/214544992?autoplay=1&loop=1&title=0&byline=0&portrait=0"
           width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
         </iframe>
       </div>
-        </a>
-    <div id="onTop"></div>
+     <a href="/products"><div id="onTop"></div></a>
       
 
         <!-- <video id="home-video" preload="auto" autoplay="true" loop="true">

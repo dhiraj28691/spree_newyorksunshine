@@ -46,7 +46,7 @@ function Art() {
 
     flkty_tank.on( 'cellSelect', function() {
       thumbnails_wrapper.querySelector('.current').classList.remove('current');
-      thumbnails_wrapper.querySelectorAll('.thumbnail').item(flkty.selectedIndex).classList.add('current');
+      thumbnails_wrapper.querySelectorAll('.thumbnail').item(flkty_tank.selectedIndex).classList.add('current');
     });
 
     // Slideshow Thumbnails

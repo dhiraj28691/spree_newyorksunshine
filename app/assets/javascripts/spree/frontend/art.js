@@ -130,15 +130,15 @@ function Art() {
   
     function bind_thumbnail_events_tank(selector) {
 
-    document.querySelector('.left.capture').addEventListener('click', function(event){
+    document.querySelector('.left.capture.tank').addEventListener('click', function(event){
       flkty_tank.previous();
     });
 
-    document.querySelector('.right.capture').addEventListener('click', function(event){
+    document.querySelector('.right.capture.tank').addEventListener('click', function(event){
       flkty_tank.next();
     });
 
-    document.querySelector('.thumbnails').addEventListener('click', function(event){
+    document.querySelector('.thumbnails.tank').addEventListener('click', function(event){
       event.preventDefault();
       flkty_tank.select($(event.target.parentNode).index());
     }, true);

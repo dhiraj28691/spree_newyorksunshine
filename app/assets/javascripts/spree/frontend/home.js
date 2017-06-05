@@ -26,3 +26,7 @@ $(function() {
     resizeHomeVideo()
   });
 })
+
+   document.querySelector('#onTop').addEventListener('click', function(event){
+      window.location.href = "http://www.newyorksunshine.com/products";
+    });

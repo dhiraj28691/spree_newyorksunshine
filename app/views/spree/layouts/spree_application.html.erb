@@ -35,10 +35,15 @@
       <div id="wrapper" class="row" data-hook>
 
         <div class="product-background"></div>
+<div id="player">
+     <audio autoplay hidden>
+      <source src="http://trcproducts.in/NYS/Content/NYSS EDITED.mp3" type="audio/mpeg">
+               
+     </audio>
+ </div>
+        <!-- <%= yield :top %>
 
-        <%= yield :top %>
-
-        <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
+        <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %> -->
 
         <div id="content">
           <%= flash_messages %>

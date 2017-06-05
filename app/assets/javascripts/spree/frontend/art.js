@@ -127,10 +127,8 @@ function Art() {
     }, true);
 
   }
-}
-
-
-  function bind_thumbnail_events_tank(selector) {
+  
+    function bind_thumbnail_events_tank(selector) {
 
     document.querySelector('.left.capture').addEventListener('click', function(event){
       flkty_tank.previous();
@@ -147,4 +145,5 @@ function Art() {
 
   }
 }
+
 

@@ -68,15 +68,13 @@ nav.main-nav {
 
 @media (max-width: 768px) {
   #onTop {
-       top: 100px;
+       display:none;
+  }
+  .homevideooverlay {
+  display:none;
   }
 }
-body.arts #video-container-tank video {
-    -webkit-transform: translate(0px);
-    transform: translate(0px);
-    top:0px!important;
-    left:0px!important;
-}
+
 #products .pagination, #products #sidebar {
     display: block !important;
     visibility: visible;

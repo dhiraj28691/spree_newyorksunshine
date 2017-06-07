@@ -1,14 +1,15 @@
 #home {
   .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //width: 100vw;
+    //height: 100vh;
     // background-image: url('https://newyorksunshine-production.s3.amazonaws.com/video/cover.jpg');
     // background-repeat: no-repeat;
     // background-size: cover;
     // background-position: center;
+    position: relative; height: 0; overflow: hidden; max-width: 100%; height: auto;
     z-index: -1;
   }
   iframe {
@@ -87,3 +88,5 @@ nav.main-nav {
 header {
     z-index: 3!important;
 }
+
+.video-container iframe, .video-container object, .video-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }

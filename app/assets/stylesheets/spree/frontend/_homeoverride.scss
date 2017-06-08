@@ -9,6 +9,7 @@
     // background-repeat: no-repeat;
     // background-size: cover;
     // background-position: center;
+  
     
   }
   iframe {
@@ -73,6 +74,9 @@ nav.main-nav {
   }
   .homevideooverlay {
   display:none;
+  }
+  .video-container {
+    z-index: -1;
   }
 }
 

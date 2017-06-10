@@ -79,11 +79,11 @@ nav.main-nav {
     z-index: -1;
   }
   nav.main-nav {
-  //opacity: 0;
+  opacity: 0;
   }
   #content {
-    //margin:40px 10px 10px 10px;
-    //position: relative;
+    margin:40px 10px 10px 10px;
+    position: relative;
   }
 }
 
@@ -110,3 +110,6 @@ header {
    
 }
 */
+.product-background {
+display:none;
+}

@@ -78,6 +78,9 @@ nav.main-nav {
   .video-container {
     z-index: -1;
   }
+  nav.main-nav {
+  opacity: 1;
+  }
 }
 
 #products .pagination, #products #sidebar {

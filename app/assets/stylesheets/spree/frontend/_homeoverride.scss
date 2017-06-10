@@ -113,3 +113,10 @@ header {
 .product-background {
 display:none;
 }
+#home {
+  @media (max-width: 768px) {
+  nav.main-nav {
+    opacity:1;
+    }
+}
+}

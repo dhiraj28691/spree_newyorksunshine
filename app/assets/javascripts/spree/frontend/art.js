@@ -51,10 +51,6 @@ function Art() {
       thumbnails_wrapper_tank.querySelectorAll('.thumbnail.tank').item(flkty_tank.selectedIndex).classList.add('current');
     });
 
-    // Slideshow Thumbnails
-    bind_thumbnail_events('.thumbnails');
-    bind_thumbnail_events_tank('.thumbnails');
-  }
 
           flkty_chair = new Flickity('#artbook-chair', {
       cellAlign: 'center',

@@ -11,6 +11,7 @@ function Art() {
 
     thumbnails_wrapper = document.querySelector('.thumbnails');
     thumbnails_wrapper_tank = document.querySelector('.thumbnails.tank');
+    thumbnails_wrapper_chair = document.querySelector('.thumbnails.tank');
 
 
 

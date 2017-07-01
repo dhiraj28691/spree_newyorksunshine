@@ -5,7 +5,7 @@ function Art() {
 
   "use strict";
 
-  var flkty, thumbnails_wrapper, flkty_tank,thumbnails_wrapper_tank;
+  var flkty, thumbnails_wrapper, flkty_tank,thumbnails_wrapper_tank,flkty_chair,thumbnails_wrapper_chair;
 
   Art.prototype.index = function() {
 
@@ -55,6 +55,26 @@ function Art() {
     bind_thumbnail_events_tank('.thumbnails');
   }
 
+          flkty_chair = new Flickity('#artbook-chair', {
+      cellAlign: 'center',
+      cellSelector: '.slide',
+      contain: true,
+      imagesLoaded: true,
+      initialIndex: 2,
+      pageDots: false,
+      prevNextButtons: false,
+      wrapAround: true
+    });
+
+    flkty_chair.on( 'cellSelect', function() {
+      thumbnails_wrapper_chair.querySelector('.current').classList.remove('current');
+      thumbnails_wrapper_chair.querySelectorAll('.thumbnail.tank').item(flkty_chair.selectedIndex).classList.add('current');
+    });
+
+    // Slideshow Thumbnails
+    bind_thumbnail_events('.thumbnails');
+    bind_thumbnail_events_tank('.thumbnails');
+  }
   // Private functions
   function init_hero_video(selector) {
     "use strict";

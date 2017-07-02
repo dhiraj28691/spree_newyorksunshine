@@ -71,6 +71,7 @@ function Art() {
     // Slideshow Thumbnails
     bind_thumbnail_events('.thumbnails');
     bind_thumbnail_events_tank('.thumbnails');
+	bind_thumbnail_events_chair('.thumbnails');
   }
   // Private functions
   function init_hero_video(selector) {

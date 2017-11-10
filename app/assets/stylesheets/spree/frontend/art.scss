@@ -1,4 +1,11 @@
 body.arts {
+  .art_text {
+    margin-top: 80px;
+    padding: 0px 10px;
+        @media #{$desktop} {
+      padding: 0px 30px;
+    }
+}
   #wrapper {
     margin-top: -130px;
     @media #{$desktop} {

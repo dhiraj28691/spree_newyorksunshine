@@ -1,6 +1,7 @@
 body.arts {
   .art_text {
-    margin-top: 80px;
+    margin:80px auto 80px auto;
+    width:60%;
     padding: 0px 10px;
         @media #{$desktop} {
       padding: 0px 30px;

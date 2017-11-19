@@ -5,6 +5,11 @@ body.arts {
         @media #{$desktop} {
       padding: 0px 30px;
     }
+    .art_text::before {
+    min-height: 2px;
+    border: 1px solid #111;
+    min-width: 60px;
+}
 }
   #wrapper {
     margin-top: -130px;

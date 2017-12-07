@@ -9,6 +9,7 @@
     background-size: cover;
     background-position: center;
     background-image: url('http://trcproducts.in/NYS/Content/caution2017.jpg');
+    background-color:#fff00;  
    
   }
   iframe {
@@ -76,10 +77,10 @@ nav.main-nav {
     width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-image: url('http://trcproducts.in/NYS/Content/caution2017mobile.jpg');
-   
+    background-color:#fff00;  
   }
   }
   #onTop {

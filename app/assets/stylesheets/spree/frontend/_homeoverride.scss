@@ -12,15 +12,6 @@
     background-color:#ffff00;  
    
   }
-  input#equivalent-check:checked+nav.main-nav {
-    height: 455px;
-    opacity: 1;
-    pointer-events: auto;
-    -webkit-transition-property: height, opacity;
-    transition-property: height, opacity;
-    -webkit-transition-delay: 0ms, 400ms;
-    transition-delay: 0ms, 400ms;
-}
   iframe {
     position: absolute;
     top: 50%;
@@ -136,10 +127,10 @@ header {
 .product-background {
 display:none;
 }
-#home {
+/*#home {
   @media (max-width: 768px) {
   nav.main-nav {
     opacity:1;
     }
 }
-}
+}*/

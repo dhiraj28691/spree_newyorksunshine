@@ -127,10 +127,10 @@ header {
 .product-background {
 display:none;
 }
-/*#home {
+#home {
   @media (max-width: 768px) {
-  nav.main-nav {
-    opacity:1;
+  nav.main-nav a {
+  background:#fff;
     }
 }
-}*/
+}

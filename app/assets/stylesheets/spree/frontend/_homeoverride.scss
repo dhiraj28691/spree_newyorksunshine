@@ -82,6 +82,171 @@ nav.main-nav {
     background-image: url('http://trcproducts.in/NYS/Content/caution2017mobile.jpg');
     background-color:#ffff00;  
   }
+    
+    header {
+	height: 48px;
+	overflow: hidden;
+	background-color: #009900;	
+}
+
+header h1 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #fff;
+	font-size: 28px;
+	line-height: 48px;
+	margin-left: 15px;
+	float: left;	
+}
+
+header nav ul {
+	display: none;	
+}
+
+.btn-menu {
+	display: block;
+	float: right;
+	margin-top: 13px;
+	margin-bottom: 2px;
+	margin-right: 13px;
+	border: 0;
+	width: 40px;
+	height: 25px;
+	background-color: transparent;
+	cursor: pointer;
+	display: block;
+	position: relative;
+}
+
+.btn-menu:focus {
+	outline: 1px dotted #E0AE19;	
+}
+
+.show_menu .btn-menu:focus {
+	outline: none;	
+}
+
+.btn-menu .text {
+	display: block;
+	text-indent: 150%;
+	white-space: nowrap;
+	overflow: hidden;	
+}
+
+.btn-menu .bar,
+.btn-menu .bar:before,
+.btn-menu .bar:after {
+	display: block;
+	position: absolute;
+	width: 40px;
+	height: 5px;
+	background-color: #fff;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-menu .bar {
+	top: 10px;
+	left: 0;	
+}
+	
+.btn-menu .bar:before {
+	position: absolute;
+	content: '';
+	top: 10px;
+	left: 0;
+}
+
+.btn-menu .bar:after {
+	position: absolute;
+	content: '';
+	top: -10px;	
+	left: 0;
+}
+
+.show .btn-menu .bar {
+	background-color: transparent;	
+}
+
+.show .btn-menu .bar:before {
+	top: 0;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);	
+}
+
+.show .btn-menu .bar:after {
+	top: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);	
+}
+
+.mobile-nav {
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #009900;
+	border: 1px solid #005500;
+	border-top: none;
+	border-bottom: none;
+	-webkit-transition: height 0.3s ease-in-out;
+	transition: height 0.3s ease-in-out;	
+}
+
+.mobile-nav a {
+	text-decoration: none;
+	color: #fff;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	text-indent: 10px;
+	display: block;
+	line-height: 42px;
+	border-bottom: 1px solid #005500;	
+}
+
+.mobile-nav a:focus,
+.mobile-nav a:hover,
+.mobile-nav a:active {
+	background-color: #004301;	
+}
+
+.mobile-nav li:first-child a {
+	border-top: 1px solid #005500;	
+}
+
+.show .mobile-nav {
+	height: auto;
+}
+
+.mobile-nav .dd + ul {
+	height: 0;
+	overflow: hidden;
+	background-color: #093CB3;
+	-webkit-transition: height 0.3s ease-in-out;
+	transition: height 0.3s ease-in-out;	
+}
+
+.mobile-nav .dd + ul a {
+	text-indent: 30px;	
+}
+
+.mobile-nav .dd + ul a:focus,
+.mobile-nav .dd + ul a:hover,
+.mobile-nav .dd + ul a:active {
+	background-color: #001E66;	
+}
+
+.mobile-nav .dd:after {
+	content: '\25BC';
+	margin-left: 5px;
+	font-size: 12px;	
+}
+
+.mobile-nav .dd-show + ul {
+	height: auto;	
+}
   }
   #onTop {
        display:none;

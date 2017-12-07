@@ -5,12 +5,11 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    // background-image: url('https://newyorksunshine-production.s3.amazonaws.com/video/cover.jpg');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background-position: center;
-  
-    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: url(http://trcproducts.in/NYS/Content/caution2017.jpg);
+   
   }
   iframe {
     position: absolute;
@@ -69,6 +68,19 @@ nav.main-nav {
 }
 
 @media (max-width: 768px) {
+  #home {
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background: url(http://trcproducts.in/NYS/Content/caution2017mobile.jpg);
+   
+  }
   #onTop {
        display:none;
   }

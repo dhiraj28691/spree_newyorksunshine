@@ -233,15 +233,15 @@ function Art() {
 	
 	     function bind_thumbnail_events_caution(selector) {
 
-    document.querySelector('.left.capture.road').addEventListener('click', function(event){
+    document.querySelector('.left.capture.caution').addEventListener('click', function(event){
       flkty_caution.previous();
     });
 
-    document.querySelector('.right.capture.road').addEventListener('click', function(event){
+    document.querySelector('.right.capture.caution').addEventListener('click', function(event){
       flkty_caution.next();
     });
 
-    document.querySelector('.thumbnails.road').addEventListener('click', function(event){
+    document.querySelector('.thumbnails.caution').addEventListener('click', function(event){
       event.preventDefault();
       flkty_caution.select($(event.target.parentNode).index());
     }, true);

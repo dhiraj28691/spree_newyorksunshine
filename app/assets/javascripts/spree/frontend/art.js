@@ -12,7 +12,7 @@ function Art() {
     thumbnails_wrapper_tank = document.querySelector('.thumbnails.tank');
     thumbnails_wrapper_chair = document.querySelector('.thumbnails.chair');
 	thumbnails_wrapper_road = document.querySelector('.thumbnails.road');
-	thumbnails_wrapper_road = document.querySelector('.thumbnails.caution');
+	thumbnails_wrapper_caution = document.querySelector('.thumbnails.caution');
 
 
     // Hero Video
@@ -81,7 +81,7 @@ function Art() {
 
     flkty_road.on( 'cellSelect', function() {
       thumbnails_wrapper_road.querySelector('.current').classList.remove('current');
-      thumbnails_wrapper_road.querySelectorAll('.thumbnail.road').item(flkty_chair.selectedIndex).classList.add('current');
+      thumbnails_wrapper_road.querySelectorAll('.thumbnail.road').item(flkty_road.selectedIndex).classList.add('current');
     });
 	  
 	   flkty_caution = new Flickity('#artbook-caution', {

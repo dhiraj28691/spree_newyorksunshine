@@ -1172,3 +1172,199 @@ nav#lookbook-links + #lookbook {
   }
 
 }
+
+
+
+
+
+#artbook-booth {
+  // background: red;
+  margin-top: 20px;
+  overflow: hidden;
+  // padding-top: 65px;
+  position: relative;
+  &:focus {
+    outline: none;
+  }
+  #plane-booth {
+    // background: rebeccapurple;
+    pointer-events: none;
+    position: relative;
+    @media #{$tablet-portrait} {
+      padding: 0;
+    }
+  }
+
+  .stage {
+    display: block;
+    pointer-events: none;
+    transition: transform $slow;
+    transform-style: preserve-3d;
+    white-space: nowrap;
+    @media #{$tablet-portrait} {
+      margin: auto 30px;
+    }
+
+    min-height: 530px;
+    height: calc(100vh - 200px);
+    max-height: 720px;
+
+  }
+
+  .image-stretcher {
+    border: 30px solid transparent;
+    box-sizing: border-box;
+    display: none;
+    // width: 100%;
+    height: 550px;
+  }
+
+  .slide {
+    overflow: hidden;
+    border: 26px solid transparent;
+    border-top: none;
+    border-bottom: none;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    transition-property: opacity;
+    transition-delay: $slow;
+
+
+    transition-property: opacity;
+    transition-duration: 800ms;
+    transition-timing-function: ease;
+    transition-delay: 0ms;
+
+
+    vertical-align: top;
+    // height: 280px;
+    // @media #{$tablet-portrait} { height: 480px }
+    // @media #{$widescreen} { height: calc(100vh - 5em - 156px) }
+
+
+    @media (orientation:portrait) {
+      height: calc(100vw - 16px);
+    }
+    @media (orientation:landscape) {
+      height: calc(100vh - 16px);
+    }
+
+    @media #{$desktop} {
+      min-height: 530px;
+      height: calc(100vh - 200px);
+      max-height: 720px;
+      opacity: 0.50;
+    }
+
+
+    &:first-child {
+      position: relative;
+    }
+    &.current,
+    &.is-selected {
+      opacity: 1;
+    }
+
+    .image {
+      background-color: transparent;
+      display: block;
+      // margin: 4px;
+      @media #{$tablet-portrait} {
+        // margin: 4px;
+      }
+      box-sizing: border-box;
+      line-height: normal;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      background-size: cover;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    }
+
+    .description {
+      color: white;
+      font-size: 7px;
+      position: absolute;
+      width: 25%;
+      text-align: center;
+      text-transform: uppercase;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      padding: 16px;
+      width: 50%;
+      @media #{$tablet-portrait} {
+        font-size: 11px;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -100%);
+        width: 25%;
+      }
+      a {
+        color: inherit;
+        pointer-events: auto;
+        text-decoration: none;
+        &:hover {
+          text-decoration: line-through;
+        }
+      }
+      address {
+        font-style: normal;
+      }
+    }
+  }
+
+  .slide .image-stretcher {
+    display: block;
+  }
+
+  &.two-dimensional .slide {
+    display: inline-block;
+    position: relative;
+  }
+  &.two-dimensional ul.stage {
+    white-space: nowrap;
+  }
+
+  &.three-dimensional {
+    .stage {
+      // background: red;
+      margin: auto;
+      max-width: 940px;
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      // right: 0;
+      // bottom: 0;
+      left: 50%;
+    }
+  }
+
+  .capture {
+    pointer-events: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 1;
+    &.left {
+      // background: hsla(128,100%,50%,0.50);
+      cursor: image-url("w-resize.png"), w-resize;
+      left: 0;
+    }
+    &.right {
+      // background: hsla(200,100%,50%,0.50);
+      cursor: image-url("e-resize.png"), e-resize;
+      right: 0;
+    }
+
+    html.touch & {
+      display: none;
+    }
+
+  }
+
+}

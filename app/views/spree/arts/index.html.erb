@@ -8,42 +8,28 @@
     <div class="top-area"></div>
     <div class="bottom-area"></div>
   </div>
- <div id="artbook" class="main-gallery">
-    <% @works.each do |work| %>
-      <%= image_tag work.attachment(:large), class: "slide gallery-cell" %>
-    <% end %>
-    <div class="left capture"></div>
-    <div class="right capture"></div>
-  </div>
 
-  <div class="thumbnails">
-    <% @works.each_with_index do |work, index| %>
-      <div class="thumbnail <%= index == 2 ? 'current' : nil %>">
-        <%= image_tag work.attachment(:large), class: "work" %>
-      </div>
-    <% end %>
-  </div>
-
-<div id="artbook-booth" class="main-gallery">
+<div id="artbook" class="main-gallery">
       <img class="slide gallery-cell" src="http://trcproducts.in/NYS/Content/booth.jpg" alt="1" />
       <img class="slide gallery-cell" src="http://trcproducts.in/NYS/Content/booth2.jpg" alt="2" />
       <img class="slide gallery-cell" src="http://trcproducts.in/NYS/Content/booth3.jpg" alt="3" />
      
-    <div class="left capture booth"></div>
-    <div class="right capture booth"></div>
+    <div class="left capture"></div>
+    <div class="right capture"></div>
   </div>
 
- <div class="thumbnails booth">
-      <div class="thumbnail booth">
+ <div class="thumbnails">
+      <div class="thumbnail">
         <img class="work" src="http://trcproducts.in/NYS/Content/booth.jpg" alt="2" />
       </div>
-      <div class="thumbnail booth current">
+      <div class="thumbnail current">
         <img class="work" src="http://trcproducts.in/NYS/Content/booth2.jpg" alt="3" />
       </div>
-      <div class="thumbnail booth">
+      <div class="thumbnail">
         <img class="work" src="http://trcproducts.in/NYS/Content/booth3.jpg" alt="4" />
       </div>
   </div>
+
 <div class="art_text">
 CAUTION</br>
 An installation by John Margaritis alongside the New York Sunshine Install Team.
@@ -73,6 +59,22 @@ Please maintain a comfortable distance from the work as tanks may shift and fall
       </div>
   </div>
  
+ <div id="artbook-booth" class="main-gallery">
+    <% @works.each do |work| %>
+      <%= image_tag work.attachment(:large), class: "slide gallery-cell" %>
+    <% end %>
+    <div class="left capture booth"></div>
+    <div class="right capture booth"></div>
+  </div>
+
+  <div class="thumbnails booth">
+    <% @works.each_with_index do |work, index| %>
+      <div class="thumbnail booth <%= index == 2 ? 'current' : nil %>">
+        <%= image_tag work.attachment(:large), class: "work" %>
+      </div>
+    <% end %>
+  </div>
+
   <div id="video-container-tank" style="margin-top:40px;">
     <!--<video style="max-width:100%;margin-top:40px;" onclick="this.play();" data-state="playing" poster="http://trcproducts.in/NYS/Content/poster.jpg">
       <source src="http://trcproducts.in/NYS/Content/Water Box Series.mp4">

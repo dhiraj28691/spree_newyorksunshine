@@ -267,7 +267,7 @@ function Art() {
     }, true);
 
   }
-}
+
 
 
 	     function bind_thumbnail_events_booth(selector) {

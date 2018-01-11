@@ -1,14 +1,5 @@
 <% content_for :top do %>
 
-  <div id="video-container">
-    <video autoplay loop muted data-state="playing" poster="//newyorksunshine.s3.amazonaws.com/hoop-dreams.jpg">
-      <source src="//newyorksunshine.s3.amazonaws.com/hoop-dreams-201502121415.mp4">
-    </video>
-    <div class="description"><div class="inner"><%== @artist_statement %></div></div>
-    <div class="top-area"></div>
-    <div class="bottom-area"></div>
-  </div>
-
 <div id="artbook" class="main-gallery">
       <img class="slide gallery-cell" src="http://trcproducts.in/NYS/Content/booth.jpg" alt="1" />
       <img class="slide gallery-cell" src="http://trcproducts.in/NYS/Content/booth2.jpg" alt="2" />
@@ -29,7 +20,12 @@
         <img class="work" src="http://trcproducts.in/NYS/Content/booth3.jpg" alt="4" />
       </div>
   </div>
-
+ <div id="video-container-caution" style="margin-top:40px;">
+    <!--<video style="max-width:100%;margin-top:40px;" onclick="this.play();" data-state="playing" poster="http://trcproducts.in/NYS/Content/poster.jpg">
+      <source src="http://trcproducts.in/NYS/Content/Water Box Series.mp4">
+    </video>-->
+<iframe src="https://player.vimeo.com/video/248044593" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
 <div class="art_text">
 CAUTION</br>
 An installation by John Margaritis alongside the New York Sunshine Install Team.
@@ -58,7 +54,14 @@ Please maintain a comfortable distance from the work as tanks may shift and fall
         <img class="work" src="http://trcproducts.in/NYS/Content/slide3.jpg" alt="4" />
       </div>
   </div>
- 
+   <div id="video-container">
+    <video autoplay loop muted data-state="playing" poster="//newyorksunshine.s3.amazonaws.com/hoop-dreams.jpg">
+      <source src="//newyorksunshine.s3.amazonaws.com/hoop-dreams-201502121415.mp4">
+    </video>
+    <div class="description"><div class="inner"><%== @artist_statement %></div></div>
+    <div class="top-area"></div>
+    <div class="bottom-area"></div>
+  </div>
  <div id="artbook-booth" class="main-gallery">
     <% @works.each do |work| %>
       <%= image_tag work.attachment(:large), class: "slide gallery-cell" %>
@@ -154,15 +157,6 @@ Please maintain a comfortable distance from the work as tanks may shift and fall
         <img class="work" src="http://trcproducts.in/NYS/Content/Yellow-brick-3.jpg" alt="4" />
       </div>
   </div>
-
- <div id="video-container-caution" style="margin-top:40px;">
-    <!--<video style="max-width:100%;margin-top:40px;" onclick="this.play();" data-state="playing" poster="http://trcproducts.in/NYS/Content/poster.jpg">
-      <source src="http://trcproducts.in/NYS/Content/Water Box Series.mp4">
-    </video>-->
-<iframe src="https://player.vimeo.com/video/248044593" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
-
-
 
 <div class="arts_msg art_text" style="text-align:center;">
 Pricing and availability upon request. </br> Please contact <a href="mailto:info@newyorksunshine.com">info@newyorksunshine.com</a></div>
